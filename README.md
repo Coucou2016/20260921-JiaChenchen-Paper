@@ -1,5 +1,13 @@
 # HydroGeo-SRNO
 
+> **This repository has no subfolders, on purpose.** It is a deliberately
+> flattened, single-directory mirror so an automated reader (ChatGPT, another
+> agent, a crawler) can enumerate the whole project at once. Start at
+> **`START_HERE_FLAT_LAYOUT.md`**, then `FILE_INDEX.md` for the full inventory,
+> then `README_PROJECT.md` for the science. Current directory references in the
+> notes below map to flat names by an ASCII prefix, for example `scripts/train_fixed.py`
+> is `scripts__train_fixed.py`.
+
 Geography-guided arbitrary-scale neural operator for urban flood super-resolution.
 
 Primary experiment (V0): **10 m → 2 m**, target `h_max`, deterministic residual SR conditioned on the 2 m static stack.
