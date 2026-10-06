@@ -13,14 +13,36 @@ depth `h_max`. Its central finding is that the reconstructed field
 identifiable cause, and that a weighted loss plus a gentle fine-tune reduces it
 without materially degrading overall skill.
 
+## Revision status you must account for
+
+This snapshot is post-**Major Revision**. An external audit found the conclusions,
+code and statistics not fully consistent, and the following are now corrected:
+
+- significance is computed over **independent seeds**, not training epochs, and a
+  **spatial block bootstrap** on the 242 test tiles shows the uncertainty was
+  previously underestimated by $1.25\times$–$1.63\times$;
+- under that block bootstrap the **volume relative error and CSI@0.30 m cross
+  zero**, so the volume-improvement claim is withdrawn;
+- the ablation rows that made the "static contribution" claim invalid were
+  code-level broken and are fixed, but the corrected ablation is **not yet rerun**;
+- the multiscale/arbitrary-scale part now isolates `5→2`, `20→2`, `30→2` as unseen
+  and must not be read as validated cross-scale generalisation;
+- generalisation is bounded to **within-Wellington spatial extrapolation**.
+
+Do not treat any model-level claim that `RERUN_PLAN_AND_CHECKLIST.md` marks as
+"needs retrain" as established. When auditing, prefer the diagnostic/downgraded
+framing in the current `report.*` over the earlier `reportbackup__report.*`.
+
 ## What you have
 
 - Three full-report artefacts at the root (`report.html`, `report.md`,
-  `report.pdf`) — 52 figures, 32 tables.
-- Three condensed artefacts (`report_brief.*`) — 21 figures, 10 tables, the
-  paper-length version.
+  `report.pdf`) — 50+ figures, 30+ tables.
+- Three condensed artefacts (`report_brief.*`) — the paper-length version.
 - All source code (`scripts__*`, `models__*`, `losses__*`, …).
 - All small result data (`resultdata__*`).
+- The remediation plan and pre-submission checklist:
+  `RERUN_PLAN_AND_CHECKLIST.md`; the audit it answers:
+  `AUDIT_CODE_LEVEL_REVIEW_20261006.md`.
 - A full inventory in `FILE_INDEX.md` and per-file SHA-256 in `_manifest.json`.
 - What is missing and how to regenerate it: `DATA_AND_BINARY_NOTICE.md`.
 

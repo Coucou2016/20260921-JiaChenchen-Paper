@@ -1,0 +1,5 @@
+# Core runtime, needed to train or evaluate the model.
+torch>=2.0
+numpy
+netCDF4
+pyyaml

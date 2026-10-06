@@ -1,0 +1,4 @@
+# Testing.
+-r requirements-analysis.txt
+pytest
+pytest-cov

@@ -1,67 +1,110 @@
-# Ablation matrix (plan §十六). Run with --ablation A0..A7 or --geo_mode.
-# A0 LR only
-# A1 LR + DEM
-# A2 LR + DEM + Building
-# A3 LR + topography
-# A4 LR + all 15 static
-# A5 A4 + residual
-# A6 A5 + wet head
-# A7 full (residual + wet + flood loss) == default V0
+# Orthogonal ablation matrix.
+#
+# The previous file was an additive ladder A0..A7: each row changed several
+# things at once (geography AND parameterisation AND loss), so an improvement
+# could not be attributed to a single factor, and two rows were not valid tests
+# at all. Specifically, A4 set predict_residual=false while the model at the
+# time simply zeroed the residual, which reduced the depth output to the fixed
+# bilinear base; and A6 enabled the wet head but kept a depth-only loss, so the
+# head received no gradient.
+#
+# This matrix is organised into four ONE-FACTOR-AT-A-TIME families. Within a
+# family every row keeps every other factor identical, so the delta between rows
+# is attributable to the single factor named in the row.
+#
+#   G  geography channels           (residual + flood loss fixed)
+#       G0 lr_only  no HR geography at all
+#       G1 dem
+#       G2 dem_building
+#       G3 topography
+#       G4 all      15 static channels
+#
+#   R  output parameterisation      (geography=all, loss fixed)
+#       R0 direct log-depth head     predict_residual=false  -> direct_head
+#       R1 residual log-depth head   predict_residual=true
+#
+#   W  wet head                     (geography=all, residual, depth loss fixed)
+#       W0 wet head on, w_wet=0.0    head present but unsupervised (control)
+#       W1 wet head on, w_wet=0.30   head supervised by focal BCE
+#
+#   L  loss composition             (geography=all, residual, wet head on)
+#       L0 depth only
+#       L1 + log
+#       L2 + boundary
+#       L3 + extreme
+#       L4 + deep (w_deep=0.10)
+#       L5 full flood loss (w_wet=0.30 as well)
+#
+# Base config supplies everything not overridden here. Run rows with
+# `--ablation <ROW>` against this file.
 
 ablations:
-  A0:
+  # ---------------- G: geography ----------------
+  G0:
     geo_mode: lr_only
-    model:
-      geo_encoder: {in_cont: 0, use_landuse: false, width: 48}
-      predict_residual: true
-      predict_wet: false
-    loss: {name: masked_l1}
-  A1:
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood}
+  G1:
     geo_mode: dem
-    model:
-      geo_encoder: {in_cont: 1, use_landuse: false, width: 48}
-      predict_residual: true
-      predict_wet: false
-    loss: {name: masked_l1}
-  A2:
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood}
+  G2:
     geo_mode: dem_building
-    model:
-      geo_encoder: {in_cont: 2, use_landuse: false, width: 48}
-      predict_residual: true
-      predict_wet: false
-    loss: {name: masked_l1}
-  A3:
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood}
+  G3:
     geo_mode: topography
-    model:
-      geo_encoder: {in_cont: 8, use_landuse: false, width: 48}
-      predict_residual: true
-      predict_wet: false
-    loss: {name: masked_l1}
-  A4:
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood}
+  G4:
     geo_mode: all
-    model:
-      geo_encoder: {in_cont: 14, use_landuse: true, width: 48}
-      predict_residual: false
-      predict_wet: false
-    loss: {name: masked_l1}
-  A5:
-    geo_mode: all
-    model:
-      predict_residual: true
-      predict_wet: false
-    loss: {name: masked_l1}
-  A6:
-    geo_mode: all
-    model:
-      predict_residual: true
-      predict_wet: true
-    loss: {name: masked_l1}
-  A7:
-    geo_mode: all
-    model:
-      predict_residual: true
-      predict_wet: true
+    model: {predict_residual: true, predict_wet: true}
     loss: {name: flood}
 
-# inherits defaults from v0_10m2m_hmax.yaml when merged by train script
+  # ---------------- R: parameterisation ----------------
+  R0:
+    geo_mode: all
+    model: {predict_residual: false, predict_wet: true}
+    loss: {name: flood}
+  R1:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood}
+
+  # ---------------- W: wet head ----------------
+  W0:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.0}
+  W1:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.30}
+
+  # ---------------- L: loss composition ----------------
+  L0:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.0, w_log: 0.0, w_boundary: 0.0, w_extreme: 0.0, w_deep: 0.0}
+  L1:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.0, w_log: 0.20, w_boundary: 0.0, w_extreme: 0.0, w_deep: 0.0}
+  L2:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.0, w_log: 0.20, w_boundary: 0.10, w_extreme: 0.0, w_deep: 0.0}
+  L3:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.0, w_log: 0.20, w_boundary: 0.10, w_extreme: 0.10, w_deep: 0.0}
+  L4:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.0, w_log: 0.20, w_boundary: 0.10, w_extreme: 0.10, w_deep: 0.10}
+  L5:
+    geo_mode: all
+    model: {predict_residual: true, predict_wet: true}
+    loss: {name: flood, w_wet: 0.30, w_log: 0.20, w_boundary: 0.10, w_extreme: 0.10, w_deep: 0.10}
+
 base: configs/v0_10m2m_hmax.yaml

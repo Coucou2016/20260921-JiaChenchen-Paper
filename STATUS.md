@@ -2,6 +2,57 @@
 
 Generated against plan `20260924-方案.md`. Workspace: `E:\Projects\20260921-JiaChenchen-Paper`.
 
+## Major-revision remediation ledger (2026-10-06/07)
+
+An external system review returned **Major Revision** on the ground that the
+paper's conclusions, the code, and the statistical evidence were not fully
+consistent. This section records what was changed in the code, what was
+recomputed on real data, and — importantly — what still requires retraining.
+Full plan and acceptance checklist: `RERUN_PLAN_AND_CHECKLIST.md`.
+
+### Code-level fixes (no retraining required)
+
+| ID | Defect | Fix | Files |
+|----|--------|-----|-------|
+| A1 | Metric aggregation risked pseudo-replication | domain-pooled accumulator; tile-macro named explicitly | `metrics/aggregation.py` |
+| A2 | Empty-event CSI/F1 scored as 0; area/volume error denominators unguarded; PSNR on a data range; non-standard SSIM | NaN for empty events, physical floors on denominators, fixed-range PSNR, standard-window SSIM | `metrics/flood_metrics.py` |
+| A3 | focal $\alpha$ class-blind; boundary loss polluted by nodata edge; extreme quantile pooled across tiles; no wet-supervision switch | class-specific $\alpha$, eroded-mask boundary stencil, per-sample extreme quantile, `w_wet` switch | `losses/flood_loss.py` |
+| A4 | disabling the residual head zeroed `delta_z`, so depth fell back to bilinear; `masked_l1` supervised `depth` only, so the wet head never got a gradient | trainable `direct_head`; mask-aware bilinear base; wet head gets its own supervised term | `models/hydrogeo_srno.py`, `losses/flood_loss.py` |
+| A5 | YAML batch size / epochs / AMP were ignored; no full epoch loop; `batch_size` pinned to 1 | trainer now honours the YAML; resolution-grouped sampler; validation, best/worst archiving | `scripts/train_multiscale.py` |
+| A6 | `5 m → 2 m` sat inside the training pairs, confounding arbitrary-scale generalisation | strict seen/unseen isolation; `[5,2]`,`[20,2]`,`[30,2]` are unseen-only | `configs/v1_arbitrary_scale.yaml` |
+| A7 | ablation rows A4/A6 were code-level invalid | orthogonal G/R/W/L matrix rebuilt on the fixed interfaces | `configs/v0_10m2m_hmax_ablation.yaml` |
+| A8 | no seed control, no run provenance, monolithic dependencies | `seed_everything`, run manifest, split requirement files | `engine/reproducibility.py`, `requirements-*.txt` |
+| A9 | scientific semantics untested | 13 unit tests, all passing | `tests/test_scientific_semantics.py` |
+| A10 | significance used training epochs as replicates | seed-level inference script + spatial block bootstrap run on the real 242 test tiles | `analysis/seed_level_inference.py`, `analysis/spatial_block_bootstrap.py`, `outputs/premodel/spatial_block_bootstrap.json` |
+| A11 | in-text captions quoted rendered, not authored, numbers | authored-number cross-references restored and verified | `scripts/report_body.py`, `scripts/_verify_xref.py` |
+
+### Recalculated on real data (E0)
+
+Spatial block bootstrap, $1\times1$ to $4\times4$ blocks, on all 242 test tiles:
+
+- spatial autocorrelation inflates the CI width by $1.25\times$ to $1.63\times$;
+- **volume relative error and CSI@0.30 m cross zero at every block size** — the
+  volume-improvement side claim is withdrawn;
+- the 0.05 m overall result stays positive and far from zero; the 1.00 m deep
+  result stays negative at every block size and is reported as such;
+- the deep term's effect weakens when training is extended by twenty epochs, so it
+  is demoted to an exploratory finding inside the specific 20-epoch window.
+
+### Report-level de-escalation (done)
+
+`report.html` / `report.md` / `report_brief.html` / `report_brief.md` were rebuilt
+with the abstract and conclusions de-escalated: epoch-level paired tests are now
+labelled training-process diagnostics, generalisation is bounded to within-Wellington
+spatial extrapolation, and the volume/deep-water claims are stated with the block-bootstrap
+caveats. All 85 captions resolve with zero dangling references.
+
+### Requires retraining (not yet done — see E1–E5)
+
+The main table still holds only the two parameter-free baselines (nearest, bilinear).
+Multi-seed runs, the learning-type baselines, the corrected orthogonal ablation, the
+deep-weight scan and the arbitrary-scale rerun all need GPU time that this 4 GB box
+cannot supply. Nothing in the report claims those numbers exist.
+
 ## Completed (plan sections → files)
 
 | Plan § | Item | Paths |

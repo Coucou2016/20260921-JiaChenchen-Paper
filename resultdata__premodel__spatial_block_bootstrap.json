@@ -1,0 +1,416 @@
+{
+  "source": {
+    "control": "outputs/finetune_deep/w0ext/visualizations/ep189/per_tile_metrics_test.json",
+    "treatment": "outputs/finetune_deep/w01ext/visualizations/ep189/per_tile_metrics_test.json",
+    "note": "w_deep=0.00 vs w_deep=0.10; same held-out tiles; difference is paired by tile"
+  },
+  "n_paired_tiles": 242,
+  "metrics": {
+    "MAE_wet": {
+      "n_finite": 242,
+      "raw_mean_diff": -0.0013228032799545398,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": -0.0013228032799545398,
+          "ci95_low": -0.0024808057177858043,
+          "ci95_median": -0.0013068820742413033,
+          "ci95_high": -0.00025032275060022497,
+          "ci_width": 0.0022304829671855792,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": -0.0013228032799545398,
+          "ci95_low": -0.0025972776606951052,
+          "ci95_median": -0.001324052852201969,
+          "ci95_high": -9.196872532230903e-05,
+          "ci_width": 0.002505308935372796,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": -0.0013228032799545398,
+          "ci95_low": -0.0027187419746649163,
+          "ci95_median": -0.0013299124793829005,
+          "ci95_high": 4.0361671126891896e-05,
+          "ci_width": 0.002759103645791808,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": -0.0013228032799545398,
+          "ci95_low": -0.0024509989492274785,
+          "ci95_median": -0.001331657600014198,
+          "ci95_high": -7.901523701415413e-05,
+          "ci_width": 0.0023719837122133246,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    },
+    "RMSE_wet": {
+      "n_finite": 242,
+      "raw_mean_diff": -0.0015568315736518418,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": -0.0015568315736518418,
+          "ci95_low": -0.0037029849065175232,
+          "ci95_median": -0.0015608961963333376,
+          "ci95_high": 0.0005520318403901621,
+          "ci_width": 0.004255016746907685,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": -0.0015568315736518418,
+          "ci95_low": -0.003985105586147918,
+          "ci95_median": -0.0015749838159177104,
+          "ci95_high": 0.0008407913666223545,
+          "ci_width": 0.004825896952770272,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": -0.0015568315736518418,
+          "ci95_low": -0.003937745544908926,
+          "ci95_median": -0.001583013372459863,
+          "ci95_high": 0.0009341132204532149,
+          "ci_width": 0.004871858765362141,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": -0.0015568315736518418,
+          "ci95_low": -0.0034543305368128197,
+          "ci95_median": -0.0015663472132462384,
+          "ci95_high": 0.0005143038787794618,
+          "ci_width": 0.0039686344155922815,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    },
+    "CSI_005": {
+      "n_finite": 242,
+      "raw_mean_diff": 0.0016650452224676274,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": 0.0016650452224676274,
+          "ci95_low": 0.00047926222674610203,
+          "ci95_median": 0.0016517001550552274,
+          "ci95_high": 0.002825306831620448,
+          "ci_width": 0.0023460446048743457,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": 0.0016650452224676274,
+          "ci95_low": 0.00040518554674219776,
+          "ci95_median": 0.0016624790466043145,
+          "ci95_high": 0.0029257189661138134,
+          "ci_width": 0.0025205334193716157,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": 0.0016650452224676274,
+          "ci95_low": 0.00019029727278778563,
+          "ci95_median": 0.0016510127510860131,
+          "ci95_high": 0.003083234086678219,
+          "ci_width": 0.0028929368138904334,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": 0.0016650452224676274,
+          "ci95_low": 0.0002966816351751337,
+          "ci95_median": 0.0016558802184560662,
+          "ci95_high": 0.0032254844914053715,
+          "ci_width": 0.0029288028562302376,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    },
+    "CSI_030": {
+      "n_finite": 242,
+      "raw_mean_diff": -0.005771356088317131,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": -0.005771356088317131,
+          "ci95_low": -0.009443699683963268,
+          "ci95_median": -0.005829084018045221,
+          "ci95_high": -0.002043479186875269,
+          "ci_width": 0.007400220497087998,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": -0.005771356088317131,
+          "ci95_low": -0.010105737668421476,
+          "ci95_median": -0.005763969617577201,
+          "ci95_high": -0.0012938888937234936,
+          "ci_width": 0.008811848774697983,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": -0.005771356088317131,
+          "ci95_low": -0.010677878403450976,
+          "ci95_median": -0.00571291129090472,
+          "ci95_high": -0.0011811887315999457,
+          "ci_width": 0.00949668967185103,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": -0.005771356088317131,
+          "ci95_low": -0.011916517657472899,
+          "ci95_median": -0.005702386586341588,
+          "ci95_high": 0.00012412897738643355,
+          "ci_width": 0.012040646634859332,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    },
+    "CSI_100": {
+      "n_finite": 242,
+      "raw_mean_diff": -0.007697829596644406,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": -0.007697829596644406,
+          "ci95_low": -0.011948722328936338,
+          "ci95_median": -0.007673153143341476,
+          "ci95_high": -0.0034111181759320717,
+          "ci_width": 0.008537604153004266,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": -0.007697829596644406,
+          "ci95_low": -0.012765711562438645,
+          "ci95_median": -0.007650158812637069,
+          "ci95_high": -0.003119814706056586,
+          "ci_width": 0.00964589685638206,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": -0.007697829596644406,
+          "ci95_low": -0.012831751063611618,
+          "ci95_median": -0.007690379774587048,
+          "ci95_high": -0.003133555118346636,
+          "ci_width": 0.009698195945264982,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": -0.007697829596644406,
+          "ci95_low": -0.01424417394303011,
+          "ci95_median": -0.00759076400435457,
+          "ci95_high": -0.00227374501767829,
+          "ci_width": 0.01197042892535182,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    },
+    "VolumeRelativeError": {
+      "n_finite": 242,
+      "raw_mean_diff": 0.0049121943514417446,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": 0.0049121943514417446,
+          "ci95_low": -0.001561024647578074,
+          "ci95_median": 0.004981646689741843,
+          "ci95_high": 0.011212364067597248,
+          "ci_width": 0.012773388715175322,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": 0.0049121943514417446,
+          "ci95_low": -0.002982977263141373,
+          "ci95_median": 0.004932779148091305,
+          "ci95_high": 0.01264333846992882,
+          "ci_width": 0.015626315733070193,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": 0.0049121943514417446,
+          "ci95_low": -0.0024572243699161767,
+          "ci95_median": 0.00503409446188224,
+          "ci95_high": 0.0126497738292661,
+          "ci_width": 0.015106998199182277,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": 0.0049121943514417446,
+          "ci95_low": -0.002848700263141369,
+          "ci95_median": 0.005094999855689066,
+          "ci95_high": 0.013244438690435933,
+          "ci_width": 0.0160931389535773,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    },
+    "PeakDepthError": {
+      "n_finite": 242,
+      "raw_mean_diff": 0.0909968056708328,
+      "block_sensitivity": [
+        {
+          "value_col": "_diff",
+          "block_rows": 1,
+          "block_cols": 1,
+          "n_tiles": 242,
+          "n_blocks": 242,
+          "mean": 0.0909968056708328,
+          "ci95_low": 0.04724753280131778,
+          "ci95_median": 0.09121824105170148,
+          "ci95_high": 0.13676041863735544,
+          "ci_width": 0.08951288583603767,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 2,
+          "block_cols": 2,
+          "n_tiles": 242,
+          "n_blocks": 74,
+          "mean": 0.0909968056708328,
+          "ci95_low": 0.045918649061790814,
+          "ci95_median": 0.09149167418137019,
+          "ci95_high": 0.13489843931254103,
+          "ci_width": 0.08897979025075022,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 3,
+          "block_cols": 3,
+          "n_tiles": 242,
+          "n_blocks": 46,
+          "mean": 0.0909968056708328,
+          "ci95_low": 0.04945580778075485,
+          "ci95_median": 0.09145309738379973,
+          "ci95_high": 0.13010995477079784,
+          "ci_width": 0.080654146990043,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        },
+        {
+          "value_col": "_diff",
+          "block_rows": 4,
+          "block_cols": 4,
+          "n_tiles": 242,
+          "n_blocks": 30,
+          "mean": 0.0909968056708328,
+          "ci95_low": 0.04232494526798181,
+          "ci95_median": 0.0915560544721511,
+          "ci95_high": 0.1350686052186321,
+          "ci_width": 0.09274365995065029,
+          "design": "spatial block bootstrap; scenario never crossed within a block"
+        }
+      ]
+    }
+  }
+}

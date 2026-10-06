@@ -27,6 +27,7 @@ if str(ROOT) not in sys.path:
 from dataset.wellington_fixed_sr import WellingtonFixedSRDataset, collate_fixed
 from engine.checkpoint import load_checkpoint, save_checkpoint
 from engine.evaluator import build_model
+from engine.reproducibility import make_generator, seed_everything, seed_worker, write_provenance
 from engine.trainer import EarlyStopper, evaluate_loader, train_step
 from losses.flood_loss import FloodLoss, MaskedL1Loss
 
@@ -37,10 +38,12 @@ def load_config(path: Path) -> dict:
 
 
 def set_seed(seed: int) -> None:
-    random.seed(seed)
-    torch.manual_seed(seed)
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed_all(seed)
+    """Deprecated shim. Use engine.reproducibility.seed_everything.
+
+    The old body did not seed NumPy or the DataLoader workers, so two "same
+    seed" runs could diverge. Kept as a thin wrapper for external callers.
+    """
+    seed_everything(seed)
 
 
 def build_loss(cfg: dict):
@@ -233,19 +236,26 @@ def main() -> None:
     )
     print(f"train={len(train_ds)} val={len(val_ds)} geo_mode={geo_mode}")
 
+    # Reproducibility: workers must be reseeded too, otherwise two runs with the
+    # same seed can still differ.
+    dl_workers = int(train_cfg.get("num_workers", 0))
+    dl_gen = make_generator(int(train_cfg.get("seed", 42)))
+
     train_loader = DataLoader(
         train_ds,
         batch_size=bs,
         shuffle=True,
-        num_workers=int(train_cfg.get("num_workers", 0)),
+        num_workers=dl_workers,
         collate_fn=collate_fixed,
         pin_memory=(device.type == "cuda"),
+        worker_init_fn=seed_worker,
+        generator=dl_gen,
     )
     val_loader = DataLoader(
         val_ds,
         batch_size=bs,
         shuffle=False,
-        num_workers=int(train_cfg.get("num_workers", 0)),
+        num_workers=dl_workers,
         collate_fn=collate_fixed,
         pin_memory=(device.type == "cuda"),
     )
@@ -274,6 +284,14 @@ def main() -> None:
         sched = CosineAnnealingLR(optimizer, T_max=max(epochs, 1))
 
     (out_dir / "config_resolved.yaml").write_text(yaml.safe_dump(cfg), encoding="utf-8")
+    write_provenance(out_dir, cfg, int(train_cfg.get("seed", 42)), extra={
+        "geo_mode": geo_mode,
+        "ablation": args.ablation,
+        "batch_size": bs,
+        "amp": use_amp,
+        "checkpoint_rule": "best validation CSI_005; tie-break RMSE_wet",
+        "split": "spatial-band-v1",
+    }, root=ROOT)
 
     start_epoch = 1
     best_csi = -1.0

@@ -1,18 +1,34 @@
 # HydroGeo-SRNO
 
-> **This repository has no subfolders, on purpose.** It is a deliberately
-> flattened, single-directory mirror so an automated reader (ChatGPT, another
-> agent, a crawler) can enumerate the whole project at once. Start at
-> **`START_HERE_FLAT_LAYOUT.md`**, then `FILE_INDEX.md` for the full inventory,
-> then `README_PROJECT.md` for the science. Current directory references in the
-> notes below map to flat names by an ASCII prefix, for example `scripts/train_fixed.py`
-> is `scripts__train_fixed.py`.
-
 Geography-guided arbitrary-scale neural operator for urban flood super-resolution.
 
 Primary experiment (V0): **10 m → 2 m**, target `h_max`, deterministic residual SR conditioned on the 2 m static stack.
 
 Plan source of truth: `../20260924-方案.md` (this repo root). Derived grids live in `dataset/` (do not rebuild unless required).
+
+## Revision status (2026-10-07)
+
+An external system review returned **Major Revision**: the conclusions, the code and
+the statistical evidence were not fully consistent. The code-level and report-level
+defects are fixed and, where no retraining was needed, recomputed. Model-level claims
+that require retraining are deferred and are **not** asserted anywhere in the report.
+
+Key changes:
+
+- statistics move from **training epochs** to **independent seeds**; a spatial block
+  bootstrap was run on all 242 test tiles and shows spatial autocorrelation inflates
+  the CI width by $1.25\times$–$1.63\times$;
+- the **volume relative error and CSI@0.30 m cross zero** under block bootstrap, so
+  the volume-improvement claim is withdrawn;
+- the ablation interfaces that made A4/A6 invalid are fixed (trainable direct head,
+  wet-head supervision), but the corrected ablation must be **rerun** before use;
+- the multiscale trainer now honours its YAML and strictly isolates `5→2`, `20→2`,
+  `30→2` as unseen scales;
+- generalisation is bounded to **within-Wellington spatial extrapolation** — cross-city
+  and cross-event transfer are labelled unverified.
+
+Full plan and pre-submission checklist: `RERUN_PLAN_AND_CHECKLIST.md`.
+Ledger: `STATUS.md`, `IMPLEMENTATION_CHECKLIST.md`.
 
 ## Layout
 

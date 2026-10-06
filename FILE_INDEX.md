@@ -1,34 +1,52 @@
 # FILE_INDEX
 
-Complete flat inventory of this mirror. **715 files, 148.5 MB, no subdirectories.**
+Complete flat inventory of this mirror. **755 files, 149.0 MB, no subdirectories.**
 
 Every entry lists the flat filename, its original repo-relative path and its size. Fetch by flat name. The machine-readable twin of this index is `_manifest.json`, which also carries a SHA-256 per file.
 
 ## Full and condensed report artifacts (root)
 
-6 files, 49.04 MB
+6 files, 49.26 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `report.html` | `report.html` | 19,511,837 |
-| `report.md` | `report.md` | 347,717 |
-| `report.pdf` | `report.pdf` | 15,936,697 |
-| `report_brief.html` | `report_brief.html` | 8,452,122 |
-| `report_brief.md` | `report_brief.md` | 37,520 |
-| `report_brief.pdf` | `report_brief.pdf` | 7,135,952 |
+| `report.html` | `report.html` | 19,528,114 |
+| `report.md` | `report.md` | 362,897 |
+| `report.pdf` | `report.pdf` | 16,069,337 |
+| `report_brief.html` | `report_brief.html` | 8,456,296 |
+| `report_brief.md` | `report_brief.md` | 40,721 |
+| `report_brief.pdf` | `report_brief.pdf` | 7,197,058 |
 
 ## Project entry points and docs (root)
 
-6 files, 0.11 MB
+12 files, 0.19 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `IMPLEMENTATION_CHECKLIST.md` | `IMPLEMENTATION_CHECKLIST.md` | 3,226 |
+| `AUDIT_CODE_LEVEL_REVIEW_20261006.md` | `20260921-JiaChenchen-Paper_全面审稿与代码级修改方案_20261006.md` | 64,153 |
+| `IMPLEMENTATION_CHECKLIST.md` | `IMPLEMENTATION_CHECKLIST.md` | 4,537 |
 | `PLAN_20260924.md` | `20260924-方案.md` | 32,114 |
-| `README.md` | `README.md` | 1,828 |
-| `STATUS.md` | `STATUS.md` | 66,235 |
+| `README.md` | `README.md` | 3,136 |
+| `RERUN_PLAN_AND_CHECKLIST.md` | `RERUN_PLAN_AND_CHECKLIST.md` | 11,372 |
+| `STATUS.md` | `STATUS.md` | 70,552 |
 | `VISUALIZATION.md` | `VISUALIZATION.md` | 9,262 |
+| `requirements-analysis.txt` | `requirements-analysis.txt` | 140 |
+| `requirements-core.txt` | `requirements-core.txt` | 92 |
+| `requirements-paper.txt` | `requirements-paper.txt` | 83 |
+| `requirements-test.txt` | `requirements-test.txt` | 62 |
 | `requirements.txt` | `requirements.txt` | 36 |
+
+## Orientation docs for an automated reviewer
+
+5 files, 0.02 MB
+
+| Flat filename | Original path | Bytes |
+|---|---|---|
+| `DATA_AND_BINARY_NOTICE.md` | `scripts/mirror_extras/DATA_AND_BINARY_NOTICE.md` | 4,386 |
+| `README_PROJECT.md` | `scripts/mirror_extras/README_PROJECT.md` | 3,142 |
+| `START_HERE_FLAT_LAYOUT.md` | `scripts/mirror_extras/START_HERE_FLAT_LAYOUT.md` | 4,581 |
+| `chatgpt__00_TASK_BRIEF.md` | `scripts/mirror_extras/chatgpt__00_TASK_BRIEF.md` | 3,962 |
+| `chatgpt__01_WHERE_TO_LOOK.md` | `scripts/mirror_extras/chatgpt__01_WHERE_TO_LOOK.md` | 3,509 |
 
 ## Figures embedded in the report, in render order
 
@@ -154,7 +172,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Machine result data and small grids
 
-430 files, 46.44 MB
+431 files, 46.46 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -450,6 +468,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__premodel__sabre_r_run.log` | `outputs/premodel/sabre_r_run.log` | 1,701 |
 | `resultdata__premodel__sabre_r_vmeasure.csv` | `outputs/premodel/sabre_r_vmeasure.csv` | 1,844 |
 | `resultdata__premodel__scale_dialect.json` | `outputs/premodel/scale_dialect.json` | 10,270 |
+| `resultdata__premodel__spatial_block_bootstrap.json` | `outputs/premodel/spatial_block_bootstrap.json` | 14,769 |
 | `resultdata__premodel__static_inventory.json` | `outputs/premodel/static_inventory.json` | 33,836 |
 | `resultdata__premodel__terrain_distortion.json` | `outputs/premodel/terrain_distortion.json` | 16,638 |
 | `resultdata__premodel__tile_20m_val.npz` | `outputs/premodel/tile_20m_val.npz` | 4,783,587 |
@@ -591,18 +610,35 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Pipeline, figure generators, report builders, audits
 
-102 files, 1.12 MB
+125 files, 1.21 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
 | `scripts__00_check_grid_alignment.py` | `scripts/00_check_grid_alignment.py` | 7,105 |
 | `scripts___analyze_epoch_scan.py` | `scripts/_analyze_epoch_scan.py` | 4,194 |
 | `scripts___analyze_extend.py` | `scripts/_analyze_extend.py` | 4,336 |
+| `scripts___audit_capseq.py` | `scripts/_audit_capseq.py` | 1,629 |
 | `scripts___audit_ch2c.py` | `scripts/_audit_ch2c.py` | 1,997 |
 | `scripts___audit_compliance.py` | `scripts/_audit_compliance.py` | 1,716 |
+| `scripts___audit_ctx.py` | `scripts/_audit_ctx.py` | 1,345 |
+| `scripts___audit_diff.py` | `scripts/_audit_diff.py` | 1,968 |
+| `scripts___audit_diff2.py` | `scripts/_audit_diff2.py` | 1,864 |
 | `scripts___audit_figmap.py` | `scripts/_audit_figmap.py` | 2,974 |
+| `scripts___audit_final.py` | `scripts/_audit_final.py` | 3,900 |
+| `scripts___audit_intro.py` | `scripts/_audit_intro.py` | 2,353 |
+| `scripts___audit_map.py` | `scripts/_audit_map.py` | 2,717 |
+| `scripts___audit_map2.py` | `scripts/_audit_map2.py` | 3,484 |
+| `scripts___audit_neigh.py` | `scripts/_audit_neigh.py` | 2,866 |
+| `scripts___audit_neigh_src.py` | `scripts/_audit_neigh_src.py` | 2,101 |
+| `scripts___audit_pertile.py` | `scripts/_audit_pertile.py` | 2,177 |
 | `scripts___audit_prose.py` | `scripts/_audit_prose.py` | 2,106 |
+| `scripts___audit_recompute_scope.py` | `scripts/_audit_recompute_scope.py` | 2,621 |
+| `scripts___audit_refs_ctx.py` | `scripts/_audit_refs_ctx.py` | 1,455 |
 | `scripts___audit_sentences.py` | `scripts/_audit_sentences.py` | 4,549 |
+| `scripts___audit_xref.py` | `scripts/_audit_xref.py` | 3,655 |
+| `scripts___audit_xref2.py` | `scripts/_audit_xref2.py` | 2,944 |
+| `scripts___audit_xref_sem.py` | `scripts/_audit_xref_sem.py` | 2,886 |
+| `scripts___audit_xref_src.py` | `scripts/_audit_xref_src.py` | 4,449 |
 | `scripts___check_ckpt.py` | `scripts/_check_ckpt.py` | 1,126 |
 | `scripts___check_html.py` | `scripts/_check_html.py` | 1,323 |
 | `scripts___check_tempids.py` | `scripts/_check_tempids.py` | 1,524 |
@@ -610,7 +646,9 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___diag_lu.py` | `scripts/_diag_lu.py` | 957 |
 | `scripts___diag_res.py` | `scripts/_diag_res.py` | 1,613 |
 | `scripts___diag_static.py` | `scripts/_diag_static.py` | 525 |
+| `scripts___dump_suspect.py` | `scripts/_dump_suspect.py` | 727 |
 | `scripts___inspect_static.py` | `scripts/_inspect_static.py` | 2,424 |
+| `scripts___list_authored_caps.py` | `scripts/_list_authored_caps.py` | 1,136 |
 | `scripts___list_patterns.py` | `scripts/_list_patterns.py` | 904 |
 | `scripts___plot_paired.py` | `scripts/_plot_paired.py` | 2,011 |
 | `scripts___premodel_summary.py` | `scripts/_premodel_summary.py` | 3,600 |
@@ -635,6 +673,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___verify_premodel3.py` | `scripts/_verify_premodel3.py` | 2,213 |
 | `scripts___verify_report.py` | `scripts/_verify_report.py` | 1,693 |
 | `scripts___verify_sweep.py` | `scripts/_verify_sweep.py` | 1,995 |
+| `scripts___verify_xref.py` | `scripts/_verify_xref.py` | 2,367 |
 | `scripts___verify_zoom.py` | `scripts/_verify_zoom.py` | 2,947 |
 | `scripts___verify_zoom_pdf.py` | `scripts/_verify_zoom_pdf.py` | 1,220 |
 | `scripts___write_final_selection.py` | `scripts/_write_final_selection.py` | 4,327 |
@@ -642,12 +681,12 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__auto_visualize.py` | `scripts/auto_visualize.py` | 11,789 |
 | `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 7,996 |
 | `scripts__build_brief_pdf.py` | `scripts/build_brief_pdf.py` | 1,571 |
-| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 34,268 |
-| `scripts__build_flat_mirror.py` | `scripts/build_flat_mirror.py` | 7,948 |
+| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 36,578 |
+| `scripts__build_flat_mirror.py` | `scripts/build_flat_mirror.py` | 14,219 |
 | `scripts__build_gallery.py` | `scripts/build_gallery.py` | 12,015 |
-| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 14,848 |
+| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 14,944 |
 | `scripts__build_pdf.py` | `scripts/build_pdf.py` | 1,413 |
-| `scripts__build_report.py` | `scripts/build_report.py` | 100,302 |
+| `scripts__build_report.py` | `scripts/build_report.py` | 100,357 |
 | `scripts__build_sr_dataset.py` | `scripts/build_sr_dataset.py` | 14,858 |
 | `scripts__chain_after_pid.py` | `scripts/chain_after_pid.py` | 2,701 |
 | `scripts__collect_result_fields.py` | `scripts/collect_result_fields.py` | 11,892 |
@@ -675,8 +714,9 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__premodel_10_consistency.py` | `scripts/premodel_10_consistency.py` | 51,434 |
 | `scripts__premodel_11_pattern_extra.py` | `scripts/premodel_11_pattern_extra.py` | 26,457 |
 | `scripts__premodel_lib.py` | `scripts/premodel_lib.py` | 10,405 |
+| `scripts__refresh_flat_manifest.py` | `scripts/refresh_flat_manifest.py` | 3,009 |
 | `scripts__repair_summaries.py` | `scripts/repair_summaries.py` | 3,017 |
-| `scripts__report_body.py` | `scripts/report_body.py` | 300,494 |
+| `scripts__report_body.py` | `scripts/report_body.py` | 316,721 |
 | `scripts__report_stats.py` | `scripts/report_stats.py` | 4,678 |
 | `scripts__run_baseline_table.py` | `scripts/run_baseline_table.py` | 5,441 |
 | `scripts__run_deep_extend.py` | `scripts/run_deep_extend.py` | 9,571 |
@@ -688,8 +728,8 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__scan_epochs.py` | `scripts/scan_epochs.py` | 7,918 |
 | `scripts__train_baseline.py` | `scripts/train_baseline.py` | 5,335 |
 | `scripts__train_dynamic.py` | `scripts/train_dynamic.py` | 3,333 |
-| `scripts__train_fixed.py` | `scripts/train_fixed.py` | 19,456 |
-| `scripts__train_multiscale.py` | `scripts/train_multiscale.py` | 2,243 |
+| `scripts__train_fixed.py` | `scripts/train_fixed.py` | 20,259 |
+| `scripts__train_multiscale.py` | `scripts/train_multiscale.py` | 12,517 |
 | `scripts__train_residual_ldm.py` | `scripts/train_residual_ldm.py` | 6,612 |
 | `scripts__visualize_all.py` | `scripts/visualize_all.py` | 3,656 |
 | `scripts__visualize_bias_evolution.py` | `scripts/visualize_bias_evolution.py` | 11,086 |
@@ -697,6 +737,8 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__visualize_evolution.py` | `scripts/visualize_evolution.py` | 7,933 |
 | `scripts__visualize_tiles.py` | `scripts/visualize_tiles.py` | 18,807 |
 | `scripts__watch_checkpoints.py` | `scripts/watch_checkpoints.py` | 7,277 |
+| `scripts__write_flat_docs.py` | `scripts/write_flat_docs.py` | 1,156 |
+| `scripts__write_flat_docs2.py` | `scripts/write_flat_docs2.py` | 888 |
 
 ## Loss functions
 
@@ -705,7 +747,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | Flat filename | Original path | Bytes |
 |---|---|---|
 | `losses__boundary_loss.py` | `losses/boundary_loss.py` | 135 |
-| `losses__flood_loss.py` | `losses/flood_loss.py` | 8,175 |
+| `losses__flood_loss.py` | `losses/flood_loss.py` | 14,459 |
 | `losses__masked_loss.py` | `losses/masked_loss.py` | 206 |
 
 ## Model definitions
@@ -731,27 +773,28 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `models__geo_encoder.py` | `models/geo_encoder.py` | 2,279 |
 | `models__heads.py` | `models/heads.py` | 875 |
 | `models__hydro_encoder.py` | `models/hydro_encoder.py` | 1,096 |
-| `models__hydrogeo_srno.py` | `models/hydrogeo_srno.py` | 7,042 |
+| `models__hydrogeo_srno.py` | `models/hydrogeo_srno.py` | 8,733 |
 | `models__implicit_query.py` | `models/implicit_query.py` | 2,961 |
 | `models__scale_embedding.py` | `models/scale_embedding.py` | 970 |
 
 ## Evaluation metrics
 
-2 files, 0.01 MB
+2 files, 0.02 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `metrics__aggregation.py` | `metrics/aggregation.py` | 658 |
-| `metrics__flood_metrics.py` | `metrics/flood_metrics.py` | 5,393 |
+| `metrics__aggregation.py` | `metrics/aggregation.py` | 8,114 |
+| `metrics__flood_metrics.py` | `metrics/flood_metrics.py` | 10,671 |
 
 ## Training and evaluation engine
 
-3 files, 0.01 MB
+4 files, 0.01 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
 | `engine__checkpoint.py` | `engine/checkpoint.py` | 1,275 |
 | `engine__evaluator.py` | `engine/evaluator.py` | 1,678 |
+| `engine__reproducibility.py` | `engine/reproducibility.py` | 3,080 |
 | `engine__trainer.py` | `engine/trainer.py` | 3,450 |
 
 ## Experiment configuration
@@ -761,10 +804,10 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | Flat filename | Original path | Bytes |
 |---|---|---|
 | `configs__v0_10m2m_hmax.yaml` | `configs/v0_10m2m_hmax.yaml` | 1,166 |
-| `configs__v0_10m2m_hmax_ablation.yaml` | `configs/v0_10m2m_hmax_ablation.yaml` | 1,717 |
+| `configs__v0_10m2m_hmax_ablation.yaml` | `configs/v0_10m2m_hmax_ablation.yaml` | 4,137 |
 | `configs__v0_10m2m_hmax_smoke.yaml` | `configs/v0_10m2m_hmax_smoke.yaml` | 1,086 |
 | `configs__v0_dynamic_h.yaml` | `configs/v0_dynamic_h.yaml` | 762 |
-| `configs__v1_arbitrary_scale.yaml` | `configs/v1_arbitrary_scale.yaml` | 625 |
+| `configs__v1_arbitrary_scale.yaml` | `configs/v1_arbitrary_scale.yaml` | 1,906 |
 | `configs__v1_multiscale.yaml` | `configs/v1_multiscale.yaml` | 579 |
 | `configs__v2_residual_ldm.yaml` | `configs/v2_residual_ldm.yaml` | 372 |
 
@@ -787,7 +830,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `dataset__transforms.py` | `dataset/transforms.py` | 720 |
 | `dataset__wellington_dynamic_sr.py` | `dataset/wellington_dynamic_sr.py` | 2,801 |
 | `dataset__wellington_fixed_sr.py` | `dataset/wellington_fixed_sr.py` | 3,986 |
-| `dataset__wellington_multiscale.py` | `dataset/wellington_multiscale.py` | 2,144 |
+| `dataset__wellington_multiscale.py` | `dataset/wellington_multiscale.py` | 2,823 |
 | `dataset__wellington_sr.py` | `dataset/wellington_sr.py` | 5,672 |
 
 ## Visualisation
@@ -804,7 +847,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Tests
 
-5 files, 0.01 MB
+6 files, 0.02 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -813,6 +856,17 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `tests__test_masked_loss.py` | `tests/test_masked_loss.py` | 1,188 |
 | `tests__test_model_shapes.py` | `tests/test_model_shapes.py` | 1,173 |
 | `tests__test_multiscale.py` | `tests/test_multiscale.py` | 1,005 |
+| `tests__test_scientific_semantics.py` | `tests/test_scientific_semantics.py` | 12,391 |
+
+## Analysis (statistics, block bootstrap)
+
+3 files, 0.01 MB
+
+| Flat filename | Original path | Bytes |
+|---|---|---|
+| `analysis__run_block_bootstrap_test.py` | `analysis/run_block_bootstrap_test.py` | 4,519 |
+| `analysis__seed_level_inference.py` | `analysis/seed_level_inference.py` | 4,376 |
+| `analysis__spatial_block_bootstrap.py` | `analysis/spatial_block_bootstrap.py` | 6,293 |
 
 ## Earlier report snapshot
 
@@ -823,3 +877,4 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `reportbackup__report.html` | `20261002-报告备份-1/report.html` | 13,155,692 |
 | `reportbackup__report.md` | `20261002-报告备份-1/report.md` | 249,621 |
 | `reportbackup__report.pdf` | `20261002-报告备份-1/report.pdf` | 11,306,811 |
+

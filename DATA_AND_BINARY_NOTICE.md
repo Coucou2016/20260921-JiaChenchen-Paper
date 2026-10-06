@@ -1,9 +1,9 @@
 # DATA AND BINARY NOTICE — what was deliberately left out
 
 This mirror is a **flat, GitHub-sized snapshot** of a much larger working
-project. The source tree is about **41 GB across 1705 files**. GitHub rejects any
+project. The source tree is about **41 GB across 1700+ files**. GitHub rejects any
 single file over 100 MB, and this snapshot therefore carries the auditable core
-only: **712 files, about 148.7 MB.**
+only: **about 760 files, roughly 149 MB.**
 
 **Nothing that determines a number in the report was omitted.** Every figure and
 every table can be traced to a file that is present. What is absent is raw input
@@ -36,7 +36,6 @@ intentional, because they are the deliverables themselves:
 | `report_brief.html` | 8.1 MB | Condensed report, self-contained |
 | `report_brief.pdf` | 6.8 MB | Condensed report, print form |
 | `resultdata__premodel__tile_metrics.json` | 4.6 MB | Per-tile metric table behind several figures |
-
 If you clone with `git clone --depth 1` you still get all of them; Git LFS is not
 used, so no extra step is needed to fetch the reports.
 

@@ -66,6 +66,18 @@ class WellingtonMultiscaleDataset(Dataset):
             )
         self.concat = ConcatDataset(self.datasets)
         self.pairs = list(pairs)
+        # Map each global index to its (lr_res, hr_res), so a batch sampler can
+        # group samples of equal spatial size without inspecting tensors.
+        self.pair_of_index: list[tuple[int, int]] = []
+        for (lr, hr), sub in zip(self.pairs, self.datasets):
+            self.pair_of_index.extend([(int(lr), int(hr))] * len(sub))
+
+    def groups(self) -> dict[tuple[int, int], list[int]]:
+        """Global indices grouped by resolution pair (equal LR/HR shape)."""
+        out: dict[tuple[int, int], list[int]] = {p: [] for p in self.pairs}
+        for i, p in enumerate(self.pair_of_index):
+            out.setdefault(p, []).append(i)
+        return out
 
     def __len__(self) -> int:
         return len(self.concat)

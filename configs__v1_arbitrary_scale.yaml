@@ -1,29 +1,79 @@
+# Arbitrary-scale / multiscale configuration.
+#
+# Train and evaluation pairs are now separated. The earlier version listed
+# [5, 2] among the TRAINING pairs while the comment called it the
+# "core arbitrary-scale test", and it also declared epochs/batch_size/amp that
+# train_multiscale.py never read. Both are fixed here: the trainer honours this
+# file, and no evaluation pair appears in the training set.
+#
+# `test_seen_pairs`   were trained on; they measure interpolation of the operator
+#                     across scales it saw.
+# `test_unseen_pairs` were NOT trained on; they measure scale extrapolation.
+#                     [5, 2] is x2.5 (fractional), [20, 2] is x10, [30, 2] is x15.
+
 dataset:
   root: dataset
   target: h_max
   geo_mode: all
   scenarios: [20a, 100a]
-  pairs:
+  allow_fractional_scale: true
+
+  train_pairs:
     - [20, 10]
     - [10, 5]
     - [30, 10]
     - [20, 5]
     - [10, 2]
     - [30, 5]
-    - [5, 2]   # ×2.5 fractional — core arbitrary-scale test
-  allow_fractional_scale: true
+
+  test_seen_pairs:
+    - [20, 10]
+    - [10, 5]
+    - [30, 10]
+
+  test_unseen_pairs:
+    - [5, 2]    # x2.5 fractional
+    - [20, 2]   # x10
+    - [30, 2]   # x15
 
 model:
   name: hydrogeo_srno
   hydro_encoder: {in_channels: 2, width: 64, blocks: 8}
   geo_encoder: {width: 48, in_cont: 14, landuse_embedding: 8, use_landuse: true}
   operator: {width: 192, heads: 8, layers: 2}
+  scale_dim: 16
   depth_ref: 0.10
+  mask_aware_base: true
 
 train:
-  batch_size: 2
+  batch_size: 2         # honoured via a per-pair-homogeneous batch sampler
   epochs: 200
   amp: true
+  seed: 42
+  num_workers: 0
+  max_grad_norm: 1.0
+  log_every_steps: 50
+
+optimizer:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 1.0e-5
+
+scheduler:
+  warmup_epochs: 5
+
+loss:
+  name: flood
+  w_depth: 1.0
+  w_wet: 0.30
+  w_log: 0.20
+  w_boundary: 0.10
+  w_extreme: 0.10
+
+early_stopping:
+  patience: 40
+  metric: CSI_005
+  mode: max
 
 output:
   dir: outputs/v1_arbitrary_scale

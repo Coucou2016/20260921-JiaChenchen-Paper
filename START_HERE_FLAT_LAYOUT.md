@@ -31,7 +31,7 @@ name. Sub-paths that were more than one level deep are joined with `__`.
 
 | Flat prefix | Original location | Contents |
 |---|---|---|
-| *(none)* | repository root | Canonical entry points: `report.html`, `report.md`, `report.pdf`, the three `report_brief.*` condensed files, `README.md`, `STATUS.md`, `VISUALIZATION.md`, `IMPLEMENTATION_CHECKLIST.md`, `requirements.txt`, `PLAN_20260924.md` |
+| *(none)* | repository root | Canonical entry points: `report.html`, `report.md`, `report.pdf`, the three `report_brief.*` condensed files, `README.md`, `STATUS.md`, `VISUALIZATION.md`, `IMPLEMENTATION_CHECKLIST.md`, `RERUN_PLAN_AND_CHECKLIST.md`, `requirements*.txt`, `PLAN_20260924.md`, `AUDIT_CODE_LEVEL_REVIEW_20261006.md` |
 | `scripts__` | `scripts/` | Pipeline stages, figure generators, report builders, audits. A leading `_` marks a verification/audit helper that is excluded from the report body |
 | `configs__` | `configs/` | YAML experiment configuration (V0, ablations, multiscale, diffusion stubs) |
 | `models__` | `models/` | HydroGeo-SRNO, Galerkin operator, baselines |
@@ -40,6 +40,7 @@ name. Sub-paths that were more than one level deep are joined with `__`.
 | `engine__` | `engine/` | Trainer, evaluator, checkpoint handling |
 | `viz__` | `viz/` | Dashboards and plotting helpers |
 | `tests__` | `tests/` | Unit checks |
+| `analysis__` | `analysis/` | Seed-level inference and spatial block bootstrap |
 | `dataset__` | `dataset/` | Dataset adapters, normalisation, rain `.npy`, `manifest.json`, `DATASET.md` |
 | `figure__` | `figures/` | Published figures (upstream set) |
 | `reportfig__` | `outputs/report_figs/*.png` | The figures actually embedded in the report, in render order (`fig00`…`fig85`) |
@@ -56,10 +57,10 @@ becomes `resultdata__premodel__cross_resolution_consistency.json`.
 
 ## 2. What is deliberately NOT here
 
-The working project is about 41 GB across 1705 files. GitHub rejects any file
+The working project is about 41 GB across 1700+ files. GitHub rejects any file
 over 100 MB and warns above 50 MB, so the multi-gigabyte raw simulation fields
 and the full checkpoint set cannot be published this way. This mirror carries
-the **auditable core: 715 files, 148.5 MB.**
+the **auditable core: roughly 760 files, about 149 MB.**
 `DATA_AND_BINARY_NOTICE.md` lists what was omitted, its size, and how to
 regenerate it. Nothing that affects a reported number was omitted — every value
 quoted in the report can still be traced from the files that are here.

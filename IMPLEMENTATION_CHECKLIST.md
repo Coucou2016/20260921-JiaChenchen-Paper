@@ -2,6 +2,27 @@
 
 Derived strictly from `20260924-方案.md`. Primary experiment: **10 m → 2 m, `h_max`, deterministic residual SR**.
 
+## Major-revision remediation status (2026-10-07)
+
+External system review returned **Major Revision**. Code-level and report-level fixes
+are complete; model-level claims that need retraining are explicitly deferred.
+Details: `RERUN_PLAN_AND_CHECKLIST.md`; full ledger in `STATUS.md`.
+
+| Area | Code fixed | Recomputed on real data | Needs retrain |
+|------|-----------|--------------------------|---------------|
+| Metric aggregation (domain-pooled vs tile-macro) | yes | yes | no |
+| Metric semantics (empty CSI/F1, denominators, PSNR, SSIM) | yes | yes | no |
+| Loss (class focal, eroded-mask boundary, per-sample quantile, wet supervision) | yes | yes | no |
+| Ablation interfaces (direct head, wet-head supervision) | yes | partially | **yes** (E3) |
+| Multiscale trainer (honour YAML, epoch loop, split sampler) | yes | smoke only | **yes** (E5) |
+| seen/unseen scale isolation | yes | — | **yes** (E5) |
+| seed-level inference + spatial block bootstrap | yes | yes (242 tiles) | no |
+| Report de-escalation + caption cross-refs | yes | yes (85 captions) | no |
+| Multi-seed main model | n/a | n/a | **yes** (E1) |
+| Learning-type baselines in the main table | code exists | no | **yes** (E2) |
+
+Anything marked "needs retrain" must not be quoted in a submission until E1–E5 run.
+
 ## Phase map (plan §二十八)
 
 | ID | Plan item | Deliverable | Status |

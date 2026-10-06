@@ -38,11 +38,13 @@ class HydroGeoSRNO(nn.Module):
         depth_ref: float = 0.10,
         predict_residual: bool = True,
         predict_wet: bool = True,
+        mask_aware_base: bool = True,
     ) -> None:
         super().__init__()
         self.depth_ref = depth_ref
         self.predict_residual = predict_residual
         self.predict_wet = predict_wet
+        self.mask_aware_base = mask_aware_base
         self.hydro_width = hydro_width
         self.geo_width = geo_width
         self.scale_dim = scale_dim
@@ -70,6 +72,11 @@ class HydroGeoSRNO(nn.Module):
             *[OperatorBlock(operator_width, heads=heads) for _ in range(operator_layers)]
         )
         self.residual_head = ResidualDepthHead(operator_width)
+        # Direct log-depth head, used when predict_residual is False. Previously
+        # that flag simply zeroed the residual, which reduced the whole model to
+        # a fixed bilinear base and left the network with no trainable path to
+        # the depth output, so the "no residual" arm did not test what it claimed.
+        self.direct_head = ResidualDepthHead(operator_width)
         self.wet_head = WetDryHead(operator_width) if predict_wet else None
 
     def encode_lr(self, lr: torch.Tensor, lr_valid: torch.Tensor) -> torch.Tensor:
@@ -129,15 +136,34 @@ class HydroGeoSRNO(nn.Module):
         feat = self.operator(feat)
 
         delta_z = self.residual_head(feat)
-        if not self.predict_residual:
-            delta_z = torch.zeros_like(delta_z)
 
-        # Bilinear base in physical depth, then log1p residual
+        # Mask-aware bilinear base. nodata is filled with 0 upstream, so a plain
+        # bilinear interpolation of lr_depth pulls land/edge nodata zeros into the
+        # valid region and the residual then has to spend capacity undoing that
+        # artefact. Normalising by the interpolated valid mask removes it.
         lr_depth = lr[:, :1]
-        base_h = F.interpolate(lr_depth, size=(hr_h, hr_w), mode="bilinear", align_corners=False)
+        if self.mask_aware_base:
+            valid = lr_valid[:, :1].float()
+            num = F.interpolate(lr_depth * valid, size=(hr_h, hr_w),
+                                mode="bilinear", align_corners=False)
+            den = F.interpolate(valid, size=(hr_h, hr_w),
+                                mode="bilinear", align_corners=False)
+            base_h = torch.where(den > 1e-6, num / den.clamp_min(1e-6),
+                                 torch.zeros_like(num))
+        else:
+            base_h = F.interpolate(lr_depth, size=(hr_h, hr_w),
+                                   mode="bilinear", align_corners=False)
         base_h = torch.clamp(base_h, min=0.0)
         z_base = depth_encode(base_h, self.depth_ref)
-        z_pred = z_base + delta_z
+
+        if self.predict_residual:
+            z_pred = z_base + delta_z
+        else:
+            # Direct log-depth regression: the head predicts z directly, so the
+            # whole network stays trainable. delta_z is reported relative to the
+            # base for diagnostics only.
+            z_pred = self.direct_head(feat)
+            delta_z = z_pred - z_base
         h_pred = depth_decode(z_pred, self.depth_ref)
         h_pred = torch.clamp(h_pred, min=0.0)
 
@@ -158,6 +184,7 @@ def build_hydrogeo_srno(cfg: dict) -> HydroGeoSRNO:
     hydro = m.get("hydro_encoder", {})
     geo = m.get("geo_encoder", {})
     op = m.get("operator", {})
+    scale_dim_default = m.get("scale_dim", 16)
     return HydroGeoSRNO(
         hydro_width=hydro.get("width", 64),
         hydro_blocks=hydro.get("blocks", 8),
@@ -169,7 +196,9 @@ def build_hydrogeo_srno(cfg: dict) -> HydroGeoSRNO:
         operator_width=op.get("width", 192),
         heads=op.get("heads", 8),
         operator_layers=op.get("layers", 2),
+        scale_dim=m.get("scale_dim", scale_dim_default),
         depth_ref=m.get("depth_ref", 0.10),
         predict_residual=m.get("predict_residual", True),
         predict_wet=m.get("predict_wet", True),
+        mask_aware_base=m.get("mask_aware_base", True),
     )

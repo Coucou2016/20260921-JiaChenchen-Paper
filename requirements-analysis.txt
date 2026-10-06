@@ -1,0 +1,6 @@
+# Analysis, statistics, figures and tables (the numbers in the report).
+-r requirements-core.txt
+scipy
+pandas
+scikit-learn
+matplotlib

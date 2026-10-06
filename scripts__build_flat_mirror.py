@@ -48,14 +48,17 @@ MB = 1024 * 1024
 # ---------------------------------------------------------------- selection
 ROOT_FILES = {
     "README.md", "STATUS.md", "VISUALIZATION.md", "IMPLEMENTATION_CHECKLIST.md",
-    "requirements.txt",
+    "RERUN_PLAN_AND_CHECKLIST.md",
+    "requirements.txt", "requirements-core.txt", "requirements-paper.txt",
+    "requirements-analysis.txt", "requirements-test.txt",
     "report.html", "report.md", "report.pdf",
     "report_brief.html", "report_brief.md", "report_brief.pdf",
     "20260924-方案.md",
+    "20260921-JiaChenchen-Paper_全面审稿与代码级修改方案_20261006.md",
 }
 
 CODE_DIRS = ("scripts", "configs", "models", "losses", "metrics",
-             "engine", "viz", "tests")
+             "engine", "viz", "tests", "analysis")
 
 # small result data outside outputs/premodel that carries headline numbers
 OUT_SMALL_EXT = (".json", ".csv", ".yaml", ".yml")
@@ -74,6 +77,8 @@ def ascii_safe(name):
         return name
     if name.endswith("方案.md"):
         return "PLAN_20260924.md"
+    if "全面审稿" in name:
+        return "AUDIT_CODE_LEVEL_REVIEW_20261006.md"
     return re.sub(r"[^0-9A-Za-z._-]+", "_", name).strip("_")
 
 
@@ -133,6 +138,11 @@ def selected():
             if top in CODE_DIRS:
                 if f.endswith((".pyc", ".pyo")):
                     continue
+                # mirror_extras holds hand-authored mirror-only docs that are
+                # restored at the mirror root by main(); never copy them again
+                # under a scripts__ prefix.
+                if r.startswith("scripts/mirror_extras/"):
+                    continue
                 out.append(r)
                 continue
             if top == "dataset":
@@ -178,6 +188,91 @@ def sha256(path, buf=1 << 20):
     return h.hexdigest()
 
 
+# human-readable grouping of the flat namespaces, in listing order
+_INDEX_GROUPS = [
+    ("Full and condensed report artifacts (root)", lambda f: f in _ROOT_REPORTS),
+    ("Project entry points and docs (root)", lambda f: f in _ROOT_DOCS),
+    ("Orientation docs for an automated reviewer",
+     lambda f: f in _MIRROR_EXTRAS),
+    ("Figures embedded in the report, in render order",
+     lambda f: f.startswith("reportfig__")),
+    ("Published figures (upstream set)", lambda f: f.startswith("figure__")),
+    ("Machine result data and small grids",
+     lambda f: f.startswith("resultdata__")),
+    ("Pipeline, figure generators, report builders, audits",
+     lambda f: f.startswith("scripts__")),
+    ("Loss functions", lambda f: f.startswith("losses__")),
+    ("Model definitions", lambda f: f.startswith("models__")),
+    ("Evaluation metrics", lambda f: f.startswith("metrics__")),
+    ("Training and evaluation engine", lambda f: f.startswith("engine__")),
+    ("Experiment configuration", lambda f: f.startswith("configs__")),
+    ("Dataset adapters and small data", lambda f: f.startswith("dataset__")),
+    ("Visualisation", lambda f: f.startswith("viz__")),
+    ("Tests", lambda f: f.startswith("tests__")),
+    ("Analysis (statistics, block bootstrap)",
+     lambda f: f.startswith("analysis__")),
+    ("Earlier report snapshot", lambda f: f.startswith("reportbackup__")),
+    ("Manifest", lambda f: f == "_manifest.json"),
+]
+
+_ROOT_REPORTS = {"report.html", "report.md", "report.pdf",
+                 "report_brief.html", "report_brief.md", "report_brief.pdf"}
+_ROOT_DOCS = {"README.md", "STATUS.md", "VISUALIZATION.md",
+              "IMPLEMENTATION_CHECKLIST.md", "RERUN_PLAN_AND_CHECKLIST.md",
+              "PLAN_20260924.md", "AUDIT_CODE_LEVEL_REVIEW_20261006.md",
+              "_manifest.json", "requirements.txt", "requirements-core.txt",
+              "requirements-paper.txt", "requirements-analysis.txt",
+              "requirements-test.txt"}
+_MIRROR_EXTRAS = {"START_HERE_FLAT_LAYOUT.md", "README_PROJECT.md",
+                  "DATA_AND_BINARY_NOTICE.md", "chatgpt__00_TASK_BRIEF.md",
+                  "chatgpt__01_WHERE_TO_LOOK.md"}
+
+
+def write_file_index(dest, index):
+    """Regenerate FILE_INDEX.md from the manifest so its counts cannot go stale."""
+    by_name = {e["flat"]: e for e in index}
+    total_bytes = sum(e["bytes"] for e in index)
+    lines = [
+        "# FILE_INDEX",
+        "",
+        f"Complete flat inventory of this mirror. "
+        f"**{len(index)} files, {total_bytes/MB:.1f} MB, no subdirectories.**",
+        "",
+        "Every entry lists the flat filename, its original repo-relative path and "
+        "its size. Fetch by flat name. The machine-readable twin of this index is "
+        "`_manifest.json`, which also carries a SHA-256 per file.",
+        "",
+    ]
+    placed = set()
+    for title, pred in _INDEX_GROUPS:
+        members = [e for e in index
+                   if pred(e["flat"]) and e["flat"] not in placed]
+        if not members:
+            continue
+        gb = sum(e["bytes"] for e in members)
+        placed.update(e["flat"] for e in members)
+        lines += [f"## {title}", "",
+                  f"{len(members)} files, {gb/MB:.2f} MB", "",
+                  "| Flat filename | Original path | Bytes |",
+                  "|---|---|---|"]
+        for e in sorted(members, key=lambda x: x["flat"]):
+            lines.append(f"| `{e['flat']}` | `{e['origin']}` | "
+                         f"{e['bytes']:,} |")
+        lines.append("")
+    leftover = [e for e in index if e["flat"] not in placed]
+    if leftover:
+        lines += ["## Other", "",
+                  f"{len(leftover)} files", "",
+                  "| Flat filename | Original path | Bytes |", "|---|---|---|"]
+        for e in sorted(leftover, key=lambda x: x["flat"]):
+            lines.append(f"| `{e['flat']}` | `{e['origin']}` | "
+                         f"{e['bytes']:,} |")
+        lines.append("")
+    with open(os.path.join(dest, "FILE_INDEX.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+    print(f"wrote FILE_INDEX.md ({len(index)} entries)")
+
+
 def main():
     files = selected()
     print(f"selected {len(files)} files from {ROOT}")
@@ -198,8 +293,21 @@ def main():
         plan.append((r, name))
 
     if os.path.isdir(DEST):
-        shutil.rmtree(DEST)
-    os.makedirs(DEST)
+        # Never touch .git: the mirror is a pushed git repo, and wiping its
+        # object store corrupts history. Clear only the flat artefacts.
+        for entry in os.listdir(DEST):
+            if entry == ".git":
+                continue
+            p = os.path.join(DEST, entry)
+            if os.path.isdir(p):
+                shutil.rmtree(p, ignore_errors=True)
+            else:
+                try:
+                    os.remove(p)
+                except OSError:
+                    pass
+    else:
+        os.makedirs(DEST)
 
     total = 0
     index = []
@@ -219,11 +327,32 @@ def main():
         for r, old, new in collisions:
             print(f"   {r}  ->  {new}")
 
+    # Hand-written orientation docs live only in the mirror (they are not
+    # derived from the source tree). They are versioned under
+    # scripts/mirror_extras/ so a rebuild can never silently drop them.
+    extras_dir = os.path.join(ROOT, "scripts", "mirror_extras")
+    extras = []
+    if os.path.isdir(extras_dir):
+        for f in sorted(os.listdir(extras_dir)):
+            src = os.path.join(extras_dir, f)
+            if not os.path.isfile(src):
+                continue
+            dst = os.path.join(DEST, f)
+            shutil.copy2(src, dst)
+            extras.append(f)
+            sz = os.path.getsize(dst)
+            index.append({"flat": f, "origin": f"scripts/mirror_extras/{f}",
+                          "bytes": sz, "sha256": sha256(dst)})
+        print(f"restored {len(extras)} hand-written mirror docs: "
+              f"{', '.join(extras)}")
+
     with open(os.path.join(DEST, "_manifest.json"), "w", encoding="utf-8") as fh:
         json.dump({"source_root": ROOT, "file_count": len(index),
                    "total_bytes": total, "files": index},
                   fh, ensure_ascii=False, indent=1)
     print("wrote _manifest.json")
+
+    write_file_index(DEST, index)
     return index
 
 
