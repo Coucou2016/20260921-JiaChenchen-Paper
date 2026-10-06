@@ -1,0 +1,86 @@
+==============================================================================
+PER TILE (test split, 242 tiles)
+  tiles                  242
+  peak truth  min/med/max 0.47 / 4.28 / 23.67 m
+  CSI_005                frozen 0.59156  win 0.59289  d +0.00133  t +2.22  n 242
+                         median frozen 0.62335  win 0.62967  win>frozen 129  win<frozen 113
+  CSI_030                frozen 0.45993  win 0.46734  d +0.00741  t +5.23  n 242
+                         median frozen 0.50180  win 0.49423  win>frozen 162  win<frozen 79
+  CSI_100                frozen 0.25906  win 0.27271  d +0.01366  t +4.59  n 242
+                         median frozen 0.15855  win 0.16008  win>frozen 149  win<frozen 56
+  MAE_wet                frozen 0.20632  win 0.20388  d -0.00244  t -4.76  n 242
+                         median frozen 0.18510  win 0.18467  win>frozen 85  win<frozen 157
+  RMSE_wet               frozen 0.39538  win 0.38973  d -0.00565  t -5.82  n 242
+                         median frozen 0.38224  win 0.38056  win>frozen 77  win<frozen 165
+  VolumeRelativeError    frozen 0.19635  win 0.17373  d -0.02262  t -7.21  n 242
+                         median frozen 0.14612  win 0.11242  win>frozen 76  win<frozen 166
+  PeakDepthError         frozen 1.47859  win 1.40991  d -0.06868  t -2.69  n 242
+                         median frozen 0.93374  win 0.90793  win>frozen 98  win<frozen 144
+
+==============================================================================
+MOMENTS
+  frozen  n=13,705,512 mean=-0.01637 sd=0.18855 MAE=0.04222 RMSE=0.18926
+          skew=-5.907 excess_kurtosis=170.24
+  win     n=13,705,512 mean=-0.01451 sd=0.18819 MAE=0.04231 RMSE=0.18875
+          skew=-5.068 excess_kurtosis=171.95
+  per-bin (true depth bin | n | MAE frozen | MAE win | bias frozen | bias win | skew frozen | skew win | kurt frozen | kurt win)
+    0-0.05    11,758,244  0.0098 0.0103   +0.0053 +0.0062   +29.07 +27.91   1712.3 1497.6
+    0.05-0.1     590,168  0.0507 0.0503   +0.0093 +0.0096   +9.68 +10.07   187.4 203.5
+    0.1-0.2      427,423  0.0940 0.0929   -0.0080 -0.0075   +6.90 +6.89   117.6 121.2
+    0.2-0.3      224,045  0.1535 0.1521   -0.0582 -0.0574   +4.94 +5.10   59.9 67.1
+    0.3-0.5      272,456  0.2377 0.2365   -0.1429 -0.1392   +4.24 +4.43   51.6 57.1
+    0.5-0.75     181,836  0.3640 0.3646   -0.2677 -0.2614   +3.39 +3.54   31.9 34.8
+    0.75-1        83,300  0.5437 0.5428   -0.4315 -0.4194   +2.39 +2.41   16.3 16.5
+    1-1.5         68,530  0.7623 0.7573   -0.5950 -0.5684   +1.56 +1.57   8.6 8.6
+    1.5-2         37,445  1.0483 1.0248   -0.8651 -0.8185   +1.05 +1.03   5.2 5.4
+    2-3           32,885  1.2956 1.2579   -1.1255 -1.0628   +0.48 +0.44   3.3 3.3
+    3-inf         29,180  1.6712 1.6284   -1.4387 -1.2299   -0.25 -0.16   3.5 3.3
+
+==============================================================================
+EXCEEDANCE (share of test pixels above a depth threshold, %)
+  >0.05 m   truth  14.5843%   frozen  13.4364% (  92.1% of truth)   win  13.6887% (  93.9% of truth)
+  >0.10 m   truth  10.0063%   frozen   8.3091% (  83.0% of truth)   win   8.4465% (  84.4% of truth)
+  >0.30 m   truth   5.1629%   frozen   3.4550% (  66.9% of truth)   win   3.5192% (  68.2% of truth)
+  >0.50 m   truth   3.1606%   frozen   1.9449% (  61.5% of truth)   win   1.9997% (  63.3% of truth)
+  >1.00 m   truth   1.2223%   frozen   0.7819% (  64.0% of truth)   win   0.8219% (  67.2% of truth)
+  >1.50 m   truth   0.7046%   frozen   0.4437% (  63.0% of truth)   win   0.4709% (  66.8% of truth)
+  >2.00 m   truth   0.4596%   frozen   0.2958% (  64.4% of truth)   win   0.3150% (  68.5% of truth)
+
+==============================================================================
+THRESHOLD SWEEP from the 4M-pixel subsample
+  subsample n = 4,000,000 of 13,705,512
+  CSI@0.05  frozen 0.5638  win 0.5666  d +0.0028
+  CSI@0.10  frozen 0.5122  win 0.5146  d +0.0024
+  CSI@0.30  frozen 0.3921  win 0.3941  d +0.0020
+  CSI@0.50  frozen 0.3403  win 0.3428  d +0.0025
+  CSI@1.00  frozen 0.3616  win 0.3682  d +0.0066
+  CSI@1.50  frozen 0.3799  win 0.3885  d +0.0085
+  deep-water (truth > 1 m) behaviour:
+    n = 49,140   mean truth 2.350 m
+    frozen  mean 1.447 m  bias -0.9027 m  MAE 1.0838 m  under-predicted share 84.0%
+    win     mean 1.517 m  bias -0.8329 m  MAE 1.0614 m  under-predicted share 81.2%
+    depth-weighted volume shortfall: frozen 38.42%  win 35.45%
+
+==============================================================================
+SPATIAL AUTOCORRELATION OF THE ERROR
+  frozen   mean 0.6580  median 0.6671  range 0.261..0.942
+  win      mean 0.6492  median 0.6638  range 0.311..0.937
+  paired   d -0.0088  t -6.18  n 242
+  tiles with Moran > 0.5 : frozen 205  win 201
+
+==============================================================================
+DOMAIN MAP EXTREMES
+  tiles with peak > 1 m : 228 of 242
+  tiles with peak > 2 m : 203
+  CSI@1.00 = 0 tiles    : frozen 40  win 37
+  per-tile improvement  : mean +0.0137  median +0.0046  max +0.3333  min -0.2500
+
+==============================================================================
+BOOTSTRAP FILE (if already written)
+  CSI_100                d +0.01366  t +4.59  CI [+0.00794, +0.01956]  n 242
+  CSI_005                d +0.00133  t +2.22  CI [+0.00016, +0.00249]  n 242
+  VolumeRelativeError    d +0.02262  t +7.21  CI [+0.01652, +0.02872]  n 242
+  PeakDepthError         d +0.06868  t +2.69  CI [+0.01825, +0.11827]  n 242
+
+hypergeometric-style check: number of tiles where the improvement exceeds 0.01 CSI
+  97 tiles; where it is worse than -0.01: 30

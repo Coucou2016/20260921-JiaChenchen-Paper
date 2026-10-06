@@ -1,0 +1,22 @@
+{
+  "state": "done",
+  "tag": "D2",
+  "w_deep": 0.5,
+  "deep_delta": 5.0,
+  "deep_threshold": 1.0,
+  "desc": "medium linear deep term",
+  "exit_code": 120,
+  "metrics": {
+    "best_csi": 0.4486894264817238,
+    "best_rmse_wet": 0.613141164307793,
+    "last_epoch": 40,
+    "CSI_005": 0.4473117023706436,
+    "CSI_030": 0.2784239809960127,
+    "CSI_100": 0.17066367864608764,
+    "RMSE_wet": 0.6539621132115523,
+    "MAE_wet": 0.36078286518653235,
+    "PeakDepthError": 1.880873696009318,
+    "VolumeRelativeError": 0.3092056207669278
+  },
+  "finished": "2026-09-27 18:29:50"
+}

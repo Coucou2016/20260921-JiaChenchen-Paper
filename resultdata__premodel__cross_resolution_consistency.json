@@ -1,0 +1,4125 @@
+{
+  "continuous": {
+    "scenario": "100a",
+    "route_down": "bilinear interpolation onto the coarse cell centres",
+    "route_down_crosscheck": "area-weighted block average, the route used everywhere else in the report",
+    "support": "coarse cells whose centre falls inside the 2 m study domain",
+    "variables": {
+      "DEM": {
+        "group": "地形",
+        "5m": {
+          "group": "地形",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945582,
+          "bilinear_pearson": 0.9999997385503178,
+          "bilinear_spearman": 0.999999556395706,
+          "bilinear_rmse": 0.06844130023502663,
+          "bilinear_bias": 5.9942203188336493e-05,
+          "agg_pearson": 0.9999998441081885,
+          "agg_spearman": 0.999999800491907,
+          "agg_rmse": 0.05284189215875094,
+          "fine_mean": 138.32981872558594,
+          "coarse_mean": 138.32981872558594,
+          "bilinear_roundtrip_bias": 0.00016683038483837273,
+          "bilinear_roundtrip_max": 2.966970443725586
+        },
+        "10m": {
+          "group": "地形",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236137,
+          "bilinear_pearson": 0.9999944410428561,
+          "bilinear_spearman": 0.9999911907276261,
+          "bilinear_rmse": 0.3156449064608674,
+          "bilinear_bias": 0.0004724755110741018,
+          "agg_pearson": 0.999999999627925,
+          "agg_spearman": 0.9999999918495157,
+          "agg_rmse": 0.0025809061618714073,
+          "fine_mean": 138.35867309570312,
+          "coarse_mean": 138.35865783691406,
+          "bilinear_roundtrip_bias": 0.0006756407258459299,
+          "bilinear_roundtrip_max": 4.372017860412598
+        },
+        "20m": {
+          "group": "地形",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.9999755182766573,
+          "bilinear_spearman": 0.9999648848457643,
+          "bilinear_rmse": 0.6628888852775717,
+          "bilinear_bias": -0.0006353604619264432,
+          "agg_pearson": 0.999999998772556,
+          "agg_spearman": 0.9999999777254468,
+          "agg_rmse": 0.004690208547789099,
+          "fine_mean": 138.33636474609375,
+          "coarse_mean": 138.33627319335938,
+          "bilinear_roundtrip_bias": 0.002235663976481845,
+          "bilinear_roundtrip_max": 6.777894973754883
+        },
+        "30m": {
+          "group": "地形",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": 0.9999277999481363,
+          "bilinear_spearman": 0.9999032512667617,
+          "bilinear_rmse": 1.1392302063635398,
+          "bilinear_bias": 0.0034831523189613927,
+          "agg_pearson": 0.9999999947582731,
+          "agg_spearman": 0.9999999571690217,
+          "agg_rmse": 0.009684798105638371,
+          "fine_mean": 138.374755859375,
+          "coarse_mean": 138.37454223632812,
+          "bilinear_roundtrip_bias": 0.005291025695940553,
+          "bilinear_roundtrip_max": 7.602264404296875
+        }
+      },
+      "Slope": {
+        "group": "地形",
+        "5m": {
+          "group": "地形",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945582,
+          "bilinear_pearson": 0.9598869327011903,
+          "bilinear_spearman": 0.9699348466275739,
+          "bilinear_rmse": 0.06894996336984734,
+          "bilinear_bias": -0.008068777633642216,
+          "agg_pearson": 0.9773935751481244,
+          "agg_spearman": 0.9838897939574092,
+          "agg_rmse": 0.051078171552269874,
+          "fine_mean": 0.3431355655193329,
+          "coarse_mean": 0.33477529883384705
+        },
+        "10m": {
+          "group": "地形",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236137,
+          "bilinear_pearson": 0.858165140526598,
+          "bilinear_spearman": 0.8902886697616461,
+          "bilinear_rmse": 0.12995042702641005,
+          "bilinear_bias": -0.019685464450502572,
+          "agg_pearson": 0.9419537392053942,
+          "agg_spearman": 0.9627132576861592,
+          "agg_rmse": 0.07922017950667853,
+          "fine_mean": 0.3432442247867584,
+          "coarse_mean": 0.32284584641456604
+        },
+        "20m": {
+          "group": "地形",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.7802828521891758,
+          "bilinear_spearman": 0.8382929179422958,
+          "bilinear_rmse": 0.15828623164259403,
+          "bilinear_bias": -0.0415601602133249,
+          "agg_pearson": 0.8837457924194849,
+          "agg_spearman": 0.9330356479441185,
+          "agg_rmse": 0.10966561534055239,
+          "fine_mean": 0.34321141242980957,
+          "coarse_mean": 0.3009166419506073
+        },
+        "30m": {
+          "group": "地形",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": 0.6970669007730366,
+          "bilinear_spearman": 0.7684547766356801,
+          "bilinear_rmse": 0.1902495618634028,
+          "bilinear_bias": -0.06070841681684697,
+          "agg_pearson": 0.8414713997453633,
+          "agg_spearman": 0.9061085595944398,
+          "agg_rmse": 0.1279304681111696,
+          "fine_mean": 0.34328481554985046,
+          "coarse_mean": 0.28213655948638916
+        }
+      },
+      "Curv_plan": {
+        "group": "地形",
+        "5m": {
+          "group": "地形",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945582,
+          "bilinear_pearson": 0.020029765831857668,
+          "bilinear_spearman": 0.6037527149369125,
+          "bilinear_rmse": 7.533146997561619,
+          "bilinear_bias": 0.0043113805041089534,
+          "agg_pearson": 0.03276986501114649,
+          "agg_spearman": 0.6825069849846045,
+          "agg_rmse": 5.032111427206433,
+          "fine_mean": 0.01132264081388712,
+          "coarse_mean": 0.010592338629066944,
+          "clip_lo": -0.8057237923145295,
+          "clip_hi": 0.9235841313004456,
+          "bilinear_pearson_clipped": 0.3490461964850896,
+          "bilinear_spearman_clipped": 0.603767752681899,
+          "fine_p1": -0.8744416832923889,
+          "fine_p99": 0.9811615943908691
+        },
+        "10m": {
+          "group": "地形",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236137,
+          "bilinear_pearson": -1.2433906210438428e-05,
+          "bilinear_spearman": 0.3377641582529831,
+          "bilinear_rmse": 5.521820489051193,
+          "bilinear_bias": 0.0033345364373552474,
+          "agg_pearson": 0.007078736765217976,
+          "agg_spearman": 0.5798213586597746,
+          "agg_rmse": 4.9788036672649625,
+          "fine_mean": 0.008961815387010574,
+          "coarse_mean": 0.015932517126202583,
+          "clip_lo": -0.5659093952178955,
+          "clip_hi": 0.6182218813896183,
+          "bilinear_pearson_clipped": 0.18375810239993975,
+          "bilinear_spearman_clipped": 0.3377922329382942,
+          "fine_p1": -0.8744416832923889,
+          "fine_p99": 0.9811615943908691
+        },
+        "20m": {
+          "group": "地形",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.0006865097134727959,
+          "bilinear_spearman": 0.24374728932481649,
+          "bilinear_rmse": 5.616158325649094,
+          "bilinear_bias": -0.01729575380149277,
+          "agg_pearson": 0.010087131851922447,
+          "agg_spearman": 0.5203952958983977,
+          "agg_rmse": 1.9539556595047851,
+          "fine_mean": 0.013719899579882622,
+          "coarse_mean": 0.007925690151751041,
+          "clip_lo": -0.4427389018237591,
+          "clip_hi": 0.4044157588481937,
+          "bilinear_pearson_clipped": 0.13955344502574588,
+          "bilinear_spearman_clipped": 0.24380539550068006,
+          "fine_p1": -0.8744416832923889,
+          "fine_p99": 0.9811615943908691
+        },
+        "30m": {
+          "group": "地形",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": 0.0006539633323719585,
+          "bilinear_spearman": 0.1383088861280254,
+          "bilinear_rmse": 0.9242217281086713,
+          "bilinear_bias": -0.0030038143293514914,
+          "agg_pearson": 0.075485968493017,
+          "agg_spearman": 0.4798481985380914,
+          "agg_rmse": 0.6514181388787837,
+          "fine_mean": 0.010092082433402538,
+          "coarse_mean": 0.003263704711571336,
+          "clip_lo": -0.4191817525029183,
+          "clip_hi": 0.35252826169132995,
+          "bilinear_pearson_clipped": 0.07365673214640137,
+          "bilinear_spearman_clipped": 0.13835565559498259,
+          "fine_p1": -0.8744416832923889,
+          "fine_p99": 0.9811615943908691
+        }
+      },
+      "Curv_profile": {
+        "group": "地形",
+        "5m": {
+          "group": "地形",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945580,
+          "bilinear_pearson": 0.10050789691053087,
+          "bilinear_spearman": 0.6299211340671813,
+          "bilinear_rmse": 5.269957045500145,
+          "bilinear_bias": -0.016321336950167045,
+          "agg_pearson": 0.13230028758078316,
+          "agg_spearman": 0.7275638624822061,
+          "agg_rmse": 4.810627120457531,
+          "fine_mean": -0.0341140516102314,
+          "coarse_mean": -0.039835043251514435,
+          "clip_lo": -1.3415028762817383,
+          "clip_hi": 1.0865442186593892,
+          "bilinear_pearson_clipped": 0.44473468120485116,
+          "bilinear_spearman_clipped": 0.6299174337377332,
+          "fine_p1": -1.2568761110305786,
+          "fine_p99": 1.0910444259643555
+        },
+        "10m": {
+          "group": "地形",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236136,
+          "bilinear_pearson": 0.000330670336187122,
+          "bilinear_spearman": 0.2947279357777452,
+          "bilinear_rmse": 9.39148579971422,
+          "bilinear_bias": -0.007374168962235854,
+          "agg_pearson": 0.024157243250475954,
+          "agg_spearman": 0.5855443532984022,
+          "agg_rmse": 8.266105479266887,
+          "fine_mean": -0.030623914673924446,
+          "coarse_mean": -0.046955499798059464,
+          "clip_lo": -0.9287223815917969,
+          "clip_hi": 0.7523306936025572,
+          "bilinear_pearson_clipped": 0.1638417694115529,
+          "bilinear_spearman_clipped": 0.29471240981415947,
+          "fine_p1": -1.2568761110305786,
+          "fine_p99": 1.0910444259643555
+        },
+        "20m": {
+          "group": "地形",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.004292415821263286,
+          "bilinear_spearman": 0.19813138787229737,
+          "bilinear_rmse": 2.7924645665613324,
+          "bilinear_bias": 0.020185462444521702,
+          "agg_pearson": 0.11777305990814924,
+          "agg_spearman": 0.5387773106355779,
+          "agg_rmse": 1.3065543253273244,
+          "fine_mean": -0.037493541836738586,
+          "coarse_mean": -0.016723359003663063,
+          "clip_lo": -0.7500243294239045,
+          "clip_hi": 0.5011152255535144,
+          "bilinear_pearson_clipped": 0.09484951836605589,
+          "bilinear_spearman_clipped": 0.19810402277783634,
+          "fine_p1": -1.2568761110305786,
+          "fine_p99": 1.0910444259643555
+        },
+        "30m": {
+          "group": "地形",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": -0.001087286816196233,
+          "bilinear_spearman": 0.11850501262802696,
+          "bilinear_rmse": 2.4650742174801605,
+          "bilinear_bias": 0.00818936974664379,
+          "agg_pearson": 0.03562466000706441,
+          "agg_spearman": 0.5248898359774926,
+          "agg_rmse": 1.629537403263865,
+          "fine_mean": -0.03546803444623947,
+          "coarse_mean": -0.016227051615715027,
+          "clip_lo": -1.0507803231477744,
+          "clip_hi": 0.49916921988129276,
+          "bilinear_pearson_clipped": 0.03692422622513525,
+          "bilinear_spearman_clipped": 0.11856753444484795,
+          "fine_p1": -1.2568761110305786,
+          "fine_p99": 1.0910444259643555
+        }
+      },
+      "Tpi": {
+        "group": "地形",
+        "5m": {
+          "group": "地形",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945582,
+          "bilinear_pearson": 0.9998968263767128,
+          "bilinear_spearman": 0.999865947822945,
+          "bilinear_rmse": 0.16466132365962236,
+          "bilinear_bias": 0.006941179230523683,
+          "agg_pearson": 0.9999276504149419,
+          "agg_spearman": 0.9999109267698724,
+          "agg_rmse": 0.15824789570339362,
+          "fine_mean": -0.06085306778550148,
+          "coarse_mean": -0.05397600308060646
+        },
+        "10m": {
+          "group": "地形",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236137,
+          "bilinear_pearson": 0.9988034832388137,
+          "bilinear_spearman": 0.9984367037664026,
+          "bilinear_rmse": 0.49956136687832053,
+          "bilinear_bias": 0.01864232643400901,
+          "agg_pearson": 0.9995608780616265,
+          "agg_spearman": 0.9994661717209826,
+          "agg_rmse": 0.39798103405967866,
+          "fine_mean": -0.05900437757372856,
+          "coarse_mean": -0.04085698351264
+        },
+        "20m": {
+          "group": "地形",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.9943941668865247,
+          "bilinear_spearman": 0.9929551512745407,
+          "bilinear_rmse": 1.064216545987044,
+          "bilinear_bias": 0.0374063232952545,
+          "agg_pearson": 0.9979968275381833,
+          "agg_spearman": 0.9975791243607143,
+          "agg_rmse": 0.8735822216645915,
+          "fine_mean": -0.060632891952991486,
+          "coarse_mean": -0.022396855056285858
+        },
+        "30m": {
+          "group": "地形",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": 0.9644009477734894,
+          "bilinear_spearman": 0.9562370121616288,
+          "bilinear_rmse": 3.380502837496733,
+          "bilinear_bias": 0.04952690337163829,
+          "agg_pearson": 0.9787738332509942,
+          "agg_spearman": 0.9736404309973381,
+          "agg_rmse": 3.254142762240019,
+          "fine_mean": -0.058449678122997284,
+          "coarse_mean": -0.012182433158159256
+        }
+      },
+      "Twi": {
+        "group": "地形",
+        "5m": {
+          "group": "地形",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 3593179,
+          "bilinear_pearson": 0.9625672364500628,
+          "bilinear_spearman": 0.9709853173294549,
+          "bilinear_rmse": 0.5434507336029033,
+          "bilinear_bias": -0.007776695126285832,
+          "agg_pearson": 0.9999996164068371,
+          "agg_spearman": 0.9999997698205288,
+          "agg_rmse": 0.001586238298666042,
+          "fine_mean": 4.818217754364014,
+          "coarse_mean": 4.818217754364014
+        },
+        "10m": {
+          "group": "地形",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 899841,
+          "bilinear_pearson": 0.7962628469829446,
+          "bilinear_spearman": 0.8236149561692955,
+          "bilinear_rmse": 1.3500894896829785,
+          "bilinear_bias": -0.03176964054692785,
+          "agg_pearson": 0.9999988304804365,
+          "agg_spearman": 0.9999995392621074,
+          "agg_rmse": 0.002484819291706112,
+          "fine_mean": 4.793467998504639,
+          "coarse_mean": 4.793471336364746
+        },
+        "20m": {
+          "group": "地形",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 224955,
+          "bilinear_pearson": 0.8097077410302984,
+          "bilinear_spearman": 0.7896039150907319,
+          "bilinear_rmse": 1.1325589017446422,
+          "bilinear_bias": -0.06506295790471672,
+          "agg_pearson": 0.9999903199257683,
+          "agg_spearman": 0.999985336745292,
+          "agg_rmse": 0.006267374761747586,
+          "fine_mean": 4.759427547454834,
+          "coarse_mean": 4.75944185256958
+        },
+        "30m": {
+          "group": "地形",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 100166,
+          "bilinear_pearson": 0.6570019118754774,
+          "bilinear_spearman": 0.6514627990452883,
+          "bilinear_rmse": 1.6926448327387495,
+          "bilinear_bias": -0.08727771556360987,
+          "agg_pearson": 0.9999933063573192,
+          "agg_spearman": 0.9999909366415347,
+          "agg_rmse": 0.004858959882441699,
+          "fine_mean": 4.741881370544434,
+          "coarse_mean": 4.741902828216553
+        }
+      },
+      "Manning": {
+        "group": "下垫面",
+        "5m": {
+          "group": "下垫面",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945582,
+          "bilinear_pearson": 0.9924913012156094,
+          "bilinear_spearman": 0.9298827005601923,
+          "bilinear_rmse": 0.024411863012084676,
+          "bilinear_bias": -5.952996504237676e-05,
+          "agg_pearson": 0.9849014695984747,
+          "agg_spearman": 0.9096373037296543,
+          "agg_rmse": 0.034609169630872134,
+          "fine_mean": 0.22076590359210968,
+          "coarse_mean": 0.22071319818496704
+        },
+        "10m": {
+          "group": "下垫面",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236137,
+          "bilinear_pearson": 0.9907750071806155,
+          "bilinear_spearman": 0.9648895887948232,
+          "bilinear_rmse": 0.027051005059249192,
+          "bilinear_bias": -3.896898758769603e-05,
+          "agg_pearson": 0.9737931319507915,
+          "agg_spearman": 0.8146823096096153,
+          "agg_rmse": 0.04565291920381677,
+          "fine_mean": 0.22077341377735138,
+          "coarse_mean": 0.22066743671894073
+        },
+        "20m": {
+          "group": "下垫面",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.9730704450256819,
+          "bilinear_spearman": 0.9272873540561779,
+          "bilinear_rmse": 0.04587881235774888,
+          "bilinear_bias": -0.0008648379783501722,
+          "agg_pearson": 0.9495064411835826,
+          "agg_spearman": 0.7243271093226754,
+          "agg_rmse": 0.06347564179687495,
+          "fine_mean": 0.22076821327209473,
+          "coarse_mean": 0.21985775232315063
+        },
+        "30m": {
+          "group": "下垫面",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": 0.9392578167635456,
+          "bilinear_spearman": 0.8150613506198598,
+          "bilinear_rmse": 0.0694339885499483,
+          "bilinear_bias": 0.001308153774139826,
+          "agg_pearson": 0.9235007458712797,
+          "agg_spearman": 0.6824981631429722,
+          "agg_rmse": 0.07803401171917694,
+          "fine_mean": 0.2207503467798233,
+          "coarse_mean": 0.2220887988805771
+        }
+      },
+      "impervious_frac": {
+        "group": "下垫面",
+        "5m": {
+          "group": "下垫面",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4945582,
+          "bilinear_pearson": 0.9909498337160153,
+          "bilinear_spearman": 0.9331328323299476,
+          "bilinear_rmse": 0.04597631579321281,
+          "bilinear_bias": 0.00013989758940403778,
+          "agg_pearson": 0.9800233719453878,
+          "agg_spearman": 0.9030114055565731,
+          "agg_rmse": 0.06822861166666895,
+          "fine_mean": 0.13440774381160736,
+          "coarse_mean": 0.13454189896583557
+        },
+        "10m": {
+          "group": "下垫面",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1236137,
+          "bilinear_pearson": 0.9921455931809817,
+          "bilinear_spearman": 0.9909212377729443,
+          "bilinear_rmse": 0.042786717928749225,
+          "bilinear_bias": 0.00040691282600553176,
+          "agg_pearson": 0.964842453648428,
+          "agg_spearman": 0.8769426699844534,
+          "agg_rmse": 0.0910414463273635,
+          "fine_mean": 0.13435065746307373,
+          "coarse_mean": 0.13485075533390045
+        },
+        "20m": {
+          "group": "下垫面",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309084,
+          "bilinear_pearson": 0.9696955941124018,
+          "bilinear_spearman": 0.9350343652824965,
+          "bilinear_rmse": 0.0837186643219972,
+          "bilinear_bias": 0.0013062791991820995,
+          "agg_pearson": 0.9316777411321909,
+          "agg_spearman": 0.7445523677860526,
+          "agg_rmse": 0.12862908058776112,
+          "fine_mean": 0.13442747294902802,
+          "coarse_mean": 0.13584333658218384
+        },
+        "30m": {
+          "group": "下垫面",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137334,
+          "bilinear_pearson": 0.9225340602040479,
+          "bilinear_spearman": 0.9248147925277851,
+          "bilinear_rmse": 0.1334290509387275,
+          "bilinear_bias": -0.0035460992907801418,
+          "agg_pearson": 0.8849577705403465,
+          "agg_spearman": 0.49190664777352555,
+          "agg_rmse": 0.1609790662479394,
+          "fine_mean": 0.13439321517944336,
+          "coarse_mean": 0.13045567274093628
+        }
+      },
+      "built_frac": {
+        "group": "下垫面",
+        "5m": {
+          "group": "下垫面",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4932740,
+          "bilinear_pearson": 0.9948155336500781,
+          "bilinear_spearman": 0.9791893543525737,
+          "bilinear_rmse": 0.04570239635574163,
+          "bilinear_bias": -1.8182085412975344e-05,
+          "agg_pearson": 0.9941611340674273,
+          "agg_spearman": 0.975089770188964,
+          "agg_rmse": 0.04852078875797421,
+          "fine_mean": 0.28083011507987976,
+          "coarse_mean": 0.28081876039505005
+        },
+        "10m": {
+          "group": "下垫面",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1232928,
+          "bilinear_pearson": 0.975828119331822,
+          "bilinear_spearman": 0.9798006487481988,
+          "bilinear_rmse": 0.0988198944460162,
+          "bilinear_bias": 2.2710166368190194e-05,
+          "agg_pearson": 0.9832948841188465,
+          "agg_spearman": 0.9446693675897516,
+          "agg_rmse": 0.08181163297370038,
+          "fine_mean": 0.2808911204338074,
+          "coarse_mean": 0.28091907501220703
+        },
+        "20m": {
+          "group": "下垫面",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 308354,
+          "bilinear_pearson": 0.9800125197659031,
+          "bilinear_spearman": 0.973656130890422,
+          "bilinear_rmse": 0.08961216507011503,
+          "bilinear_bias": -8.918321150366137e-06,
+          "agg_pearson": 0.9781242985745555,
+          "agg_spearman": 0.8887474967232093,
+          "agg_rmse": 0.09371048627031581,
+          "fine_mean": 0.28077057003974915,
+          "coarse_mean": 0.2807714641094208
+        },
+        "30m": {
+          "group": "下垫面",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137058,
+          "bilinear_pearson": 0.9639811884790014,
+          "bilinear_spearman": 0.970263867988048,
+          "bilinear_rmse": 0.12061751643301828,
+          "bilinear_bias": 4.3777087072626186e-05,
+          "agg_pearson": 0.9672943213471644,
+          "agg_spearman": 0.8436374043152484,
+          "agg_rmse": 0.11439579291765713,
+          "fine_mean": 0.28080859780311584,
+          "coarse_mean": 0.2808372974395752
+        }
+      },
+      "h_max": {
+        "group": "洪涝",
+        "5m": {
+          "group": "洪涝",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 960985,
+          "bilinear_pearson": 0.6293940276939783,
+          "bilinear_spearman": 0.2665958164955699,
+          "bilinear_rmse": 0.8390342603557517,
+          "bilinear_bias": -0.07404795450631786,
+          "agg_pearson": 0.6409741015582732,
+          "agg_spearman": 0.24381164652306672,
+          "fine_mean": 0.4111909568309784,
+          "coarse_mean": 0.34015345573425293
+        },
+        "10m": {
+          "group": "洪涝",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 275971,
+          "bilinear_pearson": 0.6710049560324779,
+          "bilinear_spearman": 0.438898943215589,
+          "bilinear_rmse": 0.7749510766753737,
+          "bilinear_bias": -0.0354562700068779,
+          "agg_pearson": 0.6894863683875602,
+          "agg_spearman": 0.2880690728100117,
+          "fine_mean": 0.3539826273918152,
+          "coarse_mean": 0.3236468434333801
+        },
+        "20m": {
+          "group": "洪涝",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 80492,
+          "bilinear_pearson": 0.36803448217551765,
+          "bilinear_spearman": 0.32816544282194837,
+          "bilinear_rmse": 0.9350497313120978,
+          "bilinear_bias": -0.032100115906450434,
+          "agg_pearson": 0.3733430117135886,
+          "agg_spearman": 0.22840817488751852,
+          "fine_mean": 0.297385573387146,
+          "coarse_mean": 0.2691326141357422
+        },
+        "30m": {
+          "group": "洪涝",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 39203,
+          "bilinear_pearson": 0.27876802706640585,
+          "bilinear_spearman": 0.36002105704269244,
+          "bilinear_rmse": 1.0152767530625981,
+          "bilinear_bias": 0.001339553899914703,
+          "agg_pearson": 0.22258299441778526,
+          "agg_spearman": 0.2997389643015837,
+          "fine_mean": 0.26839664578437805,
+          "coarse_mean": 0.2727801501750946
+        }
+      },
+      "speed": {
+        "group": "洪涝",
+        "5m": {
+          "group": "洪涝",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 102955,
+          "bilinear_pearson": 0.46690371855214235,
+          "bilinear_spearman": 0.43107756859827745,
+          "bilinear_rmse": 0.6224968229631066,
+          "bilinear_bias": -0.37960183259499686,
+          "agg_pearson": 0.47401352969919475,
+          "agg_spearman": 0.43111749782365083,
+          "fine_mean": 0.48394444584846497,
+          "coarse_mean": 0.1017594188451767
+        },
+        "10m": {
+          "group": "洪涝",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 27424,
+          "bilinear_pearson": 0.2838424050710383,
+          "bilinear_spearman": 0.3303795580014035,
+          "bilinear_rmse": 1.7635678012209952,
+          "bilinear_bias": 0.43582795209220715,
+          "agg_pearson": 0.32459426112050427,
+          "agg_spearman": 0.41227516118516266,
+          "fine_mean": 0.470340758562088,
+          "coarse_mean": 0.9020126461982727
+        },
+        "20m": {
+          "group": "洪涝",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 5573,
+          "bilinear_pearson": 0.218563986625795,
+          "bilinear_spearman": 0.21632017154432018,
+          "bilinear_rmse": 3.330147718752193,
+          "bilinear_bias": 1.376502980644114,
+          "agg_pearson": 0.25969246597513845,
+          "agg_spearman": 0.31431312593702465,
+          "fine_mean": 0.44978055357933044,
+          "coarse_mean": 1.8176002502441406
+        },
+        "30m": {
+          "group": "洪涝",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 2369,
+          "bilinear_pearson": 0.2842845710554439,
+          "bilinear_spearman": 0.2205293931248174,
+          "bilinear_rmse": 4.7882156115426175,
+          "bilinear_bias": 2.4060039066490604,
+          "agg_pearson": 0.36622708176531443,
+          "agg_spearman": 0.35726175077300637,
+          "fine_mean": 0.48050832748413086,
+          "coarse_mean": 2.8718974590301514
+        }
+      }
+    }
+  },
+  "categorical": {
+    "measures": {
+      "agreement": "fraction of coarse cells whose class equals the majority class of the 2 m cells inside the same block",
+      "kappa": "Cohen kappa, agreement after removing what chance alone gives",
+      "cramers_v": "Cramer's V from the full class-by-class contingency table, zero means no association and one means perfect association",
+      "why": "Landuse carries a nominal code and Building_binary is a flag, so a product-moment correlation has no meaning for either of them"
+    },
+    "water_class": 7,
+    "impervious_classes": [
+      2,
+      3
+    ],
+    "variables": {
+      "Landuse": {
+        "group": "下垫面",
+        "5m": {
+          "group": "下垫面",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4948317,
+          "agreement": 0.9955213055267074,
+          "kappa": 0.9936289786464139,
+          "cramers_v": 0.9743553579433573,
+          "majority_frac_coarse": 0.3927523236688353
+        },
+        "10m": {
+          "group": "下垫面",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1237074,
+          "agreement": 0.9998852130107011,
+          "kappa": 0.9998363590023489,
+          "cramers_v": 0.9985209996473928,
+          "majority_frac_coarse": 0.394691020909016
+        },
+        "20m": {
+          "group": "下垫面",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 309117,
+          "agreement": 0.9981819181733778,
+          "kappa": 0.9974083556739972,
+          "cramers_v": 0.9982369146493187,
+          "majority_frac_coarse": 0.3956268985529751
+        },
+        "30m": {
+          "group": "下垫面",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137429,
+          "agreement": 0.9998981292158132,
+          "kappa": 0.9998543447498677,
+          "cramers_v": 0.9999002034113343,
+          "majority_frac_coarse": 0.3962700740018482
+        }
+      },
+      "Building_binary": {
+        "group": "下垫面",
+        "5m": {
+          "group": "下垫面",
+          "res": "5m",
+          "ratio": 2.5,
+          "n": 4936395,
+          "agreement": 0.9971916753015105,
+          "kappa": 0.99304470405037,
+          "cramers_v": 0.9930447107196594,
+          "majority_frac_coarse": 0.7193771973271993,
+          "building_frac_coarse": 0.2806228026728007,
+          "building_frac_block": 0.2806695979555931
+        },
+        "10m": {
+          "group": "下垫面",
+          "res": "10m",
+          "ratio": 5.0,
+          "n": 1233819,
+          "agreement": 0.9903194877044363,
+          "kappa": 0.9760323386385996,
+          "cramers_v": 0.9760323967742953,
+          "majority_frac_coarse": 0.719274058836831,
+          "building_frac_coarse": 0.280725941163169,
+          "building_frac_block": 0.2808653457273717
+        },
+        "20m": {
+          "group": "下垫面",
+          "res": "20m",
+          "ratio": 10.0,
+          "n": 308467,
+          "agreement": 0.9894996871626462,
+          "kappa": 0.9739938896425487,
+          "cramers_v": 0.9739939009760045,
+          "majority_frac_coarse": 0.7193281615213297,
+          "building_frac_coarse": 0.28067183847867033,
+          "building_frac_block": 0.2806102435592786
+        },
+        "30m": {
+          "group": "下垫面",
+          "res": "30m",
+          "ratio": 15.0,
+          "n": 137177,
+          "agreement": 0.9843559780429664,
+          "kappa": 0.9613130172141124,
+          "cramers_v": 0.9613195180597357,
+          "majority_frac_coarse": 0.7194063144696269,
+          "building_frac_coarse": 0.28059368553037317,
+          "building_frac_block": 0.282080815297025
+        }
+      }
+    }
+  },
+  "flood": {
+    "speed_definition": "speed = |(hux,hvy)|/h, evaluated at the hour with the largest domain water volume; these are derived quantities, not stored fields.",
+    "wet_threshold_m": 0.05,
+    "fit_note": "families are fitted by maximum likelihood on a random subsample of at most one hundred thousand wet cells, with the location parameter fixed at zero, seed 20260921",
+    "variables": {
+      "h_max": {
+        "20a": {
+          "resolutions": {
+            "5m": {
+              "n": 4948992,
+              "pearson_wet": 0.6025549102926571,
+              "spearman_wet": 0.23022265487888954,
+              "rmse": 0.33913955092430115,
+              "bias": 0.00716557539999485,
+              "mean_truth": 0.07026305049657822,
+              "mean_native": 0.07742862403392792,
+              "dist_native": {
+                "n_fit": 100000,
+                "mean": 0.5165630382101237,
+                "median": 0.18009719997644424,
+                "std": 0.9341018871566337,
+                "p95": 2.133998274803156,
+                "skew": 4.838690548948958,
+                "kurtosis_excess": 36.131051028749354,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 21642.11901471254,
+                "best_ks": 0.10180926632265375,
+                "best_ks_p": 0.0,
+                "best_params": [
+                  1.189132090066477,
+                  0.0,
+                  0.226735385731881
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 25939.640426551938,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.729736187599063,
+                      0.0,
+                      0.7078764175169803
+                    ],
+                    "aic": 60478.580467782755,
+                    "ks": 0.15346311618261202,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.189132090066477,
+                      0.0,
+                      0.226735385731881
+                    ],
+                    "aic": 21642.11901471254,
+                    "ks": 0.10180926632265375,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7718947631266173,
+                      0.0,
+                      0.425007923222993
+                    ],
+                    "aic": 51990.56281552774,
+                    "ks": 0.174430895431164,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.5165630382101237
+                    ],
+                    "aic": 67890.41018794783,
+                    "ks": 0.2058965601468684,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.4395296808718698,
+                      0.0,
+                      0.2049716833223033
+                    ],
+                    "aic": 25939.640426551938,
+                    "ks": 0.11599140351511233,
+                    "ks_p": 0.0
+                  }
+                ]
+              }
+            },
+            "10m": {
+              "n": 1237248,
+              "pearson_wet": 0.655444997850139,
+              "spearman_wet": 0.2822544435926265,
+              "rmse": 0.3159533143043518,
+              "bias": 0.0045999991707503796,
+              "mean_truth": 0.07026585936546326,
+              "mean_native": 0.07486586272716522,
+              "dist_native": {
+                "n_fit": 100000,
+                "mean": 0.572279762625657,
+                "median": 0.2227022498846054,
+                "std": 1.0443045851583965,
+                "p95": 2.28880177736282,
+                "skew": 5.0907432771691195,
+                "kurtosis_excess": 38.50791274507711,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 44973.08637231732,
+                "best_ks": 0.08349354706412992,
+                "best_ks_p": 0.0,
+                "best_params": [
+                  1.1824300499107914,
+                  0.0,
+                  0.25623384701180496
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 49245.48275991103,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.74559450374639,
+                      0.0,
+                      0.7675482581351148
+                    ],
+                    "aic": 82007.79924533385,
+                    "ks": 0.13827690229882722,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.1824300499107914,
+                      0.0,
+                      0.25623384701180496
+                    ],
+                    "aic": 44973.08637231732,
+                    "ks": 0.08349354706412992,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7816342390972981,
+                      0.0,
+                      0.47656408183669857
+                    ],
+                    "aic": 73952.9609551768,
+                    "ks": 0.1577330309246279,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.572279762625657
+                    ],
+                    "aic": 88376.53766576854,
+                    "ks": 0.17835355777590872,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.4474343230934412,
+                      0.0,
+                      0.23640837149227845
+                    ],
+                    "aic": 49245.48275991103,
+                    "ks": 0.09546756825881095,
+                    "ks_p": 0.0
+                  }
+                ]
+              }
+            },
+            "20m": {
+              "n": 309633,
+              "pearson_wet": 0.2975420015653292,
+              "spearman_wet": 0.22617746834421248,
+              "rmse": 0.3950452208518982,
+              "bias": 0.010085520334541798,
+              "mean_truth": 0.07022668421268463,
+              "mean_native": 0.08031221479177475,
+              "dist_native": {
+                "n_fit": 36689,
+                "mean": 0.5790342368249894,
+                "median": 0.2977685034275055,
+                "std": 0.8917690946752657,
+                "p95": 2.1832765579223627,
+                "skew": 4.296945531693214,
+                "kurtosis_excess": 26.897677207655097,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 23370.164752863697,
+                "best_ks": 0.05372116368968163,
+                "best_ks_p": 1.8115238094580638e-92,
+                "best_params": [
+                  1.1115883851671982,
+                  0.0,
+                  0.2993047660881081
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 24905.76401629909,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.8874593931937572,
+                      0.0,
+                      0.6524627957806404
+                    ],
+                    "aic": 32932.52309495749,
+                    "ks": 0.103103782941335,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.1115883851671982,
+                      0.0,
+                      0.2993047660881081
+                    ],
+                    "aic": 23370.164752863697,
+                    "ks": 0.05372116368968163,
+                    "ks_p": 1.8115238094580638e-92
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.8668613580331157,
+                      0.0,
+                      0.5296245088755633
+                    ],
+                    "aic": 31655.047631414065,
+                    "ks": 0.12125657925813633,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.5790342368249894
+                    ],
+                    "aic": 33286.72512139814,
+                    "ks": 0.11176092511819358,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.5440711588332474,
+                      0.0,
+                      0.2907315844876671
+                    ],
+                    "aic": 24905.76401629909,
+                    "ks": 0.06191169328394755,
+                    "ks_p": 1.0690073756971782e-122
+                  }
+                ]
+              }
+            },
+            "30m": {
+              "n": 137459,
+              "pearson_wet": 0.19458263527136993,
+              "spearman_wet": 0.2861220631023041,
+              "rmse": 0.4391627013683319,
+              "bias": 0.01134091429412365,
+              "mean_truth": 0.07028062641620636,
+              "mean_native": 0.08162155002355576,
+              "dist_native": {
+                "n_fit": 13220,
+                "mean": 0.704230496418661,
+                "median": 0.2690236568450928,
+                "std": 1.1149564387836859,
+                "p95": 2.8102255105972276,
+                "skew": 3.5809274309088615,
+                "kurtosis_excess": 18.013236430839758,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 12418.28155921954,
+                "best_ks": 0.10558341002700916,
+                "best_ks_p": 8.820590298251261e-129,
+                "best_params": [
+                  1.3234998886546407,
+                  0.0,
+                  0.2923827177280819
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 13493.483816060829,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.6890255279493477,
+                      0.0,
+                      1.0220673514297296
+                    ],
+                    "aic": 15764.643476864783,
+                    "ks": 0.13520898795229522,
+                    "ks_p": 3.0373833739915707e-211
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.3234998886546407,
+                      0.0,
+                      0.2923827177280819
+                    ],
+                    "aic": 12418.28155921954,
+                    "ks": 0.10558341002700916,
+                    "ks_p": 8.820590298251261e-129
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.755788298599764,
+                      0.0,
+                      0.5772634941764984
+                    ],
+                    "aic": 14927.76528728128,
+                    "ks": 0.14565749640375375,
+                    "ks_p": 3.0323315846611242e-245
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.704230496418661
+                    ],
+                    "aic": 17170.825455781705,
+                    "ks": 0.2062234584145652,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.2505793220791719,
+                      0.0,
+                      0.275499382372874
+                    ],
+                    "aic": 13493.483816060829,
+                    "ks": 0.10582531541083091,
+                    "ks_p": 2.2659809141120212e-129
+                  }
+                ]
+              }
+            }
+          },
+          "dist_2m": {
+            "n_fit": 100000,
+            "mean": 0.4650453895940259,
+            "median": 0.17112186551094055,
+            "std": 0.9912248331310477,
+            "p95": 1.7601700305938675,
+            "skew": 6.945368512588987,
+            "kurtosis_excess": 68.29427764530534,
+            "best_family": "Log-normal 对数正态",
+            "best_aic": -5903.710658107868,
+            "best_ks": 0.09627924763201817,
+            "best_ks_p": 0.0,
+            "best_params": [
+              1.108409117234514,
+              0.0,
+              0.21195043134707772
+            ],
+            "runner_up": "Log-logistic 对数逻辑斯蒂",
+            "runner_aic": -4362.015457536163,
+            "all_families": [
+              {
+                "family": "Gamma 伽马",
+                "params": [
+                  0.7604129566840431,
+                  0.0,
+                  0.6115695235151754
+                ],
+                "aic": 41386.475678148665,
+                "ks": 0.15609354647660365,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-normal 对数正态",
+                "params": [
+                  1.108409117234514,
+                  0.0,
+                  0.21195043134707772
+                ],
+                "aic": -5903.710658107868,
+                "ks": 0.09627924763201817,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Weibull 三参数韦布尔",
+                "params": [
+                  0.7828803167593072,
+                  0.0,
+                  0.38310064945790956
+                ],
+                "aic": 31368.29954717499,
+                "ks": 0.18378890939545606,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Exponential 指数",
+                "params": [
+                  0.0,
+                  0.4650453895940259
+                ],
+                "aic": 46877.94677432767,
+                "ks": 0.19549798774799976,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-logistic 对数逻辑斯蒂",
+                "params": [
+                  1.577492070408587,
+                  0.0,
+                  0.19168551923491745
+                ],
+                "aic": -4362.015457536163,
+                "ks": 0.1071819216476878,
+                "ks_p": 0.0
+              }
+            ]
+          }
+        },
+        "100a": {
+          "resolutions": {
+            "5m": {
+              "n": 4948992,
+              "pearson_wet": 0.6409970316543948,
+              "spearman_wet": 0.24382581918885307,
+              "rmse": 0.4012254476547241,
+              "bias": 0.011499181389808655,
+              "mean_truth": 0.0911329910159111,
+              "mean_native": 0.10263217240571976,
+              "dist_native": {
+                "n_fit": 100000,
+                "mean": 0.5556621565015987,
+                "median": 0.16419009864330292,
+                "std": 1.0731039419743509,
+                "p95": 2.3347102403640694,
+                "skew": 5.003442191990079,
+                "kurtosis_excess": 37.23876446768961,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 27791.790750429107,
+                "best_ks": 0.11242229173730639,
+                "best_ks_p": 0.0,
+                "best_params": [
+                  1.2372904990780158,
+                  0.0,
+                  0.22471474369865943
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 31891.81949777143,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.6714619405372025,
+                      0.0,
+                      0.8275408075356313
+                    ],
+                    "aic": 70151.63811634558,
+                    "ks": 0.16413210327096786,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.2372904990780158,
+                      0.0,
+                      0.22471474369865943
+                    ],
+                    "aic": 27791.790750429107,
+                    "ks": 0.11242229173730639,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7358345599613082,
+                      0.0,
+                      0.43337260493096297
+                    ],
+                    "aic": 59421.46596102815,
+                    "ks": 0.1846293661663025,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.5556621565015987
+                    ],
+                    "aic": 82483.03967876385,
+                    "ks": 0.24528713013744552,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.386031313559032,
+                      0.0,
+                      0.19970160404272194
+                    ],
+                    "aic": 31891.81949777143,
+                    "ks": 0.1279321874918835,
+                    "ks_p": 0.0
+                  }
+                ]
+              }
+            },
+            "10m": {
+              "n": 1237248,
+              "pearson_wet": 0.6895018268859758,
+              "spearman_wet": 0.28796880602613867,
+              "rmse": 0.3725595772266388,
+              "bias": 0.007962898351252079,
+              "mean_truth": 0.09113632142543793,
+              "mean_native": 0.09909922629594803,
+              "dist_native": {
+                "n_fit": 100000,
+                "mean": 0.6344234144738689,
+                "median": 0.21997849643230438,
+                "std": 1.1925807535450264,
+                "p95": 2.611634004116055,
+                "skew": 5.054834933562678,
+                "kurtosis_excess": 37.90512702570691,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 60806.95710050908,
+                "best_ks": 0.09060716092993298,
+                "best_ks_p": 0.0,
+                "best_params": [
+                  1.2436247726791512,
+                  0.0,
+                  0.26369713063850386
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 65723.56523133698,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.6898008976426134,
+                      0.0,
+                      0.919719612778127
+                    ],
+                    "aic": 98414.34294478521,
+                    "ks": 0.14473006979786374,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.2436247726791512,
+                      0.0,
+                      0.26369713063850386
+                    ],
+                    "aic": 60806.95710050908,
+                    "ks": 0.09060716092993298,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7489964654235817,
+                      0.0,
+                      0.5063396505378442
+                    ],
+                    "aic": 88947.36216794772,
+                    "ks": 0.16185809744363985,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.6344234144738689
+                    ],
+                    "aic": 108994.2597436738,
+                    "ks": 0.20773646613594315,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.368626476865538,
+                      0.0,
+                      0.24135128417698254
+                    ],
+                    "aic": 65723.56523133698,
+                    "ks": 0.10391091776809501,
+                    "ks_p": 0.0
+                  }
+                ]
+              }
+            },
+            "20m": {
+              "n": 309633,
+              "pearson_wet": 0.3734133794570351,
+              "spearman_wet": 0.22816944321853555,
+              "rmse": 0.46030619740486145,
+              "bias": 0.00808330811560154,
+              "mean_truth": 0.09108597040176392,
+              "mean_native": 0.09916926920413971,
+              "dist_native": {
+                "n_fit": 43060,
+                "mean": 0.6122807853494862,
+                "median": 0.28335079550743103,
+                "std": 1.0295538849339734,
+                "p95": 2.425765252113342,
+                "skew": 4.406058906960349,
+                "kurtosis_excess": 27.05689471912865,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 28987.86983426803,
+                "best_ks": 0.07060530220350533,
+                "best_ks_p": 4.2089252494867774e-187,
+                "best_params": [
+                  1.1850401133143182,
+                  0.0,
+                  0.2858857500030249
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 31160.24522248486,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.7816672424850798,
+                      0.0,
+                      0.7833010673479427
+                    ],
+                    "aic": 41988.193998709,
+                    "ks": 0.12216572385498588,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.1850401133143182,
+                      0.0,
+                      0.2858857500030249
+                    ],
+                    "aic": 28987.86983426803,
+                    "ks": 0.07060530220350533,
+                    "ks_p": 4.2089252494867774e-187
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.8066036318544383,
+                      0.0,
+                      0.5275834810383616
+                    ],
+                    "aic": 39356.50894529604,
+                    "ks": 0.1388473510112976,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.6122807853494862
+                    ],
+                    "aic": 43874.60230353566,
+                    "ks": 0.1341628872188081,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.4353588108434083,
+                      0.0,
+                      0.2728147108098771
+                    ],
+                    "aic": 31160.24522248486,
+                    "ks": 0.08050972801695132,
+                    "ks_p": 3.156822684799808e-243
+                  }
+                ]
+              }
+            },
+            "30m": {
+              "n": 137459,
+              "pearson_wet": 0.22260898871794327,
+              "spearman_wet": 0.2996251582218625,
+              "rmse": 0.525690495967865,
+              "bias": 0.010126595385372639,
+              "mean_truth": 0.09115452319383621,
+              "mean_native": 0.10128112137317657,
+              "dist_native": {
+                "n_fit": 17018,
+                "mean": 0.6848125944179148,
+                "median": 0.1615508496761322,
+                "std": 1.2182955639910529,
+                "p95": 3.0517486333847046,
+                "skew": 3.667184317459013,
+                "kurtosis_excess": 18.016649620133613,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 11402.917662038242,
+                "best_ks": 0.13803109100210803,
+                "best_ks_p": 2.699793432635473e-283,
+                "best_params": [
+                  1.3734878634974002,
+                  0.0,
+                  0.24625584886351662
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 12552.241982801701,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.6035873018022173,
+                      0.0,
+                      1.1345709102447508
+                    ],
+                    "aic": 17600.50759753354,
+                    "ks": 0.17303297589682276,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.3734878634974002,
+                      0.0,
+                      0.24625584886351662
+                    ],
+                    "aic": 11402.917662038242,
+                    "ks": 0.13803109100210803,
+                    "ks_p": 2.699793432635473e-283
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.6938063639934705,
+                      0.0,
+                      0.5069688563057162
+                    ],
+                    "aic": 15835.5285827472,
+                    "ks": 0.18166034898077926,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.6848125944179148
+                    ],
+                    "aic": 21151.62789769168,
+                    "ks": 0.29017123160793,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.22105089461438,
+                      0.0,
+                      0.21757568826360305
+                    ],
+                    "aic": 12552.241982801701,
+                    "ks": 0.14241087001259645,
+                    "ks_p": 1.2975688732192954e-301
+                  }
+                ]
+              }
+            }
+          },
+          "dist_2m": {
+            "n_fit": 100000,
+            "mean": 0.5069437566570938,
+            "median": 0.17515376955270767,
+            "std": 1.0912068324258748,
+            "p95": 1.9485233306884757,
+            "skew": 6.868852845663538,
+            "kurtosis_excess": 67.35832848383282,
+            "best_family": "Log-normal 对数正态",
+            "best_aic": 10006.8433732268,
+            "best_ks": 0.09729200452262844,
+            "best_ks_p": 0.0,
+            "best_params": [
+              1.1478285962295978,
+              0.0,
+              0.22161884288191086
+            ],
+            "runner_up": "Log-logistic 对数逻辑斯蒂",
+            "runner_aic": 12372.586906766654,
+            "all_families": [
+              {
+                "family": "Gamma 伽马",
+                "params": [
+                  0.7266122806744849,
+                  0.0,
+                  0.6976812395553215
+                ],
+                "aic": 56500.175741984436,
+                "ks": 0.15643878571575887,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-normal 对数正态",
+                "params": [
+                  1.1478285962295978,
+                  0.0,
+                  0.22161884288191086
+                ],
+                "aic": 10006.8433732268,
+                "ks": 0.09729200452262844,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Weibull 三参数韦布尔",
+                "params": [
+                  0.7654603837623953,
+                  0.0,
+                  0.40831622110236937
+                ],
+                "aic": 45655.38314317155,
+                "ks": 0.18159390012281076,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Exponential 指数",
+                "params": [
+                  0.0,
+                  0.5069437566570938
+                ],
+                "aic": 64130.956968051585,
+                "ks": 0.20941205396748602,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-logistic 对数逻辑斯蒂",
+                "params": [
+                  1.5128951020367727,
+                  0.0,
+                  0.20022208137346165
+                ],
+                "aic": 12372.586906766654,
+                "ks": 0.10920077788960836,
+                "ks_p": 0.0
+              }
+            ]
+          }
+        }
+      },
+      "speed": {
+        "20a": {
+          "resolutions": {
+            "5m": {
+              "n": 190726,
+              "pearson_wet": 0.2910753139068908,
+              "spearman_wet": 0.339498504338953,
+              "mean_native": 0.1094835102558136,
+              "mean_truth": 0.6761725544929504,
+              "median_native": 0.04352090507745743,
+              "median_truth": 0.5119989514350891,
+              "dist_native": {
+                "n_fit": 100000,
+                "mean": 0.17124419819943607,
+                "median": 0.13133490830659866,
+                "std": 0.12715651547466694,
+                "p95": 0.41967271715402565,
+                "skew": 2.6929722788539996,
+                "kurtosis_excess": 10.926285261930616,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": -215262.0316707737,
+                "best_ks": 0.05235337302124832,
+                "best_ks_p": 1.1796050118247323e-238,
+                "best_params": [
+                  0.5820796846156296,
+                  0.0,
+                  0.14168899971790427
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": -213698.0484485844,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      2.7946216273659434,
+                      0.0,
+                      0.06127634471963971
+                    ],
+                    "aic": -197971.2675804861,
+                    "ks": 0.09376358168808818,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      0.5820796846156296,
+                      0.0,
+                      0.14168899971790427
+                    ],
+                    "aic": -215262.0316707737,
+                    "ks": 0.05235337302124832,
+                    "ks_p": 1.1796050118247323e-238
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      1.5425663946756327,
+                      0.0,
+                      0.19248570974234175
+                    ],
+                    "aic": -182982.9347273166,
+                    "ks": 0.11967038062671588,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.17124419819943607
+                    ],
+                    "aic": -152930.9363082187,
+                    "ks": 0.26098352476052866,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      3.0123645340460303,
+                      0.0,
+                      0.13638231697594086
+                    ],
+                    "aic": -213698.0484485844,
+                    "ks": 0.0464222745501921,
+                    "ks_p": 1.0349882255641061e-187
+                  }
+                ]
+              }
+            },
+            "10m": {
+              "n": 60526,
+              "pearson_wet": 0.36624204057152115,
+              "spearman_wet": 0.5038488179917945,
+              "mean_native": 1.5559614896774292,
+              "mean_truth": 0.6381474733352661,
+              "median_native": 0.5778824687004089,
+              "median_truth": 0.430277019739151,
+              "dist_native": {
+                "n_fit": 75483,
+                "mean": 1.8762459996971985,
+                "median": 0.8544240593910217,
+                "std": 2.48117711064182,
+                "p95": 7.1636844635009735,
+                "skew": 2.330140098899335,
+                "kurtosis_excess": 6.616838989717634,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 232924.28848008078,
+                "best_ks": 0.040629383255650464,
+                "best_ks_p": 1.0489968208992334e-108,
+                "best_params": [
+                  1.3918701682772898,
+                  0.0,
+                  0.8132465516600855
+                ],
+                "runner_up": "Weibull 三参数韦布尔",
+                "runner_aic": 237626.02440530597,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.7200741761706374,
+                      0.0,
+                      2.605628783516576
+                    ],
+                    "aic": 239850.14121636216,
+                    "ks": 0.07087246295358252,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.3918701682772898,
+                      0.0,
+                      0.8132465516600855
+                    ],
+                    "aic": 232924.28848008078,
+                    "ks": 0.040629383255650464,
+                    "ks_p": 1.0489968208992334e-108
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7880278999547268,
+                      0.0,
+                      1.6188492878918166
+                    ],
+                    "aic": 237626.02440530597,
+                    "ks": 0.06251271475148171,
+                    "ks_p": 7.051507348565315e-257
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      1.8762459996971985
+                    ],
+                    "aic": 245966.82347431805,
+                    "ks": 0.14067198114778545,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.2048812408780125,
+                      0.0,
+                      0.8269066867624129
+                    ],
+                    "aic": 238173.3051258397,
+                    "ks": 0.04217899506226397,
+                    "ks_p": 3.987853533743382e-117
+                  }
+                ]
+              }
+            },
+            "20m": {
+              "n": 22381,
+              "pearson_wet": 0.3339922024845835,
+              "spearman_wet": 0.3929745757330249,
+              "mean_native": 2.8301966190338135,
+              "mean_truth": 0.6274480819702148,
+              "median_native": 1.557029128074646,
+              "median_truth": 0.43755093216896057,
+              "dist_native": {
+                "n_fit": 25062,
+                "mean": 3.0687396610794124,
+                "median": 1.9557920694351196,
+                "std": 3.433491860802484,
+                "p95": 10.205104064941388,
+                "skew": 2.0652879328312355,
+                "kurtosis_excess": 5.123984544858651,
+                "best_family": "Weibull 三参数韦布尔",
+                "best_aic": 105753.03141544145,
+                "best_ks": 0.02648791967137215,
+                "best_ks_p": 1.0424709526036604e-15,
+                "best_params": [
+                  0.8914580682911624,
+                  0.0,
+                  2.898497193923565
+                ],
+                "runner_up": "Gamma 伽马",
+                "runner_aic": 105847.42261917185,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.8467226203716683,
+                      0.0,
+                      3.624256146283645
+                    ],
+                    "aic": 105847.42261917185,
+                    "ks": 0.028024051845163565,
+                    "ks_p": 1.5638106232382168e-17
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.3576312824085763,
+                      0.0,
+                      1.530339718822799
+                    ],
+                    "aic": 107779.1090259269,
+                    "ks": 0.07340987204022875,
+                    "ks_p": 6.742614552232127e-118
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.8914580682911624,
+                      0.0,
+                      2.898497193923565
+                    ],
+                    "aic": 105753.03141544145,
+                    "ks": 0.02648791967137215,
+                    "ks_p": 1.0424709526036604e-15
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      3.0687396610794124
+                    ],
+                    "aic": 106328.3842738216,
+                    "ks": 0.05705289924199461,
+                    "ks_p": 2.378693446788961e-71
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.2811420773334343,
+                      0.0,
+                      1.6943462946656704
+                    ],
+                    "aic": 108514.67732529913,
+                    "ks": 0.048742491707577676,
+                    "ks_p": 3.479988646691034e-52
+                  }
+                ]
+              }
+            },
+            "30m": {
+              "n": 7660,
+              "pearson_wet": 0.4369859876023432,
+              "spearman_wet": 0.5020649137279273,
+              "mean_native": 3.8146677017211914,
+              "mean_truth": 0.6530553698539734,
+              "median_native": 2.097475528717041,
+              "median_truth": 0.5151128768920898,
+              "dist_native": {
+                "n_fit": 8766,
+                "mean": 3.7046305444036314,
+                "median": 2.0308725833892822,
+                "std": 4.307266428046244,
+                "p95": 12.870382308959961,
+                "skew": 1.6144080982311582,
+                "kurtosis_excess": 2.4195818344326616,
+                "best_family": "Weibull 三参数韦布尔",
+                "best_aic": 39447.92731252393,
+                "best_ks": 0.06403385387935123,
+                "best_ks_p": 1.0829159775835068e-31,
+                "best_params": [
+                  0.7716535154466058,
+                  0.0,
+                  3.1937182561321125
+                ],
+                "runner_up": "Gamma 伽马",
+                "runner_aic": 39470.97618684542,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.677965572091362,
+                      0.0,
+                      5.464334321543394
+                    ],
+                    "aic": 39470.97618684542,
+                    "ks": 0.07095183158412105,
+                    "ks_p": 8.092162479315373e-39
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.561633655393993,
+                      0.0,
+                      1.5131027517713567
+                    ],
+                    "aic": 39956.50658358907,
+                    "ks": 0.08784008119194309,
+                    "ks_p": 2.671648127273392e-59
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7716535154466058,
+                      0.0,
+                      3.1937182561321125
+                    ],
+                    "aic": 39447.92731252393,
+                    "ks": 0.06403385387935123,
+                    "ks_p": 1.0829159775835068e-31
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      3.7046305444036314
+                    ],
+                    "aic": 40493.6185472996,
+                    "ks": 0.1602067669071446,
+                    "ks_p": 5.0737097796056946e-197
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.0710590030961125,
+                      0.0,
+                      1.6508981795212412
+                    ],
+                    "aic": 40585.3407675486,
+                    "ks": 0.07316560754086898,
+                    "ks_p": 2.969179858316864e-41
+                  }
+                ]
+              }
+            }
+          },
+          "dist_2m": {
+            "n_fit": 100000,
+            "mean": 0.5698700238445774,
+            "median": 0.3328472971916199,
+            "std": 0.7107989135334853,
+            "p95": 1.7697927296161642,
+            "skew": 4.336414393114145,
+            "kurtosis_excess": 38.726154352901034,
+            "best_family": "Log-normal 对数正态",
+            "best_aic": 72951.63904145351,
+            "best_ks": 0.04277337563254424,
+            "best_ks_p": 2.0446199652031655e-159,
+            "best_params": [
+              1.0532600688135783,
+              0.0,
+              0.33084988715992986
+            ],
+            "runner_up": "Log-logistic 对数逻辑斯蒂",
+            "runner_aic": 79516.86262088786,
+            "all_families": [
+              {
+                "family": "Gamma 伽马",
+                "params": [
+                  1.0550116107124787,
+                  0.0,
+                  0.5401552154101208
+                ],
+                "aic": 87354.0453342119,
+                "ks": 0.07561378696438822,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-normal 对数正态",
+                "params": [
+                  1.0532600688135783,
+                  0.0,
+                  0.33084988715992986
+                ],
+                "aic": 72951.63904145351,
+                "ks": 0.04277337563254424,
+                "ks_p": 2.0446199652031655e-159
+              },
+              {
+                "family": "Weibull 三参数韦布尔",
+                "params": [
+                  0.9727706388695608,
+                  0.0,
+                  0.5620172201821412
+                ],
+                "aic": 87388.61660455899,
+                "ks": 0.09065119872460049,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Exponential 指数",
+                "params": [
+                  0.0,
+                  0.5698700238445774
+                ],
+                "aic": 87532.60550023931,
+                "ks": 0.08400273057372488,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-logistic 对数逻辑斯蒂",
+                "params": [
+                  1.5951793572055069,
+                  0.0,
+                  0.3284967637866412
+                ],
+                "aic": 79516.86262088786,
+                "ks": 0.04729573547722025,
+                "ks_p": 7.898817356287898e-195
+              }
+            ]
+          }
+        },
+        "100a": {
+          "resolutions": {
+            "5m": {
+              "n": 236231,
+              "pearson_wet": 0.33688577285383975,
+              "spearman_wet": 0.41479955759069664,
+              "mean_native": 0.09770117700099945,
+              "mean_truth": 0.671513557434082,
+              "median_native": 0.017846105620265007,
+              "median_truth": 0.4758823812007904,
+              "dist_native": {
+                "n_fit": 100000,
+                "mean": 0.21159401987336576,
+                "median": 0.14508581906557083,
+                "std": 0.19454699332594297,
+                "p95": 0.6088927984237671,
+                "skew": 2.8829663503263085,
+                "kurtosis_excess": 11.804391472290359,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": -155332.89161377365,
+                "best_ks": 0.060877469956537034,
+                "best_ks_p": 0.0,
+                "best_params": [
+                  0.6903782789754149,
+                  0.0,
+                  0.16120033188714403
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": -153665.5504118221,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      1.9886246722460443,
+                      0.0,
+                      0.10640218982820007
+                    ],
+                    "aic": -133469.62120336253,
+                    "ks": 0.1114276787131907,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      0.6903782789754149,
+                      0.0,
+                      0.16120033188714403
+                    ],
+                    "aic": -155332.89161377365,
+                    "ks": 0.060877469956537034,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      1.304581695233523,
+                      0.0,
+                      0.23215860262664384
+                    ],
+                    "aic": -123020.6829585022,
+                    "ks": 0.12623171829374455,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      0.21159401987336576
+                    ],
+                    "aic": -110615.16817307624,
+                    "ks": 0.21053307389438786,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      2.5397470132507127,
+                      0.0,
+                      0.15307973509002892
+                    ],
+                    "aic": -153665.5504118221,
+                    "ks": 0.05511616938247465,
+                    "ks_p": 1.7699503462506241e-264
+                  }
+                ]
+              }
+            },
+            "10m": {
+              "n": 68920,
+              "pearson_wet": 0.3560118700407957,
+              "spearman_wet": 0.4959052508319699,
+              "mean_native": 1.4512062072753906,
+              "mean_truth": 0.6589401364326477,
+              "median_native": 0.5335527658462524,
+              "median_truth": 0.4481784403324127,
+              "dist_native": {
+                "n_fit": 83146,
+                "mean": 1.7873365769176977,
+                "median": 0.7817966341972351,
+                "std": 2.458463534977942,
+                "p95": 7.107490420341492,
+                "skew": 2.452886413450284,
+                "kurtosis_excess": 7.2173562012064565,
+                "best_family": "Log-normal 对数正态",
+                "best_aic": 245117.0238226459,
+                "best_ks": 0.03336198155437753,
+                "best_ks_p": 7.755140153587876e-81,
+                "best_params": [
+                  1.3786563082698342,
+                  0.0,
+                  0.7663960608512923
+                ],
+                "runner_up": "Log-logistic 对数逻辑斯蒂",
+                "runner_aic": 250586.06329174704,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.7120079957897496,
+                      0.0,
+                      2.510275990559921
+                    ],
+                    "aic": 255616.85456294895,
+                    "ks": 0.07981654732597943,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.3786563082698342,
+                      0.0,
+                      0.7663960608512923
+                    ],
+                    "aic": 245117.0238226459,
+                    "ks": 0.03336198155437753,
+                    "ks_p": 7.755140153587876e-81
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7793544286321471,
+                      0.0,
+                      1.523207628560284
+                    ],
+                    "aic": 252523.16762188805,
+                    "ks": 0.0673822745626483,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      1.7873365769176977
+                    ],
+                    "aic": 262864.1820976191,
+                    "ks": 0.1483996060216678,
+                    "ks_p": 0.0
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.220710528361087,
+                      0.0,
+                      0.7685841547958256
+                    ],
+                    "aic": 250586.06329174704,
+                    "ks": 0.036949891476555474,
+                    "ks_p": 4.5656083561984936e-99
+                  }
+                ]
+              }
+            },
+            "20m": {
+              "n": 24333,
+              "pearson_wet": 0.3186865266780566,
+              "spearman_wet": 0.37560645195201237,
+              "mean_native": 2.723790407180786,
+              "mean_truth": 0.6559611558914185,
+              "median_native": 1.3087937831878662,
+              "median_truth": 0.4644995629787445,
+              "dist_native": {
+                "n_fit": 26136,
+                "mean": 3.021484385681275,
+                "median": 1.7785348296165466,
+                "std": 3.5136308441487083,
+                "p95": 10.396551370620728,
+                "skew": 2.056878751673637,
+                "kurtosis_excess": 4.931344950867619,
+                "best_family": "Weibull 三参数韦布尔",
+                "best_aic": 108908.18389690375,
+                "best_ks": 0.031869422753468137,
+                "best_ks_p": 1.6976222260876436e-23,
+                "best_params": [
+                  0.8536998941729796,
+                  0.0,
+                  2.7793750205120213
+                ],
+                "runner_up": "Gamma 伽马",
+                "runner_aic": 109097.06487406758,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.7956756355557528,
+                      0.0,
+                      3.7973820620646115
+                    ],
+                    "aic": 109097.06487406758,
+                    "ks": 0.034092832816572355,
+                    "ks_p": 7.910297962903065e-27
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.3945287017845873,
+                      0.0,
+                      1.4323521272736068
+                    ],
+                    "aic": 110340.4161143806,
+                    "ks": 0.06266224656873809,
+                    "ks_p": 1.1672812385396703e-89
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.8536998941729796,
+                      0.0,
+                      2.7793750205120213
+                    ],
+                    "aic": 108908.18389690375,
+                    "ks": 0.031869422753468137,
+                    "ks_p": 1.6976222260876436e-23
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      3.021484385681275
+                    ],
+                    "aic": 110073.67142987734,
+                    "ks": 0.08045851280819555,
+                    "ks_p": 1.2804887175995085e-147
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.2322465093952397,
+                      0.0,
+                      1.565073572932845
+                    ],
+                    "aic": 111459.50879806001,
+                    "ks": 0.04749666879139523,
+                    "ks_p": 1.1195842654161799e-51
+                  }
+                ]
+              }
+            },
+            "30m": {
+              "n": 8482,
+              "pearson_wet": 0.40484911681991265,
+              "spearman_wet": 0.46908876348612055,
+              "mean_native": 3.75182843208313,
+              "mean_truth": 0.6988763213157654,
+              "median_native": 1.6340553760528564,
+              "median_truth": 0.5486170053482056,
+              "dist_native": {
+                "n_fit": 9427,
+                "mean": 3.6910886810686456,
+                "median": 1.6661651134490967,
+                "std": 4.520778372699671,
+                "p95": 13.621095466613754,
+                "skew": 1.6664502886992838,
+                "kurtosis_excess": 2.4009673630213166,
+                "best_family": "Weibull 三参数韦布尔",
+                "best_aic": 41965.62754185566,
+                "best_ks": 0.06882393954751126,
+                "best_ks_p": 2.856185541037503e-39,
+                "best_params": [
+                  0.7446416289428641,
+                  0.0,
+                  3.0804049512034855
+                ],
+                "runner_up": "Gamma 伽马",
+                "runner_aic": 42083.3629130363,
+                "all_families": [
+                  {
+                    "family": "Gamma 伽马",
+                    "params": [
+                      0.6486558770836961,
+                      0.0,
+                      5.6903649708123805
+                    ],
+                    "aic": 42083.3629130363,
+                    "ks": 0.08224228087697966,
+                    "ks_p": 6.482219427089261e-56
+                  },
+                  {
+                    "family": "Log-normal 对数正态",
+                    "params": [
+                      1.570104033844712,
+                      0.0,
+                      1.439258484854431
+                    ],
+                    "aic": 42127.766188922265,
+                    "ks": 0.07689304840056088,
+                    "ks_p": 6.354215749479888e-49
+                  },
+                  {
+                    "family": "Weibull 三参数韦布尔",
+                    "params": [
+                      0.7446416289428641,
+                      0.0,
+                      3.0804049512034855
+                    ],
+                    "aic": 41965.62754185566,
+                    "ks": 0.06882393954751126,
+                    "ks_p": 2.856185541037503e-39
+                  },
+                  {
+                    "family": "Exponential 指数",
+                    "params": [
+                      0.0,
+                      3.6910886810686456
+                    ],
+                    "aic": 43477.84301939304,
+                    "ks": 0.1819884377830938,
+                    "ks_p": 1.0744078150796961e-273
+                  },
+                  {
+                    "family": "Log-logistic 对数逻辑斯蒂",
+                    "params": [
+                      1.0603151184009092,
+                      0.0,
+                      1.524780233573475
+                    ],
+                    "aic": 42849.82141635667,
+                    "ks": 0.06961647857846076,
+                    "ks_p": 3.591312653232032e-40
+                  }
+                ]
+              }
+            }
+          },
+          "dist_2m": {
+            "n_fit": 100000,
+            "mean": 0.5869406149636954,
+            "median": 0.3555663675069809,
+            "std": 0.7034198713702435,
+            "p95": 1.8057781934738146,
+            "skew": 4.272201164599118,
+            "kurtosis_excess": 42.83981106109989,
+            "best_family": "Log-normal 对数正态",
+            "best_aic": 81267.60795712503,
+            "best_ks": 0.04280493321120338,
+            "best_ks_p": 1.190797263685117e-159,
+            "best_params": [
+              1.0532677349117807,
+              0.0,
+              0.34489406970634273
+            ],
+            "runner_up": "Log-logistic 对数逻辑斯蒂",
+            "runner_aic": 87970.86322853452,
+            "all_families": [
+              {
+                "family": "Gamma 伽马",
+                "params": [
+                  1.0764820619355704,
+                  0.0,
+                  0.5452395685148212
+                ],
+                "aic": 93098.75764262432,
+                "ks": 0.07042103148600544,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-normal 对数正态",
+                "params": [
+                  1.0532677349117807,
+                  0.0,
+                  0.34489406970634273
+                ],
+                "aic": 81267.60795712503,
+                "ks": 0.04280493321120338,
+                "ks_p": 1.190797263685117e-159
+              },
+              {
+                "family": "Weibull 三参数韦布尔",
+                "params": [
+                  0.9895909962533784,
+                  0.0,
+                  0.5839454851541082
+                ],
+                "aic": 93417.23273971348,
+                "ks": 0.08410027673223655,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Exponential 指数",
+                "params": [
+                  0.0,
+                  0.5869406149636954
+                ],
+                "aic": 93435.67374315762,
+                "ks": 0.08166456142059582,
+                "ks_p": 0.0
+              },
+              {
+                "family": "Log-logistic 对数逻辑斯蒂",
+                "params": [
+                  1.5937854297382947,
+                  0.0,
+                  0.34552249173811994
+                ],
+                "aic": 87970.86322853452,
+                "ks": 0.04650037683387645,
+                "ks_p": 2.4206521016258744e-188
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "vmeasure": {
+    "scenario": "100a",
+    "speed_frame": 6,
+    "seed": 20260921,
+    "regionalisation": {
+      "unit": "2 m cells of the study domain",
+      "feature": "log(1 + value) of that resolution's own simulated field",
+      "scaling": "each resolution's log field is centred and scaled by its own mean and standard deviation on the common support, so the comparison is about spatial pattern rather than about the overall level",
+      "algorithm": "KMeans with one feature, KMeans++ initialisation",
+      "k_choice": "silhouette score over K = 3 to 8, evaluated on the 2 m reference field",
+      "label_projection": "a coarse label is carried to the 2 m cells inside its block by nearest neighbour, which keeps each block label intact",
+      "support": "the common support is the 2 m cells whose own value and the value of every coarse field at that cell all exceed the wet threshold, so no dry coarse value is ever set against a wet 2 m value",
+      "metric": "V-measure, the harmonic mean of homogeneity and completeness, computed from its definition",
+      "sabre_note": "SABRE is an R package and this machine has no R runtime, so its implementation cannot be called. The V-measure definition is unique, so computing it directly gives the same quantity."
+    },
+    "variables": {
+      "h_max": {
+        "group": "洪涝",
+        "k_diagnostics": {
+          "chosen_k": 3,
+          "chosen_silhouette": 0.6393828392028809,
+          "scores": {
+            "3": 0.6393828392028809,
+            "4": 0.597377598285675,
+            "5": 0.5853443145751953,
+            "6": 0.5795826315879822,
+            "7": 0.5732277631759644,
+            "8": 0.5668529272079468
+          },
+          "subsample": 60000,
+          "metric": "silhouette on the 2 m reference"
+        },
+        "pairwise": {
+          "2m": {
+            "2m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "5m": {
+              "h": 0.24176512915624868,
+              "c": 0.2195978598984083,
+              "v": 0.23014895524913836
+            },
+            "10m": {
+              "h": 0.25461363828979283,
+              "c": 0.23382593672885935,
+              "v": 0.24377743132210483
+            },
+            "20m": {
+              "h": 0.10696702155260056,
+              "c": 0.09481136195878934,
+              "v": 0.10052304733132882
+            },
+            "30m": {
+              "h": 0.05397471149132296,
+              "c": 0.04311834600826931,
+              "v": 0.04793958179325327
+            }
+          },
+          "5m": {
+            "2m": {
+              "h": 0.2195978598984083,
+              "c": 0.24176512915624868,
+              "v": 0.23014895524913836
+            },
+            "5m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "10m": {
+              "h": 0.7100410071175376,
+              "c": 0.717893479755029,
+              "v": 0.7139456523454141
+            },
+            "20m": {
+              "h": 0.1866698676092158,
+              "c": 0.1821588429105555,
+              "v": 0.18438676881765448
+            },
+            "30m": {
+              "h": 0.06756569452081349,
+              "c": 0.05942423047401478,
+              "v": 0.06323398338104717
+            }
+          },
+          "10m": {
+            "2m": {
+              "h": 0.23382593672885935,
+              "c": 0.25461363828979283,
+              "v": 0.24377743132210483
+            },
+            "5m": {
+              "h": 0.717893479755029,
+              "c": 0.7100410071175376,
+              "v": 0.7139456523454141
+            },
+            "10m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "20m": {
+              "h": 0.18037867832083831,
+              "c": 0.17409434416152908,
+              "v": 0.17718080480751874
+            },
+            "30m": {
+              "h": 0.061957833810945814,
+              "c": 0.05389605393915639,
+              "v": 0.05764645136865642
+            }
+          },
+          "20m": {
+            "2m": {
+              "h": 0.09481136195878934,
+              "c": 0.10696702155260056,
+              "v": 0.10052304733132882
+            },
+            "5m": {
+              "h": 0.1821588429105555,
+              "c": 0.1866698676092158,
+              "v": 0.18438676881765448
+            },
+            "10m": {
+              "h": 0.17409434416152908,
+              "c": 0.18037867832083831,
+              "v": 0.17718080480751874
+            },
+            "20m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "30m": {
+              "h": 0.07066701098085046,
+              "c": 0.06369099064249946,
+              "v": 0.0669978993544744
+            }
+          },
+          "30m": {
+            "2m": {
+              "h": 0.04311834600826931,
+              "c": 0.05397471149132296,
+              "v": 0.04793958179325327
+            },
+            "5m": {
+              "h": 0.05942423047401478,
+              "c": 0.06756569452081349,
+              "v": 0.06323398338104717
+            },
+            "10m": {
+              "h": 0.05389605393915639,
+              "c": 0.061957833810945814,
+              "v": 0.05764645136865642
+            },
+            "20m": {
+              "h": 0.06369099064249946,
+              "c": 0.07066701098085046,
+              "v": 0.0669978993544744
+            },
+            "30m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            }
+          }
+        },
+        "k": {
+          "2m": 3,
+          "5m": 3,
+          "10m": 3,
+          "20m": 3,
+          "30m": 3
+        },
+        "support_cells": 826554,
+        "cluster_share": {
+          "2m": [
+            0.05805065367779964,
+            0.727388652163077,
+            0.2145606941591233
+          ],
+          "5m": [
+            0.21150826201312922,
+            0.6963005441870707,
+            0.09219119379980013
+          ],
+          "10m": [
+            0.2137500998119905,
+            0.6996155121141511,
+            0.08663438807385845
+          ],
+          "20m": [
+            0.6834314515446057,
+            0.0980988537953963,
+            0.21846969465999802
+          ],
+          "30m": [
+            0.26732796647284995,
+            0.6109606873840063,
+            0.1217113461431437
+          ]
+        },
+        "stability_share": {
+          "0": 0.11110223893417732,
+          "1": 0.028269175395678928,
+          "2": 0.23266719415791345,
+          "3": 0.025280864892069967,
+          "4": 0.6026805266201604
+        },
+        "mean_stability": 0.7450420662170892,
+        "share_agree_le_one": 0.13937141432985625,
+        "n_coarse_compared": 4
+      },
+      "speed": {
+        "group": "洪涝",
+        "k_diagnostics": {
+          "chosen_k": 3,
+          "chosen_silhouette": 0.5877126455307007,
+          "scores": {
+            "3": 0.5877126455307007,
+            "4": 0.5740416049957275,
+            "5": 0.5550323724746704,
+            "6": 0.5440340638160706,
+            "7": 0.539073646068573,
+            "8": 0.5376570820808411
+          },
+          "subsample": 60000,
+          "metric": "silhouette on the 2 m reference"
+        },
+        "pairwise": {
+          "2m": {
+            "2m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "5m": {
+              "h": 0.022642657991065893,
+              "c": 0.025164116075723237,
+              "v": 0.023836892786535308
+            },
+            "10m": {
+              "h": 0.08610444631589334,
+              "c": 0.09721790347118789,
+              "v": 0.09132431217580321
+            },
+            "20m": {
+              "h": 0.026492620136227774,
+              "c": 0.02951405825135012,
+              "v": 0.02792183919641061
+            },
+            "30m": {
+              "h": 0.03900369990144061,
+              "c": 0.03997360819701929,
+              "v": 0.03948269840118065
+            }
+          },
+          "5m": {
+            "2m": {
+              "h": 0.025164116075723237,
+              "c": 0.022642657991065893,
+              "v": 0.023836892786535308
+            },
+            "5m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "10m": {
+              "h": 0.07501703092776009,
+              "c": 0.07621251106346855,
+              "v": 0.07561004581845629
+            },
+            "20m": {
+              "h": 0.004477755549293611,
+              "c": 0.0044885919414178145,
+              "v": 0.00448316719712666
+            },
+            "30m": {
+              "h": 0.003394684388872527,
+              "c": 0.0031304925549407556,
+              "v": 0.003257240162909258
+            }
+          },
+          "10m": {
+            "2m": {
+              "h": 0.09721790347118789,
+              "c": 0.08610444631589334,
+              "v": 0.09132431217580321
+            },
+            "5m": {
+              "h": 0.07621251106346855,
+              "c": 0.07501703092776009,
+              "v": 0.07561004581845629
+            },
+            "10m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "20m": {
+              "h": 0.07827720714240215,
+              "c": 0.07723580314616325,
+              "v": 0.07775301822610985
+            },
+            "30m": {
+              "h": 0.07707728031740314,
+              "c": 0.0699637782263599,
+              "v": 0.07334846198502838
+            }
+          },
+          "20m": {
+            "2m": {
+              "h": 0.02951405825135012,
+              "c": 0.026492620136227774,
+              "v": 0.02792183919641061
+            },
+            "5m": {
+              "h": 0.0044885919414178145,
+              "c": 0.004477755549293611,
+              "v": 0.00448316719712666
+            },
+            "10m": {
+              "h": 0.07723580314616325,
+              "c": 0.07827720714240215,
+              "v": 0.07775301822610985
+            },
+            "20m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            },
+            "30m": {
+              "h": 0.10801690890075628,
+              "c": 0.09936999602134042,
+              "v": 0.10351318769849668
+            }
+          },
+          "30m": {
+            "2m": {
+              "h": 0.03997360819701929,
+              "c": 0.03900369990144061,
+              "v": 0.03948269840118065
+            },
+            "5m": {
+              "h": 0.0031304925549407556,
+              "c": 0.003394684388872527,
+              "v": 0.003257240162909258
+            },
+            "10m": {
+              "h": 0.0699637782263599,
+              "c": 0.07707728031740314,
+              "v": 0.07334846198502838
+            },
+            "20m": {
+              "h": 0.09936999602134042,
+              "c": 0.10801690890075628,
+              "v": 0.10351318769849668
+            },
+            "30m": {
+              "h": 1.0,
+              "c": 1.0,
+              "v": 1.0
+            }
+          }
+        },
+        "k": {
+          "2m": 3,
+          "5m": 3,
+          "10m": 3,
+          "20m": 3,
+          "30m": 3
+        },
+        "support_cells": 94702,
+        "cluster_share": {
+          "2m": [
+            0.36147071867542396,
+            0.2281683596967329,
+            0.41036092162784316
+          ],
+          "5m": [
+            0.5333783869400858,
+            0.126143059280691,
+            0.34047855377922326
+          ],
+          "10m": [
+            0.5235792274714367,
+            0.10888893581972926,
+            0.36753183670883405
+          ],
+          "20m": [
+            0.579470338535617,
+            0.2582416422039661,
+            0.1622880192604169
+          ],
+          "30m": [
+            0.24953010496082448,
+            0.4928301408629174,
+            0.2576397541762582
+          ]
+        },
+        "stability_share": {
+          "0": 0.19041836497645245,
+          "1": 0.23034360414774768,
+          "2": 0.24227577031108108,
+          "3": 0.17636375155751727,
+          "4": 0.16059850900720155
+        },
+        "mean_stability": 0.4715951088678169,
+        "share_agree_le_one": 0.4207619691242001,
+        "n_coarse_compared": 4
+      }
+    }
+  },
+  "spatial_pattern": {
+    "scenario": "100a",
+    "speed_frame": 6,
+    "seed": 20260921,
+    "families": {
+      "chance_corrected": "Adjusted Rand Index, Fowlkes-Mallows, Normalized and Adjusted Mutual Information, and Cohen kappa beside the V-measure",
+      "areal": "per-cluster intersection over union after best matching, and the total-variation distance of the area shares",
+      "boundary": "wet-mask boundary F1, boundary IoU and modified Hausdorff distance between wet fronts, the front being read off a depth field in metres",
+      "autocorrelation": "Moran's I and Geary's C of the field and of the ordered class labels, plus a join-count statistic",
+      "distance_resolved": "agreement against the 2 m reference resolved by depth band and by distance to the nearest channel"
+    },
+    "support_cells": {
+      "h_max": 826554,
+      "speed": 94702
+    },
+    "variables": {
+      "h_max": {
+        "k": 3,
+        "n": 826554,
+        "chance_corrected": {
+          "2m|5m": {
+            "ari": 0.3813935251366941,
+            "ami": 0.23014651602057873,
+            "nmi": 0.2301489552491384,
+            "fm": 0.726775653856376,
+            "kappa": 0.4538594084737172,
+            "v": 0.2301489552491384,
+            "h": 0.24176512915624865,
+            "c": 0.2195978598984083,
+            "separation": 2.5
+          },
+          "2m|10m": {
+            "ari": 0.39195718722572387,
+            "ami": 0.24377502145973814,
+            "nmi": 0.24377743132210483,
+            "fm": 0.7328387891762939,
+            "kappa": 0.4712011253315803,
+            "v": 0.24377743132210483,
+            "h": 0.2546136382897928,
+            "c": 0.23382593672885935,
+            "separation": 5.0
+          },
+          "2m|20m": {
+            "ari": 0.22862087558281624,
+            "ami": 0.100520233903204,
+            "nmi": 0.10052304733132882,
+            "fm": 0.6537733133350565,
+            "kappa": 0.28552110604705483,
+            "v": 0.1005230473313288,
+            "h": 0.10696702155260053,
+            "c": 0.09481136195878934,
+            "separation": 10.0
+          },
+          "2m|30m": {
+            "ari": 0.13061490816117666,
+            "ami": 0.04793676732003186,
+            "nmi": 0.047939581793253264,
+            "fm": 0.5797413248422851,
+            "kappa": 0.17750928364559015,
+            "v": 0.04793958179325326,
+            "h": 0.05397471149132295,
+            "c": 0.04311834600826931,
+            "separation": 15.0
+          },
+          "5m|10m": {
+            "ari": 0.8300794699038545,
+            "ami": 0.7139447827982652,
+            "nmi": 0.7139456523454142,
+            "fm": 0.9219047841074922,
+            "kappa": 0.870367034766445,
+            "v": 0.7139456523454141,
+            "h": 0.7100410071175376,
+            "c": 0.717893479755029,
+            "separation": 2.0
+          },
+          "5m|20m": {
+            "ari": 0.3451989261717159,
+            "ami": 0.18438433323884568,
+            "nmi": 0.18438676881765445,
+            "fm": 0.6930615229248984,
+            "kappa": 0.41775245566931685,
+            "v": 0.18438676881765448,
+            "h": 0.1866698676092158,
+            "c": 0.1821588429105555,
+            "separation": 4.0
+          },
+          "5m|30m": {
+            "ari": 0.15754961109251014,
+            "ami": 0.06323133294837376,
+            "nmi": 0.06323398338104716,
+            "fm": 0.5769585654095053,
+            "kappa": 0.20171287327483844,
+            "v": 0.06323398338104717,
+            "h": 0.06756569452081349,
+            "c": 0.05942423047401478,
+            "separation": 6.0
+          },
+          "10m|20m": {
+            "ari": 0.33545002860603024,
+            "ami": 0.1771783343633327,
+            "nmi": 0.17718080480751874,
+            "fm": 0.6900133323769548,
+            "kappa": 0.40597539564204665,
+            "v": 0.17718080480751874,
+            "h": 0.18037867832083831,
+            "c": 0.17409434416152908,
+            "separation": 2.0
+          },
+          "10m|30m": {
+            "ari": 0.1476910661498999,
+            "ami": 0.05764377140841062,
+            "nmi": 0.05764645136865642,
+            "fm": 0.5738251722271764,
+            "kappa": 0.19008707087245247,
+            "v": 0.05764645136865642,
+            "h": 0.061957833810945814,
+            "c": 0.05389605393915639,
+            "separation": 3.0
+          },
+          "20m|30m": {
+            "ari": 0.1588014922552933,
+            "ami": 0.06699528981264795,
+            "nmi": 0.06699789935447441,
+            "fm": 0.5721086833735273,
+            "kappa": 0.22244015184523525,
+            "v": 0.0669978993544744,
+            "h": 0.07066701098085046,
+            "c": 0.06369099064249946,
+            "separation": 1.5
+          }
+        },
+        "areal": {
+          "2m|5m": {
+            "mean_iou": 0.6414369672028856,
+            "area_tv": 0.03414054012200046,
+            "per_cluster_iou": [
+              0.7569527495218515,
+              0.3203795769314407,
+              0.3806548446272722
+            ],
+            "cluster_share_a": [
+              0.727388652163077,
+              0.2145606941591233,
+              0.05805065367779964
+            ],
+            "cluster_share_b": [
+              0.6963005441870707,
+              0.21150826201312922,
+              0.09219119379980013
+            ],
+            "separation": 2.5
+          },
+          "2m|10m": {
+            "mean_iou": 0.6505042553666748,
+            "area_tv": 0.02858373439605878,
+            "per_cluster_iou": [
+              0.7623119459605642,
+              0.3356044743742101,
+              0.413426308946933
+            ],
+            "cluster_share_a": [
+              0.727388652163077,
+              0.2145606941591233,
+              0.05805065367779964
+            ],
+            "cluster_share_b": [
+              0.6996155121141511,
+              0.2137500998119905,
+              0.08663438807385845
+            ],
+            "separation": 5.0
+          },
+          "2m|20m": {
+            "mean_iou": 0.5548386838821989,
+            "area_tv": 0.043957200618471345,
+            "per_cluster_iou": [
+              0.6785501455266741,
+              0.22653238159531489,
+              0.21815539112050739
+            ],
+            "cluster_share_a": [
+              0.727388652163077,
+              0.2145606941591233,
+              0.05805065367779964
+            ],
+            "cluster_share_b": [
+              0.6834314515446057,
+              0.21846969465999802,
+              0.0980988537953963
+            ],
+            "separation": 10.0
+          },
+          "2m|30m": {
+            "mean_iou": 0.48026299672661543,
+            "area_tv": 0.1164279647790707,
+            "per_cluster_iou": [
+              0.594249726177437,
+              0.18854682338617992,
+              0.13019236766641057
+            ],
+            "cluster_share_a": [
+              0.727388652163077,
+              0.2145606941591233,
+              0.05805065367779964
+            ],
+            "cluster_share_b": [
+              0.6109606873840063,
+              0.26732796647284995,
+              0.1217113461431437
+            ],
+            "separation": 15.0
+          },
+          "5m|10m": {
+            "mean_iou": 0.8906527293182025,
+            "area_tv": 0.005556805725941687,
+            "per_cluster_iou": [
+              0.938944587659184,
+              0.7550467098397735,
+              0.8370266340214514
+            ],
+            "cluster_share_a": [
+              0.6963005441870707,
+              0.21150826201312922,
+              0.09219119379980013
+            ],
+            "cluster_share_b": [
+              0.6996155121141511,
+              0.2137500998119905,
+              0.08663438807385845
+            ],
+            "separation": 2.0
+          },
+          "5m|20m": {
+            "mean_iou": 0.6002681694187079,
+            "area_tv": 0.012869092642464955,
+            "per_cluster_iou": [
+              0.7281938132394191,
+              0.29457618475212183,
+              0.33540214465830653
+            ],
+            "cluster_share_a": [
+              0.6963005441870707,
+              0.21150826201312922,
+              0.09219119379980013
+            ],
+            "cluster_share_b": [
+              0.6834314515446057,
+              0.21846969465999802,
+              0.0980988537953963
+            ],
+            "separation": 4.0
+          },
+          "5m|30m": {
+            "mean_iou": 0.471926578063726,
+            "area_tv": 0.08533985680306432,
+            "per_cluster_iou": [
+              0.5994108722199608,
+              0.18034546929426923,
+              0.17802030862716878
+            ],
+            "cluster_share_a": [
+              0.6963005441870707,
+              0.21150826201312922,
+              0.09219119379980013
+            ],
+            "cluster_share_b": [
+              0.6109606873840063,
+              0.26732796647284995,
+              0.1217113461431437
+            ],
+            "separation": 6.0
+          },
+          "10m|20m": {
+            "mean_iou": 0.5963796666380652,
+            "area_tv": 0.016184060569545362,
+            "per_cluster_iou": [
+              0.724402013476475,
+              0.2874863504167853,
+              0.32465797395657114
+            ],
+            "cluster_share_a": [
+              0.6996155121141511,
+              0.2137500998119905,
+              0.08663438807385845
+            ],
+            "cluster_share_b": [
+              0.6834314515446057,
+              0.21846969465999802,
+              0.0980988537953963
+            ],
+            "separation": 2.0
+          },
+          "10m|30m": {
+            "mean_iou": 0.4681804963992014,
+            "area_tv": 0.08865482473014472,
+            "per_cluster_iou": [
+              0.5939441827751464,
+              0.17803710353081986,
+              0.1684375508874776
+            ],
+            "cluster_share_a": [
+              0.6996155121141511,
+              0.2137500998119905,
+              0.08663438807385845
+            ],
+            "cluster_share_b": [
+              0.6109606873840063,
+              0.26732796647284995,
+              0.1217113461431437
+            ],
+            "separation": 3.0
+          },
+          "20m|30m": {
+            "mean_iou": 0.47128442995047704,
+            "area_tv": 0.07247076416059936,
+            "per_cluster_iou": [
+              0.5962905382016973,
+              0.19750917804664922,
+              0.2101039030238444
+            ],
+            "cluster_share_a": [
+              0.6834314515446057,
+              0.21846969465999802,
+              0.0980988537953963
+            ],
+            "cluster_share_b": [
+              0.6109606873840063,
+              0.26732796647284995,
+              0.1217113461431437
+            ],
+            "separation": 1.5
+          }
+        },
+        "chance_floor": {
+          "2m|30m": {
+            "v": 3.060761056000488e-06,
+            "ari": -2.129351742504805e-05,
+            "fm": 0.5155957415115086,
+            "kappa": 1.703802397831818e-05
+          },
+          "5m|10m": {
+            "v": 3.0055311476897155e-06,
+            "ari": 7.004868834937435e-06,
+            "fm": 0.5403607443272376,
+            "kappa": 7.875996958316423e-05
+          }
+        },
+        "autocorrelation": {
+          "class_labels": {
+            "2m": {
+              "moran": 0.9456243709130941,
+              "geary": 0.10009642691943645,
+              "n": 826554,
+              "expected_moran": -1.2098437728736088e-06
+            },
+            "5m": {
+              "moran": 0.9803267583290658,
+              "geary": 0.03377384377869892,
+              "n": 826554,
+              "expected_moran": -1.2098437728736088e-06
+            },
+            "10m": {
+              "moran": 0.9862663036120892,
+              "geary": 0.031793691774529724,
+              "n": 826554,
+              "expected_moran": -1.2098437728736088e-06
+            },
+            "20m": {
+              "moran": 0.9779561311355414,
+              "geary": 0.02452387643296169,
+              "n": 826554,
+              "expected_moran": -1.2098437728736088e-06
+            },
+            "30m": {
+              "moran": 0.9890366122857271,
+              "geary": 0.015355698451450928,
+              "n": 826554,
+              "expected_moran": -1.2098437728736088e-06
+            }
+          },
+          "field": {
+            "2m": {
+              "moran": 1.175104674723629,
+              "geary": 0.02955274503481981,
+              "n": 4937385,
+              "expected_moran": -2.0253640389323578e-07
+            },
+            "5m": {
+              "moran": 1.1199303593935266,
+              "geary": 0.11653606545288879,
+              "n": 784816,
+              "expected_moran": -1.274185636105324e-06
+            },
+            "10m": {
+              "moran": 1.1519061540238853,
+              "geary": 0.3350487411538959,
+              "n": 169516,
+              "expected_moran": -5.8991829631596025e-06
+            },
+            "20m": {
+              "moran": 0.6866154184287339,
+              "geary": 0.8837889820052629,
+              "n": 43060,
+              "expected_moran": -2.3223948535730044e-05
+            },
+            "30m": {
+              "moran": 0.25706728206984225,
+              "geary": 0.7666172060697015,
+              "n": 17018,
+              "expected_moran": -5.876476464711759e-05
+            }
+          }
+        },
+        "join_count": {
+          "2m": {
+            "observed": 2687916.0,
+            "expected": 1666826.3215007798,
+            "ratio": 1.6125951248357115,
+            "z": 1212.198592505019,
+            "n": 826554,
+            "n_perm": 100
+          },
+          "5m": {
+            "observed": 2816586.0,
+            "expected": 1550332.9311725886,
+            "ratio": 1.8167620279275662,
+            "z": 1396.1490256307875,
+            "n": 826554,
+            "n_perm": 100
+          },
+          "10m": {
+            "observed": 2821660.0,
+            "expected": 1563549.6245685222,
+            "ratio": 1.8046501087412985,
+            "z": 1400.0555761826558,
+            "n": 826554,
+            "n_perm": 100
+          },
+          "20m": {
+            "observed": 2843650.0,
+            "expected": 1511036.5787489004,
+            "ratio": 1.8819200276107606,
+            "z": 1510.3337614095942,
+            "n": 826554,
+            "n_perm": 100
+          },
+          "30m": {
+            "observed": 2856818.0,
+            "expected": 1324098.3638067995,
+            "ratio": 2.1575572314632367,
+            "z": 1374.40015010541,
+            "n": 826554,
+            "n_perm": 100
+          }
+        },
+        "distance_resolved": {
+          "value_bands": [
+            {
+              "lo": 0.05,
+              "hi": 0.1,
+              "n": 93178,
+              "mean_stability": 0.9298224902874069
+            },
+            {
+              "lo": 0.1,
+              "hi": 0.3,
+              "n": 241252,
+              "mean_stability": 0.9361766949082287
+            },
+            {
+              "lo": 0.3,
+              "hi": 0.5,
+              "n": 154208,
+              "mean_stability": 0.9280144350487654
+            },
+            {
+              "lo": 0.5,
+              "hi": 1.0,
+              "n": 168627,
+              "mean_stability": 0.6471680098679333
+            },
+            {
+              "lo": 1.0,
+              "hi": 2.0,
+              "n": 84048,
+              "mean_stability": 0.26663335237007424
+            },
+            {
+              "lo": 2.0,
+              "hi": null,
+              "n": 85241,
+              "mean_stability": 0.3364196806701001
+            }
+          ],
+          "dist_water_bands": [
+            {
+              "lo": 0,
+              "hi": 25,
+              "n": 96403,
+              "mean_stability": 0.49218385319958924
+            },
+            {
+              "lo": 25,
+              "hi": 50,
+              "n": 14731,
+              "mean_stability": 0.7049589301473084
+            },
+            {
+              "lo": 50,
+              "hi": 100,
+              "n": 19754,
+              "mean_stability": 0.7321808241368837
+            },
+            {
+              "lo": 100,
+              "hi": 200,
+              "n": 30014,
+              "mean_stability": 0.7261194775771307
+            },
+            {
+              "lo": 200,
+              "hi": 400,
+              "n": 52774,
+              "mean_stability": 0.7616866259900709
+            },
+            {
+              "lo": 400,
+              "hi": 800,
+              "n": 109347,
+              "mean_stability": 0.7529881935489771
+            },
+            {
+              "lo": 800,
+              "hi": null,
+              "n": 503528,
+              "mean_stability": 0.792786597766162
+            }
+          ]
+        },
+        "boundary": {
+          "2m|5m": {
+            "f1": 0.14799716074336902,
+            "iou": 0.07991195132442296,
+            "mhd_m": 6.577677761439807,
+            "n_ref_boundary": 2307633,
+            "n_res_boundary": 2093519,
+            "separation": 2.5,
+            "mask_source": "h_max"
+          },
+          "2m|10m": {
+            "f1": 0.1376655861719035,
+            "iou": 0.07392098065187275,
+            "mhd_m": 9.255514820107836,
+            "n_ref_boundary": 2307633,
+            "n_res_boundary": 1507903,
+            "separation": 5.0,
+            "mask_source": "h_max"
+          },
+          "2m|20m": {
+            "f1": 0.07907304206237664,
+            "iou": 0.041164002481006524,
+            "mhd_m": 17.510304734394758,
+            "n_ref_boundary": 2307633,
+            "n_res_boundary": 1071420,
+            "separation": 10.0,
+            "mask_source": "h_max"
+          },
+          "2m|30m": {
+            "f1": 0.046388604628131914,
+            "iou": 0.0237450522340457,
+            "mhd_m": 36.98280567817431,
+            "n_ref_boundary": 2307633,
+            "n_res_boundary": 600495,
+            "separation": 15.0,
+            "mask_source": "h_max"
+          }
+        },
+        "front_diagnostic": {}
+      },
+      "speed": {
+        "k": 3,
+        "n": 94702,
+        "chance_corrected": {
+          "2m|5m": {
+            "ari": 0.039341731954534456,
+            "ami": 0.023816617908498663,
+            "nmi": 0.023836892786535304,
+            "fm": 0.40677273786675566,
+            "kappa": 0.12669109177324855,
+            "v": 0.023836892786535308,
+            "h": 0.022642657991065893,
+            "c": 0.025164116075723237,
+            "separation": 2.5
+          },
+          "2m|10m": {
+            "ari": 0.11544322776393616,
+            "ami": 0.0913052976632751,
+            "nmi": 0.09132431217580322,
+            "fm": 0.4560326027081657,
+            "kappa": 0.23001246067804848,
+            "v": 0.09132431217580321,
+            "h": 0.08610444631589335,
+            "c": 0.0972179034711879,
+            "separation": 5.0
+          },
+          "2m|20m": {
+            "ari": 0.04843317838348371,
+            "ami": 0.02790162612446035,
+            "nmi": 0.027921839196410607,
+            "fm": 0.4179010748330632,
+            "kappa": 0.13217470848366397,
+            "v": 0.02792183919641061,
+            "h": 0.026492620136227774,
+            "c": 0.02951405825135012,
+            "separation": 10.0
+          },
+          "2m|30m": {
+            "ari": 0.05320099200577786,
+            "ami": 0.03946351547483933,
+            "nmi": 0.03948269840118065,
+            "fm": 0.39517824647170785,
+            "kappa": 0.15990449964518683,
+            "v": 0.03948269840118065,
+            "h": 0.03900369990144061,
+            "c": 0.0399736081970193,
+            "separation": 15.0
+          },
+          "5m|10m": {
+            "ari": 0.07870202455428937,
+            "ami": 0.07558961655009938,
+            "nmi": 0.07561004581845626,
+            "fm": 0.4644397754611837,
+            "kappa": 0.14072581204131462,
+            "v": 0.07561004581845626,
+            "h": 0.07501703092776008,
+            "c": 0.07621251106346852,
+            "separation": 2.0
+          },
+          "5m|20m": {
+            "ari": 0.0033033848584211665,
+            "ami": 0.004461312416448435,
+            "nmi": 0.00448316719712666,
+            "fm": 0.42442693590615765,
+            "kappa": -0.024410564273571245,
+            "v": 0.00448316719712666,
+            "h": 0.004477755549293611,
+            "c": 0.0044885919414178145,
+            "separation": 4.0
+          },
+          "5m|30m": {
+            "ari": 0.008166545682060374,
+            "ami": 0.0032362699796299028,
+            "nmi": 0.003257240162909258,
+            "fm": 0.39825170317563424,
+            "kappa": 0.0024084278737267484,
+            "v": 0.003257240162909258,
+            "h": 0.003394684388872527,
+            "c": 0.003130492554940756,
+            "separation": 6.0
+          },
+          "10m|20m": {
+            "ari": 0.13444183443977722,
+            "ami": 0.07773261160252878,
+            "nmi": 0.07775301822610985,
+            "fm": 0.5022387785554884,
+            "kappa": 0.23167980249657627,
+            "v": 0.07775301822610985,
+            "h": 0.07827720714240215,
+            "c": 0.07723580314616325,
+            "separation": 2.0
+          },
+          "10m|30m": {
+            "ari": 0.11118645881018203,
+            "ami": 0.07332881851806941,
+            "nmi": 0.07334846198502838,
+            "fm": 0.46294511841608643,
+            "kappa": 0.20345606539039252,
+            "v": 0.0733484619850284,
+            "h": 0.07707728031740314,
+            "c": 0.06996377822635991,
+            "separation": 3.0
+          },
+          "20m|30m": {
+            "ari": 0.17362911244541931,
+            "ami": 0.10349430497267507,
+            "nmi": 0.1035131876984967,
+            "fm": 0.5039097888173798,
+            "kappa": 0.2827327006338043,
+            "v": 0.1035131876984967,
+            "h": 0.10801690890075628,
+            "c": 0.09936999602134043,
+            "separation": 1.5
+          }
+        },
+        "areal": {
+          "2m|5m": {
+            "mean_iou": 0.2839324044048226,
+            "area_tv": 0.12301746531224261,
+            "per_cluster_iou": [
+              0.399245377546068,
+              0.24598890388364072,
+              0.13665311653116533
+            ],
+            "cluster_share_a": [
+              0.41036092162784316,
+              0.36147071867542396,
+              0.2281683596967329
+            ],
+            "cluster_share_b": [
+              0.5333783869400858,
+              0.34047855377922326,
+              0.126143059280691
+            ],
+            "separation": 2.5
+          },
+          "2m|10m": {
+            "mean_iou": 0.342595757648801,
+            "area_tv": 0.11927942387700363,
+            "per_cluster_iou": [
+              0.48160680782632004,
+              0.2744222107361737,
+              0.20058675292436154
+            ],
+            "cluster_share_a": [
+              0.41036092162784316,
+              0.36147071867542396,
+              0.2281683596967329
+            ],
+            "cluster_share_b": [
+              0.5235792274714367,
+              0.36753183670883405,
+              0.10888893581972926
+            ],
+            "separation": 5.0
+          },
+          "2m|20m": {
+            "mean_iou": 0.28243129835608255,
+            "area_tv": 0.16910941690777387,
+            "per_cluster_iou": [
+              0.408063328977213,
+              0.19945226757137893,
+              0.18793973078035148
+            ],
+            "cluster_share_a": [
+              0.41036092162784316,
+              0.36147071867542396,
+              0.2281683596967329
+            ],
+            "cluster_share_b": [
+              0.579470338535617,
+              0.2582416422039661,
+              0.1622880192604169
+            ],
+            "separation": 10.0
+          },
+          "2m|30m": {
+            "mean_iou": 0.2922394763586648,
+            "area_tv": 0.10383096449916579,
+            "per_cluster_iou": [
+              0.39229091382622,
+              0.19767536871348612,
+              0.2621080236580739
+            ],
+            "cluster_share_a": [
+              0.41036092162784316,
+              0.36147071867542396,
+              0.2281683596967329
+            ],
+            "cluster_share_b": [
+              0.4928301408629174,
+              0.2576397541762582,
+              0.24953010496082448
+            ],
+            "separation": 15.0
+          },
+          "5m|10m": {
+            "mean_iou": 0.34870175592489927,
+            "area_tv": 0.027053282929610796,
+            "per_cluster_iou": [
+              0.46701645879438963,
+              0.27350427350427353,
+              0.05139348134152102
+            ],
+            "cluster_share_a": [
+              0.5333783869400858,
+              0.34047855377922326,
+              0.126143059280691
+            ],
+            "cluster_share_b": [
+              0.5235792274714367,
+              0.36753183670883405,
+              0.10888893581972926
+            ],
+            "separation": 2.0
+          },
+          "5m|20m": {
+            "mean_iou": 0.25507988373227813,
+            "area_tv": 0.17819053451880637,
+            "per_cluster_iou": [
+              0.3775979712948681,
+              0.10918790476634208,
+              0.13081296014413968
+            ],
+            "cluster_share_a": [
+              0.5333783869400858,
+              0.34047855377922326,
+              0.126143059280691
+            ],
+            "cluster_share_b": [
+              0.579470338535617,
+              0.2582416422039661,
+              0.1622880192604169
+            ],
+            "separation": 4.0
+          },
+          "5m|30m": {
+            "mean_iou": 0.2561946529837211,
+            "area_tv": 0.13149669489556717,
+            "per_cluster_iou": [
+              0.34912195460540013,
+              0.16513053632496455,
+              0.10905983949223398
+            ],
+            "cluster_share_a": [
+              0.5333783869400858,
+              0.34047855377922326,
+              0.126143059280691
+            ],
+            "cluster_share_b": [
+              0.4928301408629174,
+              0.2576397541762582,
+              0.24953010496082448
+            ],
+            "separation": 6.0
+          },
+          "10m|20m": {
+            "mean_iou": 0.3907249694439531,
+            "area_tv": 0.10929019450486793,
+            "per_cluster_iou": [
+              0.537457317791122,
+              0.23771929824561402,
+              0.20161894067003555
+            ],
+            "cluster_share_a": [
+              0.5235792274714367,
+              0.36753183670883405,
+              0.10888893581972926
+            ],
+            "cluster_share_b": [
+              0.579470338535617,
+              0.2582416422039661,
+              0.1622880192604169
+            ],
+            "separation": 2.0
+          },
+          "10m|30m": {
+            "mean_iou": 0.35952519423116225,
+            "area_tv": 0.1406411691410952,
+            "per_cluster_iou": [
+              0.4972856098433587,
+              0.2104886526272746,
+              0.2001626476203946
+            ],
+            "cluster_share_a": [
+              0.5235792274714367,
+              0.36753183670883405,
+              0.10888893581972926
+            ],
+            "cluster_share_b": [
+              0.4928301408629174,
+              0.2576397541762582,
+              0.24953010496082448
+            ],
+            "separation": 3.0
+          },
+          "20m|30m": {
+            "mean_iou": 0.42316025450876454,
+            "area_tv": 0.08724208570040759,
+            "per_cluster_iou": [
+              0.5570701340120826,
+              0.20931211168593283,
+              0.2853046831229608
+            ],
+            "cluster_share_a": [
+              0.579470338535617,
+              0.2582416422039661,
+              0.1622880192604169
+            ],
+            "cluster_share_b": [
+              0.4928301408629174,
+              0.2576397541762582,
+              0.24953010496082448
+            ],
+            "separation": 1.5
+          }
+        },
+        "chance_floor": {
+          "2m|30m": {
+            "v": 2.2888328559038038e-05,
+            "ari": 2.733373481952369e-05,
+            "fm": 0.3611881375708581,
+            "kappa": -0.0003989164138490301
+          },
+          "5m|10m": {
+            "v": 2.740510088643953e-05,
+            "ari": -0.00018725621016087518,
+            "fm": 0.41857923228977717,
+            "kappa": -0.0005042217604118197
+          }
+        },
+        "autocorrelation": {
+          "class_labels": {
+            "2m": {
+              "moran": 0.8453206675183315,
+              "geary": 0.14809146646475818,
+              "n": 94702,
+              "expected_moran": -1.055955058552708e-05
+            },
+            "5m": {
+              "moran": 0.9484495181807229,
+              "geary": 0.07478397016835754,
+              "n": 94702,
+              "expected_moran": -1.055955058552708e-05
+            },
+            "10m": {
+              "moran": 0.9191443232369051,
+              "geary": 0.04889531910479692,
+              "n": 94702,
+              "expected_moran": -1.055955058552708e-05
+            },
+            "20m": {
+              "moran": 0.9317923764002304,
+              "geary": 0.0268864640217758,
+              "n": 94702,
+              "expected_moran": -1.055955058552708e-05
+            },
+            "30m": {
+              "moran": 0.9619082494282544,
+              "geary": 0.014777878563020064,
+              "n": 94702,
+              "expected_moran": -1.055955058552708e-05
+            }
+          },
+          "field": {
+            "2m": {
+              "moran": 0.5873826900753845,
+              "geary": 0.15482740185136304,
+              "n": 1807944,
+              "expected_moran": -5.53114782932869e-07
+            },
+            "5m": {
+              "moran": 1.0682775230929673,
+              "geary": 0.14559066904498966,
+              "n": 149194,
+              "expected_moran": -6.702727339754546e-06
+            },
+            "10m": {
+              "moran": 0.29647521212504613,
+              "geary": 0.37299305803018257,
+              "n": 83146,
+              "expected_moran": -1.2027181430031872e-05
+            },
+            "20m": {
+              "moran": 0.3044413661685194,
+              "geary": 0.7015287014772207,
+              "n": 26136,
+              "expected_moran": -3.826286588865506e-05
+            },
+            "30m": {
+              "moran": 0.33017495401695257,
+              "geary": 0.43590750719781557,
+              "n": 9427,
+              "expected_moran": -0.00010608953957139826
+            }
+          }
+        },
+        "join_count": {
+          "2m": {
+            "observed": 247364.0,
+            "expected": 103605.08070718645,
+            "ratio": 2.3875663076708733,
+            "z": 421.4182400052052,
+            "n": 94702,
+            "n_perm": 100
+          },
+          "5m": {
+            "observed": 276494.0,
+            "expected": 122847.39086559821,
+            "ratio": 2.2507112121127557,
+            "z": 450.8450494437801,
+            "n": 94702,
+            "n_perm": 100
+          },
+          "10m": {
+            "observed": 283980.0,
+            "expected": 124246.45649897408,
+            "ratio": 2.2856185037546313,
+            "z": 424.56821771752897,
+            "n": 94702,
+            "n_perm": 100
+          },
+          "20m": {
+            "observed": 289478.0,
+            "expected": 126530.42042629958,
+            "ratio": 2.287813468292495,
+            "z": 436.6688404934406,
+            "n": 94702,
+            "n_perm": 100
+          },
+          "30m": {
+            "observed": 291580.0,
+            "expected": 109626.64367183899,
+            "ratio": 2.6597548755832374,
+            "z": 491.7707568602789,
+            "n": 94702,
+            "n_perm": 100
+          }
+        },
+        "distance_resolved": {
+          "value_bands": [
+            {
+              "lo": 0.05,
+              "hi": 0.1,
+              "n": 5355,
+              "mean_stability": 0.8217086834733893
+            },
+            {
+              "lo": 0.1,
+              "hi": 0.3,
+              "n": 18658,
+              "mean_stability": 0.7730866116411191
+            },
+            {
+              "lo": 0.3,
+              "hi": 0.5,
+              "n": 11761,
+              "mean_stability": 0.680469347844571
+            },
+            {
+              "lo": 0.5,
+              "hi": 1.0,
+              "n": 22258,
+              "mean_stability": 0.3453477401383772
+            },
+            {
+              "lo": 1.0,
+              "hi": 2.0,
+              "n": 26252,
+              "mean_stability": 0.2842545329879628
+            },
+            {
+              "lo": 2.0,
+              "hi": null,
+              "n": 10418,
+              "mean_stability": 0.25767901708581303
+            }
+          ],
+          "dist_water_bands": [
+            {
+              "lo": 0,
+              "hi": 25,
+              "n": 28595,
+              "mean_stability": 0.3632453226088477
+            },
+            {
+              "lo": 25,
+              "hi": 50,
+              "n": 1811,
+              "mean_stability": 0.3743787962451684
+            },
+            {
+              "lo": 50,
+              "hi": 100,
+              "n": 2023,
+              "mean_stability": 0.42288680177953536
+            },
+            {
+              "lo": 100,
+              "hi": 200,
+              "n": 2508,
+              "mean_stability": 0.44348086124401914
+            },
+            {
+              "lo": 200,
+              "hi": 400,
+              "n": 3586,
+              "mean_stability": 0.44081148912437257
+            },
+            {
+              "lo": 400,
+              "hi": 800,
+              "n": 11020,
+              "mean_stability": 0.45558076225045374
+            },
+            {
+              "lo": 800,
+              "hi": null,
+              "n": 45158,
+              "mean_stability": 0.5541930554940432
+            }
+          ]
+        },
+        "boundary": {
+          "2m|5m": {
+            "f1": 0.1040076260626804,
+            "iou": 0.05485656350330807,
+            "mhd_m": 9.776608190000381,
+            "n_ref_boundary": 999283,
+            "n_res_boundary": 1029549,
+            "separation": 2.5,
+            "mask_source": "depth at frame 6"
+          },
+          "2m|10m": {
+            "f1": 0.10213432531625047,
+            "iou": 0.05381536042231735,
+            "mhd_m": 10.297241429920952,
+            "n_ref_boundary": 999283,
+            "n_res_boundary": 968224,
+            "separation": 5.0,
+            "mask_source": "depth at frame 6"
+          },
+          "2m|20m": {
+            "f1": 0.06309790418883454,
+            "iou": 0.03257671326046526,
+            "mhd_m": 16.537990254375277,
+            "n_ref_boundary": 999283,
+            "n_res_boundary": 830128,
+            "separation": 10.0,
+            "mask_source": "depth at frame 6"
+          },
+          "2m|30m": {
+            "f1": 0.03645464151993633,
+            "iou": 0.018565724169547607,
+            "mhd_m": 45.91193178486632,
+            "n_ref_boundary": 999283,
+            "n_res_boundary": 380459,
+            "separation": 15.0,
+            "mask_source": "depth at frame 6"
+          }
+        },
+        "front_diagnostic": {
+          "f1": 0.08016838468289285,
+          "iou": 0.04175802921635452,
+          "mhd_m": 90.97682887006746,
+          "n_ref_boundary": 1082036,
+          "n_res_boundary": 436867,
+          "mask_cells_2m": 1807944,
+          "mask_cells_5m": 928533,
+          "mask_ratio_5m_to_2m": 0.5135850446695251,
+          "wet_cells_2m": 2084637,
+          "speed_pass_share_2m": 0.6319200896846789,
+          "wet_cells_5m": 397817,
+          "speed_pass_share_5m": 0.1803869618442651,
+          "note": "front read off the speed field itself with the same absolute 0.05 threshold, kept only to show why the reported family uses a depth field"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "note": "speed = |(hux,hvy)|/h, evaluated at the hour with the largest domain water volume; these are derived quantities, not stored fields.",
+  "scenarios": {
+    "20a": {
+      "frame": 6,
+      "resolutions": {
+        "5m": {
+          "ratio": 2.5,
+          "n": 190726,
+          "pearson": 0.2910753139068908,
+          "spearman": 0.339498504338953,
+          "mean_native": 0.1094835102558136,
+          "mean_agg": 0.6761725544929504,
+          "median_native": 0.04352090507745743,
+          "median_agg": 0.5119989514350891
+        },
+        "10m": {
+          "ratio": 5.0,
+          "n": 60526,
+          "pearson": 0.36624204057152115,
+          "spearman": 0.5038488179917945,
+          "mean_native": 1.5559614896774292,
+          "mean_agg": 0.6381474733352661,
+          "median_native": 0.5778824687004089,
+          "median_agg": 0.430277019739151
+        },
+        "20m": {
+          "ratio": 10.0,
+          "n": 22381,
+          "pearson": 0.3339922024845835,
+          "spearman": 0.3929745757330249,
+          "mean_native": 2.8301966190338135,
+          "mean_agg": 0.6274480819702148,
+          "median_native": 1.557029128074646,
+          "median_agg": 0.43755093216896057
+        },
+        "30m": {
+          "ratio": 15.0,
+          "n": 7660,
+          "pearson": 0.4369859876023432,
+          "spearman": 0.5020649137279273,
+          "mean_native": 3.8146677017211914,
+          "mean_agg": 0.6530553698539734,
+          "median_native": 2.097475528717041,
+          "median_agg": 0.5151128768920898
+        }
+      }
+    },
+    "100a": {
+      "frame": 6,
+      "resolutions": {
+        "5m": {
+          "ratio": 2.5,
+          "n": 236231,
+          "pearson": 0.33688577285383975,
+          "spearman": 0.41479955759069664,
+          "mean_native": 0.09770117700099945,
+          "mean_agg": 0.671513557434082,
+          "median_native": 0.017846105620265007,
+          "median_agg": 0.4758823812007904
+        },
+        "10m": {
+          "ratio": 5.0,
+          "n": 68920,
+          "pearson": 0.3560118700407957,
+          "spearman": 0.4959052508319699,
+          "mean_native": 1.4512062072753906,
+          "mean_agg": 0.6589401364326477,
+          "median_native": 0.5335527658462524,
+          "median_agg": 0.4481784403324127
+        },
+        "20m": {
+          "ratio": 10.0,
+          "n": 24333,
+          "pearson": 0.3186865266780566,
+          "spearman": 0.37560645195201237,
+          "mean_native": 2.723790407180786,
+          "mean_agg": 0.6559611558914185,
+          "median_native": 1.3087937831878662,
+          "median_agg": 0.4644995629787445
+        },
+        "30m": {
+          "ratio": 15.0,
+          "n": 8482,
+          "pearson": 0.40484911681991265,
+          "spearman": 0.46908876348612055,
+          "mean_native": 3.75182843208313,
+          "mean_agg": 0.6988763213157654,
+          "median_native": 1.6340553760528564,
+          "median_agg": 0.5486170053482056
+        }
+      }
+    }
+  }
+}

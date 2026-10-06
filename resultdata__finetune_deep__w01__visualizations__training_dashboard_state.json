@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-09-28 06:27:15",
+  "last_epoch": 200,
+  "logged_epochs": 20,
+  "total_epochs": 300,
+  "best_summary": {
+    "best_csi": 0.5316449562599371,
+    "best_rmse_wet": 0.5700877816726764,
+    "last_epoch": 200,
+    "elapsed_sec": 15662.55754995346
+  },
+  "csi005_improvements": [
+    {
+      "epoch": 181,
+      "value": 0.5018129820624987
+    },
+    {
+      "epoch": 182,
+      "value": 0.5124297360579173
+    },
+    {
+      "epoch": 185,
+      "value": 0.5138450250029564
+    },
+    {
+      "epoch": 192,
+      "value": 0.5164688259363175
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+[cont] 5m ratio 2.5
+[cont]   DEM           r=+1.00000 rho=+1.00000 agg=+1.00000 n=4945582 (22.6s)
+[cont]   Slope         r=+0.95989 rho=+0.96993 agg=+0.97739 n=4945582 (17.3s)
+[cont]   Curv_plan     r=+0.02003 rho=+0.60375 agg=+0.03277 n=4945582 (25.8s)
+[cont]   Curv_profile  r=+0.10051 rho=+0.62992 agg=+0.13230 n=4945580 (26.3s)
+[cont]   Tpi           r=+0.99990 rho=+0.99987 agg=+0.99993 n=4945582 (17.4s)
+[cont]   Twi           r=+0.96257 rho=+0.97099 agg=+1.00000 n=3593179 (14.6s)
+[cont]   Manning       r=+0.99249 rho=+0.92988 agg=+0.98490 n=4945582 (11.5s)
+[cont]   impervious_frac r=+0.99095 rho=+0.93313 agg=+0.98002 n=4945582 (11.6s)
+[cont]   built_frac    r=+0.99482 rho=+0.97919 agg=+0.99416 n=4932740 (10.9s)
+[cont] 10m ratio 5
+[cont]   DEM           r=+0.99999 rho=+0.99999 agg=+1.00000 n=1236137 (11.6s)
+[cont]   Slope         r=+0.85817 rho=+0.89029 agg=+0.94195 n=1236137 (6.7s)
+[cont]   Curv_plan     r=-0.00001 rho=+0.33776 agg=+0.00708 n=1236137 (9.9s)
+[cont]   Curv_profile  r=+0.00033 rho=+0.29473 agg=+0.02416 n=1236136 (9.9s)
+[cont]   Tpi           r=+0.99880 rho=+0.99844 agg=+0.99956 n=1236137 (6.9s)
+[cont]   Twi           r=+0.79626 rho=+0.82361 agg=+1.00000 n=899841 (6.6s)
+[cont]   Manning       r=+0.99078 rho=+0.96489 agg=+0.97379 n=1236137 (5.6s)
+[cont]   impervious_frac r=+0.99215 rho=+0.99092 agg=+0.96484 n=1236137 (5.6s)
+[cont]   built_frac    r=+0.97583 rho=+0.97980 agg=+0.98329 n=1232928 (4.8s)
+[cont] 20m ratio 10
+[cont]   DEM           r=+0.99998 rho=+0.99996 agg=+1.00000 n=309084 (8.8s)
+[cont]   Slope         r=+0.78028 rho=+0.83829 agg=+0.88375 n=309084 (4.3s)
+[cont]   Curv_plan     r=+0.00069 rho=+0.24375 agg=+0.01009 n=309084 (6.6s)
+[cont]   Curv_profile  r=+0.00429 rho=+0.19813 agg=+0.11777 n=309084 (6.5s)
+[cont]   Tpi           r=+0.99439 rho=+0.99296 agg=+0.99800 n=309084 (4.4s)
+[cont]   Twi           r=+0.80971 rho=+0.78960 agg=+0.99999 n=224955 (4.7s)
+[cont]   Manning       r=+0.97307 rho=+0.92729 agg=+0.94951 n=309084 (4.0s)
+[cont]   impervious_frac r=+0.96970 rho=+0.93503 agg=+0.93168 n=309084 (4.1s)
+[cont]   built_frac    r=+0.98001 rho=+0.97366 agg=+0.97812 n=308354 (3.5s)
+[cont] 30m ratio 15
+[cont]   DEM           r=+0.99993 rho=+0.99990 agg=+1.00000 n=137334 (7.9s)
+[cont]   Slope         r=+0.69707 rho=+0.76845 agg=+0.84147 n=137334 (3.8s)
+[cont]   Curv_plan     r=+0.00065 rho=+0.13831 agg=+0.07549 n=137334 (6.0s)
+[cont]   Curv_profile  r=-0.00109 rho=+0.11851 agg=+0.03562 n=137334 (5.8s)
+[cont]   Tpi           r=+0.96440 rho=+0.95624 agg=+0.97877 n=137334 (4.1s)
+[cont]   Twi           r=+0.65700 rho=+0.65146 agg=+0.99999 n=100166 (4.1s)
+[cont]   Manning       r=+0.93926 rho=+0.81506 agg=+0.92350 n=137334 (3.6s)
+[cont]   impervious_frac r=+0.92253 rho=+0.92481 agg=+0.88496 n=137334 (3.9s)
+[cont]   built_frac    r=+0.96398 rho=+0.97026 agg=+0.96729 n=137058 (3.0s)
+[cont]   h_max         r=+0.6294 rho=+0.2666 agg=+0.6410 n=960985 (8.6s)
+[cont]   speed         r=+0.4669 rho=+0.4311 agg=+0.4740 n=102955 (14.7s)
+[cont]   h_max         r=+0.6710 rho=+0.4389 agg=+0.6895 n=275971 (4.8s)
+[cont]   speed         r=+0.2838 rho=+0.3304 agg=+0.3246 n=27424 (11.2s)
+[cont]   h_max         r=+0.3680 rho=+0.3282 agg=+0.3733 n=80492 (3.7s)
+[cont]   speed         r=+0.2186 rho=+0.2163 agg=+0.2597 n=5573 (10.1s)
+[cont]   h_max         r=+0.2788 rho=+0.3600 agg=+0.2226 n=39203 (3.5s)
+[cont]   speed         r=+0.2843 rho=+0.2205 agg=+0.3662 n=2369 (9.7s)
+[cont] done in 399s
+[cat] Landuse          5m agree=0.9955 kappa=0.9936 V=0.9744 n=4948317
+[cat] Building_binary  5m agree=0.9972 kappa=0.9930 V=0.9930 n=4936395
+[cat] Landuse          10m agree=0.9999 kappa=0.9998 V=0.9985 n=1237074
+[cat] Building_binary  10m agree=0.9903 kappa=0.9760 V=0.9760 n=1233819
+[cat] Landuse          20m agree=0.9982 kappa=0.9974 V=0.9982 n=309117
+[cat] Building_binary  20m agree=0.9895 kappa=0.9740 V=0.9740 n=308467
+[cat] Landuse          30m agree=0.9999 kappa=0.9999 V=0.9999 n=137429
+[cat] Building_binary  30m agree=0.9844 kappa=0.9613 V=0.9613 n=137177
+wrote E:\Projects\20260921-JiaChenchen-Paper\outputs\premodel\consistency_partial_step1.json
+[flood] 20a 5m: depth r=0.603 rho=0.230 | speed r=0.291 rho=0.339
+[flood] 20a 10m: depth r=0.655 rho=0.282 | speed r=0.366 rho=0.504
+[flood] 20a 20m: depth r=0.298 rho=0.226 | speed r=0.334 rho=0.393
+[flood] 20a 30m: depth r=0.195 rho=0.286 | speed r=0.437 rho=0.502
+[flood] 100a 5m: depth r=0.641 rho=0.244 | speed r=0.337 rho=0.415
+[flood] 100a 10m: depth r=0.690 rho=0.288 | speed r=0.356 rho=0.496
+[flood] 100a 20m: depth r=0.373 rho=0.228 | speed r=0.319 rho=0.376
+[flood] 100a 30m: depth r=0.223 rho=0.300 | speed r=0.405 rho=0.469
+[flood] wrote consistency_pairs.npz (16 blocks)
+wrote E:\Projects\20260921-JiaChenchen-Paper\outputs\premodel\consistency_partial_step2.json
+[vm] reading 2 m fields
+[vm] support depth 4937385 speed 1807944
+[vm] === h_max ===
+[vm]   2m K=3

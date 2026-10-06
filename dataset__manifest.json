@@ -1,0 +1,91 @@
+{
+  "task": "guided super-resolution of Wellington urban flood depth",
+  "primary_pair": {
+    "lr_m": 10,
+    "hr_m": 2,
+    "scale": 5,
+    "target": "h_max"
+  },
+  "cascade": [
+    "30m->10m",
+    "10m->2m"
+  ],
+  "patch_m": 480,
+  "domain": {
+    "west": 1743040.0,
+    "north": 5442720.0,
+    "width_m": 12960,
+    "height_m": 23040,
+    "crs_inferred": "EPSG:2193"
+  },
+  "return_periods_with_flood": [
+    "20a",
+    "100a"
+  ],
+  "return_periods_rain_only": [
+    "50a"
+  ],
+  "dropped_frames": "t=0 s is dry and is excluded by the reader",
+  "landuse": {
+    "1": {
+      "name": "building",
+      "manning": 0.5,
+      "infiltration": 0.0
+    },
+    "2": {
+      "name": "road",
+      "manning": 0.013,
+      "infiltration": 0.0
+    },
+    "3": {
+      "name": "impervious",
+      "manning": 0.013,
+      "infiltration": 0.0
+    },
+    "4": {
+      "name": "pervious",
+      "manning": 0.1,
+      "infiltration": 9.17e-07
+    },
+    "5": {
+      "name": "missing_in_source",
+      "manning": 0.035,
+      "infiltration": 4.58e-07
+    },
+    "6": {
+      "name": "green",
+      "manning": 0.1,
+      "infiltration": 9.17e-07
+    },
+    "7": {
+      "name": "water",
+      "manning": 0.035,
+      "infiltration": 0.0
+    }
+  },
+  "static_channels": [
+    "DEM",
+    "Slope",
+    "Aspect_sin",
+    "Aspect_cos",
+    "Curv_plan",
+    "Curv_profile",
+    "Tpi",
+    "Twi",
+    "Dist_building",
+    "Dist_road",
+    "Dist_water",
+    "Infiltration",
+    "Manning",
+    "Landuse",
+    "Building_binary"
+  ],
+  "dem_nest_check_10m_vs_2m": {
+    "where": "land patch iy=0 ix=20, 2 m block-mean versus 10 m",
+    "n": 2304,
+    "corr": 1.0,
+    "rmse_m": 6.24e-6,
+    "bias_10m_minus_2m_m": -2.28e-7
+  },
+  "split": "north-to-south bands with a one-patch buffer; see index/patches_480m.json"
+}

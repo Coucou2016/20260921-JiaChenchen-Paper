@@ -1,0 +1,2422 @@
+[
+  {
+    "index": 0,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 4,
+    "deep_px": 66,
+    "mid_px": 699,
+    "peak": 1.9000279903411865,
+    "valid": 1.0
+  },
+  {
+    "index": 1,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 4,
+    "deep_px": 182,
+    "mid_px": 871,
+    "peak": 2.601599931716919,
+    "valid": 1.0
+  },
+  {
+    "index": 2,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 5,
+    "deep_px": 668,
+    "mid_px": 1403,
+    "peak": 4.920104503631592,
+    "valid": 1.0
+  },
+  {
+    "index": 3,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 5,
+    "deep_px": 890,
+    "mid_px": 1716,
+    "peak": 5.501685619354248,
+    "valid": 1.0
+  },
+  {
+    "index": 4,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 6,
+    "deep_px": 3995,
+    "mid_px": 4710,
+    "peak": 21.377315521240234,
+    "valid": 1.0
+  },
+  {
+    "index": 5,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 6,
+    "deep_px": 4672,
+    "mid_px": 5496,
+    "peak": 23.665870666503906,
+    "valid": 1.0
+  },
+  {
+    "index": 6,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 7,
+    "deep_px": 225,
+    "mid_px": 1718,
+    "peak": 1.6987380981445312,
+    "valid": 1.0
+  },
+  {
+    "index": 7,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 7,
+    "deep_px": 370,
+    "mid_px": 2277,
+    "peak": 1.7176560163497925,
+    "valid": 1.0
+  },
+  {
+    "index": 8,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 8,
+    "deep_px": 218,
+    "mid_px": 2923,
+    "peak": 4.1169843673706055,
+    "valid": 1.0
+  },
+  {
+    "index": 9,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 8,
+    "deep_px": 377,
+    "mid_px": 3778,
+    "peak": 4.366289138793945,
+    "valid": 1.0
+  },
+  {
+    "index": 10,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 9,
+    "deep_px": 509,
+    "mid_px": 1460,
+    "peak": 9.468074798583984,
+    "valid": 1.0
+  },
+  {
+    "index": 11,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 9,
+    "deep_px": 620,
+    "mid_px": 1737,
+    "peak": 9.716800689697266,
+    "valid": 1.0
+  },
+  {
+    "index": 12,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 10,
+    "deep_px": 1850,
+    "mid_px": 7764,
+    "peak": 8.359505653381348,
+    "valid": 1.0
+  },
+  {
+    "index": 13,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 10,
+    "deep_px": 2710,
+    "mid_px": 9058,
+    "peak": 9.350610733032227,
+    "valid": 1.0
+  },
+  {
+    "index": 14,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 11,
+    "deep_px": 1768,
+    "mid_px": 4998,
+    "peak": 4.395086288452148,
+    "valid": 1.0
+  },
+  {
+    "index": 15,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 11,
+    "deep_px": 2133,
+    "mid_px": 5999,
+    "peak": 4.5639567375183105,
+    "valid": 1.0
+  },
+  {
+    "index": 16,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 12,
+    "deep_px": 717,
+    "mid_px": 4198,
+    "peak": 2.9292893409729004,
+    "valid": 1.0
+  },
+  {
+    "index": 17,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 12,
+    "deep_px": 974,
+    "mid_px": 6306,
+    "peak": 3.6136837005615234,
+    "valid": 1.0
+  },
+  {
+    "index": 18,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 13,
+    "deep_px": 185,
+    "mid_px": 1872,
+    "peak": 6.36811637878418,
+    "valid": 1.0
+  },
+  {
+    "index": 19,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 13,
+    "deep_px": 349,
+    "mid_px": 2688,
+    "peak": 8.372467994689941,
+    "valid": 1.0
+  },
+  {
+    "index": 20,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 14,
+    "deep_px": 680,
+    "mid_px": 2394,
+    "peak": 4.899433135986328,
+    "valid": 1.0
+  },
+  {
+    "index": 21,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 14,
+    "deep_px": 913,
+    "mid_px": 3275,
+    "peak": 5.884049892425537,
+    "valid": 1.0
+  },
+  {
+    "index": 22,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 15,
+    "deep_px": 211,
+    "mid_px": 12636,
+    "peak": 6.1462907791137695,
+    "valid": 1.0
+  },
+  {
+    "index": 23,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 15,
+    "deep_px": 1448,
+    "mid_px": 16214,
+    "peak": 8.050016403198242,
+    "valid": 1.0
+  },
+  {
+    "index": 24,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 16,
+    "deep_px": 116,
+    "mid_px": 4511,
+    "peak": 3.444915294647217,
+    "valid": 1.0
+  },
+  {
+    "index": 25,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 16,
+    "deep_px": 265,
+    "mid_px": 7131,
+    "peak": 4.24721622467041,
+    "valid": 1.0
+  },
+  {
+    "index": 26,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 17,
+    "deep_px": 111,
+    "mid_px": 1205,
+    "peak": 2.4865379333496094,
+    "valid": 1.0
+  },
+  {
+    "index": 27,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 17,
+    "deep_px": 144,
+    "mid_px": 1599,
+    "peak": 3.277337074279785,
+    "valid": 1.0
+  },
+  {
+    "index": 28,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 18,
+    "deep_px": 37,
+    "mid_px": 21648,
+    "peak": 5.925404071807861,
+    "valid": 1.0
+  },
+  {
+    "index": 29,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 18,
+    "deep_px": 1112,
+    "mid_px": 28121,
+    "peak": 7.8549652099609375,
+    "valid": 1.0
+  },
+  {
+    "index": 30,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 19,
+    "deep_px": 294,
+    "mid_px": 3216,
+    "peak": 4.644711971282959,
+    "valid": 1.0
+  },
+  {
+    "index": 31,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 19,
+    "deep_px": 369,
+    "mid_px": 10138,
+    "peak": 5.072648048400879,
+    "valid": 1.0
+  },
+  {
+    "index": 32,
+    "scenario": "20a",
+    "iy": 38,
+    "ix": 20,
+    "deep_px": 368,
+    "mid_px": 1326,
+    "peak": 4.853683948516846,
+    "valid": 0.91625
+  },
+  {
+    "index": 33,
+    "scenario": "100a",
+    "iy": 38,
+    "ix": 20,
+    "deep_px": 491,
+    "mid_px": 1612,
+    "peak": 5.361308574676514,
+    "valid": 0.91625
+  },
+  {
+    "index": 34,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 3,
+    "deep_px": 90,
+    "mid_px": 560,
+    "peak": 3.385211229324341,
+    "valid": 1.0
+  },
+  {
+    "index": 35,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 3,
+    "deep_px": 166,
+    "mid_px": 699,
+    "peak": 3.466074228286743,
+    "valid": 1.0
+  },
+  {
+    "index": 36,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 4,
+    "deep_px": 6,
+    "mid_px": 263,
+    "peak": 1.5332962274551392,
+    "valid": 1.0
+  },
+  {
+    "index": 37,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 4,
+    "deep_px": 23,
+    "mid_px": 381,
+    "peak": 1.6382277011871338,
+    "valid": 1.0
+  },
+  {
+    "index": 38,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 5,
+    "deep_px": 19,
+    "mid_px": 105,
+    "peak": 3.1490859985351562,
+    "valid": 1.0
+  },
+  {
+    "index": 39,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 5,
+    "deep_px": 22,
+    "mid_px": 182,
+    "peak": 3.2505643367767334,
+    "valid": 1.0
+  },
+  {
+    "index": 40,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 6,
+    "deep_px": 154,
+    "mid_px": 2469,
+    "peak": 2.157381057739258,
+    "valid": 1.0
+  },
+  {
+    "index": 41,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 6,
+    "deep_px": 294,
+    "mid_px": 3057,
+    "peak": 2.3689560890197754,
+    "valid": 1.0
+  },
+  {
+    "index": 42,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 7,
+    "deep_px": 717,
+    "mid_px": 1747,
+    "peak": 4.249239921569824,
+    "valid": 1.0
+  },
+  {
+    "index": 43,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 7,
+    "deep_px": 873,
+    "mid_px": 2111,
+    "peak": 4.704339981079102,
+    "valid": 1.0
+  },
+  {
+    "index": 44,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 8,
+    "deep_px": 645,
+    "mid_px": 2878,
+    "peak": 4.354994297027588,
+    "valid": 1.0
+  },
+  {
+    "index": 45,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 8,
+    "deep_px": 927,
+    "mid_px": 3909,
+    "peak": 4.592360496520996,
+    "valid": 1.0
+  },
+  {
+    "index": 46,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 9,
+    "deep_px": 225,
+    "mid_px": 940,
+    "peak": 3.3181557655334473,
+    "valid": 1.0
+  },
+  {
+    "index": 47,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 9,
+    "deep_px": 272,
+    "mid_px": 1161,
+    "peak": 4.051652908325195,
+    "valid": 1.0
+  },
+  {
+    "index": 48,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 10,
+    "deep_px": 766,
+    "mid_px": 2306,
+    "peak": 3.6387734413146973,
+    "valid": 1.0
+  },
+  {
+    "index": 49,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 10,
+    "deep_px": 937,
+    "mid_px": 2749,
+    "peak": 3.8160576820373535,
+    "valid": 1.0
+  },
+  {
+    "index": 50,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 11,
+    "deep_px": 2994,
+    "mid_px": 5181,
+    "peak": 4.135284423828125,
+    "valid": 1.0
+  },
+  {
+    "index": 51,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 11,
+    "deep_px": 3567,
+    "mid_px": 6598,
+    "peak": 4.286073207855225,
+    "valid": 1.0
+  },
+  {
+    "index": 52,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 12,
+    "deep_px": 325,
+    "mid_px": 1184,
+    "peak": 4.0130391120910645,
+    "valid": 1.0
+  },
+  {
+    "index": 53,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 12,
+    "deep_px": 408,
+    "mid_px": 1466,
+    "peak": 4.271804332733154,
+    "valid": 1.0
+  },
+  {
+    "index": 54,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 13,
+    "deep_px": 369,
+    "mid_px": 1086,
+    "peak": 5.255382061004639,
+    "valid": 1.0
+  },
+  {
+    "index": 55,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 13,
+    "deep_px": 483,
+    "mid_px": 1320,
+    "peak": 6.0889363288879395,
+    "valid": 1.0
+  },
+  {
+    "index": 56,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 14,
+    "deep_px": 350,
+    "mid_px": 2575,
+    "peak": 4.687832832336426,
+    "valid": 1.0
+  },
+  {
+    "index": 57,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 14,
+    "deep_px": 512,
+    "mid_px": 3216,
+    "peak": 6.175770282745361,
+    "valid": 1.0
+  },
+  {
+    "index": 58,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 15,
+    "deep_px": 59,
+    "mid_px": 2472,
+    "peak": 2.8530960083007812,
+    "valid": 1.0
+  },
+  {
+    "index": 59,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 15,
+    "deep_px": 174,
+    "mid_px": 3497,
+    "peak": 3.680497407913208,
+    "valid": 1.0
+  },
+  {
+    "index": 60,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 16,
+    "deep_px": 155,
+    "mid_px": 4273,
+    "peak": 2.9332079887390137,
+    "valid": 1.0
+  },
+  {
+    "index": 61,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 16,
+    "deep_px": 208,
+    "mid_px": 5922,
+    "peak": 3.8527731895446777,
+    "valid": 1.0
+  },
+  {
+    "index": 62,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 17,
+    "deep_px": 26,
+    "mid_px": 1528,
+    "peak": 3.619669198989868,
+    "valid": 1.0
+  },
+  {
+    "index": 63,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 17,
+    "deep_px": 38,
+    "mid_px": 3099,
+    "peak": 4.726182460784912,
+    "valid": 1.0
+  },
+  {
+    "index": 64,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 18,
+    "deep_px": 18,
+    "mid_px": 6375,
+    "peak": 4.441845417022705,
+    "valid": 1.0
+  },
+  {
+    "index": 65,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 18,
+    "deep_px": 31,
+    "mid_px": 13957,
+    "peak": 5.843186378479004,
+    "valid": 1.0
+  },
+  {
+    "index": 66,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 19,
+    "deep_px": 533,
+    "mid_px": 4134,
+    "peak": 7.027634143829346,
+    "valid": 1.0
+  },
+  {
+    "index": 67,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 19,
+    "deep_px": 1007,
+    "mid_px": 5815,
+    "peak": 9.2645902633667,
+    "valid": 1.0
+  },
+  {
+    "index": 68,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 20,
+    "deep_px": 570,
+    "mid_px": 1639,
+    "peak": 5.844511032104492,
+    "valid": 1.0
+  },
+  {
+    "index": 69,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 20,
+    "deep_px": 772,
+    "mid_px": 1894,
+    "peak": 5.948852062225342,
+    "valid": 1.0
+  },
+  {
+    "index": 70,
+    "scenario": "20a",
+    "iy": 39,
+    "ix": 21,
+    "deep_px": 215,
+    "mid_px": 1907,
+    "peak": 5.242598533630371,
+    "valid": 0.91390625
+  },
+  {
+    "index": 71,
+    "scenario": "100a",
+    "iy": 39,
+    "ix": 21,
+    "deep_px": 242,
+    "mid_px": 2527,
+    "peak": 6.857980251312256,
+    "valid": 0.91390625
+  },
+  {
+    "index": 72,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 3,
+    "deep_px": 0,
+    "mid_px": 122,
+    "peak": 0.8171054720878601,
+    "valid": 1.0
+  },
+  {
+    "index": 73,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 3,
+    "deep_px": 0,
+    "mid_px": 216,
+    "peak": 0.9612658619880676,
+    "valid": 1.0
+  },
+  {
+    "index": 74,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 4,
+    "deep_px": 85,
+    "mid_px": 982,
+    "peak": 2.298274040222168,
+    "valid": 1.0
+  },
+  {
+    "index": 75,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 4,
+    "deep_px": 177,
+    "mid_px": 1316,
+    "peak": 2.648773431777954,
+    "valid": 1.0
+  },
+  {
+    "index": 76,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 5,
+    "deep_px": 1651,
+    "mid_px": 2773,
+    "peak": 18.48235511779785,
+    "valid": 1.0
+  },
+  {
+    "index": 77,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 5,
+    "deep_px": 1751,
+    "mid_px": 3119,
+    "peak": 18.793399810791016,
+    "valid": 1.0
+  },
+  {
+    "index": 78,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 6,
+    "deep_px": 1567,
+    "mid_px": 2851,
+    "peak": 10.445075035095215,
+    "valid": 1.0
+  },
+  {
+    "index": 79,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 6,
+    "deep_px": 1762,
+    "mid_px": 3672,
+    "peak": 10.902448654174805,
+    "valid": 1.0
+  },
+  {
+    "index": 80,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 7,
+    "deep_px": 2,
+    "mid_px": 145,
+    "peak": 1.3159759044647217,
+    "valid": 1.0
+  },
+  {
+    "index": 81,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 7,
+    "deep_px": 3,
+    "mid_px": 220,
+    "peak": 1.3305319547653198,
+    "valid": 1.0
+  },
+  {
+    "index": 82,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 8,
+    "deep_px": 1576,
+    "mid_px": 3501,
+    "peak": 4.1845550537109375,
+    "valid": 1.0
+  },
+  {
+    "index": 83,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 8,
+    "deep_px": 1918,
+    "mid_px": 4355,
+    "peak": 4.6931962966918945,
+    "valid": 1.0
+  },
+  {
+    "index": 84,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 9,
+    "deep_px": 8,
+    "mid_px": 907,
+    "peak": 2.0898337364196777,
+    "valid": 1.0
+  },
+  {
+    "index": 85,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 9,
+    "deep_px": 11,
+    "mid_px": 1259,
+    "peak": 2.1607630252838135,
+    "valid": 1.0
+  },
+  {
+    "index": 86,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 10,
+    "deep_px": 935,
+    "mid_px": 2352,
+    "peak": 5.4210591316223145,
+    "valid": 1.0
+  },
+  {
+    "index": 87,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 10,
+    "deep_px": 1022,
+    "mid_px": 3070,
+    "peak": 5.516138076782227,
+    "valid": 1.0
+  },
+  {
+    "index": 88,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 11,
+    "deep_px": 780,
+    "mid_px": 5876,
+    "peak": 3.6709184646606445,
+    "valid": 1.0
+  },
+  {
+    "index": 89,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 11,
+    "deep_px": 1013,
+    "mid_px": 7879,
+    "peak": 3.7729482650756836,
+    "valid": 1.0
+  },
+  {
+    "index": 90,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 12,
+    "deep_px": 46,
+    "mid_px": 1894,
+    "peak": 3.8932530879974365,
+    "valid": 1.0
+  },
+  {
+    "index": 91,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 12,
+    "deep_px": 55,
+    "mid_px": 1998,
+    "peak": 4.39600944519043,
+    "valid": 1.0
+  },
+  {
+    "index": 92,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 13,
+    "deep_px": 270,
+    "mid_px": 703,
+    "peak": 6.0074782371521,
+    "valid": 1.0
+  },
+  {
+    "index": 93,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 13,
+    "deep_px": 314,
+    "mid_px": 827,
+    "peak": 6.527857303619385,
+    "valid": 1.0
+  },
+  {
+    "index": 94,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 14,
+    "deep_px": 438,
+    "mid_px": 3153,
+    "peak": 5.690406322479248,
+    "valid": 0.9914236111111111
+  },
+  {
+    "index": 95,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 14,
+    "deep_px": 595,
+    "mid_px": 4749,
+    "peak": 5.88417387008667,
+    "valid": 0.9914236111111111
+  },
+  {
+    "index": 96,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 15,
+    "deep_px": 7,
+    "mid_px": 2986,
+    "peak": 1.7365639209747314,
+    "valid": 0.7096180555555556
+  },
+  {
+    "index": 97,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 15,
+    "deep_px": 14,
+    "mid_px": 4151,
+    "peak": 2.2654871940612793,
+    "valid": 0.7096180555555556
+  },
+  {
+    "index": 98,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 16,
+    "deep_px": 0,
+    "mid_px": 4101,
+    "peak": 0.961853563785553,
+    "valid": 0.7936458333333334
+  },
+  {
+    "index": 99,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 16,
+    "deep_px": 24,
+    "mid_px": 5300,
+    "peak": 1.071871042251587,
+    "valid": 0.7936458333333334
+  },
+  {
+    "index": 100,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 17,
+    "deep_px": 29,
+    "mid_px": 7626,
+    "peak": 1.4687663316726685,
+    "valid": 1.0
+  },
+  {
+    "index": 101,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 17,
+    "deep_px": 70,
+    "mid_px": 11570,
+    "peak": 1.6080577373504639,
+    "valid": 1.0
+  },
+  {
+    "index": 102,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 18,
+    "deep_px": 325,
+    "mid_px": 10901,
+    "peak": 1.6778368949890137,
+    "valid": 1.0
+  },
+  {
+    "index": 103,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 18,
+    "deep_px": 515,
+    "mid_px": 13875,
+    "peak": 1.7020485401153564,
+    "valid": 1.0
+  },
+  {
+    "index": 104,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 19,
+    "deep_px": 706,
+    "mid_px": 11297,
+    "peak": 2.8208985328674316,
+    "valid": 1.0
+  },
+  {
+    "index": 105,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 19,
+    "deep_px": 1808,
+    "mid_px": 13618,
+    "peak": 3.326551675796509,
+    "valid": 1.0
+  },
+  {
+    "index": 106,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 20,
+    "deep_px": 483,
+    "mid_px": 1105,
+    "peak": 5.261902809143066,
+    "valid": 1.0
+  },
+  {
+    "index": 107,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 20,
+    "deep_px": 597,
+    "mid_px": 1244,
+    "peak": 6.5390777587890625,
+    "valid": 1.0
+  },
+  {
+    "index": 108,
+    "scenario": "20a",
+    "iy": 40,
+    "ix": 21,
+    "deep_px": 552,
+    "mid_px": 2889,
+    "peak": 7.039051055908203,
+    "valid": 1.0
+  },
+  {
+    "index": 109,
+    "scenario": "100a",
+    "iy": 40,
+    "ix": 21,
+    "deep_px": 687,
+    "mid_px": 5024,
+    "peak": 9.160984992980957,
+    "valid": 1.0
+  },
+  {
+    "index": 110,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 1,
+    "deep_px": 10,
+    "mid_px": 158,
+    "peak": 1.9325562715530396,
+    "valid": 1.0
+  },
+  {
+    "index": 111,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 1,
+    "deep_px": 14,
+    "mid_px": 237,
+    "peak": 2.2211368083953857,
+    "valid": 1.0
+  },
+  {
+    "index": 112,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 2,
+    "deep_px": 1,
+    "mid_px": 213,
+    "peak": 1.1060878038406372,
+    "valid": 1.0
+  },
+  {
+    "index": 113,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 2,
+    "deep_px": 9,
+    "mid_px": 337,
+    "peak": 1.246303677558899,
+    "valid": 1.0
+  },
+  {
+    "index": 114,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 3,
+    "deep_px": 291,
+    "mid_px": 1246,
+    "peak": 3.4345884323120117,
+    "valid": 1.0
+  },
+  {
+    "index": 115,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 3,
+    "deep_px": 441,
+    "mid_px": 1603,
+    "peak": 4.1472907066345215,
+    "valid": 1.0
+  },
+  {
+    "index": 116,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 4,
+    "deep_px": 207,
+    "mid_px": 678,
+    "peak": 3.8822124004364014,
+    "valid": 1.0
+  },
+  {
+    "index": 117,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 4,
+    "deep_px": 236,
+    "mid_px": 818,
+    "peak": 3.929758071899414,
+    "valid": 1.0
+  },
+  {
+    "index": 118,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 5,
+    "deep_px": 82,
+    "mid_px": 364,
+    "peak": 2.5596115589141846,
+    "valid": 1.0
+  },
+  {
+    "index": 119,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 5,
+    "deep_px": 121,
+    "mid_px": 510,
+    "peak": 3.0739798545837402,
+    "valid": 1.0
+  },
+  {
+    "index": 120,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 6,
+    "deep_px": 295,
+    "mid_px": 1046,
+    "peak": 3.370492696762085,
+    "valid": 1.0
+  },
+  {
+    "index": 121,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 6,
+    "deep_px": 399,
+    "mid_px": 1362,
+    "peak": 3.6642470359802246,
+    "valid": 1.0
+  },
+  {
+    "index": 122,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 7,
+    "deep_px": 639,
+    "mid_px": 2196,
+    "peak": 6.048511028289795,
+    "valid": 1.0
+  },
+  {
+    "index": 123,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 7,
+    "deep_px": 740,
+    "mid_px": 3161,
+    "peak": 6.333156585693359,
+    "valid": 1.0
+  },
+  {
+    "index": 124,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 8,
+    "deep_px": 2050,
+    "mid_px": 4690,
+    "peak": 5.649261474609375,
+    "valid": 1.0
+  },
+  {
+    "index": 125,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 8,
+    "deep_px": 2774,
+    "mid_px": 5975,
+    "peak": 6.367329120635986,
+    "valid": 1.0
+  },
+  {
+    "index": 126,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 9,
+    "deep_px": 891,
+    "mid_px": 1605,
+    "peak": 5.4709930419921875,
+    "valid": 1.0
+  },
+  {
+    "index": 127,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 9,
+    "deep_px": 1069,
+    "mid_px": 1876,
+    "peak": 6.5280985832214355,
+    "valid": 1.0
+  },
+  {
+    "index": 128,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 10,
+    "deep_px": 511,
+    "mid_px": 1245,
+    "peak": 4.821626663208008,
+    "valid": 1.0
+  },
+  {
+    "index": 129,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 10,
+    "deep_px": 606,
+    "mid_px": 1524,
+    "peak": 5.130706310272217,
+    "valid": 1.0
+  },
+  {
+    "index": 130,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 11,
+    "deep_px": 902,
+    "mid_px": 5727,
+    "peak": 5.513512134552002,
+    "valid": 1.0
+  },
+  {
+    "index": 131,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 11,
+    "deep_px": 1176,
+    "mid_px": 6395,
+    "peak": 5.673014163970947,
+    "valid": 1.0
+  },
+  {
+    "index": 132,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 12,
+    "deep_px": 361,
+    "mid_px": 978,
+    "peak": 5.056926250457764,
+    "valid": 1.0
+  },
+  {
+    "index": 133,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 12,
+    "deep_px": 453,
+    "mid_px": 1181,
+    "peak": 5.314077377319336,
+    "valid": 1.0
+  },
+  {
+    "index": 134,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 13,
+    "deep_px": 185,
+    "mid_px": 1487,
+    "peak": 5.152807235717773,
+    "valid": 1.0
+  },
+  {
+    "index": 135,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 13,
+    "deep_px": 230,
+    "mid_px": 1793,
+    "peak": 5.679217338562012,
+    "valid": 1.0
+  },
+  {
+    "index": 136,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 17,
+    "deep_px": 0,
+    "mid_px": 2974,
+    "peak": 0.7267743349075317,
+    "valid": 1.0
+  },
+  {
+    "index": 137,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 17,
+    "deep_px": 0,
+    "mid_px": 5406,
+    "peak": 0.8296308517456055,
+    "valid": 1.0
+  },
+  {
+    "index": 138,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 18,
+    "deep_px": 462,
+    "mid_px": 4601,
+    "peak": 2.162240505218506,
+    "valid": 1.0
+  },
+  {
+    "index": 139,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 18,
+    "deep_px": 511,
+    "mid_px": 5595,
+    "peak": 2.1927475929260254,
+    "valid": 1.0
+  },
+  {
+    "index": 140,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 19,
+    "deep_px": 261,
+    "mid_px": 1072,
+    "peak": 4.281215667724609,
+    "valid": 1.0
+  },
+  {
+    "index": 141,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 19,
+    "deep_px": 327,
+    "mid_px": 1386,
+    "peak": 5.175726890563965,
+    "valid": 1.0
+  },
+  {
+    "index": 142,
+    "scenario": "20a",
+    "iy": 41,
+    "ix": 20,
+    "deep_px": 263,
+    "mid_px": 732,
+    "peak": 5.971862316131592,
+    "valid": 0.7866840277777778
+  },
+  {
+    "index": 143,
+    "scenario": "100a",
+    "iy": 41,
+    "ix": 20,
+    "deep_px": 303,
+    "mid_px": 987,
+    "peak": 6.058956146240234,
+    "valid": 0.7866840277777778
+  },
+  {
+    "index": 144,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 0,
+    "deep_px": 0,
+    "mid_px": 57,
+    "peak": 0.8588476181030273,
+    "valid": 1.0
+  },
+  {
+    "index": 145,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 0,
+    "deep_px": 0,
+    "mid_px": 109,
+    "peak": 0.9074172973632812,
+    "valid": 1.0
+  },
+  {
+    "index": 146,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 1,
+    "deep_px": 243,
+    "mid_px": 980,
+    "peak": 2.942017078399658,
+    "valid": 1.0
+  },
+  {
+    "index": 147,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 1,
+    "deep_px": 391,
+    "mid_px": 1181,
+    "peak": 3.3698368072509766,
+    "valid": 1.0
+  },
+  {
+    "index": 148,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 2,
+    "deep_px": 245,
+    "mid_px": 1008,
+    "peak": 4.127079010009766,
+    "valid": 1.0
+  },
+  {
+    "index": 149,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 2,
+    "deep_px": 357,
+    "mid_px": 1233,
+    "peak": 5.086015224456787,
+    "valid": 1.0
+  },
+  {
+    "index": 150,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 3,
+    "deep_px": 624,
+    "mid_px": 1181,
+    "peak": 3.8359999656677246,
+    "valid": 1.0
+  },
+  {
+    "index": 151,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 3,
+    "deep_px": 843,
+    "mid_px": 1385,
+    "peak": 4.391117095947266,
+    "valid": 1.0
+  },
+  {
+    "index": 152,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 4,
+    "deep_px": 0,
+    "mid_px": 100,
+    "peak": 0.771539568901062,
+    "valid": 1.0
+  },
+  {
+    "index": 153,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 4,
+    "deep_px": 0,
+    "mid_px": 159,
+    "peak": 0.8611760139465332,
+    "valid": 1.0
+  },
+  {
+    "index": 154,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 5,
+    "deep_px": 1210,
+    "mid_px": 2414,
+    "peak": 4.009401798248291,
+    "valid": 1.0
+  },
+  {
+    "index": 155,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 5,
+    "deep_px": 1567,
+    "mid_px": 2922,
+    "peak": 4.301261901855469,
+    "valid": 1.0
+  },
+  {
+    "index": 156,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 6,
+    "deep_px": 0,
+    "mid_px": 39,
+    "peak": 0.466573566198349,
+    "valid": 1.0
+  },
+  {
+    "index": 157,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 6,
+    "deep_px": 0,
+    "mid_px": 56,
+    "peak": 0.551635205745697,
+    "valid": 1.0
+  },
+  {
+    "index": 158,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 7,
+    "deep_px": 82,
+    "mid_px": 531,
+    "peak": 4.202723503112793,
+    "valid": 1.0
+  },
+  {
+    "index": 159,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 7,
+    "deep_px": 110,
+    "mid_px": 713,
+    "peak": 4.461183071136475,
+    "valid": 1.0
+  },
+  {
+    "index": 160,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 8,
+    "deep_px": 1423,
+    "mid_px": 4732,
+    "peak": 4.840353488922119,
+    "valid": 1.0
+  },
+  {
+    "index": 161,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 8,
+    "deep_px": 1653,
+    "mid_px": 7019,
+    "peak": 5.122164249420166,
+    "valid": 1.0
+  },
+  {
+    "index": 162,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 9,
+    "deep_px": 113,
+    "mid_px": 940,
+    "peak": 3.862700939178467,
+    "valid": 1.0
+  },
+  {
+    "index": 163,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 9,
+    "deep_px": 132,
+    "mid_px": 1158,
+    "peak": 3.890289545059204,
+    "valid": 1.0
+  },
+  {
+    "index": 164,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 10,
+    "deep_px": 6844,
+    "mid_px": 9587,
+    "peak": 3.5649921894073486,
+    "valid": 1.0
+  },
+  {
+    "index": 165,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 10,
+    "deep_px": 7908,
+    "mid_px": 10374,
+    "peak": 4.073001861572266,
+    "valid": 1.0
+  },
+  {
+    "index": 166,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 11,
+    "deep_px": 1262,
+    "mid_px": 7815,
+    "peak": 4.324934005737305,
+    "valid": 1.0
+  },
+  {
+    "index": 167,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 11,
+    "deep_px": 2448,
+    "mid_px": 9481,
+    "peak": 5.034291744232178,
+    "valid": 1.0
+  },
+  {
+    "index": 168,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 12,
+    "deep_px": 311,
+    "mid_px": 1021,
+    "peak": 5.572587490081787,
+    "valid": 1.0
+  },
+  {
+    "index": 169,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 12,
+    "deep_px": 392,
+    "mid_px": 1202,
+    "peak": 6.266438961029053,
+    "valid": 1.0
+  },
+  {
+    "index": 170,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 13,
+    "deep_px": 158,
+    "mid_px": 1581,
+    "peak": 3.4364752769470215,
+    "valid": 1.0
+  },
+  {
+    "index": 171,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 13,
+    "deep_px": 202,
+    "mid_px": 2015,
+    "peak": 3.6575353145599365,
+    "valid": 1.0
+  },
+  {
+    "index": 172,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 17,
+    "deep_px": 289,
+    "mid_px": 1675,
+    "peak": 4.542535305023193,
+    "valid": 0.7146527777777778
+  },
+  {
+    "index": 173,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 17,
+    "deep_px": 313,
+    "mid_px": 2123,
+    "peak": 4.628833770751953,
+    "valid": 0.7146527777777778
+  },
+  {
+    "index": 174,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 18,
+    "deep_px": 199,
+    "mid_px": 786,
+    "peak": 4.908274173736572,
+    "valid": 1.0
+  },
+  {
+    "index": 175,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 18,
+    "deep_px": 231,
+    "mid_px": 1025,
+    "peak": 5.0485920906066895,
+    "valid": 1.0
+  },
+  {
+    "index": 176,
+    "scenario": "20a",
+    "iy": 42,
+    "ix": 19,
+    "deep_px": 370,
+    "mid_px": 1058,
+    "peak": 4.773688316345215,
+    "valid": 0.9943923611111111
+  },
+  {
+    "index": 177,
+    "scenario": "100a",
+    "iy": 42,
+    "ix": 19,
+    "deep_px": 453,
+    "mid_px": 1232,
+    "peak": 5.150400161743164,
+    "valid": 0.9943923611111111
+  },
+  {
+    "index": 178,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 0,
+    "deep_px": 1,
+    "mid_px": 115,
+    "peak": 1.012476921081543,
+    "valid": 1.0
+  },
+  {
+    "index": 179,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 0,
+    "deep_px": 1,
+    "mid_px": 166,
+    "peak": 1.1254663467407227,
+    "valid": 1.0
+  },
+  {
+    "index": 180,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 1,
+    "deep_px": 864,
+    "mid_px": 1841,
+    "peak": 5.3214898109436035,
+    "valid": 1.0
+  },
+  {
+    "index": 181,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 1,
+    "deep_px": 1185,
+    "mid_px": 2133,
+    "peak": 6.0905561447143555,
+    "valid": 1.0
+  },
+  {
+    "index": 182,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 2,
+    "deep_px": 207,
+    "mid_px": 461,
+    "peak": 4.0119948387146,
+    "valid": 1.0
+  },
+  {
+    "index": 183,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 2,
+    "deep_px": 262,
+    "mid_px": 598,
+    "peak": 4.564341068267822,
+    "valid": 1.0
+  },
+  {
+    "index": 184,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 3,
+    "deep_px": 793,
+    "mid_px": 1247,
+    "peak": 5.024257183074951,
+    "valid": 1.0
+  },
+  {
+    "index": 185,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 3,
+    "deep_px": 954,
+    "mid_px": 1470,
+    "peak": 5.537463665008545,
+    "valid": 1.0
+  },
+  {
+    "index": 186,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 4,
+    "deep_px": 1,
+    "mid_px": 115,
+    "peak": 1.1209759712219238,
+    "valid": 1.0
+  },
+  {
+    "index": 187,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 4,
+    "deep_px": 3,
+    "mid_px": 175,
+    "peak": 1.7346328496932983,
+    "valid": 1.0
+  },
+  {
+    "index": 188,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 5,
+    "deep_px": 295,
+    "mid_px": 604,
+    "peak": 3.3612279891967773,
+    "valid": 1.0
+  },
+  {
+    "index": 189,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 5,
+    "deep_px": 356,
+    "mid_px": 759,
+    "peak": 3.9023385047912598,
+    "valid": 1.0
+  },
+  {
+    "index": 190,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 6,
+    "deep_px": 1294,
+    "mid_px": 1889,
+    "peak": 4.119378566741943,
+    "valid": 1.0
+  },
+  {
+    "index": 191,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 6,
+    "deep_px": 1576,
+    "mid_px": 2278,
+    "peak": 4.718605041503906,
+    "valid": 1.0
+  },
+  {
+    "index": 192,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 7,
+    "deep_px": 51,
+    "mid_px": 320,
+    "peak": 2.5687217712402344,
+    "valid": 1.0
+  },
+  {
+    "index": 193,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 7,
+    "deep_px": 88,
+    "mid_px": 424,
+    "peak": 2.796902894973755,
+    "valid": 1.0
+  },
+  {
+    "index": 194,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 8,
+    "deep_px": 3068,
+    "mid_px": 5801,
+    "peak": 4.666583061218262,
+    "valid": 1.0
+  },
+  {
+    "index": 195,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 8,
+    "deep_px": 3953,
+    "mid_px": 7420,
+    "peak": 4.840819835662842,
+    "valid": 1.0
+  },
+  {
+    "index": 196,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 9,
+    "deep_px": 681,
+    "mid_px": 1684,
+    "peak": 5.41486120223999,
+    "valid": 1.0
+  },
+  {
+    "index": 197,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 9,
+    "deep_px": 965,
+    "mid_px": 1926,
+    "peak": 5.649094104766846,
+    "valid": 1.0
+  },
+  {
+    "index": 198,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 10,
+    "deep_px": 4403,
+    "mid_px": 12233,
+    "peak": 5.802615165710449,
+    "valid": 1.0
+  },
+  {
+    "index": 199,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 10,
+    "deep_px": 5756,
+    "mid_px": 14902,
+    "peak": 7.3411946296691895,
+    "valid": 1.0
+  },
+  {
+    "index": 200,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 11,
+    "deep_px": 761,
+    "mid_px": 2413,
+    "peak": 4.146183013916016,
+    "valid": 1.0
+  },
+  {
+    "index": 201,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 11,
+    "deep_px": 1046,
+    "mid_px": 2822,
+    "peak": 5.1875834465026855,
+    "valid": 1.0
+  },
+  {
+    "index": 202,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 12,
+    "deep_px": 277,
+    "mid_px": 833,
+    "peak": 5.16741943359375,
+    "valid": 0.9804166666666667
+  },
+  {
+    "index": 203,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 12,
+    "deep_px": 335,
+    "mid_px": 1051,
+    "peak": 5.43816614151001,
+    "valid": 0.9804166666666667
+  },
+  {
+    "index": 204,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 13,
+    "deep_px": 271,
+    "mid_px": 1731,
+    "peak": 4.49454927444458,
+    "valid": 0.9052951388888889
+  },
+  {
+    "index": 205,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 13,
+    "deep_px": 445,
+    "mid_px": 2424,
+    "peak": 4.972177982330322,
+    "valid": 0.9052951388888889
+  },
+  {
+    "index": 206,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 18,
+    "deep_px": 6,
+    "mid_px": 293,
+    "peak": 1.2115014791488647,
+    "valid": 0.99796875
+  },
+  {
+    "index": 207,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 18,
+    "deep_px": 9,
+    "mid_px": 480,
+    "peak": 1.2337545156478882,
+    "valid": 0.99796875
+  },
+  {
+    "index": 208,
+    "scenario": "20a",
+    "iy": 43,
+    "ix": 19,
+    "deep_px": 344,
+    "mid_px": 1771,
+    "peak": 3.251713752746582,
+    "valid": 0.8712152777777777
+  },
+  {
+    "index": 209,
+    "scenario": "100a",
+    "iy": 43,
+    "ix": 19,
+    "deep_px": 443,
+    "mid_px": 2169,
+    "peak": 3.767690658569336,
+    "valid": 0.8712152777777777
+  },
+  {
+    "index": 210,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 0,
+    "deep_px": 2,
+    "mid_px": 236,
+    "peak": 1.2462561130523682,
+    "valid": 1.0
+  },
+  {
+    "index": 211,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 0,
+    "deep_px": 5,
+    "mid_px": 327,
+    "peak": 1.3533174991607666,
+    "valid": 1.0
+  },
+  {
+    "index": 212,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 1,
+    "deep_px": 1101,
+    "mid_px": 2280,
+    "peak": 3.9552035331726074,
+    "valid": 1.0
+  },
+  {
+    "index": 213,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 1,
+    "deep_px": 1409,
+    "mid_px": 2719,
+    "peak": 4.536355018615723,
+    "valid": 1.0
+  },
+  {
+    "index": 214,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 2,
+    "deep_px": 1214,
+    "mid_px": 2098,
+    "peak": 3.985414505004883,
+    "valid": 1.0
+  },
+  {
+    "index": 215,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 2,
+    "deep_px": 1520,
+    "mid_px": 2333,
+    "peak": 4.505605697631836,
+    "valid": 1.0
+  },
+  {
+    "index": 216,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 3,
+    "deep_px": 569,
+    "mid_px": 789,
+    "peak": 3.6769392490386963,
+    "valid": 1.0
+  },
+  {
+    "index": 217,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 3,
+    "deep_px": 687,
+    "mid_px": 861,
+    "peak": 4.247368335723877,
+    "valid": 1.0
+  },
+  {
+    "index": 218,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 4,
+    "deep_px": 61,
+    "mid_px": 739,
+    "peak": 2.1100013256073,
+    "valid": 1.0
+  },
+  {
+    "index": 219,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 4,
+    "deep_px": 119,
+    "mid_px": 931,
+    "peak": 2.738507032394409,
+    "valid": 1.0
+  },
+  {
+    "index": 220,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 5,
+    "deep_px": 29,
+    "mid_px": 187,
+    "peak": 2.0338330268859863,
+    "valid": 0.8760069444444445
+  },
+  {
+    "index": 221,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 5,
+    "deep_px": 43,
+    "mid_px": 205,
+    "peak": 2.1200222969055176,
+    "valid": 0.8760069444444445
+  },
+  {
+    "index": 222,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 6,
+    "deep_px": 567,
+    "mid_px": 1114,
+    "peak": 4.709212303161621,
+    "valid": 0.8040798611111111
+  },
+  {
+    "index": 223,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 6,
+    "deep_px": 743,
+    "mid_px": 1306,
+    "peak": 5.552980422973633,
+    "valid": 0.8040798611111111
+  },
+  {
+    "index": 224,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 7,
+    "deep_px": 410,
+    "mid_px": 612,
+    "peak": 6.395519733428955,
+    "valid": 0.9671180555555555
+  },
+  {
+    "index": 225,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 7,
+    "deep_px": 487,
+    "mid_px": 748,
+    "peak": 7.249415874481201,
+    "valid": 0.9671180555555555
+  },
+  {
+    "index": 226,
+    "scenario": "20a",
+    "iy": 44,
+    "ix": 9,
+    "deep_px": 441,
+    "mid_px": 1060,
+    "peak": 4.794559955596924,
+    "valid": 1.0
+  },
+  {
+    "index": 227,
+    "scenario": "100a",
+    "iy": 44,
+    "ix": 9,
+    "deep_px": 507,
+    "mid_px": 1198,
+    "peak": 5.948448181152344,
+    "valid": 1.0
+  },
+  {
+    "index": 228,
+    "scenario": "20a",
+    "iy": 45,
+    "ix": 0,
+    "deep_px": 53,
+    "mid_px": 740,
+    "peak": 2.814753770828247,
+    "valid": 1.0
+  },
+  {
+    "index": 229,
+    "scenario": "100a",
+    "iy": 45,
+    "ix": 0,
+    "deep_px": 137,
+    "mid_px": 891,
+    "peak": 3.3007845878601074,
+    "valid": 1.0
+  },
+  {
+    "index": 230,
+    "scenario": "20a",
+    "iy": 45,
+    "ix": 1,
+    "deep_px": 2058,
+    "mid_px": 2670,
+    "peak": 4.719987392425537,
+    "valid": 1.0
+  },
+  {
+    "index": 231,
+    "scenario": "100a",
+    "iy": 45,
+    "ix": 1,
+    "deep_px": 2401,
+    "mid_px": 3084,
+    "peak": 5.516255855560303,
+    "valid": 1.0
+  },
+  {
+    "index": 232,
+    "scenario": "20a",
+    "iy": 45,
+    "ix": 2,
+    "deep_px": 624,
+    "mid_px": 787,
+    "peak": 5.648298740386963,
+    "valid": 1.0
+  },
+  {
+    "index": 233,
+    "scenario": "100a",
+    "iy": 45,
+    "ix": 2,
+    "deep_px": 728,
+    "mid_px": 958,
+    "peak": 6.7158894538879395,
+    "valid": 1.0
+  },
+  {
+    "index": 234,
+    "scenario": "20a",
+    "iy": 45,
+    "ix": 3,
+    "deep_px": 0,
+    "mid_px": 41,
+    "peak": 0.6627345681190491,
+    "valid": 0.7503472222222223
+  },
+  {
+    "index": 235,
+    "scenario": "100a",
+    "iy": 45,
+    "ix": 3,
+    "deep_px": 0,
+    "mid_px": 59,
+    "peak": 0.7962691783905029,
+    "valid": 0.7503472222222223
+  },
+  {
+    "index": 236,
+    "scenario": "20a",
+    "iy": 46,
+    "ix": 0,
+    "deep_px": 117,
+    "mid_px": 437,
+    "peak": 2.7247376441955566,
+    "valid": 0.9984722222222222
+  },
+  {
+    "index": 237,
+    "scenario": "100a",
+    "iy": 46,
+    "ix": 0,
+    "deep_px": 199,
+    "mid_px": 514,
+    "peak": 3.457509756088257,
+    "valid": 0.9984722222222222
+  },
+  {
+    "index": 238,
+    "scenario": "20a",
+    "iy": 46,
+    "ix": 1,
+    "deep_px": 0,
+    "mid_px": 68,
+    "peak": 0.9281141757965088,
+    "valid": 1.0
+  },
+  {
+    "index": 239,
+    "scenario": "100a",
+    "iy": 46,
+    "ix": 1,
+    "deep_px": 5,
+    "mid_px": 152,
+    "peak": 1.0999845266342163,
+    "valid": 1.0
+  },
+  {
+    "index": 240,
+    "scenario": "20a",
+    "iy": 46,
+    "ix": 2,
+    "deep_px": 1333,
+    "mid_px": 1576,
+    "peak": 5.6552042961120605,
+    "valid": 0.9999652777777778
+  },
+  {
+    "index": 241,
+    "scenario": "100a",
+    "iy": 46,
+    "ix": 2,
+    "deep_px": 1559,
+    "mid_px": 1809,
+    "peak": 6.474301815032959,
+    "valid": 0.9999652777777778
+  }
+]

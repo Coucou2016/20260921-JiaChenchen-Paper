@@ -1,0 +1,11 @@
+[flood] 20a: read 2 m h_max (11520, 6480) in 1.9s
+[flood] 20a 5m: rmse=0.3391 bias=+0.0072 csi0.05=0.325 ratio=2.5 (22.6s)
+[flood] 20a 10m: rmse=0.3160 bias=+0.0046 csi0.05=0.363 ratio=5.0 (11.4s)
+[flood] 20a 20m: rmse=0.3950 bias=+0.0101 csi0.05=0.279 ratio=10.0 (8.3s)
+[flood] 20a 30m: rmse=0.4392 bias=+0.0113 csi0.05=0.282 ratio=15.0 (8.4s)
+[flood] 100a: read 2 m h_max (11520, 6480) in 1.8s
+[flood] 100a 5m: rmse=0.4012 bias=+0.0115 csi0.05=0.350 ratio=2.5 (22.9s)
+[flood] 100a 10m: rmse=0.3726 bias=+0.0080 csi0.05=0.392 ratio=5.0 (11.6s)
+[flood] 100a 20m: rmse=0.4603 bias=+0.0081 csi0.05=0.305 ratio=10.0 (8.5s)
+[flood] 100a 30m: rmse=0.5257 bias=+0.0101 csi0.05=0.320 ratio=15.0 (8.0s)
+wrote E:\Projects\20260921-JiaChenchen-Paper\outputs\premodel\flood_error.json

@@ -1,0 +1,67 @@
+# Ablation matrix (plan §十六). Run with --ablation A0..A7 or --geo_mode.
+# A0 LR only
+# A1 LR + DEM
+# A2 LR + DEM + Building
+# A3 LR + topography
+# A4 LR + all 15 static
+# A5 A4 + residual
+# A6 A5 + wet head
+# A7 full (residual + wet + flood loss) == default V0
+
+ablations:
+  A0:
+    geo_mode: lr_only
+    model:
+      geo_encoder: {in_cont: 0, use_landuse: false, width: 48}
+      predict_residual: true
+      predict_wet: false
+    loss: {name: masked_l1}
+  A1:
+    geo_mode: dem
+    model:
+      geo_encoder: {in_cont: 1, use_landuse: false, width: 48}
+      predict_residual: true
+      predict_wet: false
+    loss: {name: masked_l1}
+  A2:
+    geo_mode: dem_building
+    model:
+      geo_encoder: {in_cont: 2, use_landuse: false, width: 48}
+      predict_residual: true
+      predict_wet: false
+    loss: {name: masked_l1}
+  A3:
+    geo_mode: topography
+    model:
+      geo_encoder: {in_cont: 8, use_landuse: false, width: 48}
+      predict_residual: true
+      predict_wet: false
+    loss: {name: masked_l1}
+  A4:
+    geo_mode: all
+    model:
+      geo_encoder: {in_cont: 14, use_landuse: true, width: 48}
+      predict_residual: false
+      predict_wet: false
+    loss: {name: masked_l1}
+  A5:
+    geo_mode: all
+    model:
+      predict_residual: true
+      predict_wet: false
+    loss: {name: masked_l1}
+  A6:
+    geo_mode: all
+    model:
+      predict_residual: true
+      predict_wet: true
+    loss: {name: masked_l1}
+  A7:
+    geo_mode: all
+    model:
+      predict_residual: true
+      predict_wet: true
+    loss: {name: flood}
+
+# inherits defaults from v0_10m2m_hmax.yaml when merged by train script
+base: configs/v0_10m2m_hmax.yaml

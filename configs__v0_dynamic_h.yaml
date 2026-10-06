@@ -1,0 +1,50 @@
+dataset:
+  root: dataset
+  lr_res: 10
+  hr_res: 2
+  target: h
+  include_flow: true
+  geo_mode: all
+  scenarios: [20a, 100a]
+
+model:
+  name: hydrogeo_srno
+  hydro_encoder:
+    in_channels: 4   # h, hux, hvy, valid
+    width: 64
+    blocks: 8
+  geo_encoder:
+    width: 48
+    in_cont: 14
+    landuse_embedding: 8
+    use_landuse: true
+  operator:
+    width: 192
+    heads: 8
+    layers: 2
+  depth_ref: 0.10
+  predict_residual: true
+  predict_wet: true
+
+loss:
+  name: flood
+
+train:
+  batch_size: 1
+  epochs: 100
+  amp: false
+  num_workers: 0
+  seed: 42
+
+optimizer:
+  type: AdamW
+  lr: 0.0001
+  weight_decay: 0.00001
+
+early_stopping:
+  metric: CSI_005
+  mode: max
+  patience: 20
+
+output:
+  dir: outputs/v0_dynamic_h

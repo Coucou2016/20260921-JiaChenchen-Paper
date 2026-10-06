@@ -1,0 +1,1472 @@
+{
+  "2m": {
+    "dims": {
+      "y": 11520,
+      "x": 6480
+    },
+    "vars": [
+      {
+        "name": "DEM",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.0019999742507935,
+        "sample_max": 489.3857421875,
+        "sample_mean": 138.72536266606002,
+        "sample_finite_frac": 0.4125874125874126,
+        "n_unique_sample": 22490
+      },
+      {
+        "name": "Slope",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.5497007369995117,
+        "sample_mean": 0.34245928219227395,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 22607
+      },
+      {
+        "name": "Aspect_sin",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.04607754533843163,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 22547
+      },
+      {
+        "name": "Aspect_cos",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.0,
+        "sample_max": 1.0,
+        "sample_mean": -0.010533221390217387,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 22569
+      },
+      {
+        "name": "Curv_plan",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -80.56021118164062,
+        "sample_max": 1813.78369140625,
+        "sample_mean": 0.08651404548289604,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 22610
+      },
+      {
+        "name": "Curv_profile",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -785.3917846679688,
+        "sample_max": 27.24681282043457,
+        "sample_mean": -0.07611093474655617,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 22613
+      },
+      {
+        "name": "Tpi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -39.98854064941406,
+        "sample_max": 38.33110809326172,
+        "sample_mean": -0.0463381737280556,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 22607
+      },
+      {
+        "name": "Twi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.05733870342373848,
+        "sample_max": 20.95050621032715,
+        "sample_mean": 4.725488066685409,
+        "sample_finite_frac": 0.3635270979020979,
+        "n_unique_sample": 19946
+      },
+      {
+        "name": "Dist_building",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 57.27128601074219,
+        "sample_mean": 0.04652048629448926,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 30
+      },
+      {
+        "name": "Dist_road",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 986.8941040039062,
+        "sample_mean": 61.38460391589663,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 3435
+      },
+      {
+        "name": "Dist_water",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 7678.94091796875,
+        "sample_mean": 1644.4423274099552,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 19979
+      },
+      {
+        "name": "Infiltration",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 9.17000022582215e-07,
+        "sample_mean": 4.848042224040176e-07,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 3
+      },
+      {
+        "name": "Manning",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.013000000268220901,
+        "sample_max": 0.5,
+        "sample_mean": 0.22032639001546572,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 4
+      },
+      {
+        "name": "Landuse",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.0,
+        "sample_max": 7.0,
+        "sample_mean": 3.555942975680805,
+        "sample_finite_frac": 0.4126056235431235,
+        "n_unique_sample": 7
+      },
+      {
+        "name": "Building_binary",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          11520,
+          6480
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.2300933154206456,
+        "sample_finite_frac": 0.5015479312354313,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "y",
+        "coord": true,
+        "dims": [
+          "y"
+        ],
+        "dtype": "float64"
+      },
+      {
+        "name": "x",
+        "coord": true,
+        "dims": [
+          "x"
+        ],
+        "dtype": "float64"
+      }
+    ]
+  },
+  "5m": {
+    "dims": {
+      "y": 4608,
+      "x": 2592
+    },
+    "vars": [
+      {
+        "name": "DEM",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.0019999742507935,
+        "sample_max": 478.4200744628906,
+        "sample_mean": 138.09188825035665,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3616
+      },
+      {
+        "name": "Slope",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.4967697858810425,
+        "sample_mean": 0.33350704981340007,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3619
+      },
+      {
+        "name": "Aspect_sin",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.03828324946949196,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3613
+      },
+      {
+        "name": "Aspect_cos",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.0,
+        "sample_max": 0.9999999403953552,
+        "sample_mean": -0.015275142793345743,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3617
+      },
+      {
+        "name": "Curv_plan",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -2.7231764793395996,
+        "sample_max": 14.362635612487793,
+        "sample_mean": 0.005914485418568893,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3618
+      },
+      {
+        "name": "Curv_profile",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -15.726042747497559,
+        "sample_max": 3.632702589035034,
+        "sample_mean": -0.004867916169536901,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3619
+      },
+      {
+        "name": "Tpi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -37.455078125,
+        "sample_max": 34.57278823852539,
+        "sample_mean": -0.03129142133719155,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3619
+      },
+      {
+        "name": "Twi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.9093027710914612,
+        "sample_max": 16.126144409179688,
+        "sample_mean": 4.653110144859979,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3620
+      },
+      {
+        "name": "Dist_building",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 58.52349853515625,
+        "sample_mean": 0.11063044731605781,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 13
+      },
+      {
+        "name": "Dist_road",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 972.3296508789062,
+        "sample_mean": 60.94251412826492,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 601
+      },
+      {
+        "name": "Dist_water",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 7655.1044921875,
+        "sample_mean": 1640.1027625641484,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3251
+      },
+      {
+        "name": "Infiltration",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 9.17000022582215e-07,
+        "sample_mean": 4.843269932387738e-07,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 3
+      },
+      {
+        "name": "Manning",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.013000000268220901,
+        "sample_max": 0.5,
+        "sample_mean": 0.22250538607002193,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 4
+      },
+      {
+        "name": "Landuse",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.0,
+        "sample_max": 7.0,
+        "sample_mean": 3.5575807787903893,
+        "sample_finite_frac": 0.408,
+        "n_unique_sample": 7
+      },
+      {
+        "name": "Building_binary",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          4608,
+          2592
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.28262076624097726,
+        "sample_finite_frac": 0.40585915492957747,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "y",
+        "coord": true,
+        "dims": [
+          "y"
+        ],
+        "dtype": "float64"
+      },
+      {
+        "name": "x",
+        "coord": true,
+        "dims": [
+          "x"
+        ],
+        "dtype": "float64"
+      }
+    ]
+  },
+  "10m": {
+    "dims": {
+      "y": 2304,
+      "x": 1296
+    },
+    "vars": [
+      {
+        "name": "DEM",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.8861100077629089,
+        "sample_max": 438.26849365234375,
+        "sample_mean": 137.6212154821568,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 903
+      },
+      {
+        "name": "Slope",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.000874313001986593,
+        "sample_max": 1.4193463325500488,
+        "sample_mean": 0.3200776798299056,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 903
+      },
+      {
+        "name": "Aspect_sin",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.9999997615814209,
+        "sample_max": 0.9999886751174927,
+        "sample_mean": 0.033772668744523,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 902
+      },
+      {
+        "name": "Aspect_cos",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.9999973773956299,
+        "sample_max": 0.9999858140945435,
+        "sample_mean": 0.0051760323066419095,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 902
+      },
+      {
+        "name": "Curv_plan",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -2.8094780445098877,
+        "sample_max": 1.4934608936309814,
+        "sample_mean": -0.0010154381938141245,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 903
+      },
+      {
+        "name": "Curv_profile",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -7.918805122375488,
+        "sample_max": 1.1057714223861694,
+        "sample_mean": -0.017121088290209332,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 903
+      },
+      {
+        "name": "Tpi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -34.06352233886719,
+        "sample_max": 25.870834350585938,
+        "sample_mean": -0.30603381974884575,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 903
+      },
+      {
+        "name": "Twi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.5371779203414917,
+        "sample_max": 10.905665397644043,
+        "sample_mean": 4.68516220536871,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 903
+      },
+      {
+        "name": "Dist_building",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 40.0,
+        "sample_mean": 0.14396456256921372,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 4
+      },
+      {
+        "name": "Dist_road",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 893.756103515625,
+        "sample_mean": 61.36131942258985,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 153
+      },
+      {
+        "name": "Dist_water",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 7606.31298828125,
+        "sample_mean": 1651.855205700643,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 813
+      },
+      {
+        "name": "Infiltration",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 9.17000022582215e-07,
+        "sample_mean": 4.965769776939436e-07,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 3
+      },
+      {
+        "name": "Manning",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.013000000268220901,
+        "sample_max": 0.5,
+        "sample_mean": 0.21632336739322805,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 4
+      },
+      {
+        "name": "Landuse",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.0,
+        "sample_max": 6.0,
+        "sample_mean": 3.6057585825027685,
+        "sample_finite_frac": 0.39814814814814814,
+        "n_unique_sample": 6
+      },
+      {
+        "name": "Building_binary",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          2304,
+          1296
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.26837416481069043,
+        "sample_finite_frac": 0.3959435626102293,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "y",
+        "coord": true,
+        "dims": [
+          "y"
+        ],
+        "dtype": "float64"
+      },
+      {
+        "name": "x",
+        "coord": true,
+        "dims": [
+          "x"
+        ],
+        "dtype": "float64"
+      }
+    ]
+  },
+  "20m": {
+    "dims": {
+      "y": 1152,
+      "x": 648
+    },
+    "vars": [
+      {
+        "name": "DEM",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.8481274843215942,
+        "sample_max": 436.5045471191406,
+        "sample_mean": 139.8095864262192,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Slope",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0019001294858753681,
+        "sample_max": 1.2612420320510864,
+        "sample_mean": 0.2940324754883883,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Aspect_sin",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.999915361404419,
+        "sample_max": 0.9999850988388062,
+        "sample_mean": 0.05479327508532182,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Aspect_cos",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.9999662637710571,
+        "sample_max": 0.9999693632125854,
+        "sample_mean": 0.0003194577088619506,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Curv_plan",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.406568318605423,
+        "sample_max": 0.23088958859443665,
+        "sample_mean": -0.0031051043235664874,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Curv_profile",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.36125171184539795,
+        "sample_max": 0.1700020432472229,
+        "sample_mean": -0.0052212842716635585,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Tpi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -28.880645751953125,
+        "sample_max": 27.11603546142578,
+        "sample_mean": -0.1284395604686164,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Twi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 2.1524651050567627,
+        "sample_max": 10.489441871643066,
+        "sample_mean": 4.6955574582063075,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 233
+      },
+      {
+        "name": "Dist_building",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 40.0,
+        "sample_mean": 0.2575107296137339,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 3
+      },
+      {
+        "name": "Dist_road",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 524.9761962890625,
+        "sample_mean": 64.27250252261182,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 50
+      },
+      {
+        "name": "Dist_water",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 7253.27490234375,
+        "sample_mean": 1613.1744698782336,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 214
+      },
+      {
+        "name": "Infiltration",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 9.17000022582215e-07,
+        "sample_mean": 4.978497973701638e-07,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 3
+      },
+      {
+        "name": "Manning",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.013000000268220901,
+        "sample_max": 0.5,
+        "sample_mean": 0.21253648152486962,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 4
+      },
+      {
+        "name": "Landuse",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.0,
+        "sample_max": 6.0,
+        "sample_mean": 3.643776824034335,
+        "sample_finite_frac": 0.4045138888888889,
+        "n_unique_sample": 6
+      },
+      {
+        "name": "Building_binary",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          1152,
+          648
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.22943722943722944,
+        "sample_finite_frac": 0.4010416666666667,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "y",
+        "coord": true,
+        "dims": [
+          "y"
+        ],
+        "dtype": "float64"
+      },
+      {
+        "name": "x",
+        "coord": true,
+        "dims": [
+          "x"
+        ],
+        "dtype": "float64"
+      }
+    ]
+  },
+  "30m": {
+    "dims": {
+      "y": 768,
+      "x": 432
+    },
+    "vars": [
+      {
+        "name": "DEM",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.7389310598373413,
+        "sample_max": 423.09417724609375,
+        "sample_mean": 131.6175791140899,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Slope",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0017424182733520865,
+        "sample_max": 0.7057321667671204,
+        "sample_mean": 0.25595022511817694,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Aspect_sin",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.999993622303009,
+        "sample_max": 0.9998233914375305,
+        "sample_mean": -0.07022451607564699,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Aspect_cos",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.9999900460243225,
+        "sample_max": 0.9999991059303284,
+        "sample_mean": -0.04034324432723224,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Curv_plan",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -0.36505770683288574,
+        "sample_max": 0.06470911204814911,
+        "sample_mean": -0.002624526430206493,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Curv_profile",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -1.1211957931518555,
+        "sample_max": 0.19151604175567627,
+        "sample_mean": -0.021120935435020038,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Tpi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": -35.002349853515625,
+        "sample_max": 25.881240844726562,
+        "sample_mean": -1.4920207921741078,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Twi",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 2.7172813415527344,
+        "sample_max": 9.656903266906738,
+        "sample_mean": 4.870615938334789,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 103
+      },
+      {
+        "name": "Dist_building",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 30.0,
+        "sample_mean": 0.2912621359223301,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "Dist_road",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 330.0,
+        "sample_mean": 45.17737623788778,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 16
+      },
+      {
+        "name": "Dist_water",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 7001.3857421875,
+        "sample_mean": 1687.4094999739268,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 91
+      },
+      {
+        "name": "Infiltration",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 9.17000022582215e-07,
+        "sample_mean": 4.6295146771140955e-07,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "Manning",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.013000000268220901,
+        "sample_max": 0.5,
+        "sample_mean": 0.2365922337958535,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 3
+      },
+      {
+        "name": "Landuse",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 1.0,
+        "sample_max": 6.0,
+        "sample_mean": 3.4466019417475726,
+        "sample_finite_frac": 0.4087301587301587,
+        "n_unique_sample": 5
+      },
+      {
+        "name": "Building_binary",
+        "dims": [
+          "y",
+          "x"
+        ],
+        "shape": [
+          768,
+          432
+        ],
+        "dtype": "float32",
+        "attrs": {},
+        "sample_min": 0.0,
+        "sample_max": 1.0,
+        "sample_mean": 0.29411764705882354,
+        "sample_finite_frac": 0.40476190476190477,
+        "n_unique_sample": 2
+      },
+      {
+        "name": "y",
+        "coord": true,
+        "dims": [
+          "y"
+        ],
+        "dtype": "float64"
+      },
+      {
+        "name": "x",
+        "coord": true,
+        "dims": [
+          "x"
+        ],
+        "dtype": "float64"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "20a": {
+    "n_seconds": 21600,
+    "total_m": 0.07319998741149902,
+    "total_mm": 73.19998931884766,
+    "peak_m_per_s": 0.00021083332831040025,
+    "peak_index_s": 10801,
+    "has_flood_output": true,
+    "units": "m/s depth increment (1 s steps, 6 h). Inferred from the 6 h total."
+  },
+  "50a": {
+    "n_seconds": 21600,
+    "total_m": 0.08640000224113464,
+    "total_mm": 86.4000015258789,
+    "peak_m_per_s": 0.0002519444387871772,
+    "peak_index_s": 10801,
+    "has_flood_output": false,
+    "units": "m/s depth increment (1 s steps, 6 h). Inferred from the 6 h total."
+  },
+  "100a": {
+    "n_seconds": 21600,
+    "total_m": 0.0965999960899353,
+    "total_mm": 96.5999984741211,
+    "peak_m_per_s": 0.0002861111133825034,
+    "peak_index_s": 10801,
+    "has_flood_output": true,
+    "units": "m/s depth increment (1 s steps, 6 h). Inferred from the 6 h total."
+  }
+}

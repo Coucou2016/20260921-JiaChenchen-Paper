@@ -1,0 +1,342 @@
+{
+  "5m": {
+    "n_tiles": 974,
+    "scenario_split": {
+      "20a": 487,
+      "100a": 487
+    },
+    "vif": {
+      "scen_100a": 1.1243072662953113,
+      "mean_slope": 346.77092048233897,
+      "within_cell_dem_std": 298.9435580262966,
+      "mean_tpi": 1.6014413836014758,
+      "impervious_frac": 3.303590497648915,
+      "building_frac": 4.534092532771471,
+      "landuse_entropy": 1.3776199268088358,
+      "green_frac": 13.42330516575283,
+      "mean_dist_water": 758.6374948944209,
+      "min_dist_water": 755.2216191034444,
+      "water_frac_fine": 1.373158927283946,
+      "wet_frac": 4.9914625864399405
+    },
+    "univariate_r2": {
+      "rain_scenario": 0.007394685763866149,
+      "slope_roughness": 0.16229565304147864,
+      "impervious": 0.05683190189328069,
+      "built_landuse": 0.5501605784123862,
+      "river_drainage": 0.20918556567807356,
+      "wet_state": 2.0327456598190352e-05
+    },
+    "responses": {
+      "csi@0.05": {
+        "r2_full": 0.8045879463952764,
+        "shapley": {
+          "rain_scenario": 0.004264821038525357,
+          "slope_roughness": 0.09962252040621845,
+          "impervious": 0.021948654817067852,
+          "built_landuse": 0.5266254373531601,
+          "river_drainage": 0.10209762952232374,
+          "wet_state": 0.0500288832579808
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.005300627554306094,
+          "slope_roughness": 0.12381806221749697,
+          "impervious": 0.027279373144231716,
+          "built_landuse": 0.654528121770346,
+          "river_drainage": 0.1268943065574654,
+          "wet_state": 0.06217950875615368
+        },
+        "share_of_total": {
+          "rain_scenario": 0.004264821038525357,
+          "slope_roughness": 0.09962252040621845,
+          "impervious": 0.021948654817067852,
+          "built_landuse": 0.5266254373531601,
+          "river_drainage": 0.10209762952232374,
+          "wet_state": 0.0500288832579808
+        }
+      },
+      "pearson_wet": {
+        "r2_full": 0.4084458033125531,
+        "shapley": {
+          "rain_scenario": 0.0021545693160384496,
+          "slope_roughness": 0.03986007523994763,
+          "impervious": 0.007432864568056208,
+          "built_landuse": 0.20595190559694707,
+          "river_drainage": 0.14384441654356078,
+          "wet_state": 0.009201972048002927
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.005275043343730278,
+          "slope_roughness": 0.0975896310273647,
+          "impervious": 0.01819792126097178,
+          "built_landuse": 0.5042331294057818,
+          "river_drainage": 0.35217503859009514,
+          "wet_state": 0.022529236372056307
+        },
+        "share_of_total": {
+          "rain_scenario": 0.0021545693160384496,
+          "slope_roughness": 0.03986007523994763,
+          "impervious": 0.007432864568056208,
+          "built_landuse": 0.20595190559694707,
+          "river_drainage": 0.14384441654356078,
+          "wet_state": 0.009201972048002927
+        }
+      }
+    }
+  },
+  "10m": {
+    "n_tiles": 974,
+    "scenario_split": {
+      "20a": 487,
+      "100a": 487
+    },
+    "vif": {
+      "scen_100a": 1.1303652502899653,
+      "mean_slope": 208.96928802155477,
+      "within_cell_dem_std": 190.41176201247882,
+      "mean_tpi": 1.6767257729732863,
+      "impervious_frac": 3.2460159167092892,
+      "building_frac": 4.297787120666341,
+      "landuse_entropy": 1.4127049948064647,
+      "green_frac": 12.592095026043644,
+      "mean_dist_water": 764.2605395955361,
+      "min_dist_water": 759.6259706676059,
+      "water_frac_fine": 1.387257461556609,
+      "wet_frac": 4.701940447216096
+    },
+    "univariate_r2": {
+      "rain_scenario": 0.004107815903046874,
+      "slope_roughness": 0.28131224345577555,
+      "impervious": 0.2545770580634734,
+      "built_landuse": 0.8111250594589506,
+      "river_drainage": 0.22826491378483282,
+      "wet_state": 0.19231129436181782
+    },
+    "responses": {
+      "csi@0.05": {
+        "r2_full": 0.8653066119666017,
+        "shapley": {
+          "rain_scenario": 0.004357942445964568,
+          "slope_roughness": 0.08929820540065936,
+          "impervious": 0.07491030707306144,
+          "built_landuse": 0.5633263903390038,
+          "river_drainage": 0.07882060378994588,
+          "wet_state": 0.05459316291796674
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.005036298562494715,
+          "slope_roughness": 0.10319833936979786,
+          "impervious": 0.0865708247655835,
+          "built_landuse": 0.65101362054627,
+          "river_drainage": 0.09108979718854629,
+          "wet_state": 0.06309111956730763
+        },
+        "share_of_total": {
+          "rain_scenario": 0.004357942445964568,
+          "slope_roughness": 0.08929820540065936,
+          "impervious": 0.07491030707306144,
+          "built_landuse": 0.5633263903390038,
+          "river_drainage": 0.07882060378994588,
+          "wet_state": 0.05459316291796674
+        }
+      },
+      "pearson_wet": {
+        "r2_full": 0.4535830411485706,
+        "shapley": {
+          "rain_scenario": 0.0023542451007286637,
+          "slope_roughness": 0.054033032256693016,
+          "impervious": 0.012610395384251731,
+          "built_landuse": 0.23154931096860742,
+          "river_drainage": 0.1396291033832368,
+          "wet_state": 0.013406954055052931
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.0051903287538423055,
+          "slope_roughness": 0.1191248952338907,
+          "impervious": 0.02780173472164981,
+          "built_landuse": 0.5104893480635306,
+          "river_drainage": 0.3078358111221831,
+          "wet_state": 0.029557882104903253
+        },
+        "share_of_total": {
+          "rain_scenario": 0.0023542451007286637,
+          "slope_roughness": 0.054033032256693016,
+          "impervious": 0.012610395384251731,
+          "built_landuse": 0.23154931096860742,
+          "river_drainage": 0.1396291033832368,
+          "wet_state": 0.013406954055052931
+        }
+      }
+    }
+  },
+  "20m": {
+    "n_tiles": 974,
+    "scenario_split": {
+      "20a": 487,
+      "100a": 487
+    },
+    "vif": {
+      "scen_100a": 1.139823075360103,
+      "mean_slope": 84.39239731249343,
+      "within_cell_dem_std": 82.70409878925355,
+      "mean_tpi": 1.7635740495100032,
+      "impervious_frac": 3.1903971863715235,
+      "building_frac": 4.238941418936001,
+      "landuse_entropy": 1.416393837182008,
+      "green_frac": 12.297832069863398,
+      "mean_dist_water": 786.7542749446968,
+      "min_dist_water": 782.8034972177117,
+      "water_frac_fine": 1.3984565709802539,
+      "wet_frac": 4.498572378221305
+    },
+    "univariate_r2": {
+      "rain_scenario": 0.011482676368507971,
+      "slope_roughness": 0.2918580983123258,
+      "impervious": 0.1467239993717976,
+      "built_landuse": 0.6392381585695495,
+      "river_drainage": 0.17985335900789168,
+      "wet_state": 0.09310036742473848
+    },
+    "responses": {
+      "csi@0.05": {
+        "r2_full": 0.7291187125773564,
+        "shapley": {
+          "rain_scenario": 0.009875891566554088,
+          "slope_roughness": 0.12026406511493153,
+          "impervious": 0.04424336688365666,
+          "built_landuse": 0.4589569946106462,
+          "river_drainage": 0.06105294634629547,
+          "wet_state": 0.03472544805527234
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.013544970655935946,
+          "slope_roughness": 0.1649444226850398,
+          "impervious": 0.06068060813754335,
+          "built_landuse": 0.6294681328206246,
+          "river_drainage": 0.08373526188963092,
+          "wet_state": 0.04762660381122521
+        },
+        "share_of_total": {
+          "rain_scenario": 0.009875891566554088,
+          "slope_roughness": 0.12026406511493153,
+          "impervious": 0.04424336688365666,
+          "built_landuse": 0.4589569946106462,
+          "river_drainage": 0.06105294634629547,
+          "wet_state": 0.03472544805527234
+        }
+      },
+      "pearson_wet": {
+        "r2_full": 0.18946215480590511,
+        "shapley": {
+          "rain_scenario": 0.004745701951240602,
+          "slope_roughness": 0.02862656651678806,
+          "impervious": 0.006409410073155526,
+          "built_landuse": 0.11561398813108939,
+          "river_drainage": 0.02883752046433593,
+          "wet_state": 0.005228967669295587
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.025048284477194645,
+          "slope_roughness": 0.1510938506221182,
+          "impervious": 0.03382950056554386,
+          "built_landuse": 0.6102220691490096,
+          "river_drainage": 0.15220728643078396,
+          "wet_state": 0.027599008755349656
+        },
+        "share_of_total": {
+          "rain_scenario": 0.004745701951240602,
+          "slope_roughness": 0.02862656651678806,
+          "impervious": 0.006409410073155526,
+          "built_landuse": 0.11561398813108939,
+          "river_drainage": 0.02883752046433593,
+          "wet_state": 0.005228967669295587
+        }
+      }
+    }
+  },
+  "30m": {
+    "n_tiles": 974,
+    "scenario_split": {
+      "20a": 487,
+      "100a": 487
+    },
+    "vif": {
+      "scen_100a": 1.1485650004830368,
+      "mean_slope": 45.10042588433103,
+      "within_cell_dem_std": 45.707817622436544,
+      "mean_tpi": 1.873881202008019,
+      "impervious_frac": 2.9404247570529143,
+      "building_frac": 4.296268481599431,
+      "landuse_entropy": 1.39458215107766,
+      "green_frac": 11.883286731842952,
+      "mean_dist_water": 816.5653358604785,
+      "min_dist_water": 812.6014593969545,
+      "water_frac_fine": 1.4028772707594654,
+      "wet_frac": 4.465202089080042
+    },
+    "univariate_r2": {
+      "rain_scenario": 0.025504378937972194,
+      "slope_roughness": 0.1793771085622109,
+      "impervious": 0.11711461956828251,
+      "built_landuse": 0.4212815523955252,
+      "river_drainage": 0.10649749139120135,
+      "wet_state": 0.03583906060968778
+    },
+    "responses": {
+      "csi@0.05": {
+        "r2_full": 0.5270661224299307,
+        "shapley": {
+          "rain_scenario": 0.021590065083433696,
+          "slope_roughness": 0.08210729403998497,
+          "impervious": 0.041853414860384505,
+          "built_landuse": 0.3231816488791165,
+          "river_drainage": 0.0354819956566691,
+          "wet_state": 0.022851703910341952
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.04096272586046151,
+          "slope_roughness": 0.15578177110197497,
+          "impervious": 0.07940828119900381,
+          "built_landuse": 0.613170976326753,
+          "river_drainage": 0.06731981841877184,
+          "wet_state": 0.043356427093035006
+        },
+        "share_of_total": {
+          "rain_scenario": 0.021590065083433696,
+          "slope_roughness": 0.08210729403998497,
+          "impervious": 0.041853414860384505,
+          "built_landuse": 0.3231816488791165,
+          "river_drainage": 0.0354819956566691,
+          "wet_state": 0.022851703910341952
+        }
+      },
+      "pearson_wet": {
+        "r2_full": 0.10089021054700698,
+        "shapley": {
+          "rain_scenario": 0.001289660234949622,
+          "slope_roughness": 0.017772160801694904,
+          "impervious": 0.0021373013395852083,
+          "built_landuse": 0.035278578725012416,
+          "river_drainage": 0.03618841788822187,
+          "wet_state": 0.008224091557542957
+        },
+        "share_of_explained": {
+          "rain_scenario": 0.012782808440554703,
+          "slope_roughness": 0.17615347123707767,
+          "impervious": 0.021184427388912946,
+          "built_landuse": 0.34967296166534756,
+          "river_drainage": 0.35869107311814846,
+          "wet_state": 0.08151525814995868
+        },
+        "share_of_total": {
+          "rain_scenario": 0.001289660234949622,
+          "slope_roughness": 0.017772160801694904,
+          "impervious": 0.0021373013395852083,
+          "built_landuse": 0.035278578725012416,
+          "river_drainage": 0.03618841788822187,
+          "wet_state": 0.008224091557542957
+        }
+      }
+    }
+  }
+}

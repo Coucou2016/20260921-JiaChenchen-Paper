@@ -1,0 +1,20 @@
+{
+  "state": "done",
+  "finished": "2026-09-28 06:24:31",
+  "metrics": {
+    "exit_code": 120,
+    "w_deep": 0.1,
+    "epochs": 20,
+    "lr": 0.0001,
+    "best_csi": 0.5316449562599371,
+    "best_deep_csi": 0.173588733751482,
+    "best_deep_epoch": 187,
+    "CSI_005_at_best_deep": 0.5091794366637866,
+    "CSI_030_at_best_deep": 0.3025446129962802,
+    "PeakDepthError_at_best_deep": 2.368195293347041,
+    "RMSE_wet_at_best_deep": 0.5773062172035376,
+    "viz_pid": 36508
+  },
+  "init_state": "failed",
+  "reclassified": "exit=120 is a benign Windows stdout-flush artifact at interpreter teardown, the same code produced by the accepted D0/D2 arms. Verified complete: 20/20 epochs in history.jsonl, all checkpoints written, best_deep_summary.json populated."
+}

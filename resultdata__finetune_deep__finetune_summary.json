@@ -1,0 +1,45 @@
+{
+  "0.0": {
+    "exit_code": 120,
+    "w_deep": 0.0,
+    "epochs": 20,
+    "lr": 0.0001,
+    "best_csi": 0.5316449562599371,
+    "best_deep_csi": 0.1711457374583309,
+    "best_deep_epoch": 184,
+    "CSI_005_at_best_deep": 0.5131042192379633,
+    "CSI_030_at_best_deep": 0.30685053585718075,
+    "PeakDepthError_at_best_deep": 2.4078053226073584,
+    "RMSE_wet_at_best_deep": 0.5860356230288744,
+    "viz_pid": 37636,
+    "failed": true
+  },
+  "0.05": {
+    "exit_code": 120,
+    "w_deep": 0.05,
+    "epochs": 20,
+    "lr": 0.0001,
+    "best_csi": 0.5316449562599371,
+    "best_deep_csi": 0.1736822691668446,
+    "best_deep_epoch": 181,
+    "CSI_005_at_best_deep": 0.5119006360570589,
+    "CSI_030_at_best_deep": 0.30239813663065435,
+    "PeakDepthError_at_best_deep": 2.384892186522484,
+    "RMSE_wet_at_best_deep": 0.5889469496905804,
+    "viz_pid": 6696
+  },
+  "0.1": {
+    "exit_code": 120,
+    "w_deep": 0.1,
+    "epochs": 20,
+    "lr": 0.0001,
+    "best_csi": 0.5316449562599371,
+    "best_deep_csi": 0.173588733751482,
+    "best_deep_epoch": 187,
+    "CSI_005_at_best_deep": 0.5091794366637866,
+    "CSI_030_at_best_deep": 0.3025446129962802,
+    "PeakDepthError_at_best_deep": 2.368195293347041,
+    "RMSE_wet_at_best_deep": 0.5773062172035376,
+    "viz_pid": 36508
+  }
+}

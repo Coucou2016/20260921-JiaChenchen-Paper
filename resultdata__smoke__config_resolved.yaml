@@ -1,0 +1,61 @@
+augmentation:
+  flip: false
+  rotation: false
+dataset:
+  geo_mode: all
+  hr_res: 2
+  lr_res: 10
+  root: dataset
+  scenarios:
+  - 20a
+  - 100a
+  target: h_max
+early_stopping:
+  metric: CSI_005
+  mode: max
+  patience: 40
+loss:
+  name: flood
+  w_boundary: 0.1
+  w_depth: 1.0
+  w_extreme: 0.1
+  w_log: 0.2
+  w_wet: 0.3
+  wet_threshold: 0.05
+model:
+  depth_ref: 0.1
+  geo_encoder:
+    in_cont: 14
+    landuse_embedding: 4
+    use_landuse: true
+    width: 16
+  hydro_encoder:
+    blocks: 2
+    in_channels: 2
+    width: 32
+  name: hydrogeo_srno
+  operator:
+    heads: 4
+    layers: 1
+    width: 64
+  predict_residual: true
+  predict_wet: true
+optimizer:
+  lr: 0.0001
+  type: AdamW
+  weight_decay: 1.0e-05
+output:
+  dir: outputs/smoke
+  save_every: 1
+scheduler:
+  type: cosine
+  warmup_epochs: 0
+train:
+  amp: false
+  batch_size: 1
+  epochs: 1
+  eval_max_batches: 2
+  max_grad_norm: 1.0
+  max_steps: 3
+  num_workers: 0
+  seed: 42

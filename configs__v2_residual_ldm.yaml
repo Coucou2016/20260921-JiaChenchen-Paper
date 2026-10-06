@@ -1,0 +1,21 @@
+# Stage P11 — Residual LDM on top of frozen HydroGeo-SRNO. Not run in V0.
+dataset:
+  root: dataset
+  lr_res: 10
+  hr_res: 2
+  target: h_max
+
+deterministic_ckpt: outputs/v0_10m2m_hmax/best_csi.pt
+
+diffusion:
+  timesteps: 1000
+  latent_ch: 4
+  pad_to: 256
+  crop_back: 240
+
+train:
+  batch_size: 2
+  epochs: 200
+
+output:
+  dir: outputs/v2_residual_ldm

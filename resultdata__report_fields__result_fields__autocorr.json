@@ -1,0 +1,2422 @@
+[
+  {
+    "index": 0,
+    "model": "frozen",
+    "moran": 0.49413397908210754
+  },
+  {
+    "index": 0,
+    "model": "win",
+    "moran": 0.4991394281387329
+  },
+  {
+    "index": 1,
+    "model": "frozen",
+    "moran": 0.5819599628448486
+  },
+  {
+    "index": 1,
+    "model": "win",
+    "moran": 0.5574192404747009
+  },
+  {
+    "index": 2,
+    "model": "frozen",
+    "moran": 0.7913493514060974
+  },
+  {
+    "index": 2,
+    "model": "win",
+    "moran": 0.798894464969635
+  },
+  {
+    "index": 3,
+    "model": "frozen",
+    "moran": 0.8086744546890259
+  },
+  {
+    "index": 3,
+    "model": "win",
+    "moran": 0.8023263216018677
+  },
+  {
+    "index": 4,
+    "model": "frozen",
+    "moran": 0.8673135042190552
+  },
+  {
+    "index": 4,
+    "model": "win",
+    "moran": 0.8669156432151794
+  },
+  {
+    "index": 5,
+    "model": "frozen",
+    "moran": 0.8520463705062866
+  },
+  {
+    "index": 5,
+    "model": "win",
+    "moran": 0.8485714793205261
+  },
+  {
+    "index": 6,
+    "model": "frozen",
+    "moran": 0.7061070203781128
+  },
+  {
+    "index": 6,
+    "model": "win",
+    "moran": 0.6967533826828003
+  },
+  {
+    "index": 7,
+    "model": "frozen",
+    "moran": 0.7258874177932739
+  },
+  {
+    "index": 7,
+    "model": "win",
+    "moran": 0.7174994945526123
+  },
+  {
+    "index": 8,
+    "model": "frozen",
+    "moran": 0.5988786220550537
+  },
+  {
+    "index": 8,
+    "model": "win",
+    "moran": 0.550493061542511
+  },
+  {
+    "index": 9,
+    "model": "frozen",
+    "moran": 0.6014530062675476
+  },
+  {
+    "index": 9,
+    "model": "win",
+    "moran": 0.5609380006790161
+  },
+  {
+    "index": 10,
+    "model": "frozen",
+    "moran": 0.632844090461731
+  },
+  {
+    "index": 10,
+    "model": "win",
+    "moran": 0.628006637096405
+  },
+  {
+    "index": 11,
+    "model": "frozen",
+    "moran": 0.6375371813774109
+  },
+  {
+    "index": 11,
+    "model": "win",
+    "moran": 0.6313750743865967
+  },
+  {
+    "index": 12,
+    "model": "frozen",
+    "moran": 0.9097434878349304
+  },
+  {
+    "index": 12,
+    "model": "win",
+    "moran": 0.907223105430603
+  },
+  {
+    "index": 13,
+    "model": "frozen",
+    "moran": 0.9053924679756165
+  },
+  {
+    "index": 13,
+    "model": "win",
+    "moran": 0.9010440707206726
+  },
+  {
+    "index": 14,
+    "model": "frozen",
+    "moran": 0.854347825050354
+  },
+  {
+    "index": 14,
+    "model": "win",
+    "moran": 0.8497350215911865
+  },
+  {
+    "index": 15,
+    "model": "frozen",
+    "moran": 0.8439149856567383
+  },
+  {
+    "index": 15,
+    "model": "win",
+    "moran": 0.8370105028152466
+  },
+  {
+    "index": 16,
+    "model": "frozen",
+    "moran": 0.7745994925498962
+  },
+  {
+    "index": 16,
+    "model": "win",
+    "moran": 0.7693132758140564
+  },
+  {
+    "index": 17,
+    "model": "frozen",
+    "moran": 0.7802761793136597
+  },
+  {
+    "index": 17,
+    "model": "win",
+    "moran": 0.7739973664283752
+  },
+  {
+    "index": 18,
+    "model": "frozen",
+    "moran": 0.5411985516548157
+  },
+  {
+    "index": 18,
+    "model": "win",
+    "moran": 0.5382578372955322
+  },
+  {
+    "index": 19,
+    "model": "frozen",
+    "moran": 0.5335254669189453
+  },
+  {
+    "index": 19,
+    "model": "win",
+    "moran": 0.5386812686920166
+  },
+  {
+    "index": 20,
+    "model": "frozen",
+    "moran": 0.5752132534980774
+  },
+  {
+    "index": 20,
+    "model": "win",
+    "moran": 0.5652550458908081
+  },
+  {
+    "index": 21,
+    "model": "frozen",
+    "moran": 0.5893957614898682
+  },
+  {
+    "index": 21,
+    "model": "win",
+    "moran": 0.5747907161712646
+  },
+  {
+    "index": 22,
+    "model": "frozen",
+    "moran": 0.7894822359085083
+  },
+  {
+    "index": 22,
+    "model": "win",
+    "moran": 0.792391836643219
+  },
+  {
+    "index": 23,
+    "model": "frozen",
+    "moran": 0.7777519822120667
+  },
+  {
+    "index": 23,
+    "model": "win",
+    "moran": 0.7833207845687866
+  },
+  {
+    "index": 24,
+    "model": "frozen",
+    "moran": 0.652889609336853
+  },
+  {
+    "index": 24,
+    "model": "win",
+    "moran": 0.6570839285850525
+  },
+  {
+    "index": 25,
+    "model": "frozen",
+    "moran": 0.6949970126152039
+  },
+  {
+    "index": 25,
+    "model": "win",
+    "moran": 0.6986293196678162
+  },
+  {
+    "index": 26,
+    "model": "frozen",
+    "moran": 0.5953181385993958
+  },
+  {
+    "index": 26,
+    "model": "win",
+    "moran": 0.5853153467178345
+  },
+  {
+    "index": 27,
+    "model": "frozen",
+    "moran": 0.6071582436561584
+  },
+  {
+    "index": 27,
+    "model": "win",
+    "moran": 0.5937631726264954
+  },
+  {
+    "index": 28,
+    "model": "frozen",
+    "moran": 0.6489562392234802
+  },
+  {
+    "index": 28,
+    "model": "win",
+    "moran": 0.645254373550415
+  },
+  {
+    "index": 29,
+    "model": "frozen",
+    "moran": 0.6663946509361267
+  },
+  {
+    "index": 29,
+    "model": "win",
+    "moran": 0.6632706522941589
+  },
+  {
+    "index": 30,
+    "model": "frozen",
+    "moran": 0.5563762187957764
+  },
+  {
+    "index": 30,
+    "model": "win",
+    "moran": 0.5735994577407837
+  },
+  {
+    "index": 31,
+    "model": "frozen",
+    "moran": 0.624945342540741
+  },
+  {
+    "index": 31,
+    "model": "win",
+    "moran": 0.6391549706459045
+  },
+  {
+    "index": 32,
+    "model": "frozen",
+    "moran": 0.4137938320636749
+  },
+  {
+    "index": 32,
+    "model": "win",
+    "moran": 0.41807448863983154
+  },
+  {
+    "index": 33,
+    "model": "frozen",
+    "moran": 0.45743557810783386
+  },
+  {
+    "index": 33,
+    "model": "win",
+    "moran": 0.4646565020084381
+  },
+  {
+    "index": 34,
+    "model": "frozen",
+    "moran": 0.34738975763320923
+  },
+  {
+    "index": 34,
+    "model": "win",
+    "moran": 0.34921059012413025
+  },
+  {
+    "index": 35,
+    "model": "frozen",
+    "moran": 0.42442113161087036
+  },
+  {
+    "index": 35,
+    "model": "win",
+    "moran": 0.4016936421394348
+  },
+  {
+    "index": 36,
+    "model": "frozen",
+    "moran": 0.38715851306915283
+  },
+  {
+    "index": 36,
+    "model": "win",
+    "moran": 0.392850399017334
+  },
+  {
+    "index": 37,
+    "model": "frozen",
+    "moran": 0.4511621296405792
+  },
+  {
+    "index": 37,
+    "model": "win",
+    "moran": 0.40560242533683777
+  },
+  {
+    "index": 38,
+    "model": "frozen",
+    "moran": 0.6583634614944458
+  },
+  {
+    "index": 38,
+    "model": "win",
+    "moran": 0.6707100868225098
+  },
+  {
+    "index": 39,
+    "model": "frozen",
+    "moran": 0.6619092226028442
+  },
+  {
+    "index": 39,
+    "model": "win",
+    "moran": 0.679343044757843
+  },
+  {
+    "index": 40,
+    "model": "frozen",
+    "moran": 0.752700924873352
+  },
+  {
+    "index": 40,
+    "model": "win",
+    "moran": 0.7487518191337585
+  },
+  {
+    "index": 41,
+    "model": "frozen",
+    "moran": 0.7744359374046326
+  },
+  {
+    "index": 41,
+    "model": "win",
+    "moran": 0.7560917139053345
+  },
+  {
+    "index": 42,
+    "model": "frozen",
+    "moran": 0.7736764550209045
+  },
+  {
+    "index": 42,
+    "model": "win",
+    "moran": 0.7746357321739197
+  },
+  {
+    "index": 43,
+    "model": "frozen",
+    "moran": 0.7910962104797363
+  },
+  {
+    "index": 43,
+    "model": "win",
+    "moran": 0.7944605946540833
+  },
+  {
+    "index": 44,
+    "model": "frozen",
+    "moran": 0.9232198596000671
+  },
+  {
+    "index": 44,
+    "model": "win",
+    "moran": 0.9291623830795288
+  },
+  {
+    "index": 45,
+    "model": "frozen",
+    "moran": 0.9265844225883484
+  },
+  {
+    "index": 45,
+    "model": "win",
+    "moran": 0.9334885478019714
+  },
+  {
+    "index": 46,
+    "model": "frozen",
+    "moran": 0.32149258255958557
+  },
+  {
+    "index": 46,
+    "model": "win",
+    "moran": 0.31299102306365967
+  },
+  {
+    "index": 47,
+    "model": "frozen",
+    "moran": 0.3481587767601013
+  },
+  {
+    "index": 47,
+    "model": "win",
+    "moran": 0.3459612727165222
+  },
+  {
+    "index": 48,
+    "model": "frozen",
+    "moran": 0.767113447189331
+  },
+  {
+    "index": 48,
+    "model": "win",
+    "moran": 0.7695733904838562
+  },
+  {
+    "index": 49,
+    "model": "frozen",
+    "moran": 0.749070405960083
+  },
+  {
+    "index": 49,
+    "model": "win",
+    "moran": 0.7565997838973999
+  },
+  {
+    "index": 50,
+    "model": "frozen",
+    "moran": 0.8874294757843018
+  },
+  {
+    "index": 50,
+    "model": "win",
+    "moran": 0.8910645842552185
+  },
+  {
+    "index": 51,
+    "model": "frozen",
+    "moran": 0.8683258891105652
+  },
+  {
+    "index": 51,
+    "model": "win",
+    "moran": 0.8736140131950378
+  },
+  {
+    "index": 52,
+    "model": "frozen",
+    "moran": 0.8092591166496277
+  },
+  {
+    "index": 52,
+    "model": "win",
+    "moran": 0.810738742351532
+  },
+  {
+    "index": 53,
+    "model": "frozen",
+    "moran": 0.7900000214576721
+  },
+  {
+    "index": 53,
+    "model": "win",
+    "moran": 0.7951695322990417
+  },
+  {
+    "index": 54,
+    "model": "frozen",
+    "moran": 0.5646527409553528
+  },
+  {
+    "index": 54,
+    "model": "win",
+    "moran": 0.5740637183189392
+  },
+  {
+    "index": 55,
+    "model": "frozen",
+    "moran": 0.6166768670082092
+  },
+  {
+    "index": 55,
+    "model": "win",
+    "moran": 0.6223640441894531
+  },
+  {
+    "index": 56,
+    "model": "frozen",
+    "moran": 0.5280236601829529
+  },
+  {
+    "index": 56,
+    "model": "win",
+    "moran": 0.540876030921936
+  },
+  {
+    "index": 57,
+    "model": "frozen",
+    "moran": 0.5578315258026123
+  },
+  {
+    "index": 57,
+    "model": "win",
+    "moran": 0.5718845129013062
+  },
+  {
+    "index": 58,
+    "model": "frozen",
+    "moran": 0.6977242231369019
+  },
+  {
+    "index": 58,
+    "model": "win",
+    "moran": 0.705691397190094
+  },
+  {
+    "index": 59,
+    "model": "frozen",
+    "moran": 0.7056267261505127
+  },
+  {
+    "index": 59,
+    "model": "win",
+    "moran": 0.7146301865577698
+  },
+  {
+    "index": 60,
+    "model": "frozen",
+    "moran": 0.6497938632965088
+  },
+  {
+    "index": 60,
+    "model": "win",
+    "moran": 0.6405357122421265
+  },
+  {
+    "index": 61,
+    "model": "frozen",
+    "moran": 0.6513816118240356
+  },
+  {
+    "index": 61,
+    "model": "win",
+    "moran": 0.6409837007522583
+  },
+  {
+    "index": 62,
+    "model": "frozen",
+    "moran": 0.5666552782058716
+  },
+  {
+    "index": 62,
+    "model": "win",
+    "moran": 0.569864809513092
+  },
+  {
+    "index": 63,
+    "model": "frozen",
+    "moran": 0.5884110927581787
+  },
+  {
+    "index": 63,
+    "model": "win",
+    "moran": 0.5899742841720581
+  },
+  {
+    "index": 64,
+    "model": "frozen",
+    "moran": 0.7074073553085327
+  },
+  {
+    "index": 64,
+    "model": "win",
+    "moran": 0.7067311406135559
+  },
+  {
+    "index": 65,
+    "model": "frozen",
+    "moran": 0.7274922728538513
+  },
+  {
+    "index": 65,
+    "model": "win",
+    "moran": 0.7248616814613342
+  },
+  {
+    "index": 66,
+    "model": "frozen",
+    "moran": 0.6184921860694885
+  },
+  {
+    "index": 66,
+    "model": "win",
+    "moran": 0.6257169842720032
+  },
+  {
+    "index": 67,
+    "model": "frozen",
+    "moran": 0.6628208756446838
+  },
+  {
+    "index": 67,
+    "model": "win",
+    "moran": 0.6729028820991516
+  },
+  {
+    "index": 68,
+    "model": "frozen",
+    "moran": 0.558692455291748
+  },
+  {
+    "index": 68,
+    "model": "win",
+    "moran": 0.5636564493179321
+  },
+  {
+    "index": 69,
+    "model": "frozen",
+    "moran": 0.576251208782196
+  },
+  {
+    "index": 69,
+    "model": "win",
+    "moran": 0.5876192450523376
+  },
+  {
+    "index": 70,
+    "model": "frozen",
+    "moran": 0.5680963397026062
+  },
+  {
+    "index": 70,
+    "model": "win",
+    "moran": 0.570902407169342
+  },
+  {
+    "index": 71,
+    "model": "frozen",
+    "moran": 0.5502521991729736
+  },
+  {
+    "index": 71,
+    "model": "win",
+    "moran": 0.5548545122146606
+  },
+  {
+    "index": 72,
+    "model": "frozen",
+    "moran": 0.3616527020931244
+  },
+  {
+    "index": 72,
+    "model": "win",
+    "moran": 0.3643453121185303
+  },
+  {
+    "index": 73,
+    "model": "frozen",
+    "moran": 0.4167691171169281
+  },
+  {
+    "index": 73,
+    "model": "win",
+    "moran": 0.4031411111354828
+  },
+  {
+    "index": 74,
+    "model": "frozen",
+    "moran": 0.5314888954162598
+  },
+  {
+    "index": 74,
+    "model": "win",
+    "moran": 0.5555399656295776
+  },
+  {
+    "index": 75,
+    "model": "frozen",
+    "moran": 0.5803940892219543
+  },
+  {
+    "index": 75,
+    "model": "win",
+    "moran": 0.5845927000045776
+  },
+  {
+    "index": 76,
+    "model": "frozen",
+    "moran": 0.8904505968093872
+  },
+  {
+    "index": 76,
+    "model": "win",
+    "moran": 0.8991312384605408
+  },
+  {
+    "index": 77,
+    "model": "frozen",
+    "moran": 0.8859448432922363
+  },
+  {
+    "index": 77,
+    "model": "win",
+    "moran": 0.8878483176231384
+  },
+  {
+    "index": 78,
+    "model": "frozen",
+    "moran": 0.8739461302757263
+  },
+  {
+    "index": 78,
+    "model": "win",
+    "moran": 0.835660457611084
+  },
+  {
+    "index": 79,
+    "model": "frozen",
+    "moran": 0.862705409526825
+  },
+  {
+    "index": 79,
+    "model": "win",
+    "moran": 0.8206731677055359
+  },
+  {
+    "index": 80,
+    "model": "frozen",
+    "moran": 0.4701785743236542
+  },
+  {
+    "index": 80,
+    "model": "win",
+    "moran": 0.4693607985973358
+  },
+  {
+    "index": 81,
+    "model": "frozen",
+    "moran": 0.5193852186203003
+  },
+  {
+    "index": 81,
+    "model": "win",
+    "moran": 0.5266981720924377
+  },
+  {
+    "index": 82,
+    "model": "frozen",
+    "moran": 0.7990180253982544
+  },
+  {
+    "index": 82,
+    "model": "win",
+    "moran": 0.7667810320854187
+  },
+  {
+    "index": 83,
+    "model": "frozen",
+    "moran": 0.7933025360107422
+  },
+  {
+    "index": 83,
+    "model": "win",
+    "moran": 0.7701399326324463
+  },
+  {
+    "index": 84,
+    "model": "frozen",
+    "moran": 0.6340059041976929
+  },
+  {
+    "index": 84,
+    "model": "win",
+    "moran": 0.6714532971382141
+  },
+  {
+    "index": 85,
+    "model": "frozen",
+    "moran": 0.7053841352462769
+  },
+  {
+    "index": 85,
+    "model": "win",
+    "moran": 0.7469117045402527
+  },
+  {
+    "index": 86,
+    "model": "frozen",
+    "moran": 0.8639813661575317
+  },
+  {
+    "index": 86,
+    "model": "win",
+    "moran": 0.8595925569534302
+  },
+  {
+    "index": 87,
+    "model": "frozen",
+    "moran": 0.8469938635826111
+  },
+  {
+    "index": 87,
+    "model": "win",
+    "moran": 0.8370846509933472
+  },
+  {
+    "index": 88,
+    "model": "frozen",
+    "moran": 0.7341946959495544
+  },
+  {
+    "index": 88,
+    "model": "win",
+    "moran": 0.741258442401886
+  },
+  {
+    "index": 89,
+    "model": "frozen",
+    "moran": 0.7614615559577942
+  },
+  {
+    "index": 89,
+    "model": "win",
+    "moran": 0.7622737288475037
+  },
+  {
+    "index": 90,
+    "model": "frozen",
+    "moran": 0.6156991124153137
+  },
+  {
+    "index": 90,
+    "model": "win",
+    "moran": 0.5727574229240417
+  },
+  {
+    "index": 91,
+    "model": "frozen",
+    "moran": 0.6735932230949402
+  },
+  {
+    "index": 91,
+    "model": "win",
+    "moran": 0.6248950958251953
+  },
+  {
+    "index": 92,
+    "model": "frozen",
+    "moran": 0.4257808029651642
+  },
+  {
+    "index": 92,
+    "model": "win",
+    "moran": 0.42226335406303406
+  },
+  {
+    "index": 93,
+    "model": "frozen",
+    "moran": 0.45216795802116394
+  },
+  {
+    "index": 93,
+    "model": "win",
+    "moran": 0.44503864645957947
+  },
+  {
+    "index": 94,
+    "model": "frozen",
+    "moran": 0.7726622223854065
+  },
+  {
+    "index": 94,
+    "model": "win",
+    "moran": 0.7749379873275757
+  },
+  {
+    "index": 95,
+    "model": "frozen",
+    "moran": 0.7671172022819519
+  },
+  {
+    "index": 95,
+    "model": "win",
+    "moran": 0.7688024044036865
+  },
+  {
+    "index": 96,
+    "model": "frozen",
+    "moran": 0.715571939945221
+  },
+  {
+    "index": 96,
+    "model": "win",
+    "moran": 0.7073421478271484
+  },
+  {
+    "index": 97,
+    "model": "frozen",
+    "moran": 0.7098255753517151
+  },
+  {
+    "index": 97,
+    "model": "win",
+    "moran": 0.7072978019714355
+  },
+  {
+    "index": 98,
+    "model": "frozen",
+    "moran": 0.7659060955047607
+  },
+  {
+    "index": 98,
+    "model": "win",
+    "moran": 0.7563540935516357
+  },
+  {
+    "index": 99,
+    "model": "frozen",
+    "moran": 0.761842668056488
+  },
+  {
+    "index": 99,
+    "model": "win",
+    "moran": 0.7540983557701111
+  },
+  {
+    "index": 100,
+    "model": "frozen",
+    "moran": 0.80904221534729
+  },
+  {
+    "index": 100,
+    "model": "win",
+    "moran": 0.8037837147712708
+  },
+  {
+    "index": 101,
+    "model": "frozen",
+    "moran": 0.8104115724563599
+  },
+  {
+    "index": 101,
+    "model": "win",
+    "moran": 0.7942524552345276
+  },
+  {
+    "index": 102,
+    "model": "frozen",
+    "moran": 0.8660122156143188
+  },
+  {
+    "index": 102,
+    "model": "win",
+    "moran": 0.8672755360603333
+  },
+  {
+    "index": 103,
+    "model": "frozen",
+    "moran": 0.852193295955658
+  },
+  {
+    "index": 103,
+    "model": "win",
+    "moran": 0.8564079999923706
+  },
+  {
+    "index": 104,
+    "model": "frozen",
+    "moran": 0.7617526054382324
+  },
+  {
+    "index": 104,
+    "model": "win",
+    "moran": 0.758455753326416
+  },
+  {
+    "index": 105,
+    "model": "frozen",
+    "moran": 0.7864371538162231
+  },
+  {
+    "index": 105,
+    "model": "win",
+    "moran": 0.7822745442390442
+  },
+  {
+    "index": 106,
+    "model": "frozen",
+    "moran": 0.6354196071624756
+  },
+  {
+    "index": 106,
+    "model": "win",
+    "moran": 0.6349417567253113
+  },
+  {
+    "index": 107,
+    "model": "frozen",
+    "moran": 0.7049111127853394
+  },
+  {
+    "index": 107,
+    "model": "win",
+    "moran": 0.7044289708137512
+  },
+  {
+    "index": 108,
+    "model": "frozen",
+    "moran": 0.6034663319587708
+  },
+  {
+    "index": 108,
+    "model": "win",
+    "moran": 0.6026932001113892
+  },
+  {
+    "index": 109,
+    "model": "frozen",
+    "moran": 0.6131631135940552
+  },
+  {
+    "index": 109,
+    "model": "win",
+    "moran": 0.6121153831481934
+  },
+  {
+    "index": 110,
+    "model": "frozen",
+    "moran": 0.43039795756340027
+  },
+  {
+    "index": 110,
+    "model": "win",
+    "moran": 0.3758614659309387
+  },
+  {
+    "index": 111,
+    "model": "frozen",
+    "moran": 0.4605037271976471
+  },
+  {
+    "index": 111,
+    "model": "win",
+    "moran": 0.40900787711143494
+  },
+  {
+    "index": 112,
+    "model": "frozen",
+    "moran": 0.4740998148918152
+  },
+  {
+    "index": 112,
+    "model": "win",
+    "moran": 0.4293758273124695
+  },
+  {
+    "index": 113,
+    "model": "frozen",
+    "moran": 0.5235381126403809
+  },
+  {
+    "index": 113,
+    "model": "win",
+    "moran": 0.489678293466568
+  },
+  {
+    "index": 114,
+    "model": "frozen",
+    "moran": 0.6122324466705322
+  },
+  {
+    "index": 114,
+    "model": "win",
+    "moran": 0.5675740838050842
+  },
+  {
+    "index": 115,
+    "model": "frozen",
+    "moran": 0.6548000574111938
+  },
+  {
+    "index": 115,
+    "model": "win",
+    "moran": 0.6230358481407166
+  },
+  {
+    "index": 116,
+    "model": "frozen",
+    "moran": 0.9258090853691101
+  },
+  {
+    "index": 116,
+    "model": "win",
+    "moran": 0.9267730712890625
+  },
+  {
+    "index": 117,
+    "model": "frozen",
+    "moran": 0.9088801145553589
+  },
+  {
+    "index": 117,
+    "model": "win",
+    "moran": 0.9098868370056152
+  },
+  {
+    "index": 118,
+    "model": "frozen",
+    "moran": 0.4643317461013794
+  },
+  {
+    "index": 118,
+    "model": "win",
+    "moran": 0.43832358717918396
+  },
+  {
+    "index": 119,
+    "model": "frozen",
+    "moran": 0.5107191205024719
+  },
+  {
+    "index": 119,
+    "model": "win",
+    "moran": 0.47981491684913635
+  },
+  {
+    "index": 120,
+    "model": "frozen",
+    "moran": 0.6121646761894226
+  },
+  {
+    "index": 120,
+    "model": "win",
+    "moran": 0.6396424174308777
+  },
+  {
+    "index": 121,
+    "model": "frozen",
+    "moran": 0.6519609093666077
+  },
+  {
+    "index": 121,
+    "model": "win",
+    "moran": 0.6642836332321167
+  },
+  {
+    "index": 122,
+    "model": "frozen",
+    "moran": 0.7327755689620972
+  },
+  {
+    "index": 122,
+    "model": "win",
+    "moran": 0.7038206458091736
+  },
+  {
+    "index": 123,
+    "model": "frozen",
+    "moran": 0.7295976281166077
+  },
+  {
+    "index": 123,
+    "model": "win",
+    "moran": 0.6964372396469116
+  },
+  {
+    "index": 124,
+    "model": "frozen",
+    "moran": 0.7870850563049316
+  },
+  {
+    "index": 124,
+    "model": "win",
+    "moran": 0.7632668018341064
+  },
+  {
+    "index": 125,
+    "model": "frozen",
+    "moran": 0.7683317065238953
+  },
+  {
+    "index": 125,
+    "model": "win",
+    "moran": 0.738519012928009
+  },
+  {
+    "index": 126,
+    "model": "frozen",
+    "moran": 0.9182819128036499
+  },
+  {
+    "index": 126,
+    "model": "win",
+    "moran": 0.9079501628875732
+  },
+  {
+    "index": 127,
+    "model": "frozen",
+    "moran": 0.9392192959785461
+  },
+  {
+    "index": 127,
+    "model": "win",
+    "moran": 0.9244463443756104
+  },
+  {
+    "index": 128,
+    "model": "frozen",
+    "moran": 0.557391345500946
+  },
+  {
+    "index": 128,
+    "model": "win",
+    "moran": 0.5233219861984253
+  },
+  {
+    "index": 129,
+    "model": "frozen",
+    "moran": 0.5832211971282959
+  },
+  {
+    "index": 129,
+    "model": "win",
+    "moran": 0.5399557948112488
+  },
+  {
+    "index": 130,
+    "model": "frozen",
+    "moran": 0.6746691465377808
+  },
+  {
+    "index": 130,
+    "model": "win",
+    "moran": 0.682037889957428
+  },
+  {
+    "index": 131,
+    "model": "frozen",
+    "moran": 0.6887797117233276
+  },
+  {
+    "index": 131,
+    "model": "win",
+    "moran": 0.6920718550682068
+  },
+  {
+    "index": 132,
+    "model": "frozen",
+    "moran": 0.500691831111908
+  },
+  {
+    "index": 132,
+    "model": "win",
+    "moran": 0.4948083162307739
+  },
+  {
+    "index": 133,
+    "model": "frozen",
+    "moran": 0.5596372485160828
+  },
+  {
+    "index": 133,
+    "model": "win",
+    "moran": 0.5452682375907898
+  },
+  {
+    "index": 134,
+    "model": "frozen",
+    "moran": 0.5307950377464294
+  },
+  {
+    "index": 134,
+    "model": "win",
+    "moran": 0.5354158878326416
+  },
+  {
+    "index": 135,
+    "model": "frozen",
+    "moran": 0.5372315049171448
+  },
+  {
+    "index": 135,
+    "model": "win",
+    "moran": 0.5475879907608032
+  },
+  {
+    "index": 136,
+    "model": "frozen",
+    "moran": 0.9415677785873413
+  },
+  {
+    "index": 136,
+    "model": "win",
+    "moran": 0.9352184534072876
+  },
+  {
+    "index": 137,
+    "model": "frozen",
+    "moran": 0.9405140280723572
+  },
+  {
+    "index": 137,
+    "model": "win",
+    "moran": 0.9369102120399475
+  },
+  {
+    "index": 138,
+    "model": "frozen",
+    "moran": 0.7959008812904358
+  },
+  {
+    "index": 138,
+    "model": "win",
+    "moran": 0.7994246482849121
+  },
+  {
+    "index": 139,
+    "model": "frozen",
+    "moran": 0.8190972208976746
+  },
+  {
+    "index": 139,
+    "model": "win",
+    "moran": 0.8214167356491089
+  },
+  {
+    "index": 140,
+    "model": "frozen",
+    "moran": 0.5889410376548767
+  },
+  {
+    "index": 140,
+    "model": "win",
+    "moran": 0.5847327709197998
+  },
+  {
+    "index": 141,
+    "model": "frozen",
+    "moran": 0.6304355263710022
+  },
+  {
+    "index": 141,
+    "model": "win",
+    "moran": 0.6339465379714966
+  },
+  {
+    "index": 142,
+    "model": "frozen",
+    "moran": 0.6042441129684448
+  },
+  {
+    "index": 142,
+    "model": "win",
+    "moran": 0.598719596862793
+  },
+  {
+    "index": 143,
+    "model": "frozen",
+    "moran": 0.6141241192817688
+  },
+  {
+    "index": 143,
+    "model": "win",
+    "moran": 0.6062315702438354
+  },
+  {
+    "index": 144,
+    "model": "frozen",
+    "moran": 0.5092959403991699
+  },
+  {
+    "index": 144,
+    "model": "win",
+    "moran": 0.48643580079078674
+  },
+  {
+    "index": 145,
+    "model": "frozen",
+    "moran": 0.5408068895339966
+  },
+  {
+    "index": 145,
+    "model": "win",
+    "moran": 0.5159170031547546
+  },
+  {
+    "index": 146,
+    "model": "frozen",
+    "moran": 0.557157576084137
+  },
+  {
+    "index": 146,
+    "model": "win",
+    "moran": 0.5456498265266418
+  },
+  {
+    "index": 147,
+    "model": "frozen",
+    "moran": 0.613591194152832
+  },
+  {
+    "index": 147,
+    "model": "win",
+    "moran": 0.5758575797080994
+  },
+  {
+    "index": 148,
+    "model": "frozen",
+    "moran": 0.6929472088813782
+  },
+  {
+    "index": 148,
+    "model": "win",
+    "moran": 0.6625158190727234
+  },
+  {
+    "index": 149,
+    "model": "frozen",
+    "moran": 0.7393550872802734
+  },
+  {
+    "index": 149,
+    "model": "win",
+    "moran": 0.7112524509429932
+  },
+  {
+    "index": 150,
+    "model": "frozen",
+    "moran": 0.6119560599327087
+  },
+  {
+    "index": 150,
+    "model": "win",
+    "moran": 0.5495105981826782
+  },
+  {
+    "index": 151,
+    "model": "frozen",
+    "moran": 0.6791038513183594
+  },
+  {
+    "index": 151,
+    "model": "win",
+    "moran": 0.62901771068573
+  },
+  {
+    "index": 152,
+    "model": "frozen",
+    "moran": 0.45701462030410767
+  },
+  {
+    "index": 152,
+    "model": "win",
+    "moran": 0.4520825743675232
+  },
+  {
+    "index": 153,
+    "model": "frozen",
+    "moran": 0.5015627145767212
+  },
+  {
+    "index": 153,
+    "model": "win",
+    "moran": 0.49340903759002686
+  },
+  {
+    "index": 154,
+    "model": "frozen",
+    "moran": 0.7077853083610535
+  },
+  {
+    "index": 154,
+    "model": "win",
+    "moran": 0.7188850045204163
+  },
+  {
+    "index": 155,
+    "model": "frozen",
+    "moran": 0.7410279512405396
+  },
+  {
+    "index": 155,
+    "model": "win",
+    "moran": 0.7390871047973633
+  },
+  {
+    "index": 156,
+    "model": "frozen",
+    "moran": 0.6678885817527771
+  },
+  {
+    "index": 156,
+    "model": "win",
+    "moran": 0.599077045917511
+  },
+  {
+    "index": 157,
+    "model": "frozen",
+    "moran": 0.6557259559631348
+  },
+  {
+    "index": 157,
+    "model": "win",
+    "moran": 0.6089164018630981
+  },
+  {
+    "index": 158,
+    "model": "frozen",
+    "moran": 0.7753254175186157
+  },
+  {
+    "index": 158,
+    "model": "win",
+    "moran": 0.7062011957168579
+  },
+  {
+    "index": 159,
+    "model": "frozen",
+    "moran": 0.7672117948532104
+  },
+  {
+    "index": 159,
+    "model": "win",
+    "moran": 0.7025578618049622
+  },
+  {
+    "index": 160,
+    "model": "frozen",
+    "moran": 0.7469784617424011
+  },
+  {
+    "index": 160,
+    "model": "win",
+    "moran": 0.713096022605896
+  },
+  {
+    "index": 161,
+    "model": "frozen",
+    "moran": 0.7616427540779114
+  },
+  {
+    "index": 161,
+    "model": "win",
+    "moran": 0.7289957404136658
+  },
+  {
+    "index": 162,
+    "model": "frozen",
+    "moran": 0.37725144624710083
+  },
+  {
+    "index": 162,
+    "model": "win",
+    "moran": 0.3566748797893524
+  },
+  {
+    "index": 163,
+    "model": "frozen",
+    "moran": 0.37610581517219543
+  },
+  {
+    "index": 163,
+    "model": "win",
+    "moran": 0.3572562038898468
+  },
+  {
+    "index": 164,
+    "model": "frozen",
+    "moran": 0.7717670798301697
+  },
+  {
+    "index": 164,
+    "model": "win",
+    "moran": 0.7621704936027527
+  },
+  {
+    "index": 165,
+    "model": "frozen",
+    "moran": 0.7641453742980957
+  },
+  {
+    "index": 165,
+    "model": "win",
+    "moran": 0.7562319040298462
+  },
+  {
+    "index": 166,
+    "model": "frozen",
+    "moran": 0.6743909120559692
+  },
+  {
+    "index": 166,
+    "model": "win",
+    "moran": 0.6689162254333496
+  },
+  {
+    "index": 167,
+    "model": "frozen",
+    "moran": 0.6741960644721985
+  },
+  {
+    "index": 167,
+    "model": "win",
+    "moran": 0.6648363471031189
+  },
+  {
+    "index": 168,
+    "model": "frozen",
+    "moran": 0.5227016806602478
+  },
+  {
+    "index": 168,
+    "model": "win",
+    "moran": 0.5086822509765625
+  },
+  {
+    "index": 169,
+    "model": "frozen",
+    "moran": 0.6016033887863159
+  },
+  {
+    "index": 169,
+    "model": "win",
+    "moran": 0.5913078188896179
+  },
+  {
+    "index": 170,
+    "model": "frozen",
+    "moran": 0.39928293228149414
+  },
+  {
+    "index": 170,
+    "model": "win",
+    "moran": 0.4076412618160248
+  },
+  {
+    "index": 171,
+    "model": "frozen",
+    "moran": 0.4416510760784149
+  },
+  {
+    "index": 171,
+    "model": "win",
+    "moran": 0.44790324568748474
+  },
+  {
+    "index": 172,
+    "model": "frozen",
+    "moran": 0.6885783076286316
+  },
+  {
+    "index": 172,
+    "model": "win",
+    "moran": 0.6819095611572266
+  },
+  {
+    "index": 173,
+    "model": "frozen",
+    "moran": 0.6781370043754578
+  },
+  {
+    "index": 173,
+    "model": "win",
+    "moran": 0.6741436123847961
+  },
+  {
+    "index": 174,
+    "model": "frozen",
+    "moran": 0.7250379920005798
+  },
+  {
+    "index": 174,
+    "model": "win",
+    "moran": 0.7242911458015442
+  },
+  {
+    "index": 175,
+    "model": "frozen",
+    "moran": 0.7198899388313293
+  },
+  {
+    "index": 175,
+    "model": "win",
+    "moran": 0.7165441513061523
+  },
+  {
+    "index": 176,
+    "model": "frozen",
+    "moran": 0.5446364879608154
+  },
+  {
+    "index": 176,
+    "model": "win",
+    "moran": 0.5502414703369141
+  },
+  {
+    "index": 177,
+    "model": "frozen",
+    "moran": 0.5776713490486145
+  },
+  {
+    "index": 177,
+    "model": "win",
+    "moran": 0.5842387676239014
+  },
+  {
+    "index": 178,
+    "model": "frozen",
+    "moran": 0.36529192328453064
+  },
+  {
+    "index": 178,
+    "model": "win",
+    "moran": 0.40642935037612915
+  },
+  {
+    "index": 179,
+    "model": "frozen",
+    "moran": 0.3582083582878113
+  },
+  {
+    "index": 179,
+    "model": "win",
+    "moran": 0.3625625967979431
+  },
+  {
+    "index": 180,
+    "model": "frozen",
+    "moran": 0.6733768582344055
+  },
+  {
+    "index": 180,
+    "model": "win",
+    "moran": 0.6485443115234375
+  },
+  {
+    "index": 181,
+    "model": "frozen",
+    "moran": 0.7177484035491943
+  },
+  {
+    "index": 181,
+    "model": "win",
+    "moran": 0.7050756812095642
+  },
+  {
+    "index": 182,
+    "model": "frozen",
+    "moran": 0.7397487163543701
+  },
+  {
+    "index": 182,
+    "model": "win",
+    "moran": 0.6909107565879822
+  },
+  {
+    "index": 183,
+    "model": "frozen",
+    "moran": 0.7361099123954773
+  },
+  {
+    "index": 183,
+    "model": "win",
+    "moran": 0.694885790348053
+  },
+  {
+    "index": 184,
+    "model": "frozen",
+    "moran": 0.7045992612838745
+  },
+  {
+    "index": 184,
+    "model": "win",
+    "moran": 0.6878044009208679
+  },
+  {
+    "index": 185,
+    "model": "frozen",
+    "moran": 0.7455000281333923
+  },
+  {
+    "index": 185,
+    "model": "win",
+    "moran": 0.7304668426513672
+  },
+  {
+    "index": 186,
+    "model": "frozen",
+    "moran": 0.45464423298835754
+  },
+  {
+    "index": 186,
+    "model": "win",
+    "moran": 0.3995424211025238
+  },
+  {
+    "index": 187,
+    "model": "frozen",
+    "moran": 0.46408602595329285
+  },
+  {
+    "index": 187,
+    "model": "win",
+    "moran": 0.4337559938430786
+  },
+  {
+    "index": 188,
+    "model": "frozen",
+    "moran": 0.7670862078666687
+  },
+  {
+    "index": 188,
+    "model": "win",
+    "moran": 0.7264071106910706
+  },
+  {
+    "index": 189,
+    "model": "frozen",
+    "moran": 0.7841696739196777
+  },
+  {
+    "index": 189,
+    "model": "win",
+    "moran": 0.761911153793335
+  },
+  {
+    "index": 190,
+    "model": "frozen",
+    "moran": 0.7213444709777832
+  },
+  {
+    "index": 190,
+    "model": "win",
+    "moran": 0.7110045552253723
+  },
+  {
+    "index": 191,
+    "model": "frozen",
+    "moran": 0.7695534229278564
+  },
+  {
+    "index": 191,
+    "model": "win",
+    "moran": 0.7614309787750244
+  },
+  {
+    "index": 192,
+    "model": "frozen",
+    "moran": 0.617186427116394
+  },
+  {
+    "index": 192,
+    "model": "win",
+    "moran": 0.49906906485557556
+  },
+  {
+    "index": 193,
+    "model": "frozen",
+    "moran": 0.6295569539070129
+  },
+  {
+    "index": 193,
+    "model": "win",
+    "moran": 0.5170667767524719
+  },
+  {
+    "index": 194,
+    "model": "frozen",
+    "moran": 0.8222883939743042
+  },
+  {
+    "index": 194,
+    "model": "win",
+    "moran": 0.7986689805984497
+  },
+  {
+    "index": 195,
+    "model": "frozen",
+    "moran": 0.8321026563644409
+  },
+  {
+    "index": 195,
+    "model": "win",
+    "moran": 0.8194251656532288
+  },
+  {
+    "index": 196,
+    "model": "frozen",
+    "moran": 0.5831970572471619
+  },
+  {
+    "index": 196,
+    "model": "win",
+    "moran": 0.5418226718902588
+  },
+  {
+    "index": 197,
+    "model": "frozen",
+    "moran": 0.5982219576835632
+  },
+  {
+    "index": 197,
+    "model": "win",
+    "moran": 0.578414261341095
+  },
+  {
+    "index": 198,
+    "model": "frozen",
+    "moran": 0.743057370185852
+  },
+  {
+    "index": 198,
+    "model": "win",
+    "moran": 0.73842453956604
+  },
+  {
+    "index": 199,
+    "model": "frozen",
+    "moran": 0.7405173778533936
+  },
+  {
+    "index": 199,
+    "model": "win",
+    "moran": 0.7396318912506104
+  },
+  {
+    "index": 200,
+    "model": "frozen",
+    "moran": 0.5788710117340088
+  },
+  {
+    "index": 200,
+    "model": "win",
+    "moran": 0.5755845308303833
+  },
+  {
+    "index": 201,
+    "model": "frozen",
+    "moran": 0.6014245748519897
+  },
+  {
+    "index": 201,
+    "model": "win",
+    "moran": 0.6042509078979492
+  },
+  {
+    "index": 202,
+    "model": "frozen",
+    "moran": 0.6031864881515503
+  },
+  {
+    "index": 202,
+    "model": "win",
+    "moran": 0.5762059092521667
+  },
+  {
+    "index": 203,
+    "model": "frozen",
+    "moran": 0.6223143935203552
+  },
+  {
+    "index": 203,
+    "model": "win",
+    "moran": 0.6017488241195679
+  },
+  {
+    "index": 204,
+    "model": "frozen",
+    "moran": 0.5404150485992432
+  },
+  {
+    "index": 204,
+    "model": "win",
+    "moran": 0.537300705909729
+  },
+  {
+    "index": 205,
+    "model": "frozen",
+    "moran": 0.5702573657035828
+  },
+  {
+    "index": 205,
+    "model": "win",
+    "moran": 0.5606272220611572
+  },
+  {
+    "index": 206,
+    "model": "frozen",
+    "moran": 0.5880400538444519
+  },
+  {
+    "index": 206,
+    "model": "win",
+    "moran": 0.5950744152069092
+  },
+  {
+    "index": 207,
+    "model": "frozen",
+    "moran": 0.608829915523529
+  },
+  {
+    "index": 207,
+    "model": "win",
+    "moran": 0.6112052202224731
+  },
+  {
+    "index": 208,
+    "model": "frozen",
+    "moran": 0.6682568788528442
+  },
+  {
+    "index": 208,
+    "model": "win",
+    "moran": 0.6702828407287598
+  },
+  {
+    "index": 209,
+    "model": "frozen",
+    "moran": 0.6816610097885132
+  },
+  {
+    "index": 209,
+    "model": "win",
+    "moran": 0.6845234036445618
+  },
+  {
+    "index": 210,
+    "model": "frozen",
+    "moran": 0.4791080951690674
+  },
+  {
+    "index": 210,
+    "model": "win",
+    "moran": 0.46458700299263
+  },
+  {
+    "index": 211,
+    "model": "frozen",
+    "moran": 0.5231873393058777
+  },
+  {
+    "index": 211,
+    "model": "win",
+    "moran": 0.48125728964805603
+  },
+  {
+    "index": 212,
+    "model": "frozen",
+    "moran": 0.7559951543807983
+  },
+  {
+    "index": 212,
+    "model": "win",
+    "moran": 0.7481741905212402
+  },
+  {
+    "index": 213,
+    "model": "frozen",
+    "moran": 0.7817403674125671
+  },
+  {
+    "index": 213,
+    "model": "win",
+    "moran": 0.7690691947937012
+  },
+  {
+    "index": 214,
+    "model": "frozen",
+    "moran": 0.7433796525001526
+  },
+  {
+    "index": 214,
+    "model": "win",
+    "moran": 0.7704119086265564
+  },
+  {
+    "index": 215,
+    "model": "frozen",
+    "moran": 0.7537458539009094
+  },
+  {
+    "index": 215,
+    "model": "win",
+    "moran": 0.766129732131958
+  },
+  {
+    "index": 216,
+    "model": "frozen",
+    "moran": 0.75445955991745
+  },
+  {
+    "index": 216,
+    "model": "win",
+    "moran": 0.7406220436096191
+  },
+  {
+    "index": 217,
+    "model": "frozen",
+    "moran": 0.7889968156814575
+  },
+  {
+    "index": 217,
+    "model": "win",
+    "moran": 0.778440535068512
+  },
+  {
+    "index": 218,
+    "model": "frozen",
+    "moran": 0.48928332328796387
+  },
+  {
+    "index": 218,
+    "model": "win",
+    "moran": 0.5032297968864441
+  },
+  {
+    "index": 219,
+    "model": "frozen",
+    "moran": 0.535247266292572
+  },
+  {
+    "index": 219,
+    "model": "win",
+    "moran": 0.5366615653038025
+  },
+  {
+    "index": 220,
+    "model": "frozen",
+    "moran": 0.4482946991920471
+  },
+  {
+    "index": 220,
+    "model": "win",
+    "moran": 0.4799663722515106
+  },
+  {
+    "index": 221,
+    "model": "frozen",
+    "moran": 0.4737681448459625
+  },
+  {
+    "index": 221,
+    "model": "win",
+    "moran": 0.5066766142845154
+  },
+  {
+    "index": 222,
+    "model": "frozen",
+    "moran": 0.7998524308204651
+  },
+  {
+    "index": 222,
+    "model": "win",
+    "moran": 0.7982417345046997
+  },
+  {
+    "index": 223,
+    "model": "frozen",
+    "moran": 0.7672886252403259
+  },
+  {
+    "index": 223,
+    "model": "win",
+    "moran": 0.7501621842384338
+  },
+  {
+    "index": 224,
+    "model": "frozen",
+    "moran": 0.49867793917655945
+  },
+  {
+    "index": 224,
+    "model": "win",
+    "moran": 0.47698351740837097
+  },
+  {
+    "index": 225,
+    "model": "frozen",
+    "moran": 0.5611552000045776
+  },
+  {
+    "index": 225,
+    "model": "win",
+    "moran": 0.5366576910018921
+  },
+  {
+    "index": 226,
+    "model": "frozen",
+    "moran": 0.3989720046520233
+  },
+  {
+    "index": 226,
+    "model": "win",
+    "moran": 0.3884489834308624
+  },
+  {
+    "index": 227,
+    "model": "frozen",
+    "moran": 0.4774576723575592
+  },
+  {
+    "index": 227,
+    "model": "win",
+    "moran": 0.46666842699050903
+  },
+  {
+    "index": 228,
+    "model": "frozen",
+    "moran": 0.4669801890850067
+  },
+  {
+    "index": 228,
+    "model": "win",
+    "moran": 0.521330714225769
+  },
+  {
+    "index": 229,
+    "model": "frozen",
+    "moran": 0.5242180228233337
+  },
+  {
+    "index": 229,
+    "model": "win",
+    "moran": 0.5447103977203369
+  },
+  {
+    "index": 230,
+    "model": "frozen",
+    "moran": 0.7927745580673218
+  },
+  {
+    "index": 230,
+    "model": "win",
+    "moran": 0.7760719060897827
+  },
+  {
+    "index": 231,
+    "model": "frozen",
+    "moran": 0.8092663884162903
+  },
+  {
+    "index": 231,
+    "model": "win",
+    "moran": 0.7917201519012451
+  },
+  {
+    "index": 232,
+    "model": "frozen",
+    "moran": 0.7797554731369019
+  },
+  {
+    "index": 232,
+    "model": "win",
+    "moran": 0.7642934322357178
+  },
+  {
+    "index": 233,
+    "model": "frozen",
+    "moran": 0.7964839935302734
+  },
+  {
+    "index": 233,
+    "model": "win",
+    "moran": 0.7907741069793701
+  },
+  {
+    "index": 234,
+    "model": "frozen",
+    "moran": 0.2612729072570801
+  },
+  {
+    "index": 234,
+    "model": "win",
+    "moran": 0.3106478154659271
+  },
+  {
+    "index": 235,
+    "model": "frozen",
+    "moran": 0.2986578643321991
+  },
+  {
+    "index": 235,
+    "model": "win",
+    "moran": 0.33504563570022583
+  },
+  {
+    "index": 236,
+    "model": "frozen",
+    "moran": 0.8299492597579956
+  },
+  {
+    "index": 236,
+    "model": "win",
+    "moran": 0.8234764933586121
+  },
+  {
+    "index": 237,
+    "model": "frozen",
+    "moran": 0.8452147245407104
+  },
+  {
+    "index": 237,
+    "model": "win",
+    "moran": 0.826774537563324
+  },
+  {
+    "index": 238,
+    "model": "frozen",
+    "moran": 0.6419999599456787
+  },
+  {
+    "index": 238,
+    "model": "win",
+    "moran": 0.635295033454895
+  },
+  {
+    "index": 239,
+    "model": "frozen",
+    "moran": 0.6698890924453735
+  },
+  {
+    "index": 239,
+    "model": "win",
+    "moran": 0.6676271557807922
+  },
+  {
+    "index": 240,
+    "model": "frozen",
+    "moran": 0.8272885084152222
+  },
+  {
+    "index": 240,
+    "model": "win",
+    "moran": 0.8178823590278625
+  },
+  {
+    "index": 241,
+    "model": "frozen",
+    "moran": 0.8630203008651733
+  },
+  {
+    "index": 241,
+    "model": "win",
+    "moran": 0.8579679131507874
+  }
+]
