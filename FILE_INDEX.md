@@ -1,21 +1,21 @@
 # FILE_INDEX
 
-Complete flat inventory of this mirror. **755 files, 149.0 MB, no subdirectories.**
+Complete flat inventory of this mirror. **759 files, 152.7 MB, no subdirectories.**
 
 Every entry lists the flat filename, its original repo-relative path and its size. Fetch by flat name. The machine-readable twin of this index is `_manifest.json`, which also carries a SHA-256 per file.
 
 ## Full and condensed report artifacts (root)
 
-6 files, 49.26 MB
+6 files, 51.81 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `report.html` | `report.html` | 19,528,114 |
-| `report.md` | `report.md` | 362,897 |
-| `report.pdf` | `report.pdf` | 16,069,337 |
-| `report_brief.html` | `report_brief.html` | 8,456,296 |
-| `report_brief.md` | `report_brief.md` | 40,721 |
-| `report_brief.pdf` | `report_brief.pdf` | 7,197,058 |
+| `report.html` | `report.html` | 20,313,167 |
+| `report.md` | `report.md` | 366,283 |
+| `report.pdf` | `report.pdf` | 16,685,815 |
+| `report_brief.html` | `report_brief.html` | 9,234,280 |
+| `report_brief.md` | `report_brief.md` | 36,898 |
+| `report_brief.pdf` | `report_brief.pdf` | 7,686,562 |
 
 ## Project entry points and docs (root)
 
@@ -27,7 +27,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `IMPLEMENTATION_CHECKLIST.md` | `IMPLEMENTATION_CHECKLIST.md` | 4,537 |
 | `PLAN_20260924.md` | `20260924-方案.md` | 32,114 |
 | `README.md` | `README.md` | 3,136 |
-| `RERUN_PLAN_AND_CHECKLIST.md` | `RERUN_PLAN_AND_CHECKLIST.md` | 11,372 |
+| `RERUN_PLAN_AND_CHECKLIST.md` | `RERUN_PLAN_AND_CHECKLIST.md` | 15,247 |
 | `STATUS.md` | `STATUS.md` | 70,552 |
 | `VISUALIZATION.md` | `VISUALIZATION.md` | 9,262 |
 | `requirements-analysis.txt` | `requirements-analysis.txt` | 140 |
@@ -50,7 +50,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Figures embedded in the report, in render order
 
-56 files, 13.97 MB
+57 files, 14.54 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -73,6 +73,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `reportfig__fig12_loss_parts.png` | `outputs/report_figs/fig12_loss_parts.png` | 92,993 |
 | `reportfig__fig20_hyetograph.png` | `outputs/report_figs/fig20_hyetograph.png` | 110,602 |
 | `reportfig__fig21_tile_deep.png` | `outputs/report_figs/fig21_tile_deep.png` | 1,007,502 |
+| `reportfig__fig21b_tile_deep_scale.png` | `outputs/report_figs/fig21b_tile_deep_scale.png` | 589,248 |
 | `reportfig__fig22_tiles_spectrum.png` | `outputs/report_figs/fig22_tiles_spectrum.png` | 731,721 |
 | `reportfig__fig23_domain_maps.png` | `outputs/report_figs/fig23_domain_maps.png` | 73,315 |
 | `reportfig__fig24_density.png` | `outputs/report_figs/fig24_density.png` | 1,014,223 |
@@ -113,7 +114,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Published figures (upstream set)
 
-52 files, 13.71 MB
+53 files, 14.27 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -132,6 +133,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `figure__fig12_loss_parts.png` | `figures/fig12_loss_parts.png` | 92,993 |
 | `figure__fig20_hyetograph.png` | `figures/fig20_hyetograph.png` | 110,602 |
 | `figure__fig21_tile_deep.png` | `figures/fig21_tile_deep.png` | 1,007,502 |
+| `figure__fig21b_tile_deep_scale.png` | `figures/fig21b_tile_deep_scale.png` | 589,248 |
 | `figure__fig22_tiles_spectrum.png` | `figures/fig22_tiles_spectrum.png` | 731,721 |
 | `figure__fig23_domain_maps.png` | `figures/fig23_domain_maps.png` | 73,315 |
 | `figure__fig24_density.png` | `figures/fig24_density.png` | 1,014,223 |
@@ -172,7 +174,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Machine result data and small grids
 
-431 files, 46.46 MB
+432 files, 46.47 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -444,6 +446,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__premodel__contiguity_core_h_max.npz` | `outputs/premodel/contiguity_core_h_max.npz` | 6,267 |
 | `resultdata__premodel__contiguity_core_speed.npz` | `outputs/premodel/contiguity_core_speed.npz` | 3,850 |
 | `resultdata__premodel__cross_resolution_consistency.json` | `outputs/premodel/cross_resolution_consistency.json` | 144,712 |
+| `resultdata__premodel__error_scale_diagnostic.json` | `outputs/premodel/error_scale_diagnostic.json` | 9,618 |
 | `resultdata__premodel__extrapolation.json` | `outputs/premodel/extrapolation.json` | 7,202 |
 | `resultdata__premodel__factor_contrasts.json` | `outputs/premodel/factor_contrasts.json` | 62,618 |
 | `resultdata__premodel__flood_error.json` | `outputs/premodel/flood_error.json` | 55,912 |
@@ -610,7 +613,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Pipeline, figure generators, report builders, audits
 
-125 files, 1.21 MB
+126 files, 1.23 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -646,6 +649,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___diag_lu.py` | `scripts/_diag_lu.py` | 957 |
 | `scripts___diag_res.py` | `scripts/_diag_res.py` | 1,613 |
 | `scripts___diag_static.py` | `scripts/_diag_static.py` | 525 |
+| `scripts___diagnose_error_scale.py` | `scripts/_diagnose_error_scale.py` | 14,210 |
 | `scripts___dump_suspect.py` | `scripts/_dump_suspect.py` | 727 |
 | `scripts___inspect_static.py` | `scripts/_inspect_static.py` | 2,424 |
 | `scripts___list_authored_caps.py` | `scripts/_list_authored_caps.py` | 1,136 |
@@ -679,14 +683,14 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___write_final_selection.py` | `scripts/_write_final_selection.py` | 4,327 |
 | `scripts___zoom_numbers.py` | `scripts/_zoom_numbers.py` | 1,707 |
 | `scripts__auto_visualize.py` | `scripts/auto_visualize.py` | 11,789 |
-| `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 7,996 |
+| `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 8,138 |
 | `scripts__build_brief_pdf.py` | `scripts/build_brief_pdf.py` | 1,571 |
-| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 36,578 |
+| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 38,256 |
 | `scripts__build_flat_mirror.py` | `scripts/build_flat_mirror.py` | 14,219 |
 | `scripts__build_gallery.py` | `scripts/build_gallery.py` | 12,015 |
-| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 14,944 |
+| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 15,091 |
 | `scripts__build_pdf.py` | `scripts/build_pdf.py` | 1,413 |
-| `scripts__build_report.py` | `scripts/build_report.py` | 100,357 |
+| `scripts__build_report.py` | `scripts/build_report.py` | 103,661 |
 | `scripts__build_sr_dataset.py` | `scripts/build_sr_dataset.py` | 14,858 |
 | `scripts__chain_after_pid.py` | `scripts/chain_after_pid.py` | 2,701 |
 | `scripts__collect_result_fields.py` | `scripts/collect_result_fields.py` | 11,892 |
@@ -716,7 +720,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__premodel_lib.py` | `scripts/premodel_lib.py` | 10,405 |
 | `scripts__refresh_flat_manifest.py` | `scripts/refresh_flat_manifest.py` | 3,009 |
 | `scripts__repair_summaries.py` | `scripts/repair_summaries.py` | 3,017 |
-| `scripts__report_body.py` | `scripts/report_body.py` | 316,721 |
+| `scripts__report_body.py` | `scripts/report_body.py` | 324,361 |
 | `scripts__report_stats.py` | `scripts/report_stats.py` | 4,678 |
 | `scripts__run_baseline_table.py` | `scripts/run_baseline_table.py` | 5,441 |
 | `scripts__run_deep_extend.py` | `scripts/run_deep_extend.py` | 9,571 |

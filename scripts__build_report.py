@@ -20,7 +20,8 @@ IMG = {n: b64(n) for n in [
     "fig04_paired_finetune.png", "fig05_selection_noise.png", "fig06_before_after.png",
     "fig07_forest.png", "fig08_bias_evolution.png", "fig09_sweep.png",
     "fig10_scorecard.png", "fig11_training_history.png", "fig12_loss_parts.png",
-    "fig20_hyetograph.png", "fig21_tile_deep.png", "fig22_tiles_spectrum.png",
+    "fig20_hyetograph.png", "fig21_tile_deep.png", "fig21b_tile_deep_scale.png",
+    "fig22_tiles_spectrum.png",
     "fig23_domain_maps.png", "fig24_density.png", "fig25_distributions.png",
     "fig26_exceedance.png", "fig27_bootstrap.png", "fig28_autocorr.png",
     "fig41_premodel_task.png", "fig42_error_vs_grid.png",
@@ -289,31 +290,44 @@ def per_tile_table() -> str:
             picks.append(r)
 
     body = []
+    scen_cn = {"20a": "20 年一遇", "100a": "100 年一遇"}
     for r in picks:
+        dcsi05 = r["win_CSI_005"] - r["frozen_CSI_005"]
         dcsi = r["win_CSI_100"] - r["frozen_CSI_100"]
         dvol = r["frozen_VolumeRelativeError"] - r["win_VolumeRelativeError"]
         cls = "good" if dcsi > 1e-9 else ("bad" if dcsi < -1e-9 else "")
+        vcls = "good" if dvol > 1e-9 else ("bad" if dvol < -1e-9 else "")
+        sc = r["scenario"]
+        sc = sc[0] if isinstance(sc, (list, tuple)) and sc else sc
+        sc = str(sc).strip("[]'\" ")
+        lab = f"{scen_cn.get(sc, sc)} {r['iy']}/{r['ix']}"
         body.append(
-            f"<tr><td class='l'>{r['scenario']} iy={r['iy']} ix={r['ix']}</td>"
+            f"<tr><td class='l'>{lab}</td>"
             f"<td>{_fmt(r['peak_truth'], 2)}</td>"
             f"<td>{_fmt(r['wet_frac']*100, 1)}</td>"
-            f"<td>{_fmt(r['frozen_CSI_005'])}</td><td>{_fmt(r['win_CSI_005'])}</td>"
-            f"<td>{_fmt(r['frozen_CSI_100'])}</td>"
-            f"<td class='{cls}'>{_fmt(r['win_CSI_100'])}</td>"
+            f"<td>{_fmt(r['frozen_CSI_005'])} → {_fmt(r['win_CSI_005'])}</td>"
+            f"<td class='{cls}'>{_fmt(dcsi05, 3, plus=True)}</td>"
+            f"<td>{_fmt(r['frozen_CSI_100'])} → "
+            f"<span class='{cls}'>{_fmt(r['win_CSI_100'])}</span></td>"
             f"<td class='{cls}'>{_fmt(dcsi, 3, plus=True)}</td>"
-            f"<td>{_fmt(r['frozen_VolumeRelativeError'])}</td>"
-            f"<td>{_fmt(r['win_VolumeRelativeError'])}</td>"
-            f"<td>{_fmt(dvol, 3, plus=True)}</td></tr>")
+            f"<td>{_fmt(r['frozen_VolumeRelativeError'])} → "
+            f"{_fmt(r['win_VolumeRelativeError'])}</td>"
+            f"<td class='{vcls}'>{_fmt(dvol, 3, plus=True)}</td></tr>")
     return (
         "<table><caption><b>表 90　逐瓦片的直接对比（测试集代表性瓦片）。</b>"
         "瓦片按真值峰值水深从第 10 百分位取到最大，覆盖从浅水到最深的完整区间。"
+        "每一对指标都写成「冻结基线 → 微调模型」，箭头左侧是基线，右侧是微调。"
+        "瓦片一列给出降雨情景与瓦片的纵向、横向编号，例如 20 年一遇 40/7。"
         "CSI 列为该瓦片自身的判定指标，体积误差为该瓦片的总水量相对偏差。"
-        "倒数第二列是微调模型相对冻结基线的深水增益，正值表示改善。"
-        "单个瓦片的指标波动较大，这里看的是改善是否在全区间上一致出现。"
-        "</caption><thead><tr><th class='l'>瓦片</th><th>真值峰值<br>(m)</th>"
-        "<th>湿区占比<br>(%)</th><th>基线<br>CSI@0.05</th><th>微调<br>CSI@0.05</th>"
-        "<th>基线<br>CSI@1.00</th><th>微调<br>CSI@1.00</th><th>深水<br>增益</th>"
-        "<th>基线<br>体积误差</th><th>微调<br>体积误差</th><th>体积<br>增益</th>"
+        "增益列为微调减基线，判定指标的增益正值表示改善，"
+        "体积误差的增益写成基线减微调，正值同样表示改善，因此两列方向一致，"
+        "都读作越大越好。单个瓦片的指标波动较大，"
+        "这里看的是改善是否在全区间上一致出现。</caption>"
+        "<thead><tr><th class='l'>瓦片<br>情景/坐标</th><th>真值峰值<br>(m)</th>"
+        "<th>湿区占比<br>(%)</th>"
+        "<th>CSI@0.05<br>基线 → 微调</th><th>CSI@0.05<br>增益</th>"
+        "<th>CSI@1.00<br>基线 → 微调</th><th>CSI@1.00<br>增益</th>"
+        "<th>体积误差<br>基线 → 微调</th><th>体积<br>增益</th>"
         "</tr></thead><tbody>" + "".join(body) + "</tbody></table>")
 
 
@@ -329,34 +343,41 @@ def higher_order_table() -> str:
     f, w = mom["models"]["frozen"], mom["models"]["win"]
     body = []
     for i, lab in enumerate(bins):
-        cl = "good" if w["mae"][i] < f["mae"][i] else "bad"
+        # dependence axis made explicit: each paired cell is 基线 → 微调
+        dunder = (w["under_frac"][i] - f["under_frac"][i]) * 100
+        ucls = "good" if dunder < 0 else ("bad" if dunder > 0 else "")
         body.append(
             f"<tr><td class='l'>{lab}</td><td>{f['n'][i]:,.0f}</td>"
-            f"<td>{_fmt(f['mae'][i], 4)}</td><td class='{cl}'>{_fmt(w['mae'][i], 4)}</td>"
-            f"<td>{_fmt(f['under_frac'][i]*100, 1)}</td>"
-            f"<td>{_fmt(w['under_frac'][i]*100, 1)}</td>"
+            f"<td>{_fmt(f['mean'][i], 3, plus=True)} → "
+            f"{_fmt(w['mean'][i], 3, plus=True)}</td>"
+            f"<td>{_fmt(f['under_frac'][i]*100, 1)} → "
+            f"{_fmt(w['under_frac'][i]*100, 1)}</td>"
+            f"<td class='{ucls}'>{_fmt(dunder, 1, plus=True)}</td>"
             f"<td>{_fmt(f['skew'][i], 2, plus=True)}</td>"
-            f"<td>{_fmt(w['skew'][i], 2, plus=True)}</td>"
-            f"<td>{_fmt(f['excess_kurtosis'][i], 1, plus=True)}</td>"
-            f"<td>{_fmt(w['excess_kurtosis'][i], 1, plus=True)}</td></tr>")
+            f"<td>{_fmt(f['excess_kurtosis'][i], 1, plus=True)}</td></tr>")
     gf, gw = f["global"], w["global"]
     body.append(
         f"<tr><td class='l'>全部像元</td><td>{gf['n']:,.0f}</td>"
-        f"<td>{_fmt(gf['mae'], 4)}</td><td>{_fmt(gw['mae'], 4)}</td>"
-        f"<td>—</td><td>—</td>"
-        f"<td>{_fmt(gf['skew'], 2, plus=True)}</td><td>{_fmt(gw['skew'], 2, plus=True)}</td>"
-        f"<td>{_fmt(gf['excess_kurtosis'], 1, plus=True)}</td>"
-        f"<td>{_fmt(gw['excess_kurtosis'], 1, plus=True)}</td></tr>")
+        f"<td>{_fmt(gf['mean'], 3, plus=True)} → {_fmt(gw['mean'], 3, plus=True)}</td>"
+        f"<td>— → —</td><td>—</td>"
+        f"<td>{_fmt(gf['skew'], 2, plus=True)}</td>"
+        f"<td>{_fmt(gf['excess_kurtosis'], 1, plus=True)}</td></tr>")
     return (
         "<table><caption><b>表 91　误差的高阶矩按水深分层（全测试集）。</b>"
-        "偏度衡量误差分布的不对称程度，正值表示分布右侧拖尾更长，即高估的极端情形更多。"
-        "超额峰度衡量尾部的厚重程度，正态分布的取值为零，正值越大说明极端误差出现得越频繁。"
-        "低估比例为误差为负的像元占比。两列平均绝对误差的对比可以看到微调在哪些区间"
-        "改变了误差量级。</caption>"
+        "每一对单元格都写成「冻结基线 → 微调模型」，箭头左侧是基线，右侧是微调。"
+        "平均偏差为误差的均值，负值表示低估，单位是米。"
+        "低估比例是误差为负的像元占比。低估变化一列是微调减基线，单位为百分点，"
+        "负值表示低估的像元变少，也就是改善。"
+        "偏度衡量误差分布的不对称程度，正值表示右侧拖尾更长，即高估的极端情形更多；"
+        "三米以上转为负值，说明极深水体处的误差由低估主导。"
+        "超额峰度衡量尾部厚重程度，正态分布的取值为零，数值越大说明极端误差越频繁，"
+        "它随水深单调下降，说明重尾集中在浅水区。两极矩只列基线，"
+        "因为两个模型在分布形状上的差别在图上不可分辨，微调改变的是位置而不是形状。</caption>"
         "<thead><tr><th class='l'>水深区间（米）</th><th>像元数</th>"
-        "<th>基线<br>MAE</th><th>微调<br>MAE</th><th>基线<br>低估%</th><th>微调<br>低估%</th>"
-        "<th>基线<br>偏度</th><th>微调<br>偏度</th><th>基线<br>超额峰度</th>"
-        "<th>微调<br>超额峰度</th></tr></thead><tbody>" + "".join(body) + "</tbody></table>")
+        "<th>平均偏差（米）<br>基线 → 微调</th><th>低估比例（%）<br>基线 → 微调</th>"
+        "<th>低估变化<br>（百分点）</th><th>误差偏度<br>基线</th>"
+        "<th>超额峰度<br>基线</th></tr></thead><tbody>"
+        + "".join(body) + "</tbody></table>")
 
 
 def _prem(name):
@@ -381,25 +402,30 @@ def pre_error_table() -> str:
             m = d["resolutions"][scen][res]
             rows.append(
                 f"<tr><td class='l'>{scen}</td><td>{cells[res]}</td>"
-                f"<td>{m['ratio']:.1f}</td><td>{_fmt(m['mae'], 4)}</td>"
-                f"<td>{_fmt(m['rmse'], 4)}</td><td>{_fmt(m['bias'], 4, plus=True)}</td>"
+                f"<td>{_fmt(m['mae'], 4)}</td>"
+                f"<td>{_fmt(m['rmse'], 4)}</td>"
                 f"<td>{_fmt(m['volume_rel']*100, 1, plus=True)}</td>"
-                f"<td>{_fmt(m['csi']['0.05'])}</td><td>{_fmt(m['csi']['0.30'])}</td>"
+                f"<td>{_fmt(m['csi']['0.05'])}</td>"
                 f"<td>{_fmt(m['csi']['1.00'])}</td>"
                 f"<td>{_fmt(m['pearson_wet'])}</td><td>{_fmt(m['spearman_wet'])}</td>"
-                f"<td>{_fmt(m['ssim'])}</td></tr>")
+                f"</tr>")
     return (
         "<table><caption><b>表 81　粗网格模拟值与聚合后的二米真值的误差。</b>"
         "粗网格模拟值指水动力程序直接在这套粗网格上求解浅水方程得到的水深场，"
         "聚合后的二米真值指把两米精细结果按面积加权平均到同一套网格的结果，两者的区别见 2.1 节。"
         "所有指标都在各自的粗网格上计算，因此这一张表度量的是表示误差与数值误差，"
         "不含二米真值自身被粗化丢掉的信息。"
-        "临界成功指数在三个阈值下给出。相关与结构相似度只在湿区像元上统计，湿区取水深"
-        "超过五厘米。体积相对误差是全部单元水量之和的相对偏差，正值表示粗网格给多了水。"
+        "临界成功指数给出五厘米与一米两个阈值，三十厘米档见 2.7 节的图 14。"
+        "相关系数只在湿区像元上统计，"
+        "湿区取水深超过五厘米。体积相对误差是全部单元水量之和的相对偏差，"
+        "正值表示粗网格给多了水，读它的绝对幅度。"
+        "读数方向，平均绝对误差与均方根误差两列越小越准，"
+        "临界成功指数、皮尔逊与斯皮尔曼三列越大越准。"
+        "边长一列同时充当分辨率比，把边长除以二米即得 2.5、5、10 与 15 四档。"
         "</caption><thead><tr><th class='l'>重现期</th><th>边长<br>(米)</th>"
-        "<th>分辨率比</th><th>MAE<br>(米)</th><th>RMSE<br>(米)</th><th>偏差<br>(米)</th>"
-        "<th>体积相对<br>误差(%)</th><th>CSI<br>@0.05</th><th>CSI<br>@0.30</th>"
-        "<th>CSI<br>@1.00</th><th>Pearson</th><th>Spearman</th><th>SSIM</th></tr></thead>"
+        "<th>MAE<br>(米)</th><th>RMSE<br>(米)</th>"
+        "<th>体积相对<br>误差(%)</th><th>CSI<br>@0.05</th>"
+        "<th>CSI<br>@1.00</th><th>Pearson</th><th>Spearman</th></tr></thead>"
         "<tbody>" + "".join(rows) + "</tbody></table>")
 
 
@@ -455,38 +481,37 @@ def pre_sources_table() -> str:
 
     rows = []
 
-    def add(part, span, cn, lo_t, hi_t, lo_m, hi_m, ratio, lo_d, hi_d, r, rlab):
-        head = (f"<td class='l' rowspan='{span}'>{part}</td>"
-                if span else "")
+    def add(part, cn, lo_t, hi_t, lo_m, hi_m, ratio, lo_d, hi_d, r):
         rows.append(
-            f"<tr>{head}<td class='l'>{cn}</td><td>{lo_t}</td><td>{lo_m:.4f}</td>"
+            f"<tr><td class='l'>{part}</td><td class='l'>{cn}</td>"
+            f"<td>{lo_t}</td><td>{lo_m:.4f}</td>"
             f"<td>{hi_t}</td><td>{hi_m:.4f}</td><td>{ratio:.2f}</td>"
             f"<td>{lo_d:.3f}</td><td>{hi_d:.3f}</td><td>{r:.2f}</td></tr>")
 
     c = cf["resolutions"]["10m"]["100a"]["factors"]
     order = ["Slope", "Building_binary", "Dist_water"]
-    for k, name in enumerate(order):
+    for name in order:
         e = c[name]
         lo_t = "0" if name == "Building_binary" else f"≤{num(e['low_cut'])}"
         hi_t = "1" if name == "Building_binary" else f"≥{num(e['high_cut'])}"
         if name == "Building_binary":
             lo_t, hi_t = "覆盖率 0", "覆盖率 1"
-        add("单元", len(order) if k == 0 else 0, e["cn"], lo_t, hi_t,
+        add("单元", e["cn"], lo_t, hi_t,
             e["low"]["mae"], e["high"]["mae"], e["mae_ratio_high_over_low"],
             e["low"]["mean_truth_m"], e["high"]["mean_truth_m"],
-            e["pearson_with_abs_err"], "abs")
+            e["pearson_with_abs_err"])
 
     t = tf["resolutions"]["10m"]["factors"]
     torder = ["mean_slope", "within_cell_dem_std", "building_frac",
               "impervious_frac", "mean_dist_water", "landuse_entropy"]
-    for k, name in enumerate(torder):
+    for name in torder:
         e = t[name]
-        add("瓦片", len(torder) if k == 0 else 0, e["cn"],
+        add("瓦片", e["cn"],
             f"≤{num(e['low_cut'])}", f"≥{num(e['high_cut'])}",
             e["low"]["mae"]["mean"], e["high"]["mae"]["mean"],
             e["mae_ratio_high_over_low"],
             e["low"]["mean_depth_2m"]["mean"], e["high"]["mean_depth_2m"]["mean"],
-            e["pearson_with_mae"], "mae")
+            e["pearson_with_mae"])
 
     return (
         "<table><caption><b>表 96　哪些条件让误差变大，单元一级与瓦片一级的两组对照。</b>"
@@ -495,15 +520,15 @@ def pre_sources_table() -> str:
         "一百年一遇情景，统计范围是全部有水单元，共 276143 个，条件变量取该单元自身的取值。"
         "瓦片一级取十米网格下的全部 487 块瓦片与两个情景，共 974 条记录，"
         "条件变量取该瓦片内的平均值。平均绝对误差单位是米。比值是两组的平均绝对误差相除，"
-        "大于一表示高值组误差更大，小于一表示方向相反。末两列给出两组内部的平均水深，"
+        "大于一表示高值组误差更大，小于一表示方向相反。平均水深两列给出两组内部的水深，"
         "用来提示两组的水深并不相同，读比值时需要一起看。相关系数是条件变量与误差绝对值"
         "之间的皮尔逊相关系数，只描述线性同步程度。单元建筑覆盖率一行的中间档是部分覆盖，"
         "它的平均绝对误差是 0.360 米，高于本表列出的两端，因而不在本表的两列之内。</caption>"
         "<thead><tr><th class='l'>统计部位</th><th class='l'>条件变量</th>"
         "<th>低值组<br>取值</th><th>低值组<br>MAE(米)</th><th>高值组<br>取值</th>"
-        "<th>高值组<br>MAE(米)</th><th>高值组<br>与低值<br>组之比</th>"
+        "<th>高值组<br>MAE(米)</th><th>MAE 之比<br>高值组/低值组<br>(＞1 误差更大)</th>"
         "<th>低值组<br>平均水深<br>(米)</th><th>高值组<br>平均水深<br>(米)</th>"
-        "<th>与误差的<br>相关系数</th></tr></thead><tbody>"
+        "<th>与误差绝对值<br>的相关系数</th></tr></thead><tbody>"
         + "".join(rows) + "</tbody></table>")
 
 
@@ -519,12 +544,12 @@ def pre_terrain_table() -> str:
     for res in ("5m", "10m", "20m", "30m"):
         m = d["resolutions"][res]
         rows.append(
-            f"<tr><td>{res[:-1]}</td><td>{m['ratio']:.1f}</td>"
+            f"<tr><td>{res[:-1]}</td>"
             f"<td>{m['within_cell_std_mean']:.3f}</td>"
             f"<td>{m['relief_mean']:.2f}</td><td>{m['sink_depth_mean']:.3f}</td>"
             f"<td>{m['sink_frac_gt_0p1']*100:.1f}</td>"
             f"<td>{m['sink_frac_gt_0p5']*100:.1f}</td>"
-            f"<td>{m['slope_native_mean']:.4f}</td><td>{m['slope_agg_mean']:.4f}</td>"
+            f"<td>{m['slope_native_mean']:.4f}</td>"
             f"<td>{m['slope_ratio']:.3f}</td>"
             f"<td>{m['width_ratio_median']:.2f}</td>"
             f"<td>{m['water_pixels_narrower_than_cell']*100:.1f}</td>"
@@ -537,13 +562,16 @@ def pre_terrain_table() -> str:
         "刻画一个粗单元内部的地形起伏被抹平的程度，数值越大表示粗网格看到的越平坦。"
         "洼地深度是单元内高程均值减去单元内最低高程，代表被粗化抹掉的最深局部汇水点。"
         "坡度比是粗网格自身坡度均值除以二米坡度聚合后均值，小于一表示粗网格系统性地"
-        "把地形看缓。最后两列把二米水道宽度分布与网格边长相比，水体占比一列是二米水体"
-        "像元中被网格边长高于其宽度的比例。参照量，二米高程标准差为 "
+        "把地形看缓。水道宽与边长之比是二米水体像元中位宽度除以网格边长，"
+        "窄于边长的水体占比是二米水体像元中宽度小于网格边长的比例，两者一起说明水道"
+        "相对网格有多细。最后一列是单元主导地类占比，数值随网格变粗而下降表示"
+        "单元内部的地类越混。参照量，二米高程标准差为 "
         f"{f['dem_std']:.1f} 米，二米水体像元中位宽度见正文。</caption>"
-        "<thead><tr><th>边长<br>(米)</th><th>分辨率比</th><th>单元内高程<br>标准差均值(米)</th>"
+        "<thead><tr><th>边长<br>(米)</th>"
+        "<th>单元内高程<br>标准差均值(米)</th>"
         "<th>单元内<br>高差均值(米)</th><th>洼地深度<br>均值(米)</th><th>洼地深于<br>0.1 米(%)</th>"
-        "<th>洼地深于<br>0.5 米(%)</th><th>粗网格<br>坡度均值</th><th>聚合后的<br>坡度均值</th>"
-        "<th>坡度比</th><th>水道宽/边长<br>中位数</th><th>窄于边长的<br>水体占比(%)</th>"
+        "<th>洼地深于<br>0.5 米(%)</th><th>粗网格<br>坡度均值</th>"
+        "<th>坡度比<br>(粗/聚合)</th><th>水道宽/边长<br>中位数</th><th>窄于边长的<br>水体占比(%)</th>"
         "<th>单元主导<br>地类占比(%)</th></tr></thead><tbody>"
         + "".join(rows) + "</tbody></table>")
 
@@ -564,9 +592,8 @@ def pre_corr_table() -> str:
             m = d["resolutions"][scen][res]
             vr = v.get("scenarios", {}).get(scen, {}).get("resolutions", {}).get(res, {})
             rows.append(
-                f"<tr><td class='l'>{scen}</td><td>{res[:-1]}</td><td>{m['ratio']:.1f}</td>"
-                f"<td>{m['csi']['0.05']:.3f}</td><td>{m['csi']['0.30']:.3f}</td>"
-                f"<td>{m['csi']['1.00']:.3f}</td><td>{m['f1']['0.05']:.3f}</td>"
+                f"<tr><td class='l'>{scen}</td><td>{res[:-1]}</td>"
+                f"<td>{m['csi']['0.05']:.3f}</td><td>{m['csi']['1.00']:.3f}</td>"
                 f"<td>{m['pearson_wet']:.3f}</td><td>{m['spearman_wet']:.3f}</td>"
                 f"<td>{m['ssim']:.3f}</td>"
                 f"<td>{_fmt(vr.get('pearson'), 3)}</td>"
@@ -576,17 +603,20 @@ def pre_corr_table() -> str:
     frame = {s: v.get("scenarios", {}).get(s, {}).get("frame") for s in ("20a", "100a")}
     return (
         "<table><caption><b>表 84　跨分辨率相关性与流速场相似性。</b>"
+        "本表回答的是若干指标以什么速度衰减，以及流速场比水深场差多少。"
         "水深部分比较粗网格模拟值与聚合后的二米真值，行列含义与表 81 一致。"
-        "二值掩膜下交并比与临界成功指数恒等，因此只列临界成功指数，F1 单独列一列以便"
-        "读者对照。流速场的相似性由 hux 与 hvy 两个单宽流量分量除以水深得到，"
-        "只在数据存有流量场的整点时刻评估，取全域水量最大的那个整点。"
+        "二值掩膜下交并比与临界成功指数恒等，因此只列临界成功指数，"
+        "三十厘米档见 2.7 节的图 14。流速场的相似性由 hux 与 hvy 两个单宽流量分量"
+        "除以水深得到，只在数据存有流量场的整点时刻评估，取全域水量最大的那个整点。"
         f"100a 与 20a 情景都落在起始后的第 {frame.get('100a')} 个整点。"
-        "最后一列是聚合到粗网格后的平均流速，与相邻一列的粗网格平均流速对照。"
-        "表头篇幅有限，用短名代替完整说法。模拟均流速是粗网格模拟值给出的平均流速，"
-        "聚合均流速是聚合后的二米真值给出的平均流速，两个短名与 2.1 节的命名一一对应。"
+        "最后两列是粗网格模拟值与聚合后的二米真值各自的平均流速，两者对照。"
+        "表头篇幅有限，用短名代替完整说法。"
+        "模拟均流速是粗网格模拟值给出的平均流速，聚合均流速是聚合后的二米真值给出的平均流速，"
+        "两个短名与 2.1 节的命名一一对应。"
         "流速是数据中没有直接存储的量，由存有的单宽流量与水深相除得到，属于派生量。"
-        "</caption><thead><tr><th class='l'>重现期</th><th>边长<br>(米)</th><th>分辨率比</th>"
-        "<th>CSI<br>@0.05</th><th>CSI<br>@0.30</th><th>CSI<br>@1.00</th><th>F1<br>@0.05</th>"
+        "读数方向，四个相关系数、两个临界成功指数与结构相似度都是越大越好。"
+        "</caption><thead><tr><th class='l'>重现期</th><th>边长<br>(米)</th>"
+        "<th>CSI<br>@0.05</th><th>CSI<br>@1.00</th>"
         "<th>水深<br>Pearson</th><th>水深<br>Spearman</th><th>水深<br>SSIM</th>"
         "<th>流速<br>Pearson</th><th>流速<br>Spearman</th><th>模拟均<br>流速(m/s)</th>"
         "<th>聚合均<br>流速(m/s)</th></tr></thead><tbody>"
@@ -814,39 +844,49 @@ def pre_cons_cat_table() -> str:
 
 
 def pre_cons_dist_table() -> str:
-    """Probability-distribution fits for depth and speed on the four coarse grids."""
+    """Probability-distribution fits for depth and speed on the four coarse grids.
+
+    Kept compact on purpose: the leading label carries the variable, the scenario and
+    the edge length, so the body is only the fit diagnostics that support the one
+    decision this table answers, namely which family fits and how stable that choice
+    is across grids. Raw sample counts and the AIC score are method details, not
+    decision quantities, and are left to the JSON.
+    """
     d = _cons()
     if not d:
         return ""
     lab = {"h_max": "水深", "speed": "流速"}
+    scen_cn = {"20a": "20 年", "100a": "100 年"}
     rows = []
     for key, name in lab.items():
         for scen in ("20a", "100a"):
             for r in ("5m", "10m", "20m", "30m"):
                 x = d["flood"]["variables"][key][scen]["resolutions"][r]["dist_native"]
                 rows.append(
-                    f"<tr><td class='l'>{name}</td><td>{scen}</td><td>{r[:-1]}</td>"
-                    f"<td>{x['n_fit']}</td><td>{x['mean']:.3f}</td>"
-                    f"<td>{x['median']:.3f}</td><td>{x['p95']:.3f}</td>"
+                    f"<tr><td class='l'>{name}</td><td>{scen_cn[scen]}</td><td>{r[:-1]}</td>"
+                    f"<td>{x['mean']:.3f}</td><td>{x['median']:.3f}</td>"
+                    f"<td>{x['p95']:.3f}</td>"
                     f"<td>{x['skew']:.2f}</td><td>{x['kurtosis_excess']:.1f}</td>"
                     f"<td class='l'>{x['best_family']}</td>"
-                    f"<td>{x['best_aic']:.0f}</td><td>{x['best_ks']:.4f}</td></tr>")
+                    f"<td>{x['best_ks']:.4f}</td></tr>")
     return (
         "<table><caption><b>表 95　水深与流速的概率分布拟合。</b>"
+        "每一行是一档网格上一个情景的拟合结果，水深与流速两组各八行。"
         "五种备选分布族是伽马、对数正态、三参数韦布尔、指数与对数逻辑斯蒂，"
-        "位置参数固定为零，其余参数用最大似然估计。最优族由赤池信息量准则选出，"
-        "数值越小表示拟合越好，需要注意的是它只在同一行的五个备选族之间可比，"
-        "各档网格抽到的样本数不同，跨分辨率纵向比较应看 KS 列。"
-        "KS 列给出该族对应的柯尔莫哥洛夫-斯米尔诺夫统计量，"
-        "它是经验分布与拟合分布之间的最大纵向距离，数值越小表示越接近。"
+        "位置参数固定为零，其余参数用最大似然估计，最优族由赤池信息量准则选出。"
+        "KS 列是柯尔莫哥洛夫-斯米尔诺夫统计量，即经验分布与拟合分布之间的最大纵向距离，"
+        "数值越小表示拟合越接近，它是可以跨分辨率纵向比较的那一列。"
+        "均值、中位数与 95 分位三列的单位与变量同，水深的表头标米，流速的表头标米每秒。"
+        "整张表只回答一个问题，最优族是否随网格改变。读法是先看最优分布族一列，"
+        "再看同一变量四行的 KS 与偏度是否同向变化。"
         "拟合样本只取湿区单元，水深取超过五厘米的单元，流速取聚合真值超过五厘米的单元，"
         "每个样本最多抽取十万个单元，随机种子为 20260921。"
-        "均值的单位与水深的单位相同，水深是米，流速是米每秒。"
-        "水深行后半段的最优族一律是对数正态分布，流速行出现过一次更换。"
+        "水深八行一律是对数正态分布，流速五米与十米是对数正态分布，"
+        "二十米与三十米换成三参数韦布尔分布，这是本节唯一一处最优族发生更换的地方。"
         "</caption><thead><tr><th class='l'>变量</th><th>情景</th><th>边长<br>(米)</th>"
-        "<th>样本数</th><th>均值</th><th>中位数</th><th>95 分位</th><th>偏度</th>"
-        "<th>超额<br>峰度</th><th class='l'>最优分布族</th><th>AIC</th>"
-        "<th>KS</th></tr></thead><tbody>"
+        "<th>均值</th><th>中位数</th><th>95 分位</th>"
+        "<th>偏度</th><th>超额<br>峰度</th><th class='l'>最优分布族</th>"
+        "<th>KS<br>(越小越好)</th></tr></thead><tbody>"
         + "".join(rows) + "</tbody></table>")
 
 
@@ -1086,21 +1126,21 @@ def pat_table() -> str:
             q = rec["chance_corrected"][p]
             rows.append(
                 f"<tr><td class='l'>{a[:-1]} 米与 {b[:-1]} 米</td>"
-                f"<td>{q['separation']:.2f}</td><td>{q['v']:.3f}</td>"
+                f"<td>{q['v']:.3f}</td>"
                 f"<td>{q['ari']:.3f}</td><td>{q['fm']:.3f}</td>"
                 f"<td>{q['kappa']:.3f}</td></tr>")
         fl = rec["chance_floor"]
         out.append(
             f"<table><caption><b>表 {capid}　{name}各分辨率组合的机会校正一致性指标。</b>"
-            "边长之比是两档网格边长中较大者与较小者的比值，相邻档取一点五到二点五，"
-            "跨三档取十五。V-measure 与算术归一化的归一化互信息恒等，因此只列一列，"
-            f"归一化互信息的数值与之相同，调整互信息在四位数上与它一致。"
-            "调整兰德指数、Fowlkes-Mallows 与科恩卡帕都在零附近表示与随机标号无异，"
-            "负值表示比随机标号还差。Fowlkes-Mallows 的随机期望值不为零，"
+            "四列都是越大越一致，零表示与随机标号无异，负值表示比随机标号还差。"
+            "V-measure 与算术归一化的归一化互信息恒等，因此只列一列，"
+            "归一化互信息的数值与之相同，调整互信息在四位数上与它一致。"
+            "调整兰德指数、Fowlkes-Mallows 与科恩卡帕都在零附近表示与随机标号无异。"
+            "Fowlkes-Mallows 的随机期望值不为零，"
             f"二米与三十米这一对是 {fl['2m|30m']['fm']:.3f}，"
             f"五米与十米这一对是 {fl['5m|10m']['fm']:.3f}，"
             "读数时应当先减掉这个水平。"
-            "</caption><thead><tr><th class='l'>分辨率组合</th><th>边长<br>之比</th>"
+            "</caption><thead><tr><th class='l'>分辨率组合</th>"
             "<th>V-measure</th><th>调整兰德<br>指数</th>"
             "<th>Fowlkes-<br>Mallows</th><th>科恩<br>卡帕</th></tr></thead><tbody>"
             + "".join(rows) + "</tbody></table>")
@@ -1167,9 +1207,8 @@ def pre_dialect_table() -> str:
             gap = f["mse_fine"] - total
             rows.append(
                 f"<tr><td class='l'>{scen}</td><td>{res[:-1]}</td>"
-                f"<td>{x['ratio']:g}</td>"
                 f"<td>{f['mse_fine']:.4f}</td><td>{f['mse_coarse']:.4f}</td>"
-                f"<td>{f['mse_within']:.4f}</td><td>{total:.4f}</td>"
+                f"<td>{f['mse_within']:.4f}</td>"
                 f"<td>{gap:.1e}</td>"
                 f"<td>{sh['coarse_of_fine']*100:.1f}</td>"
                 f"<td>{sh['within_of_fine']*100:.1f}</td>"
@@ -1183,20 +1222,20 @@ def pre_dialect_table() -> str:
         "粗网格口径 MSE 是粗网格模拟值减聚合真值的平方在一格上的平均，"
         "对应表 82 的模拟项。块内方差是聚合真值减两米真值平方的平均，对应表 82 的聚合项，"
         "它衡量方块内部本来就不均匀的那一部分，与粗网格算得准不准无关。"
-        "两项之和一栏是粗网格口径 MSE 与块内方差相加，"
-        "按逐块恒等式，它应当等于细网格口径 MSE。"
-        "差值一栏是细网格口径 MSE 减去两项之和。"
+        "按逐块恒等式，粗网格口径 MSE 与块内方差相加应当等于细网格口径 MSE，"
+        "差值一栏给出两者相减后的残差，它是否接近零就是这条恒等式是否成立的判据。"
         "表头中的 MSE 指均方误差，也就是误差平方的平均，取平方根即 2.2 节定义的均方根误差。"
+        "差值一栏最右两列是同一批数字开平方后的均方根误差，单位是米，便于与其他表格对照。"
+        "后两栏是粗网格口径与块内方差各占细网格口径的比例，两者相加为一。"
         "十米、二十米与三十米三档上这个差值落在十的负九次方平方米量级，相对量级为十的负八次方，"
         "属于单精度累加的舍入，说明恒等式在数值上成立。"
         "逐块改用双精度复算时，最大残差为九乘十的负十四次方平方米，可以认为严格成立。"
         "五米档的方块宽两个半两米单元，最近邻升采样形成的分组与面积加权方块并不重合，"
         "因此差值升到十的负五次方平方米量级，约为该档细网格口径的万分之五，"
-        "这一档需要单独看，正文有说明。"
-        "后两栏是同一批数字开平方后的均方根误差，单位是米，便于与其他表格对照。</caption>"
-        "<thead><tr><th class='l'>重现期</th><th>边长<br>(米)</th><th>分辨率比</th>"
+        "这一档需要单独看，正文有说明。</caption>"
+        "<thead><tr><th class='l'>重现期</th><th>边长<br>(米)</th>"
         "<th>细网格口径<br>MSE(平方米)</th><th>粗网格口径<br>MSE(平方米)</th>"
-        "<th>块内<br>方差(平方米)</th><th>两项<br>之和(平方米)</th><th>差值<br>(平方米)</th>"
+        "<th>块内<br>方差(平方米)</th><th>差值<br>(平方米)</th>"
         "<th>粗网格口径<br>占比(%)</th><th>块内方差<br>占比(%)</th>"
         "<th>细网格口径<br>RMSE(米)</th><th>粗网格口径<br>RMSE(米)</th>"
         "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>")
@@ -1250,48 +1289,47 @@ def pre_paired_table() -> str:
     if not p.exists():
         return ""
     d = json.loads(p.read_text(encoding="utf-8"))
-    cn = {"mae": "逐瓦片 MAE", "rmse": "逐瓦片 RMSE", "csi005": "逐瓦片 CSI@0.05"}
-    pair_cn = {"premodel_vs_identity": "前置模型 减 恒等映射",
-               "premodel_vs_bilinear": "前置模型 减 双线性重采样",
-               "bilinear_vs_identity": "双线性重采样 减 恒等映射"}
+    metrics = [("mae", "逐瓦片 MAE（米）"), ("rmse", "逐瓦片 RMSE（米）"),
+               ("csi005", "逐瓦片 CSI@0.05")]
+    comps = ["premodel_vs_identity", "premodel_vs_bilinear"]
     rows = []
     for res in ("5m", "10m", "20m", "30m"):
-        for pk in ("premodel_vs_identity", "premodel_vs_bilinear",
-                   "bilinear_vs_identity"):
-            for mk in ("mae", "rmse", "csi005"):
+        for mk, mname in metrics:
+            cells = [f"<td>{res[:-1]}</td><td class='l'>{mname}</td>"]
+            for pk in comps:
                 s = d[res]["paired"][pk][mk]
-                if not s:
-                    continue
                 goodif = mk != "csi005"
                 dcls = "good" if ((s["mean_delta"] < 0) == goodif) else "bad"
                 # frac_improved counts the tiles where the delta is negative; for a
                 # metric where larger is better the improvement share is its complement
                 imp = s["frac_improved"] if goodif else 1.0 - s["frac_improved"]
-                rows.append(
-                    f"<tr><td>{res[:-1]}</td><td class='l'>{pair_cn[pk]}</td>"
-                    f"<td class='l'>{cn[mk]}</td><td class='{dcls}'>"
-                    f"{_fmt(s['mean_delta'], 4, plus=True)}</td>"
+                cells.append(
+                    f"<td class='{dcls}'>{_fmt(s['mean_delta'], 4, plus=True)}</td>"
                     f"<td>[{_fmt(s['boot_ci_lo'], 4, plus=True)}, "
                     f"{_fmt(s['boot_ci_hi'], 4, plus=True)}]</td>"
-                    f"<td>{_fmt(s['t'], 2, plus=True)}</td>"
-                    f"<td>{s['wilcoxon_p']:.2e}</td>"
-                    f"<td>{_fmt(s['cohen_dz'], 2, plus=True)}</td>"
-                    f"<td>{imp*100:.1f}</td></tr>")
+                    f"<td>{imp*100:.1f}</td>")
+            rows.append("<tr>" + "".join(cells) + "</tr>")
     return (
         "<table><caption><b>表 87　前置模型相对两个基线的配对检验。</b>"
-        "配对单位是一块瓦片，同一块瓦片在两个方案下的同一指标相减。"
-        "平均差值为负且指标越小越好，表示前置模型更优。"
+        "配对单位是一块瓦片，同一块瓦片在两个方案下的同一指标相减，边长是分层，指标是行。"
+        "逐瓦片 MAE 与 RMSE 越小越好，差值为负表示前置模型更优；"
+        "逐瓦片 CSI@0.05 越大越好，差值为正表示前置模型更优；两种方向都已在颜色上标出。"
+        "左右两组分别对照恒等映射与双线性重采样，同一行的两格可直接比较前置模型相对谁的增益更大。"
         "置信区间来自对差值重抽样四千次的自助法，不跨零即认为差异稳定。"
-        "t 检验与 Wilcoxon 符号秩检验同时给出，前者假设差值近似正态，后者只要求对称。"
-        "效应量采用配对 Cohen's d<sub>z</sub>，等于平均差值除以差值的标准差。"
-        "最后一列的统计口径随指标方向而变。对于逐瓦片平均绝对误差与均方根误差，"
-        "它统计差值严格为负的瓦片，也就是明确改善的瓦片。对于逐瓦片临界成功指数，"
-        "差值越大越有利，因此它统计差值不小于零的瓦片，其中包含恰好持平的情形。"
+        "末列给出差值朝有利方向未变差的瓦片占比，它的统计口径随指标方向而变。"
+        "对于逐瓦片 MAE 与 RMSE，它统计差值严格为负的瓦片，也就是明确改善的瓦片。"
+        "对于逐瓦片 CSI@0.05，差值越大越有利，"
+        "因此它统计差值不小于零的瓦片，其中包含恰好持平的情形。"
         "该列取 100.0 时含义是没有一块瓦片变差，它与全部瓦片都获得改善并不等价，"
-        "五米档前置模型对恒等映射的临界成功指数一行就属于这种情况。</caption>"
-        "<thead><tr><th>边长<br>(米)</th><th class='l'>比较</th><th class='l'>指标</th>"
-        "<th>平均差值</th><th>95% 自助法<br>置信区间</th><th>t</th><th>Wilcoxon<br>p 值</th>"
-        "<th>Cohen's<br>d<sub>z</sub></th><th>未变差瓦片<br>占比(%)</th>"
+        "五米档前置模型对恒等映射的 CSI@0.05 一格就属于这种情况。"
+        "Wilcoxon 符号秩检验的 p 值、t 统计量与配对 Cohen's d<sub>z</sub> 效应量逐对列在 "
+        "<code>outputs/premodel/premodel_results.json</code>，"
+        "本表只保留判断「是否优于基线」所需的差值、区间与占比三项。</caption>"
+        "<thead><tr><th>边长<br>(米)</th><th class='l'>指标</th>"
+        "<th>对恒等<br>平均差值</th><th>对恒等<br>95% CI</th>"
+        "<th>对恒等<br>未变差(%)</th>"
+        "<th>对双线性<br>平均差值</th><th>对双线性<br>95% CI</th>"
+        "<th>对双线性<br>未变差(%)</th>"
         "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>")
 
 
@@ -1467,38 +1505,28 @@ def patx_tables() -> str:
     for r in ("2m", "5m", "10m", "20m", "30m"):
         e = V[r]
         f = e["log_depth"]["fit"]
-        nb = (f"{f['nugget']:.4f}" if f["nugget"] == f["nugget"] else "—")
-        sb = (f"{f['sill']:.4f}" if f["sill"] == f["sill"] else "—")
         a = f.get("decay_m")
+        decay = f"{a:.1f}" if a else "—"
+        rng = f"{f['range_m']:.0f}" if a else "—"
         rows.append(
             f"<tr><td>{r[:-1]}</td><td>{e['wet_cells']:,}</td>"
-            f"<td>{e['log_depth']['sill_sample_var']:.4f}</td>"
-            f"<td>{e['log_depth']['gamma'][0]:.4f}</td>"
-            f"<td>{f['nugget_over_var']:.4f}</td><td>{nb}</td><td>{sb}</td>"
-            f"<td>{a:.1f}</td><td>{f['range_m']:.0f}</td>"
+            f"<td>{f['nugget_over_var']:.4f}</td>"
+            f"<td>{decay}</td><td>{rng}</td>"
             f"<td>{f['range95_m']:.0f}</td><td>{f['r2']:.3f}</td>"
-            f"<td>{_fmt(V[r]['depth']['fit']['r2'], 3)}</td></tr>"
-            if a else
-            f"<tr><td>{r[:-1]}</td><td>{e['wet_cells']:,}</td>"
-            f"<td>{e['log_depth']['sill_sample_var']:.4f}</td>"
-            f"<td>{e['log_depth']['gamma'][0]:.4f}</td>"
-            f"<td>{f['nugget_over_var']:.4f}</td><td>—</td><td>—</td>"
-            f"<td>—</td><td>—</td><td>{f['range95_m']:.0f}</td>"
-            f"<td>{f['r2']:.3f}</td>"
             f"<td>{_fmt(V[r]['depth']['fit']['r2'], 3)}</td></tr>")
     out.append(
         "<table><caption><b>表 99　对数水深场的半变异函数与指数模型参数。</b>"
         "滞后在 960 米瓦片内用二维快速傅里叶变换一次算出，只统计两端都是湿区的"
         "像元对，滞后上限取 480 米。半方差单位为对数水深的方差。<br>"
-        "首档半方差是相邻单元之间的半方差，首档相对粗糙度是它与样本总方差之比，"
-        "数值接近一表示相邻单元之间已经没有相关性。常数项与基台值是指数模型的"
-        "两个参数，衰减参数的单位是米，有效变程取它的三倍。"
+        "首档相对粗糙度是相邻单元之间的半方差与样本总方差之比，"
+        "数值接近一表示相邻单元之间已经没有相关性，粗网格图上接近逐格独立。"
+        "衰减参数是拟合出的指数模型尺度，单位是米，有效变程取它的三倍。"
         "达到总方差 95% 的滞后由曲线直接读出，不依赖模型。"
         "末两列是决定系数，最后一列给出原始水深上的拟合结果，用于说明原始水深"
-        "为何不能使用指数模型。</caption>"
-        "<thead><tr><th>边长<br>(米)</th><th>湿区<br>单元数</th><th>样本<br>总方差</th>"
-        "<th>首档<br>半方差</th><th>首档<br>相对粗糙度</th><th>常数项</th>"
-        "<th>基台值</th><th>衰减<br>参数(米)</th><th>有效<br>变程(米)</th>"
+        "为何不能使用指数模型。原始水深的拟合不成立，五档里有三档决定系数低于 0.11，"
+        "因此本表只把对数水深的参数当作可用结果。</caption>"
+        "<thead><tr><th>边长<br>(米)</th><th>湿区<br>单元数</th>"
+        "<th>首档<br>相对粗糙度</th><th>衰减<br>参数(米)</th><th>有效<br>变程(米)</th>"
         "<th>95%<br>滞后(米)</th><th>对数<br>R²</th><th>原始<br>R²</th>"
         "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>")
 
@@ -1533,52 +1561,79 @@ def patx_tables() -> str:
     if K:
         ks = K["k_grid"]
         rec = K["variables"]["h_max"]
+        sil_h = rec["silhouette"]
+        sil_s = K["variables"]["speed"]["silhouette"]
+        stab_h = rec["stability"]
+        fam = ["v", "ari", "fm", "kappa", "ami", "mean_iou", "area_tv"]
         rows = []
         for k in ks:
             pk = rec["per_k"][str(k)]
+            # ordering stability at this K: the weakest rank agreement with K=3
+            # over the seven metric families
+            omin = min(stab_h[m]["spearman_vs_k3"][str(k)] for m in fam)
+            sel = " class='good'" if k == 3 else ""
             rows.append(
-                f"<tr><td>{k}</td>"
-                f"<td>{rec['silhouette'][str(k)]:.4f}</td>"
-                f"<td>{K['variables']['speed']['silhouette'][str(k)]:.4f}</td>"
-                + "".join(f"<td>{pk[p]['v']:.3f}</td>" for p in PATX_PAIRS)
-                + f"<td>{pk['5m|10m']['ari']:.3f}</td>"
-                  f"<td>{pk['10m|20m']['ari']:.3f}</td></tr>")
+                f"<tr><td{sel}>{k}</td>"
+                f"<td>{sil_h[str(k)]:.3f}</td>"
+                f"<td>{sil_s[str(k)]:.3f}</td>"
+                f"<td>{omin:.3f}</td>"
+                f"<td>{pk['5m|10m']['v']:.3f}</td>"
+                f"<td>{pk['10m|20m']['v']:.3f}</td>"
+                f"<td>{pk['2m|30m']['v']:.3f}</td>"
+                f"<td>{pk['5m|10m']['ari']:.3f}</td></tr>")
         out.append(
             "<table><caption><b>表 101　簇数从二到八时各分辨率组合的 V-measure。</b>"
             "全部数值取自水深，共同湿区的 826554 个单元，随机种子 20260921。"
-            "轮廓系数在二米参考场的 60000 个抽样单元上计算。"
-            "后十列是十个分辨率组合的 V-measure，最后两列另给相邻两对的"
-            "调整兰德指数，用来与 V-measure 对照。"
-            "簇数越大，V-measure 整体越低，但十列之间的相对次序在整张表上不变。"
-            "轮廓系数随簇数单调下降，最高点在二，与 2.10 节原来的表述不同。"
+            "本表只保留支撑簇数选择的三类量，轮廓系数、排序稳定性，"
+            "以及三个代表分辨率组合的 V-measure 与相邻两对的调整兰德指数。"
+            "三个组合是排序最高的一对五米与十米、次高的一对十米与二十米、"
+            "以及最低的一对二米与三十米，其余七个组合的逐簇数原值见 "
+            "<code>outputs/premodel/pattern_extra.json</code>。"
+            "排序稳定性一列是七类指标在同一簇数下与簇数取三时的排序斯皮尔曼相关的最小值，"
+            "等于一表示十对组合的次序逐个位置不变。"
+            "三个结论可以直接读出。轮廓系数随簇数单调下降，最高点在二，"
+            "它因此不能单独支撑选三，与 2.10 节原来的表述不同。"
+            "排序稳定性在二到八之间始终不低，簇数取三时等于一，"
+            "说明簇数的选取不改变组合之间的相对次序。"
+            "绝对值随簇数整体走低，因此跨簇数比较绝对值没有意义。"
+            "行首加粗的一行是三，也就是本章实际采用的簇数。"
             "</caption><thead><tr><th>簇数<br>K</th><th>水深<br>轮廓系数</th>"
-            "<th>流速<br>轮廓系数</th>"
-            + "".join(f"<th>{p.replace('|', '/')}</th>" for p in PATX_PAIRS)
-            + "<th>5/10<br>ARI</th><th>10/20<br>ARI</th></tr></thead><tbody>"
+            "<th>流速<br>轮廓系数</th><th>排序<br>相关性最低</th>"
+            "<th>V<br>5/10</th><th>V<br>10/20</th><th>V<br>2/30</th>"
+            "<th>ARI<br>5/10</th></tr></thead><tbody>"
             + "".join(rows) + "</tbody></table>")
 
     sc = d.get("sabre_crosscheck", {})
     if sc.get("variables"):
         rows = []
         for var, name in (("h_max", "水深"), ("speed", "流速")):
-            for p, q in sc["variables"][var].items():
-                rows.append(
-                    f"<tr><td class='l'>{name}</td><td>{_pl(p)}</td>"
-                    f"<td>{q['python_v']:.9f}</td><td>{q['sabre_v']:.9f}</td>"
-                    f"<td>{q['abs_diff']:.2e}</td>"
-                    f"<td>{q['sabre_h']:.6f}</td><td>{q['sabre_c']:.6f}</td></tr>")
+            items = list(sc["variables"][var].items())
+            vv = [q["python_v"] for _, q in items]
+            diffs = [q["abs_diff"] for _, q in items]
+            # the pair that realises the largest absolute difference, to name the worst case
+            worst_p, worst_q = max(items, key=lambda kv: kv[1]["abs_diff"])
+            rows.append(
+                f"<tr><td class='l'>{name}</td><td>{len(items)}</td>"
+                f"<td>{min(vv):.3f}</td><td>{max(vv):.3f}</td>"
+                f"<td>{_pl(worst_p)}</td><td>{max(diffs):.2e}</td>"
+                f"<td class='good'>舍入量级一致</td></tr>")
         out.append(
             "<table><caption><b>表 102　SABRE 0.4.3 与直接计算的逐对数值比较。</b>"
             "R 环境由 conda-forge 建立，装入 r-base 4.5.3、sf 1.1.3、terra 1.9.50"
             "与 CRAN 上的 sabre 0.4.3。标号栅格导出为 GeoTIFF，SABRE 读入后按"
             "多边形区域划分计算。直接计算一列由 scikit-learn 的同质性、完备性与"
-            "V-measure 给出。"
-            f"二十对数值的最大绝对差是 {sc['max_abs_diff']:.2e}，"
-            "在双精度舍入量级，两种实现给出同一个量。</caption>"
-            "<thead><tr><th class='l'>变量</th><th class='l'>分辨率组合</th>"
-            "<th>直接计算<br>V-measure</th><th>SABRE<br>V-measure</th>"
-            "<th>绝对差</th><th>SABRE<br>同质性</th><th>SABRE<br>完备性</th>"
-            "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>")
+            "V-measure 给出。本表不再逐对铺开二十行，只按变量汇总，"
+            "列出 V-measure 取值范围与逐对绝对差的最大值，"
+            "目的是回答两种实现是否给出同一个量。"
+            f"全部二十对数值的最大绝对差是 {sc['max_abs_diff']:.2e}，"
+            "在双精度舍入量级，两种实现给出同一个量，"
+            "逐对的同质性、完备性与 V-measure 原值见 "
+            "<code>outputs/premodel/pattern_extra.json</code>。</caption>"
+            "<thead><tr><th class='l'>变量</th><th>组合<br>对数</th>"
+            "<th>V-measure<br>最小值</th><th>V-measure<br>最大值</th>"
+            "<th class='l'>最大差<br>所在组合</th><th>最大<br>绝对差</th>"
+            "<th class='l'>结论</th></tr></thead><tbody>"
+            + "".join(rows) + "</tbody></table>")
     return "".join(out)
 
 
