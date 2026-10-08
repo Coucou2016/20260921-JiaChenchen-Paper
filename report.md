@@ -2133,7 +2133,7 @@ SABRE 是 R 语言实现的区域划分关联分析工具，这一条已经补�
 
 | 文献 | 说明 |
 |---|---|
-| Valavi, R., Elith, J., Lahoz-Monfort, J. J., Guillera-Arroita, G. blockCV: An R package for generating spatially or environmentally separated folds for k-fold cross-validation of species distribution models. *Methods in Ecology and Evolution*, 2019, 10: 225–232. DOI: 10.1111/2041-210X.13107 | 空间分块交叉验证与分块重抽样的方法来源。本报告 5.8 节的空间分块 自助法与第 8.3 节建议的分块交叉验证均依据这一思路。 |
+| Valavi, R., Elith, J., Lahoz-Monfort, J. J., Guillera-Arroita, G. blockCV: An R package for generating spatially or environmentally separated folds for k-fold cross-validation of species distribution models. *Methods in Ecology and Evolution*, 2019, 10: 225–232. DOI: 10.1111/2041-210X.13107 | 空间分块交叉验证与分块重抽样的方法来源。本报告 5.8 节的空间分块 自助法与第 9.3 节建议的分块交叉验证均依据这一思路。 |
 
 还需说明一处沿用关系。本报告第二章在半变异函数拟合与分布族比较中使用了一元指数 模型与赤池信息量准则，属于地统计与模型选择的标准工具，未逐条列出。 上表所列为与本报告方法定位直接相关的文献，正文引用处已就近标注。
 

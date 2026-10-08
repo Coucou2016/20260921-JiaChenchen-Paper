@@ -3714,7 +3714,7 @@ blockCV: An R package for generating spatially or environmentally separated fold
 for k-fold cross-validation of species distribution models. <i>Methods in Ecology
 and Evolution</i>, 2019, 10: 225–232. DOI: 10.1111/2041-210X.13107</td>
 <td class="l">空间分块交叉验证与分块重抽样的方法来源。本报告 5.8 节的空间分块
-自助法与第 8.3 节建议的分块交叉验证均依据这一思路。</td></tr>
+自助法与第 9.3 节建议的分块交叉验证均依据这一思路。</td></tr>
 </tbody>
 </table>
 <p>还需说明一处沿用关系。本报告第二章在半变异函数拟合与分布族比较中使用了一元指数
