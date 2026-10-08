@@ -1,0 +1,70 @@
+dataset:
+  root: dataset
+  lr_res: 10
+  hr_res: 2
+  target: h_max
+  static_res: hr
+  geo_mode: all
+  scenarios: [20a, 100a]
+
+model:
+  name: bilinear_residual
+  base_mode: bilinear
+  residual_space: depth
+  hydro_encoder:
+    in_channels: 2
+    width: 64
+    blocks: 8
+  geo_encoder:
+    width: 48
+    in_cont: 14
+    landuse_embedding: 8
+    use_landuse: true
+  operator:
+    width: 192
+    heads: 8
+    layers: 2
+  depth_ref: 0.10
+  predict_residual: true
+  predict_wet: true
+
+loss:
+  name: flood
+  w_depth: 1.0
+  w_wet: 0.30
+  w_log: 0.20
+  w_boundary: 0.10
+  w_extreme: 0.10
+  wet_threshold: 0.05
+
+train:
+  # batch_size 1 required on 4 GB GPUs (GTX 950M)
+  batch_size: 1
+  epochs: 300
+  # FP16 AMP is unstable on Maxwell (sm_50) — produces NaN; keep FP32
+  amp: false
+  num_workers: 0
+  max_grad_norm: 1.0
+  seed: 42
+  log_every_steps: 50
+
+optimizer:
+  type: AdamW
+  lr: 0.0001
+  weight_decay: 0.00001
+
+scheduler:
+  type: cosine
+  warmup_epochs: 10
+
+early_stopping:
+  metric: CSI_005
+  mode: max
+  patience: 40
+
+augmentation:
+  flip: false
+  rotation: false
+
+output:
+  dir: outputs/v1_bilinear_residual

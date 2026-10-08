@@ -96,7 +96,7 @@ class HydroGeoSRNO(nn.Module):
             x = torch.cat([depth_part[:, : need - 1], lr_valid[:, :1]], dim=1)
         return self.hydro_encoder(x)
 
-    def forward(
+    def encode_features(
         self,
         lr: torch.Tensor,
         lr_valid: torch.Tensor,
@@ -104,16 +104,16 @@ class HydroGeoSRNO(nn.Module):
         landuse: torch.Tensor,
         lr_res: torch.Tensor,
         hr_res: torch.Tensor,
-        **kwargs,
-    ) -> dict[str, torch.Tensor]:
-        b, _, hr_h, hr_w = (
-            lr.shape[0],
-            None,
-            static_cont.shape[-2] if static_cont.numel() else landuse.shape[-2],
-            static_cont.shape[-1] if static_cont.numel() else landuse.shape[-1],
-        )
-        if static_cont.numel() == 0:
-            # lr-only: synthesize empty cont with correct spatial size from landuse zeros
+    ) -> tuple[torch.Tensor, int, int]:
+        """Operator features at the HR lattice plus its (height, width).
+
+        Extracted from ``forward`` so residual-parameterisation variants can reuse
+        the exact same encoder + operator stack without duplicating the wiring.
+        """
+        b = lr.shape[0]
+        if static_cont.numel():
+            hr_h, hr_w = static_cont.shape[-2], static_cont.shape[-1]
+        else:
             hr_h, hr_w = landuse.shape[-2], landuse.shape[-1]
 
         feat_lr = self.encode_lr(lr, lr_valid)  # B,Ch,hl,wl
@@ -134,15 +134,28 @@ class HydroGeoSRNO(nn.Module):
         inp = torch.cat([hydro_flat, rel_flat, feat_geo, scale_map, cell_map], dim=1)
         feat = self.imnet_in(inp)
         feat = self.operator(feat)
+        return feat, hr_h, hr_w
 
-        delta_z = self.residual_head(feat)
+    def compute_base(
+        self,
+        lr: torch.Tensor,
+        lr_valid: torch.Tensor,
+        hr_h: int,
+        hr_w: int,
+        mode: str = "bilinear",
+        mask_aware: bool | None = None,
+    ) -> torch.Tensor:
+        """Interpolation base at HR from the coarse depth input.
 
-        # Mask-aware bilinear base. nodata is filled with 0 upstream, so a plain
-        # bilinear interpolation of lr_depth pulls land/edge nodata zeros into the
-        # valid region and the residual then has to spend capacity undoing that
-        # artefact. Normalising by the interpolated valid mask removes it.
+        ``mask_aware`` normalises by the interpolated valid mask, so nodata zeros
+        (filled upstream) cannot be pulled into the valid region by the filter.
+        """
+        if mask_aware is None:
+            mask_aware = self.mask_aware_base
         lr_depth = lr[:, :1]
-        if self.mask_aware_base:
+        if mode == "nearest":
+            base_h = F.interpolate(lr_depth, size=(hr_h, hr_w), mode="nearest")
+        elif mask_aware:
             valid = lr_valid[:, :1].float()
             num = F.interpolate(lr_depth * valid, size=(hr_h, hr_w),
                                 mode="bilinear", align_corners=False)
@@ -153,7 +166,28 @@ class HydroGeoSRNO(nn.Module):
         else:
             base_h = F.interpolate(lr_depth, size=(hr_h, hr_w),
                                    mode="bilinear", align_corners=False)
-        base_h = torch.clamp(base_h, min=0.0)
+        return torch.clamp(base_h, min=0.0)
+
+    def forward(
+        self,
+        lr: torch.Tensor,
+        lr_valid: torch.Tensor,
+        static_cont: torch.Tensor,
+        landuse: torch.Tensor,
+        lr_res: torch.Tensor,
+        hr_res: torch.Tensor,
+        **kwargs,
+    ) -> dict[str, torch.Tensor]:
+        feat, hr_h, hr_w = self.encode_features(
+            lr, lr_valid, static_cont, landuse, lr_res, hr_res)
+
+        delta_z = self.residual_head(feat)
+
+        # Mask-aware bilinear base. nodata is filled with 0 upstream, so a plain
+        # bilinear interpolation of lr_depth pulls land/edge nodata zeros into the
+        # valid region and the residual then has to spend capacity undoing that
+        # artefact. Normalising by the interpolated valid mask removes it.
+        base_h = self.compute_base(lr, lr_valid, hr_h, hr_w, mode="bilinear")
         z_base = depth_encode(base_h, self.depth_ref)
 
         if self.predict_residual:

@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "config_sha256": "762ba0a07830e25ad39e246badff579c8838a8809c81e3aa01587b03cf19784f",
+  "git_commit": "unknown",
+  "python": "3.13.12",
+  "platform": "Windows-10-10.0.17763-SP0",
+  "torch": "2.7.1+cu118",
+  "cuda": "11.8",
+  "cuda_available": true,
+  "gpu": "GeForce GTX 950M",
+  "experiment": "B_deep_objective_E7",
+  "parent": "last.pt",
+  "w_deep": 0.1,
+  "deep_threshold": 1.0,
+  "deep_scale": 4.0,
+  "continuous_deep": true,
+  "decay_floor": 0.25,
+  "lr": 5e-05,
+  "horizon": 1,
+  "selection": "min domain-pooled RMSE_wet on FULL val (guarded by CSI_005)"
+}

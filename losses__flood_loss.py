@@ -131,6 +131,8 @@ class FloodLoss(nn.Module):
         focal_alpha: float = 0.25,
         focal_alpha_mode: str = "class",
         quantile_per_sample: bool = True,
+        continuous_deep: bool = False,
+        deep_scale: float = 1.0,
     ) -> None:
         super().__init__()
         self.w_depth = w_depth
@@ -155,6 +157,29 @@ class FloodLoss(nn.Module):
         self.deep_threshold = deep_threshold
         self.deep_quantile = deep_quantile
         self.deep_delta = deep_delta
+        # Experiment B: replace the binary deep mask with a CONTINUOUS per-pixel
+        # weight that rises with true depth, so deep pixels always receive weight
+        # and a mostly-shallow tile is not distorted by a mask that collapses onto
+        # its shallow side. The weight is a smooth ramp in metres:
+        #   w(t) = relu(1 + (t - deep_threshold)/deep_scale)   for t > deep_threshold
+        # i.e. w == 1 exactly at the threshold and grows linearly above it.
+        self.continuous_deep = continuous_deep
+        self.deep_scale = max(float(deep_scale), 1e-6)
+
+    def _deep_weights(self, target: torch.Tensor, mask_b: torch.Tensor) -> torch.Tensor:
+        """Per-pixel deep weight, shape [B,H,W].
+
+        Binary (default) returns the indicator ``t >= deep_threshold``; continuous
+        returns a linear ramp that is 1.0 at the threshold and increases above it.
+        In both modes the threshold is the fixed absolute one (no per-tile
+        quantile), so the mask can never collapse onto shallow water.
+        """
+        t = target[:, 0]
+        if not self.continuous_deep:
+            return (mask_b & (t >= self.deep_threshold)).float()
+        ramp = 1.0 + (t - self.deep_threshold) / self.deep_scale
+        ramp = torch.clamp(ramp, min=0.0)
+        return ramp * mask_b.float()
 
     def _quantile_threshold(self, values: torch.Tensor, q: float, fallback: float) -> torch.Tensor:
         if values.numel() == 0:
@@ -227,13 +252,23 @@ class FloodLoss(nn.Module):
         # Deep-water term in METRE space, restricted to the deep tail. The source of truth
         # is the target mask only; no fabricated depth is ever built, so no gradient flows
         # through a constant. The threshold is fixed, or the deep_quantile of the WET cells
-        # so the mask cannot collapse onto shallow water.
+        # so the mask cannot collapse onto shallow water. With continuous_deep the binary
+        # mask is replaced by a per-pixel ramp weight (Experiment B).
         l_deep = pred_h.new_tensor(0.0)
         if self.w_deep > 0:
             if self.quantile_per_sample:
                 deep_terms = []
                 for i in range(target.shape[0]):
                     mi = mask_b[i]
+                    if self.continuous_deep:
+                        # fixed absolute threshold, no per-tile collapse
+                        dw = self._deep_weights(target[i:i + 1], mi[None])
+                        de = F.huber_loss(pred_h[i:i + 1], target[i:i + 1],
+                                          reduction="none", delta=self.deep_delta)
+                        denom = dw.sum().clamp_min(1e-6)
+                        if float(denom) > 0:
+                            deep_terms.append((de * dw[None]).sum() / denom)
+                        continue
                     vals = target[i, 0][mi]
                     wet_vals = vals[vals > self.wet_threshold]
                     if self.deep_quantile is not None and wet_vals.numel() > 1:
@@ -248,18 +283,25 @@ class FloodLoss(nn.Module):
                         deep_terms.append(_masked_reduce(de, dm[None]))
                 l_deep = torch.stack(deep_terms).mean() if deep_terms else pred_h.new_tensor(0.0)
             else:
-                with torch.no_grad():
-                    valid_vals = target[:, 0][mask_b]
-                    wet_vals = valid_vals[valid_vals > self.wet_threshold]
-                    if self.deep_quantile is not None and wet_vals.numel() > 1:
-                        deep_thr = torch.quantile(wet_vals, self.deep_quantile)
-                        deep_thr = torch.maximum(deep_thr, deep_thr.new_tensor(self.deep_threshold))
-                    else:
-                        deep_thr = target.new_tensor(self.deep_threshold)
-                deep_mask = mask_b & (target[:, 0] >= deep_thr)
-                if deep_mask.any():
-                    deep_err = F.huber_loss(pred_h, target, reduction="none", delta=self.deep_delta)
-                    l_deep = _masked_reduce(deep_err, deep_mask)
+                if self.continuous_deep:
+                    dw = self._deep_weights(target, mask_b)
+                    if float(dw.sum()) > 0:
+                        de = F.huber_loss(pred_h, target, reduction="none",
+                                          delta=self.deep_delta)
+                        l_deep = (de * dw[:, None]).sum() / dw.sum().clamp_min(1e-6)
+                else:
+                    with torch.no_grad():
+                        valid_vals = target[:, 0][mask_b]
+                        wet_vals = valid_vals[valid_vals > self.wet_threshold]
+                        if self.deep_quantile is not None and wet_vals.numel() > 1:
+                            deep_thr = torch.quantile(wet_vals, self.deep_quantile)
+                            deep_thr = torch.maximum(deep_thr, deep_thr.new_tensor(self.deep_threshold))
+                        else:
+                            deep_thr = target.new_tensor(self.deep_threshold)
+                    deep_mask = mask_b & (target[:, 0] >= deep_thr)
+                    if deep_mask.any():
+                        deep_err = F.huber_loss(pred_h, target, reduction="none", delta=self.deep_delta)
+                        l_deep = _masked_reduce(deep_err, deep_mask)
 
         # Plain linear wet L1: this is our OBJECTIVE (it is what RMSE/MAE_wet measure) but it
         # is NOT optimized, because it is dominated by abundant shallow pixels. Recorded so

@@ -1,21 +1,21 @@
 # FILE_INDEX
 
-Complete flat inventory of this mirror. **759 files, 152.7 MB, no subdirectories.**
+Complete flat inventory of this mirror. **812 files, 154.5 MB, no subdirectories.**
 
 Every entry lists the flat filename, its original repo-relative path and its size. Fetch by flat name. The machine-readable twin of this index is `_manifest.json`, which also carries a SHA-256 per file.
 
 ## Full and condensed report artifacts (root)
 
-6 files, 51.81 MB
+6 files, 52.91 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `report.html` | `report.html` | 20,313,167 |
-| `report.md` | `report.md` | 366,283 |
-| `report.pdf` | `report.pdf` | 16,685,815 |
-| `report_brief.html` | `report_brief.html` | 9,234,280 |
-| `report_brief.md` | `report_brief.md` | 36,898 |
-| `report_brief.pdf` | `report_brief.pdf` | 7,686,562 |
+| `report.html` | `report.html` | 20,729,541 |
+| `report.md` | `report.md` | 382,892 |
+| `report.pdf` | `report.pdf` | 17,119,780 |
+| `report_brief.html` | `report_brief.html` | 9,366,520 |
+| `report_brief.md` | `report_brief.md` | 38,642 |
+| `report_brief.pdf` | `report_brief.pdf` | 7,842,302 |
 
 ## Project entry points and docs (root)
 
@@ -27,7 +27,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `IMPLEMENTATION_CHECKLIST.md` | `IMPLEMENTATION_CHECKLIST.md` | 4,537 |
 | `PLAN_20260924.md` | `20260924-方案.md` | 32,114 |
 | `README.md` | `README.md` | 3,136 |
-| `RERUN_PLAN_AND_CHECKLIST.md` | `RERUN_PLAN_AND_CHECKLIST.md` | 15,247 |
+| `RERUN_PLAN_AND_CHECKLIST.md` | `RERUN_PLAN_AND_CHECKLIST.md` | 18,339 |
 | `STATUS.md` | `STATUS.md` | 70,552 |
 | `VISUALIZATION.md` | `VISUALIZATION.md` | 9,262 |
 | `requirements-analysis.txt` | `requirements-analysis.txt` | 140 |
@@ -50,7 +50,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Figures embedded in the report, in render order
 
-57 files, 14.54 MB
+60 files, 14.82 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -111,10 +111,13 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `reportfig__fig83_contiguity_map.png` | `outputs/report_figs/fig83_contiguity_map.png` | 76,196 |
 | `reportfig__fig84_contiguity_metrics.png` | `outputs/report_figs/fig84_contiguity_metrics.png` | 177,204 |
 | `reportfig__fig85_k_sensitivity.png` | `outputs/report_figs/fig85_k_sensitivity.png` | 309,417 |
+| `reportfig__fig86_exp_ab.png` | `outputs/report_figs/fig86_exp_ab.png` | 97,605 |
+| `reportfig__fig87_exp_b.png` | `outputs/report_figs/fig87_exp_b.png` | 147,982 |
+| `reportfig__fig88_deep_slope.png` | `outputs/report_figs/fig88_deep_slope.png` | 53,510 |
 
 ## Published figures (upstream set)
 
-53 files, 14.27 MB
+56 files, 14.56 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -171,10 +174,13 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `figure__fig83_contiguity_map.png` | `figures/fig83_contiguity_map.png` | 76,196 |
 | `figure__fig84_contiguity_metrics.png` | `figures/fig84_contiguity_metrics.png` | 177,204 |
 | `figure__fig85_k_sensitivity.png` | `figures/fig85_k_sensitivity.png` | 309,417 |
+| `figure__fig86_exp_ab.png` | `figures/fig86_exp_ab.png` | 97,605 |
+| `figure__fig87_exp_b.png` | `figures/fig87_exp_b.png` | 147,982 |
+| `figure__fig88_deep_slope.png` | `figures/fig88_deep_slope.png` | 53,510 |
 
 ## Machine result data and small grids
 
-432 files, 46.47 MB
+469 files, 46.51 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -193,6 +199,14 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__benchmarks__table_test.json` | `outputs/benchmarks/table_test.json` | 1,261 |
 | `resultdata__benchmarks__table_val.csv` | `outputs/benchmarks/table_val.csv` | 732 |
 | `resultdata__benchmarks__table_val.json` | `outputs/benchmarks/table_val.json` | 1,255 |
+| `resultdata__deep_objective__E7__best_pooled_summary.json` | `outputs/deep_objective/E7/best_pooled_summary.json` | 341 |
+| `resultdata__deep_objective__E7__best_summary.json` | `outputs/deep_objective/E7/best_summary.json` | 161 |
+| `resultdata__deep_objective__E7__config_resolved.yaml` | `outputs/deep_objective/E7/config_resolved.yaml` | 999 |
+| `resultdata__deep_objective__E7__provenance.json` | `outputs/deep_objective/E7/provenance.json` | 599 |
+| `resultdata__deep_objective___smoke__best_pooled_summary.json` | `outputs/deep_objective/_smoke/best_pooled_summary.json` | 341 |
+| `resultdata__deep_objective___smoke__best_summary.json` | `outputs/deep_objective/_smoke/best_summary.json` | 158 |
+| `resultdata__deep_objective___smoke__config_resolved.yaml` | `outputs/deep_objective/_smoke/config_resolved.yaml` | 999 |
+| `resultdata__deep_objective___smoke__provenance.json` | `outputs/deep_objective/_smoke/provenance.json` | 599 |
 | `resultdata__deep_sweep__D0__best_summary.json` | `outputs/deep_sweep/D0/best_summary.json` | 137 |
 | `resultdata__deep_sweep__D0__config_resolved.yaml` | `outputs/deep_sweep/D0/config_resolved.yaml` | 1,079 |
 | `resultdata__deep_sweep__D0__metrics_last.json` | `outputs/deep_sweep/D0/metrics_last.json` | 507 |
@@ -446,9 +460,29 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__premodel__contiguity_core_h_max.npz` | `outputs/premodel/contiguity_core_h_max.npz` | 6,267 |
 | `resultdata__premodel__contiguity_core_speed.npz` | `outputs/premodel/contiguity_core_speed.npz` | 3,850 |
 | `resultdata__premodel__cross_resolution_consistency.json` | `outputs/premodel/cross_resolution_consistency.json` | 144,712 |
+| `resultdata__premodel__diag_deep_slope_partial.log` | `outputs/premodel/diag_deep_slope_partial.log` | 507 |
 | `resultdata__premodel__error_scale_diagnostic.json` | `outputs/premodel/error_scale_diagnostic.json` | 9,618 |
+| `resultdata__premodel__exp_ab__E7_continuous_val.json` | `outputs/premodel/exp_ab/E7_continuous_val.json` | 1,850 |
+| `resultdata__premodel__exp_ab__E7_continuous_val.log` | `outputs/premodel/exp_ab/E7_continuous_val.log` | 1,784 |
+| `resultdata__premodel__exp_ab__bilinear_val.json` | `outputs/premodel/exp_ab/bilinear_val.json` | 1,805 |
+| `resultdata__premodel__exp_ab__bilinear_val.log` | `outputs/premodel/exp_ab/bilinear_val.log` | 1,782 |
+| `resultdata__premodel__exp_ab__frozen_ep180_val.json` | `outputs/premodel/exp_ab/frozen_ep180_val.json` | 1,837 |
+| `resultdata__premodel__exp_ab__frozen_ep180_val.log` | `outputs/premodel/exp_ab/frozen_ep180_val.log` | 1,787 |
+| `resultdata__premodel__exp_ab__nearest_val.json` | `outputs/premodel/exp_ab/nearest_val.json` | 1,803 |
+| `resultdata__premodel__exp_ab__nearest_val.log` | `outputs/premodel/exp_ab/nearest_val.log` | 1,781 |
+| `resultdata__premodel__exp_ab__residual_depth_val.json` | `outputs/premodel/exp_ab/residual_depth_val.json` | 1,854 |
+| `resultdata__premodel__exp_ab__residual_depth_val.log` | `outputs/premodel/exp_ab/residual_depth_val.log` | 1,784 |
+| `resultdata__premodel__exp_ab__w00_ep200_val.json` | `outputs/premodel/exp_ab/w00_ep200_val.json` | 1,845 |
+| `resultdata__premodel__exp_ab__w00_ep200_val.log` | `outputs/premodel/exp_ab/w00_ep200_val.log` | 1,788 |
+| `resultdata__premodel__exp_ab__w01_ep187_val.json` | `outputs/premodel/exp_ab/w01_ep187_val.json` | 1,848 |
+| `resultdata__premodel__exp_ab__w01_ep187_val.log` | `outputs/premodel/exp_ab/w01_ep187_val.log` | 1,779 |
+| `resultdata__premodel__exp_ab_comparison.json` | `outputs/premodel/exp_ab_comparison.json` | 3,364 |
+| `resultdata__premodel__exp_ab_deep_slope.json` | `outputs/premodel/exp_ab_deep_slope.json` | 1,614 |
+| `resultdata__premodel__exp_ab_deep_slope_partial.json` | `outputs/premodel/exp_ab_deep_slope_partial.json` | 1,300 |
+| `resultdata__premodel__exp_ab_table.md` | `outputs/premodel/exp_ab_table.md` | 538 |
 | `resultdata__premodel__extrapolation.json` | `outputs/premodel/extrapolation.json` | 7,202 |
 | `resultdata__premodel__factor_contrasts.json` | `outputs/premodel/factor_contrasts.json` | 62,618 |
+| `resultdata__premodel__finalize_chain.log` | `outputs/premodel/finalize_chain.log` | 2,295 |
 | `resultdata__premodel__flood_error.json` | `outputs/premodel/flood_error.json` | 55,912 |
 | `resultdata__premodel__map_100a_20m.npz` | `outputs/premodel/map_100a_20m.npz` | 1,694,011 |
 | `resultdata__premodel__map_100a_30m.npz` | `outputs/premodel/map_100a_30m.npz` | 753,003 |
@@ -610,10 +644,19 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__v0_10m2m_hmax__visualizations__evolution__100a_iy31_ix12__evolution_metrics.json` | `outputs/v0_10m2m_hmax/visualizations/evolution/100a_iy31_ix12/evolution_metrics.json` | 6,173 |
 | `resultdata__v0_10m2m_hmax__visualizations__evolution__100a_iy35_ix12__evolution_metrics.json` | `outputs/v0_10m2m_hmax/visualizations/evolution/100a_iy35_ix12/evolution_metrics.json` | 856 |
 | `resultdata__v0_10m2m_hmax__visualizations__training_dashboard_state.json` | `outputs/v0_10m2m_hmax/visualizations/training_dashboard_state.json` | 2,204 |
+| `resultdata__v1_bilinear_residual___smoke__best_summary.json` | `outputs/v1_bilinear_residual/_smoke/best_summary.json` | 220 |
+| `resultdata__v1_bilinear_residual___smoke__config_resolved.yaml` | `outputs/v1_bilinear_residual/_smoke/config_resolved.yaml` | 1,038 |
+| `resultdata__v1_bilinear_residual___smoke__provenance.json` | `outputs/v1_bilinear_residual/_smoke/provenance.json` | 538 |
+| `resultdata__v1_bilinear_residual___timing__best_summary.json` | `outputs/v1_bilinear_residual/_timing/best_summary.json` | 221 |
+| `resultdata__v1_bilinear_residual___timing__config_resolved.yaml` | `outputs/v1_bilinear_residual/_timing/config_resolved.yaml` | 1,038 |
+| `resultdata__v1_bilinear_residual___timing__provenance.json` | `outputs/v1_bilinear_residual/_timing/provenance.json` | 538 |
+| `resultdata__v1_bilinear_residual__depth__best_summary.json` | `outputs/v1_bilinear_residual/depth/best_summary.json` | 221 |
+| `resultdata__v1_bilinear_residual__depth__config_resolved.yaml` | `outputs/v1_bilinear_residual/depth/config_resolved.yaml` | 1,039 |
+| `resultdata__v1_bilinear_residual__depth__provenance.json` | `outputs/v1_bilinear_residual/depth/provenance.json` | 628 |
 
 ## Pipeline, figure generators, report builders, audits
 
-126 files, 1.23 MB
+134 files, 1.32 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -642,6 +685,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___audit_xref2.py` | `scripts/_audit_xref2.py` | 2,944 |
 | `scripts___audit_xref_sem.py` | `scripts/_audit_xref_sem.py` | 2,886 |
 | `scripts___audit_xref_src.py` | `scripts/_audit_xref_src.py` | 4,449 |
+| `scripts___bench_sr.py` | `scripts/_bench_sr.py` | 2,136 |
 | `scripts___check_ckpt.py` | `scripts/_check_ckpt.py` | 1,126 |
 | `scripts___check_html.py` | `scripts/_check_html.py` | 1,323 |
 | `scripts___check_tempids.py` | `scripts/_check_tempids.py` | 1,524 |
@@ -685,17 +729,20 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__auto_visualize.py` | `scripts/auto_visualize.py` | 11,789 |
 | `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 8,138 |
 | `scripts__build_brief_pdf.py` | `scripts/build_brief_pdf.py` | 1,571 |
-| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 38,256 |
+| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 39,746 |
 | `scripts__build_flat_mirror.py` | `scripts/build_flat_mirror.py` | 14,219 |
 | `scripts__build_gallery.py` | `scripts/build_gallery.py` | 12,015 |
-| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 15,091 |
+| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 15,436 |
 | `scripts__build_pdf.py` | `scripts/build_pdf.py` | 1,413 |
-| `scripts__build_report.py` | `scripts/build_report.py` | 103,661 |
+| `scripts__build_report.py` | `scripts/build_report.py` | 115,851 |
 | `scripts__build_sr_dataset.py` | `scripts/build_sr_dataset.py` | 14,858 |
 | `scripts__chain_after_pid.py` | `scripts/chain_after_pid.py` | 2,701 |
+| `scripts__chain_exp_ab_finalize.py` | `scripts/chain_exp_ab_finalize.py` | 5,925 |
 | `scripts__collect_result_fields.py` | `scripts/collect_result_fields.py` | 11,892 |
 | `scripts__compute_norm_stats.py` | `scripts/compute_norm_stats.py` | 2,375 |
+| `scripts__diag_deep_slope.py` | `scripts/diag_deep_slope.py` | 6,841 |
 | `scripts__diagnose_loss.py` | `scripts/diagnose_loss.py` | 5,737 |
+| `scripts__eval_both_calibers.py` | `scripts/eval_both_calibers.py` | 5,534 |
 | `scripts__evaluate.py` | `scripts/evaluate.py` | 2,361 |
 | `scripts__infer_domain.py` | `scripts/infer_domain.py` | 3,599 |
 | `scripts__infer_tile.py` | `scripts/infer_tile.py` | 1,753 |
@@ -720,17 +767,21 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__premodel_lib.py` | `scripts/premodel_lib.py` | 10,405 |
 | `scripts__refresh_flat_manifest.py` | `scripts/refresh_flat_manifest.py` | 3,009 |
 | `scripts__repair_summaries.py` | `scripts/repair_summaries.py` | 3,017 |
-| `scripts__report_body.py` | `scripts/report_body.py` | 324,361 |
+| `scripts__report_body.py` | `scripts/report_body.py` | 339,366 |
+| `scripts__report_exp_ab.py` | `scripts/report_exp_ab.py` | 10,632 |
 | `scripts__report_stats.py` | `scripts/report_stats.py` | 4,678 |
 | `scripts__run_baseline_table.py` | `scripts/run_baseline_table.py` | 5,441 |
 | `scripts__run_deep_extend.py` | `scripts/run_deep_extend.py` | 9,571 |
 | `scripts__run_deep_finetune.py` | `scripts/run_deep_finetune.py` | 22,353 |
 | `scripts__run_deep_sweep.py` | `scripts/run_deep_sweep.py` | 9,683 |
+| `scripts__run_exp_ab_evals.py` | `scripts/run_exp_ab_evals.py` | 3,316 |
 | `scripts__run_post_v0_pipeline.py` | `scripts/run_post_v0_pipeline.py` | 2,371 |
 | `scripts__run_v0_pipeline.ps1` | `scripts/run_v0_pipeline.ps1` | 16,252 |
 | `scripts__sabre_crosscheck.R` | `scripts/sabre_crosscheck.R` | 2,801 |
 | `scripts__scan_epochs.py` | `scripts/scan_epochs.py` | 7,918 |
 | `scripts__train_baseline.py` | `scripts/train_baseline.py` | 5,335 |
+| `scripts__train_bilinear_residual.py` | `scripts/train_bilinear_residual.py` | 14,719 |
+| `scripts__train_deep_objective.py` | `scripts/train_deep_objective.py` | 14,892 |
 | `scripts__train_dynamic.py` | `scripts/train_dynamic.py` | 3,333 |
 | `scripts__train_fixed.py` | `scripts/train_fixed.py` | 20,259 |
 | `scripts__train_multiscale.py` | `scripts/train_multiscale.py` | 12,517 |
@@ -746,17 +797,17 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Loss functions
 
-3 files, 0.01 MB
+3 files, 0.02 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
 | `losses__boundary_loss.py` | `losses/boundary_loss.py` | 135 |
-| `losses__flood_loss.py` | `losses/flood_loss.py` | 14,459 |
+| `losses__flood_loss.py` | `losses/flood_loss.py` | 16,991 |
 | `losses__masked_loss.py` | `losses/masked_loss.py` | 206 |
 
 ## Model definitions
 
-20 files, 0.03 MB
+21 files, 0.04 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -768,6 +819,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `models__baselines__resunet.py` | `models/baselines/resunet.py` | 2,901 |
 | `models__baselines__rswinunet.py` | `models/baselines/rswinunet.py` | 983 |
 | `models__baselines__srno_single.py` | `models/baselines/srno_single.py` | 3,260 |
+| `models__bilinear_residual_srno.py` | `models/bilinear_residual_srno.py` | 4,130 |
 | `models__diffusion____init__.py` | `models/diffusion/__init__.py` | 33 |
 | `models__diffusion__condition_encoder.py` | `models/diffusion/condition_encoder.py` | 734 |
 | `models__diffusion__diffusion_utils.py` | `models/diffusion/diffusion_utils.py` | 503 |
@@ -777,7 +829,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `models__geo_encoder.py` | `models/geo_encoder.py` | 2,279 |
 | `models__heads.py` | `models/heads.py` | 875 |
 | `models__hydro_encoder.py` | `models/hydro_encoder.py` | 1,096 |
-| `models__hydrogeo_srno.py` | `models/hydrogeo_srno.py` | 8,733 |
+| `models__hydrogeo_srno.py` | `models/hydrogeo_srno.py` | 9,917 |
 | `models__implicit_query.py` | `models/implicit_query.py` | 2,961 |
 | `models__scale_embedding.py` | `models/scale_embedding.py` | 970 |
 
@@ -796,14 +848,14 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `engine__checkpoint.py` | `engine/checkpoint.py` | 1,275 |
-| `engine__evaluator.py` | `engine/evaluator.py` | 1,678 |
+| `engine__checkpoint.py` | `engine/checkpoint.py` | 2,168 |
+| `engine__evaluator.py` | `engine/evaluator.py` | 3,201 |
 | `engine__reproducibility.py` | `engine/reproducibility.py` | 3,080 |
 | `engine__trainer.py` | `engine/trainer.py` | 3,450 |
 
 ## Experiment configuration
 
-7 files, 0.01 MB
+8 files, 0.01 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -812,6 +864,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `configs__v0_10m2m_hmax_smoke.yaml` | `configs/v0_10m2m_hmax_smoke.yaml` | 1,086 |
 | `configs__v0_dynamic_h.yaml` | `configs/v0_dynamic_h.yaml` | 762 |
 | `configs__v1_arbitrary_scale.yaml` | `configs/v1_arbitrary_scale.yaml` | 1,906 |
+| `configs__v1_bilinear_residual.yaml` | `configs/v1_bilinear_residual.yaml` | 1,178 |
 | `configs__v1_multiscale.yaml` | `configs/v1_multiscale.yaml` | 579 |
 | `configs__v2_residual_ldm.yaml` | `configs/v2_residual_ldm.yaml` | 372 |
 

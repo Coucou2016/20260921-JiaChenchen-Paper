@@ -1,0 +1,8 @@
+{
+  "best_pooled_rmse": 0.5990482953349038,
+  "last_epoch": 188,
+  "elapsed_sec": 6824.405262231827,
+  "w_depth": 0.25,
+  "w_log": 0.05,
+  "w_deep": 0.1
+}

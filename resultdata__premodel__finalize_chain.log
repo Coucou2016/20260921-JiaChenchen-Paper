@@ -1,0 +1,30 @@
+[2026-10-08 16:25:23] waiting for Experiment B pid=83844 to exit (single GPU)
+[2026-10-08 16:26:55] pid=83844 gone after 1.5 min
+[2026-10-08 16:26:55] removed stale outputs/premodel/exp_ab/residual_depth_val.json
+[2026-10-08 16:26:55] RUN evals_val: E:\Miniconda3\python.exe -X utf8 -u scripts/run_exp_ab_evals.py --split val --device cuda
+[2026-10-08 16:30:59] waiting for Experiment B pid=22104 to exit (single GPU)
+[2026-10-08 16:36:54] waiting for Experiment B pid=22104 to exit (single GPU)
+[2026-10-08 19:54:05] pid=22104 gone after 203.1 min
+[2026-10-08 19:54:05] RUN evals_val: E:\Miniconda3\python.exe -X utf8 -u scripts/run_exp_ab_evals.py --split val --device cuda
+[2026-10-08 19:57:42] END evals_val: rc=0 sec=217
+[2026-10-08 19:57:42] RUN deep_slope: E:\Miniconda3\python.exe -X utf8 -u scripts/diag_deep_slope.py --split val --device cuda
+[2026-10-08 20:04:15] END deep_slope: rc=0 sec=393
+[2026-10-08 20:04:15] RUN report_ab: E:\Miniconda3\python.exe -X utf8 -u scripts/report_exp_ab.py
+[2026-10-08 20:04:20] END report_ab: rc=0 sec=4
+[2026-10-08 20:04:20] RUN build_html: E:\Miniconda3\python.exe -X utf8 build_report.py
+[2026-10-08 20:04:20] END build_html: rc=2 sec=0
+[2026-10-08 20:04:20] RUN build_md: E:\Miniconda3\python.exe -X utf8 build_markdown.py
+[2026-10-08 20:04:20] END build_md: rc=2 sec=0
+[2026-10-08 20:04:20] RUN build_brief_html: E:\Miniconda3\python.exe -X utf8 build_brief_report.py
+[2026-10-08 20:04:20] END build_brief_html: rc=2 sec=0
+[2026-10-08 20:04:20] RUN build_brief_md: E:\Miniconda3\python.exe -X utf8 build_brief_markdown.py
+[2026-10-08 20:04:20] END build_brief_md: rc=2 sec=0
+[2026-10-08 20:04:20] RUN xref: E:\Miniconda3\python.exe -X utf8 _verify_xref.py
+[2026-10-08 20:04:21] END xref: rc=2 sec=0
+[2026-10-08 20:04:21] RUN build_pdf: E:\Miniconda3\python.exe -X utf8 build_pdf.py
+[2026-10-08 20:04:21] END build_pdf: rc=2 sec=0
+[2026-10-08 20:04:21] RUN build_brief_pdf: E:\Miniconda3\python.exe -X utf8 build_brief_pdf.py
+[2026-10-08 20:04:21] END build_brief_pdf: rc=2 sec=0
+[2026-10-08 20:04:21] RUN flat_mirror: E:\Miniconda3\python.exe -X utf8 build_flat_mirror.py
+[2026-10-08 20:04:21] END flat_mirror: rc=2 sec=0
+[2026-10-08 20:04:21] CHAIN DONE (build+publish finished; git commit/push is a manual step)

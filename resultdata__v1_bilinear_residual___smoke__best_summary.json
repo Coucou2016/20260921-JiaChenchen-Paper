@@ -1,0 +1,9 @@
+{
+  "best_csi": 0.0785507754460943,
+  "best_rmse_wet": 0.7042612517764281,
+  "last_epoch": 1,
+  "elapsed_sec": 156.58568453788757,
+  "parameters": 1490787,
+  "base_mode": "bilinear",
+  "residual_space": "depth"
+}

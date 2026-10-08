@@ -1,0 +1,7 @@
+device=cpu
+        bilinear: slope=0.857 need=+1.091 delivered=-0.047 bias=-1.138 n=163582
+    frozen_ep180: slope=0.792 need=+1.091 delivered=-0.050 bias=-1.141 n=163582
+       w01_ep187: slope=0.818 need=+1.091 delivered=-0.003 bias=-1.094 n=163582
+  residual_depth: slope=0.753 need=+1.091 delivered=-0.117 bias=-1.208 n=163582
+[skip] E7_continuous: outputs/deep_objective/E7/best_pooled_rmse.pt missing
+wrote E:\Projects\20260921-JiaChenchen-Paper\outputs\premodel\exp_ab_deep_slope_partial.json

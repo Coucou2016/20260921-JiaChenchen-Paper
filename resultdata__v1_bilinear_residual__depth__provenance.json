@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "config_sha256": "a63683dc4147febdb93deab4050b679a15b6cc05091506b24f3b0bbffe1ab399",
+  "git_commit": "unknown",
+  "python": "3.13.12",
+  "platform": "Windows-10-10.0.17763-SP0",
+  "torch": "2.7.1+cu118",
+  "cuda": "11.8",
+  "cuda_available": true,
+  "gpu": "GeForce GTX 950M",
+  "base_mode": "bilinear",
+  "residual_space": "depth",
+  "batch_size": 1,
+  "amp": false,
+  "parameters": 1490787,
+  "experiment": "A_bilinear_residual",
+  "parent": "last.pt",
+  "parent_epoch": 180,
+  "horizon_epochs": 12,
+  "lr": 0.0001,
+  "checkpoint_rule": "best validation CSI_005 (tile-macro, full val)"
+}

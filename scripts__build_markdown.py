@@ -64,6 +64,9 @@ FIGMAP = {
     "fig83_contiguity_map.png": "figures/fig83_contiguity_map.png",
     "fig84_contiguity_metrics.png": "figures/fig84_contiguity_metrics.png",
     "fig85_k_sensitivity.png": "figures/fig85_k_sensitivity.png",
+    "fig86_exp_ab.png": "figures/fig86_exp_ab.png",
+    "fig87_exp_b.png": "figures/fig87_exp_b.png",
+    "fig88_deep_slope.png": "figures/fig88_deep_slope.png",
 }
 
 
@@ -198,6 +201,9 @@ for m in token.finditer(body):
                  "hyetograph": "fig20_hyetograph.png",
                  "tile deep": "fig21_tile_deep.png",
                  "tile deep shared scale": "fig21b_tile_deep_scale.png",
+                 "exp a comparison": "fig86_exp_ab.png",
+                 "exp b objective": "fig87_exp_b.png",
+                 "deep slope mechanism": "fig88_deep_slope.png",
                  "tile spectrum": "fig22_tiles_spectrum.png",
                  "domain maps": "fig23_domain_maps.png",
                  "density agreement": "fig24_density.png",

@@ -40,7 +40,8 @@ IMG = {n: b64(n) for n in [
     "fig80_pattern_distance.png",
     "fig81_sabre_crosscheck.png", "fig82_variogram_scale.png",
     "fig83_contiguity_map.png", "fig84_contiguity_metrics.png",
-    "fig85_k_sensitivity.png"]}
+    "fig85_k_sensitivity.png", "fig86_exp_ab.png", "fig87_exp_b.png",
+    "fig88_deep_slope.png"]}
 
 CSS = """
 :root{--ink:#1a1a1a;--mut:#5c6470;--line:#d8dde3;--accent:#1f4e79;--accent2:#c0392b;
@@ -1281,6 +1282,52 @@ def pre_model_table() -> str:
         "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>")
 
 
+def exp_ab_table() -> str:
+    """Experiment A/B headline comparison, same protocol for every row."""
+    import json
+
+    p = ROOT / "outputs/premodel/exp_ab_comparison.json"
+    if not p.exists():
+        return ""
+    d = json.loads(p.read_text(encoding="utf-8"))
+    cn = {"nearest": "最近邻插值", "bilinear": "双线性插值",
+          "frozen_ep180": "冻结基线（第180轮）",
+          "w00_ep200": "对照微调（权重0，第200轮）",
+          "w01_ep187": "最优微调（权重0.10，第187轮）",
+          "residual_depth": "残差模型·深度域（实验A）",
+          "residual_nearest": "残差模型·最近邻底（实验A）",
+          "E7_continuous": "E7连续加权（实验B，域合并选点）"}
+    order = ["nearest", "bilinear", "frozen_ep180", "w00_ep200", "w01_ep187",
+             "residual_depth", "residual_nearest", "E7_continuous"]
+    rows = []
+    for k in order:
+        r = d.get(k)
+        if not r:
+            continue
+        def f(key, nd=4, plus=False):
+            v = r.get(key)
+            return _fmt(v, nd, plus) if isinstance(v, (int, float)) else "—"
+        rows.append(
+            f"<tr><td class='l'>{cn[k]}</td><td>{f('RMSE_wet')}</td>"
+            f"<td>{f('RMSE_wet_domain')}</td><td>{f('MAE_wet_domain')}</td>"
+            f"<td>{f('Bias_1m_domain', 3, plus=True)}</td>"
+            f"<td>{f('CSI_100')}</td><td>{f('VolumeRelativeError')}</td></tr>")
+    return (
+        "<table><caption><b>表 103　实验A与实验B同协议对比（全量验证集，182 块瓦片）。</b>"
+        "每一行都由同一段评估代码在同一验证划分上生成，因此两套口径可以逐列对照。"
+        "第三列与第四列是域合并口径，先合并全部像元再计算；第一列与第六、七列是瓦片宏平均。"
+        "深水偏差取真值超过一米像元的平均有符号偏差，负值表示系统性低估。"
+        "残差模型的底图是十米输入的插值，最近邻底一支与双线性底一支只有底图不同。"
+        "对照微调与最优微调从同一冻结父权重出发、训练同样轮次，只有深水项权重不同。"
+        "E7 一支的选点规则是域合并湿区均方根误差，与其它行的瓦片宏平均选点规则不同，"
+        "比较时须记住这一点。</caption>"
+        "<thead><tr><th class='l'>模型</th><th>湿区RMSE<br>瓦片宏平均(米)</th>"
+        "<th>湿区RMSE<br>域合并(米)</th><th>湿区MAE<br>域合并(米)</th>"
+        "<th>深水偏差<br>≥1m(米)</th><th>CSI<br>@1.0m</th>"
+        "<th>体积相对<br>误差</th></tr></thead><tbody>"
+        + "".join(rows) + "</tbody></table>")
+
+
 def pre_paired_table() -> str:
     """Paired statistics of the pre-model against the two baselines."""
     import json
@@ -1677,6 +1724,171 @@ def sync_figures() -> None:
             target.write_bytes(p.read_bytes())
 
 
+def exp_ab_text() -> dict:
+    """Fill the Experiment A/B prose tokens from the run artefacts.
+
+    Every value is read from a JSON a run produced; when an artefact is missing the
+    token resolves to an explicit "待补" marker so a partial build cannot silently
+    print a stale number.
+    """
+    import json
+
+    TOK = {}
+    comp_p = ROOT / "outputs/premodel/exp_ab_comparison.json"
+    slope_p = ROOT / "outputs/premodel/exp_ab_deep_slope.json"
+    e7_p = ROOT / "outputs/deep_objective/E7/history.jsonl"
+
+    def put(tok, val):
+        TOK[tok] = val
+
+    def need():
+        for t in ("@@EA_W01@@", "@@EA_FROZ@@", "@@EA_BIL@@", "@@EA_NEAR@@", "@@EA_RES@@",
+                  "@@EA_DA@@", "@@EA_DA_VERDICT@@", "@@EA_DA_MACRO@@", "@@EA_RES_VS_BIL@@",
+                  "@@EA_SLOPE_BIL@@", "@@EA_SLOPE_FROZ@@", "@@EA_SLOPE_RES@@",
+                  "@@EA_NEED@@", "@@EA_DELIV_FROZ@@", "@@EA_DELIV_RES@@", "@@EA_MECH_VERDICT@@",
+                  "@@EA_BIAS_FROZ@@", "@@EA_BIAS_RES@@", "@@EA_BIAS_VERDICT@@",
+                  "@@EA_CONCLUSION@@", "@@EB_EPOCHS@@", "@@EB_SHARE0_EP@@", "@@EB_SHARE0@@",
+                  "@@EB_SHAREEND@@", "@@EB_SHARE_VERDICT@@", "@@EB_FROZ_DS@@", "@@EB_E7_DS@@",
+                  "@@EB_W01_DS@@", "@@EB_BEST_EPOCH@@", "@@EB_MINDS@@", "@@EB_BIAS_FROZ@@",
+                  "@@EB_BIAS_E7@@", "@@EB_BIAS3_FROZ@@", "@@EB_BIAS3_E7@@",
+                  "@@EB_BIAS_VERDICT@@", "@@EB_INTERPRET@@"):
+            put(t, "（数据待补）")
+    need()
+
+    comp = json.loads(comp_p.read_text(encoding="utf-8")) if comp_p.exists() else {}
+
+    def gm(label, key):
+        r = comp.get(label) or {}
+        v = r.get(key)
+        return float(v) if isinstance(v, (int, float)) else None
+
+    def s4(v):
+        return f"{v:.4f}" if v is not None else "（数据待补）"
+
+    ea_res = gm("residual_depth", "RMSE_wet_domain")
+    ea_w01 = gm("w01_ep187", "RMSE_wet_domain")
+    ea_fr = gm("frozen_ep180", "RMSE_wet_domain")
+    ea_bil = gm("bilinear", "RMSE_wet_domain")
+    ea_near = gm("nearest", "RMSE_wet_domain")
+    if ea_res is not None:
+        put("@@EA_RES@@", s4(ea_res))
+        put("@@EA_W01@@", s4(ea_w01))
+        put("@@EA_FROZ@@", s4(ea_fr))
+        put("@@EA_BIL@@", s4(ea_bil))
+        put("@@EA_NEAR@@", s4(ea_near))
+        put("@@EA_RES_VS_BIL@@", s4(ea_res - ea_bil) if ea_bil is not None else "（数据待补）")
+    if ea_res is not None and ea_w01 is not None:
+        d = ea_res - ea_w01
+        put("@@EA_DA@@", f"{d:+.4f}")
+        put("@@EA_DA_VERDICT@@", "减小了" if d < 0 else "增大了")
+        mac_res = gm("residual_depth", "RMSE_wet")
+        mac_w01 = gm("w01_ep187", "RMSE_wet")
+        if mac_res is not None and mac_w01 is not None:
+            put("@@EA_DA_MACRO@@", f"{mac_res - mac_w01:+.4f}")
+        fr1, re1 = gm("frozen_ep180", "Bias_1m_domain"), gm("residual_depth", "Bias_1m_domain")
+        if fr1 is not None and re1 is not None:
+            put("@@EA_BIAS_FROZ@@", f"{fr1:+.4f}")
+            put("@@EA_BIAS_RES@@", f"{re1:+.4f}")
+            verdict = ("残差模型把深水偏差从 %.3f 米收敛到 %.3f 米，方向正确、幅度不大"
+                       % (fr1, re1)) if re1 > fr1 else \
+                      ("残差模型没有改善深水偏差，从 %.3f 米变为 %.3f 米" % (fr1, re1))
+            put("@@EA_BIAS_VERDICT@@", verdict + "。")
+        put("@@EA_CONCLUSION@@", _ea_conclusion(d, re1, fr1))
+
+    if slope_p.exists():
+        sd = json.loads(slope_p.read_text(encoding="utf-8")).get("models", {})
+        def gs(lbl, k):
+            v = (sd.get(lbl) or {}).get(k)
+            return float(v) if isinstance(v, (int, float)) else None
+        for lbl, tok in (("bilinear", "@@EA_SLOPE_BIL@@"), ("frozen_ep180", "@@EA_SLOPE_FROZ@@")):
+            v = gs(lbl, "slope_pred_on_10m")
+            if v is not None:
+                put(tok, f"{v:.3f}")
+        if sd.get("residual_depth"):
+            put("@@EA_SLOPE_RES@@", f"{gs('residual_depth','slope_pred_on_10m'):.3f}")
+        need_v = gs("frozen_ep180", "mean_needed_lift_m")
+        if need_v is not None:
+            put("@@EA_NEED@@", f"{need_v:+.3f}")
+            put("@@EA_DELIV_FROZ@@", f"{gs('frozen_ep180','mean_delivered_lift_m'):+.3f}")
+            dv_r = gs("residual_depth", "mean_delivered_lift_m") if sd.get("residual_depth") else None
+            if dv_r is not None:
+                put("@@EA_DELIV_RES@@", f"{dv_r:+.3f}")
+                sr, sf = gs("residual_depth", "slope_pred_on_10m"), gs("frozen_ep180", "slope_pred_on_10m")
+                mv = ("残差模型把斜率从 %.3f 提到 %.3f，把实际抬升从 %.3f 米提到 %.3f 米，"
+                      "需求是 %.3f 米，深水信号的传递明显改善，但没有完全到位。"
+                      % (sf, sr, gs("frozen_ep180", "mean_delivered_lift_m"), dv_r, need_v)) \
+                    if (sr is not None and sr > sf) else \
+                    ("残差模型没有提高斜率（%.3f 对 %.3f），实际抬升 %.3f 米仍远低于需求的 %.3f 米，"
+                     "深水信号没有被放大回来。" % (sr, sf, dv_r, need_v))
+                put("@@EA_MECH_VERDICT@@", mv)
+
+    if e7_p.exists():
+        rows = [json.loads(l) for l in e7_p.read_text(encoding="utf-8").splitlines() if l.strip()]
+        rows = [r for r in rows if r.get("RMSE_wet_domain") is not None
+                and r["RMSE_wet_domain"] == r["RMSE_wet_domain"]]
+        if rows:
+            put("@@EB_EPOCHS@@", str(len(rows)))
+            r0, rl = rows[0], rows[-1]
+            put("@@EB_SHARE0_EP@@", str(r0["epoch"]))
+            def share(r):
+                den = (r.get("w_deep", 0) + r.get("w_depth", 0) + r.get("w_log", 0)
+                       + 0.30 + 0.10 + 0.10)
+                return r.get("w_deep", 0) / max(den, 1e-9)
+            put("@@EB_SHARE0@@", f"{share(r0)*100:.1f}%")
+            put("@@EB_SHAREEND@@", f"{share(rl)*100:.1f}%")
+            put("@@EB_SHARE_VERDICT@@",
+                "份额上升执行到位，" if share(rl) > share(r0) + 1e-4 else "份额基本没有变化，")
+            best = min(rows, key=lambda r: r["RMSE_wet_domain"])
+            put("@@EB_BEST_EPOCH@@", str(best["epoch"]))
+            put("@@EB_MINDS@@", f"{best['RMSE_wet_domain']:.4f}")
+            put("@@EB_E7_DS@@", f"{best['RMSE_wet_domain']:.4f}")
+            if best.get("Bias_1m_domain") is not None:
+                put("@@EB_BIAS_E7@@", f"{best['Bias_1m_domain']:+.4f}")
+            if best.get("Bias_3m_domain") is not None:
+                put("@@EB_BIAS3_E7@@", f"{best['Bias_3m_domain']:+.4f}")
+    put("@@EB_FROZ_DS@@", s4(gm("frozen_ep180", "RMSE_wet_domain")))
+    put("@@EB_W01_DS@@", s4(gm("w01_ep187", "RMSE_wet_domain")))
+    b_f0 = gm("frozen_ep180", "Bias_1m_domain")
+    b_f3 = gm("frozen_ep180", "Bias_3m_domain")
+    put("@@EB_BIAS_FROZ@@", f"{b_f0:+.4f}" if b_f0 is not None else "（数据待补）")
+    put("@@EB_BIAS3_FROZ@@", f"{b_f3:+.4f}" if b_f3 is not None else "（数据待补）")
+
+    # verdicts that combine E7 against the frozen baseline and the fine-tune
+    try:
+        e7ds = float(TOK["@@EB_E7_DS@@"])
+    except (KeyError, ValueError):
+        e7ds = None
+    b_f, b_e = gm("frozen_ep180", "Bias_1m_domain"), gm("E7_continuous", "Bias_1m_domain")
+    if b_f is not None and b_e is not None:
+        put("@@EB_BIAS_VERDICT@@",
+            ("深水偏差从 %.3f 米收敛到 %.3f 米，方向正确。" % (b_f, b_e)) if b_e > b_f
+            else ("深水偏差从 %.3f 米变为 %.3f 米，没有改善。" % (b_f, b_e)))
+    if e7ds is not None and ea_fr is not None:
+        put("@@EB_INTERPRET@@",
+            ("域合并湿区误差从冻结基线的 %.4f 米降到 %.4f 米，说明掩膜塌陷与份额固定确为目标"
+             "形式层面的可修缺陷，而不仅仅是随机波动。" % (ea_fr, e7ds)) if e7ds < ea_fr - 1e-4
+            else ("域合并湿区误差从冻结基线的 %.4f 米变为 %.4f 米，目标形式的这两处改动没有"
+                  "带来可辨识的改善，深水欠估的症结更可能在输入信息量或输出饱和上。"
+                  % (ea_fr, e7ds)))
+    return TOK
+
+
+def _ea_conclusion(d, re1, fr1):
+    if d is None:
+        return "（数据待补）"
+    if d < -0.005:
+        base = ("残差参数化在同一短程预算下优于直接参数化，域合并湿区误差降低 %.4f 米。" % (-d))
+    elif d < 0.005:
+        base = ("残差参数化与直接参数化在同一短程预算下基本持平，域合并湿区误差相差 %.4f 米，" % d)
+        base += "这是一个负结果：把残差改回米空间没有带来可辨识的增益。"
+    else:
+        base = ("残差参数化在同一短程预算下不如直接参数化，域合并湿区误差反而高出 %.4f 米，" % d)
+        base += "这是一个负结果。"
+    if re1 is not None and fr1 is not None and re1 > fr1 + 0.005:
+        base += "但它确实改善了深水偏差（%.3f 对 %.3f 米），说明残差参数化对深水方向有效，对整体误差量级没有帮助。" % (re1, fr1)
+    return base
+
+
 def build() -> None:
     from report_body import body as report_body
 
@@ -1706,6 +1918,9 @@ def build() -> None:
         BODY = BODY.replace(tok, txt)
     BODY = BODY.replace("@@PREM_MODEL@@", pre_model_table())
     BODY = BODY.replace("@@PREM_PAIRED@@", pre_paired_table())
+    BODY = BODY.replace("@@EXP_AB_TABLE@@", exp_ab_table())
+    for tok, txt in exp_ab_text().items():
+        BODY = BODY.replace(tok, txt)
     BODY = renumber(BODY)
     html = [HEAD, COVER, TOC, BODY]
     html.append("""<div class="foot">
