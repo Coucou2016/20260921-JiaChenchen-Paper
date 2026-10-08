@@ -1,7 +1,7 @@
 {
  "source_root": "E:\\Projects\\20260921-JiaChenchen-Paper",
  "file_count": 833,
- "total_bytes": 174410892,
+ "total_bytes": 174410986,
  "files": [
   {
    "flat": "AUDIT_CODE_LEVEL_REVIEW_20261006.md",
@@ -4044,8 +4044,8 @@
   {
    "flat": "report_brief.md",
    "origin": "report_brief.md",
-   "bytes": 38978,
-   "sha256": "13ba3b9140c0f76f67a8c0e5efa950ca8fb0ce75edde07e3d8d57f414385aff6"
+   "bytes": 39019,
+   "sha256": "e7fe5a2ee08ce001fe87e549d34bb87c6ae0bd867ce9bc50182d50d8e0f9c5fa"
   },
   {
    "flat": "report_brief.pdf",
@@ -4500,8 +4500,8 @@
   {
    "flat": "scripts__build_brief_markdown.py",
    "origin": "scripts/build_brief_markdown.py",
-   "bytes": 8450,
-   "sha256": "c827034d41ed8d27426faa573a32778ed2dcbc40325987d8258182a496da88b1"
+   "bytes": 8503,
+   "sha256": "6e459baefab48fe6f802f3a5699a3b8a1211234919419167f5b65a4986ddd64c"
   },
   {
    "flat": "scripts__build_brief_pdf.py",

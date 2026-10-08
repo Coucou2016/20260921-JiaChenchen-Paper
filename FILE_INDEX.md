@@ -14,7 +14,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `report.md` | `report.md` | 394,223 |
 | `report.pdf` | `report.pdf` | 19,402,118 |
 | `report_brief.html` | `report_brief.html` | 10,347,978 |
-| `report_brief.md` | `report_brief.md` | 38,978 |
+| `report_brief.md` | `report_brief.md` | 39,019 |
 | `report_brief.pdf` | `report_brief.pdf` | 8,509,107 |
 
 ## Project entry points and docs (root)
@@ -747,7 +747,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___write_final_selection.py` | `scripts/_write_final_selection.py` | 4,327 |
 | `scripts___zoom_numbers.py` | `scripts/_zoom_numbers.py` | 1,707 |
 | `scripts__auto_visualize.py` | `scripts/auto_visualize.py` | 11,789 |
-| `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 8,450 |
+| `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 8,503 |
 | `scripts__build_brief_pdf.py` | `scripts/build_brief_pdf.py` | 1,571 |
 | `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 40,903 |
 | `scripts__build_flat_mirror.py` | `scripts/build_flat_mirror.py` | 14,219 |
