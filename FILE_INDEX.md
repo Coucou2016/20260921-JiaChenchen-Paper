@@ -1,21 +1,21 @@
 # FILE_INDEX
 
-Complete flat inventory of this mirror. **812 files, 154.5 MB, no subdirectories.**
+Complete flat inventory of this mirror. **833 files, 166.3 MB, no subdirectories.**
 
 Every entry lists the flat filename, its original repo-relative path and its size. Fetch by flat name. The machine-readable twin of this index is `_manifest.json`, which also carries a SHA-256 per file.
 
 ## Full and condensed report artifacts (root)
 
-6 files, 52.91 MB
+6 files, 59.87 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
-| `report.html` | `report.html` | 20,729,541 |
-| `report.md` | `report.md` | 382,892 |
-| `report.pdf` | `report.pdf` | 17,119,780 |
-| `report_brief.html` | `report_brief.html` | 9,366,520 |
-| `report_brief.md` | `report_brief.md` | 38,642 |
-| `report_brief.pdf` | `report_brief.pdf` | 7,842,302 |
+| `report.html` | `report.html` | 24,086,339 |
+| `report.md` | `report.md` | 394,223 |
+| `report.pdf` | `report.pdf` | 19,402,118 |
+| `report_brief.html` | `report_brief.html` | 10,347,978 |
+| `report_brief.md` | `report_brief.md` | 38,978 |
+| `report_brief.pdf` | `report_brief.pdf` | 8,509,107 |
 
 ## Project entry points and docs (root)
 
@@ -50,11 +50,13 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Figures embedded in the report, in render order
 
-60 files, 14.82 MB
+66 files, 17.22 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
 | `reportfig___crop_b.png` | `outputs/report_figs/_crop_b.png` | 73,539 |
+| `reportfig___res_chapter_tile_metrics.json` | `outputs/report_figs/_res_chapter_tile_metrics.json` | 6,371 |
+| `reportfig___res_chapter_tile_stats.json` | `outputs/report_figs/_res_chapter_tile_stats.json` | 332 |
 | `reportfig___row1.png` | `outputs/report_figs/_row1.png` | 62,512 |
 | `reportfig___row2.png` | `outputs/report_figs/_row2.png` | 57,690 |
 | `reportfig___tmp23.png` | `outputs/report_figs/_tmp23.png` | 81,138 |
@@ -81,43 +83,47 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `reportfig__fig26_exceedance.png` | `outputs/report_figs/fig26_exceedance.png` | 124,189 |
 | `reportfig__fig27_bootstrap.png` | `outputs/report_figs/fig27_bootstrap.png` | 226,785 |
 | `reportfig__fig28_autocorr.png` | `outputs/report_figs/fig28_autocorr.png` | 128,730 |
-| `reportfig__fig41_premodel_task.png` | `outputs/report_figs/fig41_premodel_task.png` | 231,244 |
-| `reportfig__fig42_error_vs_grid.png` | `outputs/report_figs/fig42_error_vs_grid.png` | 281,585 |
-| `reportfig__fig43_error_depth_bins.png` | `outputs/report_figs/fig43_error_depth_bins.png` | 265,969 |
-| `reportfig__fig44_error_slope_bins.png` | `outputs/report_figs/fig44_error_slope_bins.png` | 417,932 |
-| `reportfig__fig45_terrain_distortion.png` | `outputs/report_figs/fig45_terrain_distortion.png` | 284,030 |
-| `reportfig__fig46_error_maps.png` | `outputs/report_figs/fig46_error_maps.png` | 1,004,651 |
-| `reportfig__fig47_cross_resolution.png` | `outputs/report_figs/fig47_cross_resolution.png` | 345,465 |
-| `reportfig__fig48_tile_scatter.png` | `outputs/report_figs/fig48_tile_scatter.png` | 657,902 |
-| `reportfig__fig49_decomposition.png` | `outputs/report_figs/fig49_decomposition.png` | 203,699 |
-| `reportfig__fig50_premodel_result.png` | `outputs/report_figs/fig50_premodel_result.png` | 199,789 |
-| `reportfig__fig51_dialects.png` | `outputs/report_figs/fig51_dialects.png` | 220,927 |
-| `reportfig__fig61_two_fields.png` | `outputs/report_figs/fig61_two_fields.png` | 227,111 |
-| `reportfig__fig62_error_accounts.png` | `outputs/report_figs/fig62_error_accounts.png` | 183,936 |
-| `reportfig__fig63_error_sources.png` | `outputs/report_figs/fig63_error_sources.png` | 308,601 |
-| `reportfig__fig64_domain_zoom.png` | `outputs/report_figs/fig64_domain_zoom.png` | 417,766 |
-| `reportfig__fig71_pattern_by_grid.png` | `outputs/report_figs/fig71_pattern_by_grid.png` | 851,150 |
-| `reportfig__fig72_depth_consistency.png` | `outputs/report_figs/fig72_depth_consistency.png` | 521,949 |
-| `reportfig__fig73_speed_consistency.png` | `outputs/report_figs/fig73_speed_consistency.png` | 550,685 |
-| `reportfig__fig74_vmeasure.png` | `outputs/report_figs/fig74_vmeasure.png` | 141,550 |
-| `reportfig__fig75_pattern_map.png` | `outputs/report_figs/fig75_pattern_map.png` | 303,997 |
-| `reportfig__fig76_pattern_agreement.png` | `outputs/report_figs/fig76_pattern_agreement.png` | 305,520 |
-| `reportfig__fig77_pattern_areal.png` | `outputs/report_figs/fig77_pattern_areal.png` | 178,506 |
-| `reportfig__fig78_pattern_boundary.png` | `outputs/report_figs/fig78_pattern_boundary.png` | 152,695 |
-| `reportfig__fig79_pattern_autocorr.png` | `outputs/report_figs/fig79_pattern_autocorr.png` | 187,901 |
-| `reportfig__fig80_pattern_distance.png` | `outputs/report_figs/fig80_pattern_distance.png` | 109,302 |
-| `reportfig__fig81_sabre_crosscheck.png` | `outputs/report_figs/fig81_sabre_crosscheck.png` | 128,353 |
-| `reportfig__fig82_variogram_scale.png` | `outputs/report_figs/fig82_variogram_scale.png` | 283,382 |
-| `reportfig__fig83_contiguity_map.png` | `outputs/report_figs/fig83_contiguity_map.png` | 76,196 |
-| `reportfig__fig84_contiguity_metrics.png` | `outputs/report_figs/fig84_contiguity_metrics.png` | 177,204 |
-| `reportfig__fig85_k_sensitivity.png` | `outputs/report_figs/fig85_k_sensitivity.png` | 309,417 |
-| `reportfig__fig86_exp_ab.png` | `outputs/report_figs/fig86_exp_ab.png` | 97,605 |
-| `reportfig__fig87_exp_b.png` | `outputs/report_figs/fig87_exp_b.png` | 147,982 |
-| `reportfig__fig88_deep_slope.png` | `outputs/report_figs/fig88_deep_slope.png` | 53,510 |
+| `reportfig__fig41_premodel_task.png` | `outputs/report_figs/fig41_premodel_task.png` | 218,236 |
+| `reportfig__fig42_error_vs_grid.png` | `outputs/report_figs/fig42_error_vs_grid.png` | 276,865 |
+| `reportfig__fig43_error_depth_bins.png` | `outputs/report_figs/fig43_error_depth_bins.png` | 241,112 |
+| `reportfig__fig44_error_slope_bins.png` | `outputs/report_figs/fig44_error_slope_bins.png` | 392,031 |
+| `reportfig__fig45_terrain_distortion.png` | `outputs/report_figs/fig45_terrain_distortion.png` | 276,000 |
+| `reportfig__fig46_error_maps.png` | `outputs/report_figs/fig46_error_maps.png` | 1,005,225 |
+| `reportfig__fig47_cross_resolution.png` | `outputs/report_figs/fig47_cross_resolution.png` | 335,534 |
+| `reportfig__fig48_tile_scatter.png` | `outputs/report_figs/fig48_tile_scatter.png` | 656,098 |
+| `reportfig__fig49_decomposition.png` | `outputs/report_figs/fig49_decomposition.png` | 198,047 |
+| `reportfig__fig50_premodel_result.png` | `outputs/report_figs/fig50_premodel_result.png` | 180,521 |
+| `reportfig__fig51_dialects.png` | `outputs/report_figs/fig51_dialects.png` | 213,905 |
+| `reportfig__fig61_two_fields.png` | `outputs/report_figs/fig61_two_fields.png` | 220,008 |
+| `reportfig__fig62_error_accounts.png` | `outputs/report_figs/fig62_error_accounts.png` | 170,983 |
+| `reportfig__fig63_error_sources.png` | `outputs/report_figs/fig63_error_sources.png` | 282,038 |
+| `reportfig__fig64_domain_zoom.png` | `outputs/report_figs/fig64_domain_zoom.png` | 398,391 |
+| `reportfig__fig71_pattern_by_grid.png` | `outputs/report_figs/fig71_pattern_by_grid.png` | 840,969 |
+| `reportfig__fig72_depth_consistency.png` | `outputs/report_figs/fig72_depth_consistency.png` | 516,901 |
+| `reportfig__fig73_speed_consistency.png` | `outputs/report_figs/fig73_speed_consistency.png` | 545,247 |
+| `reportfig__fig74_vmeasure.png` | `outputs/report_figs/fig74_vmeasure.png` | 138,775 |
+| `reportfig__fig75_pattern_map.png` | `outputs/report_figs/fig75_pattern_map.png` | 301,823 |
+| `reportfig__fig76_pattern_agreement.png` | `outputs/report_figs/fig76_pattern_agreement.png` | 297,820 |
+| `reportfig__fig77_pattern_areal.png` | `outputs/report_figs/fig77_pattern_areal.png` | 175,329 |
+| `reportfig__fig78_pattern_boundary.png` | `outputs/report_figs/fig78_pattern_boundary.png` | 149,980 |
+| `reportfig__fig79_pattern_autocorr.png` | `outputs/report_figs/fig79_pattern_autocorr.png` | 180,989 |
+| `reportfig__fig80_pattern_distance.png` | `outputs/report_figs/fig80_pattern_distance.png` | 108,993 |
+| `reportfig__fig81_sabre_crosscheck.png` | `outputs/report_figs/fig81_sabre_crosscheck.png` | 125,364 |
+| `reportfig__fig82_variogram_scale.png` | `outputs/report_figs/fig82_variogram_scale.png` | 281,263 |
+| `reportfig__fig83_contiguity_map.png` | `outputs/report_figs/fig83_contiguity_map.png` | 68,306 |
+| `reportfig__fig84_contiguity_metrics.png` | `outputs/report_figs/fig84_contiguity_metrics.png` | 163,809 |
+| `reportfig__fig85_k_sensitivity.png` | `outputs/report_figs/fig85_k_sensitivity.png` | 295,056 |
+| `reportfig__fig86_exp_ab.png` | `outputs/report_figs/fig86_exp_ab.png` | 155,565 |
+| `reportfig__fig87_exp_b.png` | `outputs/report_figs/fig87_exp_b.png` | 193,855 |
+| `reportfig__fig88_deep_slope.png` | `outputs/report_figs/fig88_deep_slope.png` | 122,320 |
+| `reportfig__fig89_res_tiles_deep.png` | `outputs/report_figs/fig89_res_tiles_deep.png` | 773,977 |
+| `reportfig__fig90_res_tiles_spectrum.png` | `outputs/report_figs/fig90_res_tiles_spectrum.png` | 927,213 |
+| `reportfig__fig91_res_error_structure.png` | `outputs/report_figs/fig91_res_error_structure.png` | 541,751 |
+| `reportfig__fig92_res_residual_field.png` | `outputs/report_figs/fig92_res_residual_field.png` | 365,624 |
 
 ## Published figures (upstream set)
 
-56 files, 14.56 MB
+60 files, 16.95 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -144,46 +150,57 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `figure__fig26_exceedance.png` | `figures/fig26_exceedance.png` | 124,189 |
 | `figure__fig27_bootstrap.png` | `figures/fig27_bootstrap.png` | 226,785 |
 | `figure__fig28_autocorr.png` | `figures/fig28_autocorr.png` | 128,730 |
-| `figure__fig41_premodel_task.png` | `figures/fig41_premodel_task.png` | 231,244 |
-| `figure__fig42_error_vs_grid.png` | `figures/fig42_error_vs_grid.png` | 281,585 |
-| `figure__fig43_error_depth_bins.png` | `figures/fig43_error_depth_bins.png` | 265,969 |
-| `figure__fig44_error_slope_bins.png` | `figures/fig44_error_slope_bins.png` | 417,932 |
-| `figure__fig45_terrain_distortion.png` | `figures/fig45_terrain_distortion.png` | 284,030 |
-| `figure__fig46_error_maps.png` | `figures/fig46_error_maps.png` | 1,004,651 |
-| `figure__fig47_cross_resolution.png` | `figures/fig47_cross_resolution.png` | 345,465 |
-| `figure__fig48_tile_scatter.png` | `figures/fig48_tile_scatter.png` | 657,902 |
-| `figure__fig49_decomposition.png` | `figures/fig49_decomposition.png` | 203,699 |
-| `figure__fig50_premodel_result.png` | `figures/fig50_premodel_result.png` | 199,789 |
-| `figure__fig51_dialects.png` | `figures/fig51_dialects.png` | 220,927 |
-| `figure__fig61_two_fields.png` | `figures/fig61_two_fields.png` | 227,111 |
-| `figure__fig62_error_accounts.png` | `figures/fig62_error_accounts.png` | 183,936 |
-| `figure__fig63_error_sources.png` | `figures/fig63_error_sources.png` | 308,601 |
-| `figure__fig64_domain_zoom.png` | `figures/fig64_domain_zoom.png` | 417,766 |
-| `figure__fig71_pattern_by_grid.png` | `figures/fig71_pattern_by_grid.png` | 851,150 |
-| `figure__fig72_depth_consistency.png` | `figures/fig72_depth_consistency.png` | 521,949 |
-| `figure__fig73_speed_consistency.png` | `figures/fig73_speed_consistency.png` | 550,685 |
-| `figure__fig74_vmeasure.png` | `figures/fig74_vmeasure.png` | 141,550 |
-| `figure__fig75_pattern_map.png` | `figures/fig75_pattern_map.png` | 303,997 |
-| `figure__fig76_pattern_agreement.png` | `figures/fig76_pattern_agreement.png` | 305,520 |
-| `figure__fig77_pattern_areal.png` | `figures/fig77_pattern_areal.png` | 178,506 |
-| `figure__fig78_pattern_boundary.png` | `figures/fig78_pattern_boundary.png` | 152,695 |
-| `figure__fig79_pattern_autocorr.png` | `figures/fig79_pattern_autocorr.png` | 187,901 |
-| `figure__fig80_pattern_distance.png` | `figures/fig80_pattern_distance.png` | 109,302 |
-| `figure__fig81_sabre_crosscheck.png` | `figures/fig81_sabre_crosscheck.png` | 128,353 |
-| `figure__fig82_variogram_scale.png` | `figures/fig82_variogram_scale.png` | 283,382 |
-| `figure__fig83_contiguity_map.png` | `figures/fig83_contiguity_map.png` | 76,196 |
-| `figure__fig84_contiguity_metrics.png` | `figures/fig84_contiguity_metrics.png` | 177,204 |
-| `figure__fig85_k_sensitivity.png` | `figures/fig85_k_sensitivity.png` | 309,417 |
-| `figure__fig86_exp_ab.png` | `figures/fig86_exp_ab.png` | 97,605 |
-| `figure__fig87_exp_b.png` | `figures/fig87_exp_b.png` | 147,982 |
-| `figure__fig88_deep_slope.png` | `figures/fig88_deep_slope.png` | 53,510 |
+| `figure__fig41_premodel_task.png` | `figures/fig41_premodel_task.png` | 218,236 |
+| `figure__fig42_error_vs_grid.png` | `figures/fig42_error_vs_grid.png` | 276,865 |
+| `figure__fig43_error_depth_bins.png` | `figures/fig43_error_depth_bins.png` | 241,112 |
+| `figure__fig44_error_slope_bins.png` | `figures/fig44_error_slope_bins.png` | 392,031 |
+| `figure__fig45_terrain_distortion.png` | `figures/fig45_terrain_distortion.png` | 276,000 |
+| `figure__fig46_error_maps.png` | `figures/fig46_error_maps.png` | 1,005,225 |
+| `figure__fig47_cross_resolution.png` | `figures/fig47_cross_resolution.png` | 335,534 |
+| `figure__fig48_tile_scatter.png` | `figures/fig48_tile_scatter.png` | 656,098 |
+| `figure__fig49_decomposition.png` | `figures/fig49_decomposition.png` | 198,047 |
+| `figure__fig50_premodel_result.png` | `figures/fig50_premodel_result.png` | 180,521 |
+| `figure__fig51_dialects.png` | `figures/fig51_dialects.png` | 213,905 |
+| `figure__fig61_two_fields.png` | `figures/fig61_two_fields.png` | 220,008 |
+| `figure__fig62_error_accounts.png` | `figures/fig62_error_accounts.png` | 170,983 |
+| `figure__fig63_error_sources.png` | `figures/fig63_error_sources.png` | 282,038 |
+| `figure__fig64_domain_zoom.png` | `figures/fig64_domain_zoom.png` | 398,391 |
+| `figure__fig71_pattern_by_grid.png` | `figures/fig71_pattern_by_grid.png` | 840,969 |
+| `figure__fig72_depth_consistency.png` | `figures/fig72_depth_consistency.png` | 516,901 |
+| `figure__fig73_speed_consistency.png` | `figures/fig73_speed_consistency.png` | 545,247 |
+| `figure__fig74_vmeasure.png` | `figures/fig74_vmeasure.png` | 138,775 |
+| `figure__fig75_pattern_map.png` | `figures/fig75_pattern_map.png` | 301,823 |
+| `figure__fig76_pattern_agreement.png` | `figures/fig76_pattern_agreement.png` | 297,820 |
+| `figure__fig77_pattern_areal.png` | `figures/fig77_pattern_areal.png` | 175,329 |
+| `figure__fig78_pattern_boundary.png` | `figures/fig78_pattern_boundary.png` | 149,980 |
+| `figure__fig79_pattern_autocorr.png` | `figures/fig79_pattern_autocorr.png` | 180,989 |
+| `figure__fig80_pattern_distance.png` | `figures/fig80_pattern_distance.png` | 108,993 |
+| `figure__fig81_sabre_crosscheck.png` | `figures/fig81_sabre_crosscheck.png` | 125,364 |
+| `figure__fig82_variogram_scale.png` | `figures/fig82_variogram_scale.png` | 281,263 |
+| `figure__fig83_contiguity_map.png` | `figures/fig83_contiguity_map.png` | 68,306 |
+| `figure__fig84_contiguity_metrics.png` | `figures/fig84_contiguity_metrics.png` | 163,809 |
+| `figure__fig85_k_sensitivity.png` | `figures/fig85_k_sensitivity.png` | 295,056 |
+| `figure__fig86_exp_ab.png` | `figures/fig86_exp_ab.png` | 155,565 |
+| `figure__fig87_exp_b.png` | `figures/fig87_exp_b.png` | 193,855 |
+| `figure__fig88_deep_slope.png` | `figures/fig88_deep_slope.png` | 122,320 |
+| `figure__fig89_res_tiles_deep.png` | `figures/fig89_res_tiles_deep.png` | 773,977 |
+| `figure__fig90_res_tiles_spectrum.png` | `figures/fig90_res_tiles_spectrum.png` | 927,213 |
+| `figure__fig91_res_error_structure.png` | `figures/fig91_res_error_structure.png` | 541,751 |
+| `figure__fig92_res_residual_field.png` | `figures/fig92_res_residual_field.png` | 365,624 |
 
 ## Machine result data and small grids
 
-469 files, 46.51 MB
+477 files, 46.56 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
+| `resultdata_____cjk_all.json` | `outputs/_cjk_all.json` | 13,698 |
+| `resultdata_____cjk_premodel_05_figs.json` | `outputs/_cjk_premodel_05_figs.json` | 8,932 |
+| `resultdata_____cjk_premodel_08_readability_figs.json` | `outputs/_cjk_premodel_08_readability_figs.json` | 2,433 |
+| `resultdata_____cjk_report_exp_ab.json` | `outputs/_cjk_report_exp_ab.json` | 1,177 |
+| `resultdata_____frag_premodel_05_figs.json` | `outputs/_frag_premodel_05_figs.json` | 14,915 |
+| `resultdata_____frag_premodel_08_readability_figs.json` | `outputs/_frag_premodel_08_readability_figs.json` | 4,043 |
+| `resultdata_____frag_report_exp_ab.json` | `outputs/_frag_report_exp_ab.json` | 1,784 |
 | `resultdata___verify__D2_bestcsi_val.json` | `outputs/_verify/D2_bestcsi_val.json` | 510 |
 | `resultdata__benchmarks__B0_nearest_test.json` | `outputs/benchmarks/B0_nearest_test.json` | 584 |
 | `resultdata__benchmarks__B0_nearest_val.json` | `outputs/benchmarks/B0_nearest_val.json` | 582 |
@@ -479,7 +496,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__premodel__exp_ab_comparison.json` | `outputs/premodel/exp_ab_comparison.json` | 3,364 |
 | `resultdata__premodel__exp_ab_deep_slope.json` | `outputs/premodel/exp_ab_deep_slope.json` | 1,614 |
 | `resultdata__premodel__exp_ab_deep_slope_partial.json` | `outputs/premodel/exp_ab_deep_slope_partial.json` | 1,300 |
-| `resultdata__premodel__exp_ab_table.md` | `outputs/premodel/exp_ab_table.md` | 538 |
+| `resultdata__premodel__exp_ab_table.md` | `outputs/premodel/exp_ab_table.md` | 518 |
 | `resultdata__premodel__extrapolation.json` | `outputs/premodel/extrapolation.json` | 7,202 |
 | `resultdata__premodel__factor_contrasts.json` | `outputs/premodel/factor_contrasts.json` | 62,618 |
 | `resultdata__premodel__finalize_chain.log` | `outputs/premodel/finalize_chain.log` | 2,295 |
@@ -490,6 +507,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `resultdata__premodel__map_20a_30m.npz` | `outputs/premodel/map_20a_30m.npz` | 751,860 |
 | `resultdata__premodel__pattern_extra.json` | `outputs/premodel/pattern_extra.json` | 147,658 |
 | `resultdata__premodel__premodel_results.json` | `outputs/premodel/premodel_results.json` | 153,340 |
+| `resultdata__premodel__res_chapter_spatial.json` | `outputs/premodel/res_chapter_spatial.json` | 5,954 |
 | `resultdata__premodel__sabre_input__h_max_10m.tif` | `outputs/premodel/sabre_input/h_max_10m.tif` | 1,064,963 |
 | `resultdata__premodel__sabre_input__h_max_20m.tif` | `outputs/premodel/sabre_input/h_max_20m.tif` | 1,062,589 |
 | `resultdata__premodel__sabre_input__h_max_2m.tif` | `outputs/premodel/sabre_input/h_max_2m.tif` | 1,096,008 |
@@ -656,7 +674,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 
 ## Pipeline, figure generators, report builders, audits
 
-134 files, 1.32 MB
+137 files, 1.37 MB
 
 | Flat filename | Original path | Bytes |
 |---|---|---|
@@ -665,6 +683,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___analyze_extend.py` | `scripts/_analyze_extend.py` | 4,336 |
 | `scripts___audit_capseq.py` | `scripts/_audit_capseq.py` | 1,629 |
 | `scripts___audit_ch2c.py` | `scripts/_audit_ch2c.py` | 1,997 |
+| `scripts___audit_cjk_strings.py` | `scripts/_audit_cjk_strings.py` | 976 |
 | `scripts___audit_compliance.py` | `scripts/_audit_compliance.py` | 1,716 |
 | `scripts___audit_ctx.py` | `scripts/_audit_ctx.py` | 1,345 |
 | `scripts___audit_diff.py` | `scripts/_audit_diff.py` | 1,968 |
@@ -687,6 +706,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___audit_xref_src.py` | `scripts/_audit_xref_src.py` | 4,449 |
 | `scripts___bench_sr.py` | `scripts/_bench_sr.py` | 2,136 |
 | `scripts___check_ckpt.py` | `scripts/_check_ckpt.py` | 1,126 |
+| `scripts___check_fig_glyphs.py` | `scripts/_check_fig_glyphs.py` | 4,696 |
 | `scripts___check_html.py` | `scripts/_check_html.py` | 1,323 |
 | `scripts___check_tempids.py` | `scripts/_check_tempids.py` | 1,524 |
 | `scripts___diag_long.py` | `scripts/_diag_long.py` | 488 |
@@ -727,14 +747,14 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts___write_final_selection.py` | `scripts/_write_final_selection.py` | 4,327 |
 | `scripts___zoom_numbers.py` | `scripts/_zoom_numbers.py` | 1,707 |
 | `scripts__auto_visualize.py` | `scripts/auto_visualize.py` | 11,789 |
-| `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 8,138 |
+| `scripts__build_brief_markdown.py` | `scripts/build_brief_markdown.py` | 8,450 |
 | `scripts__build_brief_pdf.py` | `scripts/build_brief_pdf.py` | 1,571 |
-| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 39,746 |
+| `scripts__build_brief_report.py` | `scripts/build_brief_report.py` | 40,903 |
 | `scripts__build_flat_mirror.py` | `scripts/build_flat_mirror.py` | 14,219 |
 | `scripts__build_gallery.py` | `scripts/build_gallery.py` | 12,015 |
-| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 15,436 |
+| `scripts__build_markdown.py` | `scripts/build_markdown.py` | 16,619 |
 | `scripts__build_pdf.py` | `scripts/build_pdf.py` | 1,413 |
-| `scripts__build_report.py` | `scripts/build_report.py` | 115,851 |
+| `scripts__build_report.py` | `scripts/build_report.py` | 122,888 |
 | `scripts__build_sr_dataset.py` | `scripts/build_sr_dataset.py` | 14,858 |
 | `scripts__chain_after_pid.py` | `scripts/chain_after_pid.py` | 2,701 |
 | `scripts__chain_exp_ab_finalize.py` | `scripts/chain_exp_ab_finalize.py` | 5,925 |
@@ -749,6 +769,7 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__make_hyetograph_fig.py` | `scripts/make_hyetograph_fig.py` | 3,257 |
 | `scripts__make_report_figs.py` | `scripts/make_report_figs.py` | 18,598 |
 | `scripts__make_report_figs2.py` | `scripts/make_report_figs2.py` | 3,494 |
+| `scripts__make_residual_chapter_figs.py` | `scripts/make_residual_chapter_figs.py` | 23,298 |
 | `scripts__make_result_figs.py` | `scripts/make_result_figs.py` | 23,917 |
 | `scripts__make_spatial_tiles.py` | `scripts/make_spatial_tiles.py` | 11,387 |
 | `scripts__make_timeline_fig.py` | `scripts/make_timeline_fig.py` | 1,448 |
@@ -757,18 +778,18 @@ Every entry lists the flat filename, its original repo-relative path and its siz
 | `scripts__premodel_02_tiles.py` | `scripts/premodel_02_tiles.py` | 9,110 |
 | `scripts__premodel_03_train.py` | `scripts/premodel_03_train.py` | 15,213 |
 | `scripts__premodel_04_decomp.py` | `scripts/premodel_04_decomp.py` | 4,905 |
-| `scripts__premodel_05_figs.py` | `scripts/premodel_05_figs.py` | 86,230 |
+| `scripts__premodel_05_figs.py` | `scripts/premodel_05_figs.py` | 86,703 |
 | `scripts__premodel_06_extrap.py` | `scripts/premodel_06_extrap.py` | 3,670 |
 | `scripts__premodel_07_readability.py` | `scripts/premodel_07_readability.py` | 14,250 |
-| `scripts__premodel_08_readability_figs.py` | `scripts/premodel_08_readability_figs.py` | 15,946 |
+| `scripts__premodel_08_readability_figs.py` | `scripts/premodel_08_readability_figs.py` | 16,337 |
 | `scripts__premodel_09_dialect.py` | `scripts/premodel_09_dialect.py` | 9,286 |
 | `scripts__premodel_10_consistency.py` | `scripts/premodel_10_consistency.py` | 51,434 |
 | `scripts__premodel_11_pattern_extra.py` | `scripts/premodel_11_pattern_extra.py` | 26,457 |
 | `scripts__premodel_lib.py` | `scripts/premodel_lib.py` | 10,405 |
 | `scripts__refresh_flat_manifest.py` | `scripts/refresh_flat_manifest.py` | 3,009 |
 | `scripts__repair_summaries.py` | `scripts/repair_summaries.py` | 3,017 |
-| `scripts__report_body.py` | `scripts/report_body.py` | 339,366 |
-| `scripts__report_exp_ab.py` | `scripts/report_exp_ab.py` | 10,632 |
+| `scripts__report_body.py` | `scripts/report_body.py` | 348,909 |
+| `scripts__report_exp_ab.py` | `scripts/report_exp_ab.py` | 10,967 |
 | `scripts__report_stats.py` | `scripts/report_stats.py` | 4,678 |
 | `scripts__run_baseline_table.py` | `scripts/run_baseline_table.py` | 5,441 |
 | `scripts__run_deep_extend.py` | `scripts/run_deep_extend.py` | 9,571 |

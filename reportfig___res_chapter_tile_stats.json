@@ -1,0 +1,10 @@
+{
+  "tile": 165,
+  "corr_ideal_vs_res": 0.7159943321121071,
+  "corr_ideal_vs_frozen": 0.7182521920945247,
+  "corr_base_vs_truth": 0.2828071293618568,
+  "deep_mean_ideal_residual_m": 1.0694372653961182,
+  "deep_mean_residual_m": 0.004125445615500212,
+  "deep_mean_frozen_residual_m": 0.026585200801491737,
+  "deep_n": 7908
+}

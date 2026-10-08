@@ -127,6 +127,10 @@ for m in token.finditer(body):
             "paired fine-tune": "fig04_paired_finetune.png",
             "bootstrap tiles": "fig27_bootstrap.png",
             "forest plot": "fig07_forest.png",
+            "residual chapter deep tile": "fig89_res_tiles_deep.png",
+            "residual chapter tile spectrum": "fig90_res_tiles_spectrum.png",
+            "residual chapter error structure": "fig91_res_error_structure.png",
+            "residual chapter residual field": "fig92_res_residual_field.png",
         }
         fname = alt2f.get(alt)
         if fname:

@@ -47,6 +47,10 @@ ALT2F = {
     "exp a comparison": "fig86_exp_ab.png",
     "exp b objective": "fig87_exp_b.png",
     "deep slope mechanism": "fig88_deep_slope.png",
+    "residual chapter deep tile": "fig89_res_tiles_deep.png",
+    "residual chapter tile spectrum": "fig90_res_tiles_spectrum.png",
+    "residual chapter error structure": "fig91_res_error_structure.png",
+    "residual chapter residual field": "fig92_res_residual_field.png",
 }
 
 FIGIMG: dict[str, str] = {}
@@ -473,7 +477,7 @@ Fowlkes-Mallows 的随机期望值不为零，读数前必须先减掉。</p>
 但它把深水偏差的方向纠正得更明显；深水目标改造把深水项份额确实推了上去，
 域合并湿区误差却没有可辨识的下降。两项合起来说明，在冻结模型上做短程微调，
 目标形式与输出参数化能改的东西不多，深水欠估的症结更可能在输入信息量上。
-这两项的具体数值、脚本与图件见完整报告第 4.7、5.12、5.13 节。</p>
+这两项的具体数值、脚本与图件见完整报告第 4.7、5.12 节与新增的第六章。</p>
 """)
     parts.append(FIG("fig86_exp_ab.png",
         "<b>图 22　两种方法改动与全部参照在同一验证划分下的对照。</b>"
@@ -481,6 +485,14 @@ Fowlkes-Mallows 的随机期望值不为零，读数前必须先减掉。</p>
         "红色是残差参数化，绿色是深水目标改造，深蓝是最优微调臂，灰色是插值与冻结基线。"
         "残差参数化的深水偏差接近最优微调臂，但整体误差略高，"
         "深水目标改造的份额上升执行到位，整体误差没有可辨识的改善。"))
+    parts.append(FIG("fig89_res_tiles_deep.png",
+        "<b>图 23　残差跨分辨率学习在深水瓦片上的逐格解剖。</b>"
+        "完整报告第六章把残差参数化提升为独立章节，给出与前几章一致的空间结果。"
+        "这里只放最深一格。前两行六个面板共用一套深度色标，依次是十米粗输入、双线性底图、"
+        "两米真值、冻结基线、最优微调臂与残差模型；第三行是三个学习臂相对真值的绝对误差。"
+        "读法是先确定深水在哪，再看残差模型相对两个直接参数化臂是否更贴近真值。"
+        "结论是残差参数化改善了深水的方向，没有改善整体量级，"
+        "域合并湿区误差仍高于最优微调臂。完整的逐瓦片、误差结构与定量对比见完整报告第六章。"))
 
     # ------------------------------------------------ 七 结论与适用边界
     parts.append("""

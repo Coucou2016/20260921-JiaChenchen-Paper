@@ -43,10 +43,10 @@ SOURCES = {
     "residual_nearest": "outputs/premodel/exp_ab/residual_nearest_val.json",
     "E7_continuous": "outputs/premodel/exp_ab/E7_continuous_val.json",
 }
-CN = {"nearest": "最近邻", "bilinear": "双线性", "frozen_ep180": "冻结基线(ep180)",
-      "w00_ep200": "对照微调w00(ep200)", "w01_ep187": "最优微调w01(ep187)",
-      "residual_depth": "残差模型(实验A)", "residual_nearest": "残差·最近邻底(实验A)",
-      "E7_continuous": "E7连续加权(实验B)"}
+CN = {"nearest": "Nearest", "bilinear": "Bilinear", "frozen_ep180": "Frozen (ep180)",
+      "w00_ep200": "Control w00 (ep200)", "w01_ep187": "Best fine-tune w01 (ep187)",
+      "residual_depth": "Residual (Exp A)", "residual_nearest": "Residual-nearest (Exp A)",
+      "E7_continuous": "E7 continuous (Exp B)"}
 KEYS = ["RMSE_wet", "MAE_wet", "CSI_005", "CSI_100", "PeakDepthError",
         "VolumeRelativeError", "RMSE_wet_domain", "MAE_wet_domain",
         "Bias_1m_domain", "Bias_3m_domain", "CSI_1.00_domain"]
@@ -74,7 +74,7 @@ def build_rows() -> dict:
 
 
 def emit_table(rows: dict) -> None:
-    lines = ["| 模型 | 湿区RMSE(瓦片宏) | 湿区RMSE(域合并) | 深水偏差≥1m | CSI@1.0m |",
+    lines = ["| Model | Wet RMSE (tile-macro) | Wet RMSE (domain) | Deep bias >=1 m | CSI@1.0 m |",
              "|---|---|---|---|---|"]
     for k in SOURCES:
         r = rows.get(k)
@@ -99,7 +99,10 @@ def _style():
     except Exception:
         pass
     plt.rcParams.update({
-        "font.family": "serif",
+        # List the CJK faces explicitly so any residual CJK text cannot fall
+        # through to a Latin-only face and render as empty boxes.
+        "font.family": ["Times New Roman", "Microsoft YaHei", "SimSun", "SimHei",
+                        "DejaVu Serif"],
         "font.serif": ["Times New Roman", "Microsoft YaHei", "SimSun", "SimHei",
                        "DejaVu Serif"],
         "font.sans-serif": ["Microsoft YaHei", "SimHei", "Arial"],
@@ -114,13 +117,13 @@ def _style():
 
 def fig_exp_a(rows: dict) -> None:
     if not rows:
-        _placeholder(FIG_A, "实验A评估尚未产生 exp_ab_comparison.json")
+        _placeholder(FIG_A, "Experiment A has not produced exp_ab_comparison.json yet")
         return
     plt = _style()
     order = [k for k in SOURCES if k in rows]
-    panels = [("RMSE_wet_domain", "域合并湿区RMSE (m)，越低越好"),
-              ("Bias_1m_domain", "深水(≥1m)平均偏差 (m)，越接近0越好"),
-              ("CSI_100", "深水判定 CSI@1.0m，越高越好")]
+    panels = [("RMSE_wet_domain", "Domain-pooled wet RMSE (m), lower is better"),
+              ("Bias_1m_domain", "Deep (>= 1 m) mean bias (m), closer to 0 is better"),
+              ("CSI_100", "Deep-water CSI@1.0 m, higher is better")]
     fig, axes = plt.subplots(1, 3, figsize=(12.6, 3.6))
     for ax, (key, title) in zip(axes, panels):
         vals, labs, cols = [], [], []
@@ -143,7 +146,7 @@ def fig_exp_a(rows: dict) -> None:
             ax.text(v, yi, f" {v:.3f}", va="center",
                     ha="left" if v >= 0 else "right", fontsize=7.2)
         ax.set_title(title, fontsize=9)
-    fig.suptitle("实验A（双线性残差）与实验B（E7目标改造）在同一验证划分、同一协议下的对比",
+    fig.suptitle("Experiments A (bilinear residual) and B (E7 objective): same validation split, same protocol",
                  fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.94])
     FIG_A.parent.mkdir(parents=True, exist_ok=True)
@@ -166,17 +169,17 @@ def _placeholder(path: Path, msg: str) -> None:
 
 def fig_exp_b() -> None:
     if not E7_HIST.exists():
-        _placeholder(FIG_B, "实验B（E7）尚未产生 history.jsonl")
+        _placeholder(FIG_B, "Experiment B (E7) has not produced history.jsonl yet")
         return
     rows = [json.loads(l) for l in E7_HIST.read_text(encoding="utf-8").splitlines() if l.strip()]
     if not rows:
-        _placeholder(FIG_B, "实验B（E7）history.jsonl 为空")
+        _placeholder(FIG_B, "Experiment B (E7) history.jsonl is empty")
         return
     plt = _style()
     ep = [r["epoch"] for r in rows]
     fig, axes = plt.subplots(1, 3, figsize=(12.6, 3.4))
     axes[0].plot(ep, [r.get("RMSE_wet_domain") for r in rows], "-o", color="#1f4e79", ms=4)
-    axes[0].set_title("域合并湿区RMSE (m)，越低越好", fontsize=9)
+    axes[0].set_title("Domain-pooled wet RMSE (m), lower is better", fontsize=9)
     axes[0].set_xlabel("epoch")
     ax = axes[1]
     pen = [i for i, r in enumerate(rows) if r.get("Bias_1m_domain") is not None
@@ -189,15 +192,15 @@ def fig_exp_b() -> None:
         ax.plot([ep[i] for i in pen3], [rows[i]["Bias_3m_domain"] for i in pen3], "-s",
                 color="#2e7d32", ms=4, label="≥3 m")
     ax.axhline(0, color="k", lw=0.7)
-    ax.set_title("深水平均偏差 (m)，越接近0越好", fontsize=9)
+    ax.set_title("Deep mean bias (m), closer to 0 is better", fontsize=9)
     ax.set_xlabel("epoch"); ax.legend(fontsize=7.5)
     shares = [r.get("w_deep", np.nan) /
               max(r.get("w_deep", 0) + r.get("w_depth", 0) + r.get("w_log", 0)
                   + 0.30 + 0.10 + 0.10, 1e-9) for r in rows]
     axes[2].plot(ep, shares, "-o", color="#6a1b9a", ms=4)
-    axes[2].set_title("深水项在目标函数中的份额（名义）", fontsize=9)
+    axes[2].set_title("Share of the deep term in the objective (nominal)", fontsize=9)
     axes[2].set_xlabel("epoch")
-    fig.suptitle("实验B（E7）：浅水权重余弦衰减 + 连续深水权重，深水项份额逐轮上升",
+    fig.suptitle("Experiment B (E7): cosine decay of the shallow weights plus a continuous deep weight raise the deep term's share",
                  fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.93])
     fig.savefig(FIG_B, dpi=300); plt.close(fig)
@@ -207,7 +210,7 @@ def fig_exp_b() -> None:
 def fig_deep_slope() -> None:
     d = load(SLOPE_JSON)
     if not d or not d.get("models"):
-        _placeholder(FIG_C, "深水斜率诊断尚未产生 exp_ab_deep_slope.json")
+        _placeholder(FIG_C, "The deep-slope diagnostic has not produced exp_ab_deep_slope.json yet")
         return
     plt = _style()
     ms = d["models"]
@@ -219,20 +222,20 @@ def fig_deep_slope() -> None:
             color="#1f4e79", alpha=0.9)
     ax.axvline(1.0, color="k", ls="--", lw=0.8, label="1.00 (identity)")
     ax.set_yticks(np.arange(len(keys))); ax.set_yticklabels(labs, fontsize=8)
-    ax.invert_yaxis(); ax.set_title("深水像元上预测对10m输入的回归斜率", fontsize=9)
+    ax.invert_yaxis(); ax.set_title("Regression slope of the prediction on the 10 m input over deep pixels", fontsize=9)
     ax.legend(fontsize=7.5)
     ax = axes[1]
     w = 0.38
     y = np.arange(len(keys))
     ax.barh(y - w/2, [ms[k]["mean_needed_lift_m"] for k in keys], height=w,
-            color="#c0392b", alpha=0.9, label="需求抬升")
+            color="#c0392b", alpha=0.9, label="Required lift")
     ax.barh(y + w/2, [ms[k]["mean_delivered_lift_m"] for k in keys], height=w,
-            color="#2e7d32", alpha=0.9, label="实际抬升")
+            color="#2e7d32", alpha=0.9, label="Delivered lift")
     ax.axvline(0, color="k", lw=0.7)
     ax.set_yticks(y); ax.set_yticklabels(labs, fontsize=8)
-    ax.invert_yaxis(); ax.set_title("深水像元：需求抬升 vs 实际抬升 (m)", fontsize=9)
+    ax.invert_yaxis(); ax.set_title("Deep pixels: required vs delivered lift (m)", fontsize=9)
     ax.legend(fontsize=7.5)
-    fig.suptitle("深水欠估的机制：网络是否放大了插值已携带的深水信号", fontsize=10)
+    fig.suptitle("Mechanism of deep-water underestimation: does the network amplify the deep signal the interpolation already carries?", fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.93])
     fig.savefig(FIG_C, dpi=300); plt.close(fig)
     print(f"wrote {FIG_C}")

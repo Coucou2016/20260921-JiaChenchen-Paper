@@ -41,7 +41,9 @@ IMG = {n: b64(n) for n in [
     "fig81_sabre_crosscheck.png", "fig82_variogram_scale.png",
     "fig83_contiguity_map.png", "fig84_contiguity_metrics.png",
     "fig85_k_sensitivity.png", "fig86_exp_ab.png", "fig87_exp_b.png",
-    "fig88_deep_slope.png"]}
+    "fig88_deep_slope.png",
+    "fig89_res_tiles_deep.png", "fig90_res_tiles_spectrum.png",
+    "fig91_res_error_structure.png", "fig92_res_residual_field.png"]}
 
 CSS = """
 :root{--ink:#1a1a1a;--mut:#5c6470;--line:#d8dde3;--accent:#1f4e79;--accent2:#c0392b;
@@ -248,6 +250,15 @@ TOC = """
   <li>测试集复核</li>
   <li>高阶统计分析与阈值敏感性</li>
   <li>偏差随训练的演化</li>
+  <li>实验B　深水目标改造（E7方案）</li>
+  </ol></li>
+<li>双线性残差跨分辨率学习（实验A）
+  <ol>
+  <li>动机与方法</li>
+  <li>逐瓦片的空间预测对比</li>
+  <li>误差的空间结构</li>
+  <li>同协议定量对比与深水机制</li>
+  <li>结论：一个需要如实呈现的负结果</li>
   </ol></li>
 <li>分析与讨论</li>
 <li>主要结论</li>
@@ -1744,9 +1755,11 @@ def exp_ab_text() -> dict:
     def need():
         for t in ("@@EA_W01@@", "@@EA_FROZ@@", "@@EA_BIL@@", "@@EA_NEAR@@", "@@EA_RES@@",
                   "@@EA_DA@@", "@@EA_DA_VERDICT@@", "@@EA_DA_MACRO@@", "@@EA_RES_VS_BIL@@",
-                  "@@EA_SLOPE_BIL@@", "@@EA_SLOPE_FROZ@@", "@@EA_SLOPE_RES@@",
+                  "@@EA_SLOPE_BIL@@", "@@EA_SLOPE_FROZ@@", "@@EA_SLOPE_W01@@",
+                  "@@EA_SLOPE_RES@@",
                   "@@EA_NEED@@", "@@EA_DELIV_FROZ@@", "@@EA_DELIV_RES@@", "@@EA_MECH_VERDICT@@",
-                  "@@EA_BIAS_FROZ@@", "@@EA_BIAS_RES@@", "@@EA_BIAS_VERDICT@@",
+                  "@@EA_BIAS_FROZ@@", "@@EA_BIAS_W01@@", "@@EA_BIAS_RES@@",
+                  "@@EA_BIAS_VERDICT@@",
                   "@@EA_CONCLUSION@@", "@@EB_EPOCHS@@", "@@EB_SHARE0_EP@@", "@@EB_SHARE0@@",
                   "@@EB_SHAREEND@@", "@@EB_SHARE_VERDICT@@", "@@EB_FROZ_DS@@", "@@EB_E7_DS@@",
                   "@@EB_W01_DS@@", "@@EB_BEST_EPOCH@@", "@@EB_MINDS@@", "@@EB_BIAS_FROZ@@",
@@ -1785,6 +1798,9 @@ def exp_ab_text() -> dict:
         mac_w01 = gm("w01_ep187", "RMSE_wet")
         if mac_res is not None and mac_w01 is not None:
             put("@@EA_DA_MACRO@@", f"{mac_res - mac_w01:+.4f}")
+        b_w01 = gm("w01_ep187", "Bias_1m_domain")
+        if b_w01 is not None:
+            put("@@EA_BIAS_W01@@", f"{b_w01:+.4f}")
         fr1, re1 = gm("frozen_ep180", "Bias_1m_domain"), gm("residual_depth", "Bias_1m_domain")
         if fr1 is not None and re1 is not None:
             put("@@EA_BIAS_FROZ@@", f"{fr1:+.4f}")
@@ -1806,6 +1822,8 @@ def exp_ab_text() -> dict:
                 put(tok, f"{v:.3f}")
         if sd.get("residual_depth"):
             put("@@EA_SLOPE_RES@@", f"{gs('residual_depth','slope_pred_on_10m'):.3f}")
+        if sd.get("w01_ep187"):
+            put("@@EA_SLOPE_W01@@", f"{gs('w01_ep187','slope_pred_on_10m'):.3f}")
         need_v = gs("frozen_ep180", "mean_needed_lift_m")
         if need_v is not None:
             put("@@EA_NEED@@", f"{need_v:+.3f}")
@@ -1889,6 +1907,117 @@ def _ea_conclusion(d, re1, fr1):
     return base
 
 
+def _rc_chapter() -> dict:
+    """Tokens for the standalone Chapter 6 on bilinear-residual cross-resolution learning.
+
+    Every number is read back from an artefact a run produced: the same-protocol
+    comparison (exp_ab_comparison.json), the deep-slope mechanism
+    (exp_ab_deep_slope.json), the pooled validation bins (res_chapter_spatial.json)
+    and the three-tile residual fields (_res_chapter_tile_stats.json).
+    """
+    import json
+
+    TOK = {}
+
+    def load(name, sub=""):
+        p = (ROOT / "outputs" / sub / name) if sub else (ROOT / "outputs" / name)
+        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+    comp = load("premodel/exp_ab_comparison.json")
+    slope = load("premodel/exp_ab_deep_slope.json").get("models", {})
+    bins = load("premodel/res_chapter_spatial.json").get("models", {})
+    fields = load("report_figs/_res_chapter_tile_stats.json")
+
+    def gm(lbl, key):
+        v = (comp.get(lbl) or {}).get(key)
+        return float(v) if isinstance(v, (int, float)) else None
+
+    def gs(lbl, key):
+        v = (slope.get(lbl) or {}).get(key)
+        return float(v) if isinstance(v, (int, float)) else None
+
+    res_d = gm("residual_depth", "RMSE_wet_domain")
+    w01_d = gm("w01_ep187", "RMSE_wet_domain")
+    res_m = gm("residual_depth", "RMSE_wet")
+    w01_m = gm("w01_ep187", "RMSE_wet")
+    b_froz = gm("frozen_ep180", "Bias_1m_domain")
+    b_w01 = gm("w01_ep187", "Bias_1m_domain")
+    b_res = gm("residual_depth", "Bias_1m_domain")
+    s_bil = gs("bilinear", "slope_pred_on_10m")
+    s_froz = gs("frozen_ep180", "slope_pred_on_10m")
+    s_w01 = gs("w01_ep187", "slope_pred_on_10m")
+    s_res = gs("residual_depth", "slope_pred_on_10m")
+    need = gs("frozen_ep180", "mean_needed_lift_m")
+    del_res = gs("residual_depth", "mean_delivered_lift_m")
+
+    d_dom = (res_d - w01_d) if (res_d is not None and w01_d is not None) else None
+    d_mac = (res_m - w01_m) if (res_m is not None and w01_m is not None) else None
+
+    if d_dom is None:
+        verdict = "（数据待补）"
+    else:
+        verdict = (
+            "本节给出结论。把残差从对数空间搬回米空间，是一个需要如实呈现的负结果。"
+            f"在域合并口径下，残差模型的湿区均方根误差是 {res_d:.4f} 米，"
+            f"高于最优微调臂的 {w01_d:.4f} 米，差值是 {d_dom:+.4f} 米，也就是更差而不是更好；"
+            f"换成瓦片宏平均口径，两者相差 {d_mac:+.4f} 米，方向一致，"
+            "说明这个判断不是口径造成的。本报告因此<b>不主张残差参数化优于直接参数化</b>，"
+            "也不主张它应当取代任何现有臂。")
+        verdict += (
+            f"它确实改善了深水的方向。深水像元的平均有符号偏差，冻结基线是 {b_froz:+.3f} 米，"
+            f"最优微调臂是 {b_w01:+.3f} 米，残差模型是 {b_res:+.3f} 米，"
+            f"残差模型比冻结基线更接近零。深水回归斜率从冻结基线的 {s_froz:.3f} "
+            f"升到残差模型的 {s_res:.3f}，也朝正确的方向移动。"
+            "但幅度远远不够。")
+        verdict += (
+            f"深水像元相对十米输入需要抬升 {need:+.3f} 米，残差模型实际只抬升 {del_res:+.3f} 米，"
+            "离需求还差一个数量级。更关键的一条机制读数是，斜率最高的是双线性底图本身，"
+            f"达到 {s_bil:.3f}，高于包括残差模型在内的任何一个学习模型。"
+            "这说明网络不论采用直接参数化还是残差参数化，都在相对平凡的双线性插值<b>削弱</b>"
+            "深水信号，残差参数化只是把这个削弱减轻了一点，并没有扭转它。"
+            "把这条读数与整体误差合起来，可以收窄一个假设：深水欠估的症结更可能在"
+            "输入信息量与输出的收缩效应上，而不在残差放在哪个空间。")
+    TOK["@@RC_VERDICT@@"] = verdict
+
+    # compact depth-bin RMSE table for the three learned arms
+    labs = (bins.get("frozen") or {}).get("depth_bins")
+    if labs and all(k in bins for k in ("frozen", "win", "res")):
+        fr = bins["frozen"]["rmse_by_depth"]
+        wl = bins["win"]["rmse_by_depth"]
+        rs = bins["res"]["rmse_by_depth"]
+
+        def cls(a, b):
+            return " class='bad'" if a > b + 1e-9 else (
+                " class='good'" if a < b - 1e-9 else "")
+        rows = []
+        for i, lab in enumerate(labs):
+            rows.append(
+                f"<tr><td class='l'>{lab} m</td><td>{fr[i]:.3f}</td>"
+                f"<td>{wl[i]:.3f}</td>"
+                f"<td{cls(rs[i], wl[i])}>{rs[i]:.3f}</td></tr>")
+        TOK["@@RC_DEPTH_TABLE@@"] = (
+            "<table><caption><b>表 104　三个学习臂的湿区均方根误差按真值水深分层"
+            "（全量验证集，182 块瓦片）。</b>"
+            "全部湿区像元按真值水深分成六档，分箱边界与第二章一致。"
+            "每一档给出该区间内的湿区均方根误差，单位是米。"
+            "最后一列用颜色标出残差模型相对最优微调臂的方向，"
+            "红色表示残差更差，绿色表示残差更好。"
+            "读法是看残差的损失与收益分别落在哪一档，"
+            "浅水档比的是底图带来的平滑，深水档比的是能否把深水补回来。</caption>"
+            "<thead><tr><th class='l'>真值水深区间</th><th>冻结基线<br>RMSE(米)</th>"
+            "<th>最优微调<br>RMSE(米)</th><th>残差模型<br>RMSE(米)</th></tr></thead><tbody>"
+            + "".join(rows) + "</tbody></table>")
+
+    def fm(key, nd=3):
+        v = fields.get(key)
+        return f"{v:.{nd}f}" if isinstance(v, (int, float)) else "（数据待补）"
+
+    TOK["@@RC_IDEAL_DEEP@@"] = fm("deep_mean_ideal_residual_m")
+    TOK["@@RC_FROZ_DEEP@@"] = fm("deep_mean_frozen_residual_m")
+    TOK["@@RC_RES_DEEP@@"] = fm("deep_mean_residual_m")
+    return TOK
+
+
 def build() -> None:
     from report_body import body as report_body
 
@@ -1920,6 +2049,8 @@ def build() -> None:
     BODY = BODY.replace("@@PREM_PAIRED@@", pre_paired_table())
     BODY = BODY.replace("@@EXP_AB_TABLE@@", exp_ab_table())
     for tok, txt in exp_ab_text().items():
+        BODY = BODY.replace(tok, txt)
+    for tok, txt in _rc_chapter().items():
         BODY = BODY.replace(tok, txt)
     BODY = renumber(BODY)
     html = [HEAD, COVER, TOC, BODY]

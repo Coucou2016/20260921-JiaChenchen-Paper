@@ -67,6 +67,10 @@ FIGMAP = {
     "fig86_exp_ab.png": "figures/fig86_exp_ab.png",
     "fig87_exp_b.png": "figures/fig87_exp_b.png",
     "fig88_deep_slope.png": "figures/fig88_deep_slope.png",
+    "fig89_res_tiles_deep.png": "figures/fig89_res_tiles_deep.png",
+    "fig90_res_tiles_spectrum.png": "figures/fig90_res_tiles_spectrum.png",
+    "fig91_res_error_structure.png": "figures/fig91_res_error_structure.png",
+    "fig92_res_residual_field.png": "figures/fig92_res_residual_field.png",
 }
 
 
@@ -136,16 +140,25 @@ out.append("  - 5.8　空间自相关下的重估")
 out.append("  - 5.9　测试集复核")
 out.append("  - 5.10　高阶统计分析与阈值敏感性")
 out.append("  - 5.11　偏差随训练的演化")
-out.append("- 六　分析与讨论")
-out.append("  - 6.1　权重的绝对数字没有意义")
-out.append("  - 6.2　为什么微调比从头训练更适合这个任务")
-out.append("  - 6.3　测量方式与模型设计同等重要")
-out.append("  - 6.4　与从头训练方案的总体对比")
-out.append("- 七　主要结论")
-out.append("- 八　不足与展望")
-out.append("  - 8.1　结论适用范围上的限制")
-out.append("  - 8.2　方法层面可以继续优化的地方")
-out.append("  - 8.3　主题层面可以拓展的方向")
+out.append("  - 5.12　实验B　深水目标改造（E7方案）")
+out.append("- 六　双线性残差跨分辨率学习（实验A）")
+out.append("  - 6.1　动机与方法")
+out.append("  - 6.2　逐瓦片的空间预测对比")
+out.append("  - 6.3　误差的空间结构")
+out.append("  - 6.4　同协议定量对比与深水机制")
+out.append("  - 6.5　结论：一个需要如实呈现的负结果")
+out.append("- 七　分析与讨论")
+out.append("  - 7.1　权重的绝对数字没有意义")
+out.append("  - 7.2　为什么微调比从头训练更适合这个任务")
+out.append("  - 7.3　测量方式与模型设计同等重要")
+out.append("  - 7.4　与从头训练方案的总体对比")
+out.append("- 八　主要结论")
+out.append("- 九　不足与展望")
+out.append("  - 9.1　结论适用范围上的限制")
+out.append("  - 9.2　方法层面可以继续优化的地方")
+out.append("  - 9.3　主题层面可以拓展的方向")
+out.append("  - 9.4　跨分辨率相关性部分的待补充事项")
+out.append("  - 9.5　物理一致约束（未来工作）")
 out.append("- 附录一　术语表")
 out.append("- 附录二　参考文献")
 out.append("- 附录三　复现命令\n")
@@ -204,6 +217,10 @@ for m in token.finditer(body):
                  "exp a comparison": "fig86_exp_ab.png",
                  "exp b objective": "fig87_exp_b.png",
                  "deep slope mechanism": "fig88_deep_slope.png",
+                 "residual chapter deep tile": "fig89_res_tiles_deep.png",
+                 "residual chapter tile spectrum": "fig90_res_tiles_spectrum.png",
+                 "residual chapter error structure": "fig91_res_error_structure.png",
+                 "residual chapter residual field": "fig92_res_residual_field.png",
                  "tile spectrum": "fig22_tiles_spectrum.png",
                  "domain maps": "fig23_domain_maps.png",
                  "density agreement": "fig24_density.png",

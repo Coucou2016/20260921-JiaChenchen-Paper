@@ -112,24 +112,24 @@ def fig_two_fields():
     ax.set_axis_off()
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
-    _box(ax, 0.01, 0.60, 0.20, 0.30, "两米参考结果\n（精细网格）", fc="#eaf2fb")
+    _box(ax, 0.01, 0.60, 0.20, 0.30, "2 m reference\n(fine grid)", fc="#eaf2fb")
     _grid(ax, 0.03, 0.635, 0.16, 0.17, 4, C["fine"], "#4a6b8a")
-    _box(ax, 0.01, 0.10, 0.20, 0.30, "粗网格水动力程序\n（直接求解）", fc="#fdeceb")
+    _box(ax, 0.01, 0.10, 0.20, 0.30, "Coarse hydrodynamic solver\n(solved directly)", fc="#fdeceb")
     _grid(ax, 0.032, 0.135, 0.158, 0.15, 2, C["coarse"], "#8a4a4a")
-    _arrow(ax, (0.21, 0.75), (0.44, 0.75), "面积加权平均\n（聚合）", dy=0.02)
-    _arrow(ax, (0.21, 0.25), (0.44, 0.25), "在粗网格上\n直接求解", dy=0.02)
+    _arrow(ax, (0.21, 0.75), (0.44, 0.75), "Area-weighted mean\n(aggregation)", dy=0.02)
+    _arrow(ax, (0.21, 0.25), (0.44, 0.25), "Solved directly\non the coarse grid", dy=0.02)
     _box(ax, 0.45, 0.57, 0.22, 0.36,
-         "聚合真值\n\n把 25 个两米小格\n按面积平均成一个值", fc="#eaf7ee")
+         "Aggregated truth\n\narea-average 25 two-metre\ncells into one value", fc="#eaf7ee")
     _grid(ax, 0.495, 0.60, 0.13, 0.13, 2, C["agg"], "#3f7a55")
     _box(ax, 0.45, 0.07, 0.22, 0.36,
-         "粗网格模拟值\n\n每个十米方块\n算出一个水深", fc="#f3ecf7")
+         "Coarse simulation\n\none depth per\n10 m block", fc="#f3ecf7")
     _grid(ax, 0.495, 0.10, 0.13, 0.13, 2, C["sim"], "#6b4a7a")
     _arrow(ax, (0.67, 0.75), (0.78, 0.60), "")
     _arrow(ax, (0.67, 0.25), (0.78, 0.40), "")
     _box(ax, 0.79, 0.35, 0.20, 0.30,
-         "同一套方块\n\n同一个位置\n两份值可以相减", fc="#f2f2f2",
+         "Same blocks\n\nsame location\nso the two values can be subtracted", fc="#f2f2f2",
          ec="#555555")
-    ax.set_title("(a) 两份资料来自同一片地面与同一个降雨情景", fontsize=10.5,
+    ax.set_title("(a) The two fields share the same ground and the same rain event", fontsize=10.5,
                  loc="left")
 
     # (b) the real ten-metre block
@@ -147,41 +147,41 @@ def fig_two_fields():
                        fontsize=7)
     ax.set_yticklabels([f"{CELL['row_span_2m'][0]+k}" for k in range(5)],
                        fontsize=7)
-    ax.set_xlabel("两米网格列号")
-    ax.set_ylabel("两米网格行号")
+    ax.set_xlabel("2 m grid column index")
+    ax.set_ylabel("2 m grid row index")
     ax.grid(False)
     cb = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.03)
-    cb.set_label("两米水深（米）", fontsize=9)
+    cb.set_label("2 m depth (m)", fontsize=9)
     cb.ax.tick_params(labelsize=8)
-    ax.set_title("(b) 一块真实十米方块内部的 25 个两米水深", fontsize=10.5,
+    ax.set_title("(b) The 25 two-metre depths inside one real 10 m block", fontsize=10.5,
                  loc="left")
-    ax.text(0.0, -0.32, f"十米行号 {CELL['row']}，列号 {CELL['col']}，"
-                        f"一百年一遇情景", transform=ax.transAxes, fontsize=8.2,
+    ax.text(0.0, -0.32, f"10 m row {CELL['row']}, col {CELL['col']}, "
+                        f"100-year event", transform=ax.transAxes, fontsize=8.2,
             color="#444444")
 
     # (c) the three numbers on that same block
     ax = fig.add_subplot(gs[0, 2])
     y = np.arange(sub.size)
     ax.plot(sub.ravel(), y, "o", ms=4.2, color=C["fine"], alpha=0.85,
-            label="25 个两米小格")
+            label="25 two-metre cells")
     ax.axvline(CELL["area_weighted_aggregate_m"], color=C["agg"], lw=1.6,
-               label=f"聚合真值 {CELL['area_weighted_aggregate_m']:.3f} 米")
+               label=f"aggregated truth {CELL['area_weighted_aggregate_m']:.3f} m")
     ax.axvline(CELL["coarse_native_m"], color=C["sim"], lw=1.6, ls="--",
-               label=f"粗网格模拟 {CELL['coarse_native_m']:.3f} 米")
+               label=f"coarse simulation {CELL['coarse_native_m']:.3f} m")
     lo = CELL["coarse_native_m"]
     hi = CELL["area_weighted_aggregate_m"]
     ax.axvspan(min(lo, hi), max(lo, hi), color="#c0392b", alpha=0.13, lw=0)
-    ax.annotate(f"两者相差\n{abs(hi-lo):.3f} 米",
+    ax.annotate(f"difference\n{abs(hi-lo):.3f} m",
                 xy=((lo + hi) / 2, sub.size * 0.62),
                 xytext=((lo + hi) / 2 + 0.75, sub.size * 0.78),
                 fontsize=8.6, color="#8a2b20", ha="left",
                 arrowprops=dict(arrowstyle="-", color="#8a2b20", lw=0.9))
-    ax.set_xlabel("水深（米）")
-    ax.set_ylabel("方块内的两米小格（按水深排序）")
+    ax.set_xlabel("Depth (m)")
+    ax.set_ylabel("Two-metre cells in the block (sorted by depth)")
     ax.set_xlim(-0.05, sub.max() * 1.22)
     ax.set_ylim(-1, sub.size)
     ax.legend(frameon=False, fontsize=8, loc="upper left")
-    ax.set_title("(c) 同一方块上的聚合值、模拟值与两者之差", fontsize=10.5,
+    ax.set_title("(c) Aggregated value, simulated value and their difference on one block", fontsize=10.5,
                  loc="left")
 
     save(fig, "fig61_two_fields.png")
@@ -200,27 +200,27 @@ def fig_error_accounts():
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     rows = [
-        (0.68, "粗网格模拟值　−　聚合真值", "模拟项：数值求解与方块形状造成的差",
-         f"三十米、一百年一遇下 {sim:.4f} 米", "#f3ecf7", C["sim"]),
-        (0.40, "聚合真值　−　两米真值", "聚合项：粗化本身造成的差",
-         f"同一条件下 {agg:.4f} 米", "#eaf7ee", C["agg"]),
+        (0.68, "Coarse simulation - aggregated truth", "Simulation term: numerical solve and block shape",
+         f"at 30 m, 100-year: {sim:.4f} m", "#f3ecf7", C["sim"]),
+        (0.40, "Aggregated truth - 2 m truth", "Aggregation term: coarsening itself",
+         f"same condition: {agg:.4f} m", "#eaf7ee", C["agg"]),
     ]
     for y, expr, note, num, fc, ec in rows:
         _box(ax, 0.02, y, 0.46, 0.22, f"{expr}\n\n{note}\n{num}", fc=fc, ec=ec,
              fs=9.0)
     _box(ax, 0.52, 0.54, 0.46, 0.36,
-         "两式相加\n\n中间两项相互抵消\n得到总误差\n"
-         "粗网格模拟值　−　两米真值",
+         "Add the two lines\n\nthe middle terms cancel\nleaving the total error\n"
+         "Coarse simulation - 2 m truth",
          fc="#f2f2f2", ec="#555555", fs=9.4)
-    ax.text(0.75, 0.42, f"三十米、一百年一遇下 {tot:.4f} 米", ha="center",
+    ax.text(0.75, 0.42, f"at 30 m, 100-year: {tot:.4f} m", ha="center",
             va="top", fontsize=9.0, color="#333333")
     _arrow(ax, (0.48, 0.79), (0.52, 0.76), "")
     _arrow(ax, (0.48, 0.51), (0.52, 0.54), "")
     _box(ax, 0.02, 0.06, 0.96, 0.26,
-         "两项之比约为 76 比 24，但它们出自同一个差值的两段，相加时不能直接相加\n"
-         f"按平方相加得到 {np.sqrt(sim**2 + agg**2):.4f} 米，与总误差 {tot:.4f} 米一致",
+         "The two terms are about 76:24, but they are two legs of one difference and must not be added directly\n"
+         f"quadrature sum {np.sqrt(sim**2 + agg**2):.4f} m vs total {tot:.4f} m",
          fc="#fdf6e3", ec="#b08800", fs=9.0)
-    ax.set_title("(a) 误差可以拆成两笔，两笔相加等于总差", fontsize=10.5,
+    ax.set_title("(a) The error splits into two terms that sum to the total", fontsize=10.5,
                  loc="left")
 
     ax = fig.add_subplot(gs[0, 1])
@@ -235,9 +235,9 @@ def fig_error_accounts():
             share_c.append(m["share_cross_var"] * 100)
         pos = x + (k - 0.5) * w
         ax.bar(pos, share_s, w * 0.94, color=C["sim"],
-               label="模拟项方差占比" if k == 0 else None)
+               label="Simulation-term variance share" if k == 0 else None)
         ax.bar(pos, share_a, w * 0.94, bottom=share_s, color=C["agg"],
-               label="聚合项方差占比" if k == 0 else None)
+               label="Aggregation-term variance share" if k == 0 else None)
         alpha = 1.0 if scen == "100a" else 0.6
         for p, s, a in zip(pos, share_s, share_a):
             ax.text(p, s + a + 2.4, f"{a:.1f}", ha="center", fontsize=7.4,
@@ -248,13 +248,13 @@ def fig_error_accounts():
             b.set_alpha(alpha)
     ax.set_xticks(x)
     ax.set_xticklabels([f"{r[:-1]}" for r in RES])
-    ax.set_xlabel("网格边长（米）")
-    ax.set_ylabel("占总平方误差的比例（百分数）")
+    ax.set_xlabel("Grid edge length (m)")
+    ax.set_ylabel("Share of the total squared error (%)")
     ax.set_ylim(0, 116)
     ax.legend(frameon=False, ncol=2, loc="lower center")
-    ax.text(0.02, 0.96, "交叉项在四档网格上都不超过万分之六，因此图中未单独画出",
+    ax.text(0.02, 0.96, "The cross term stays below 6e-4 on all four grids and is not drawn separately",
             transform=ax.transAxes, fontsize=8.0, color="#555555", va="top")
-    ax.set_title("(b) 两笔账各占多少，随网格变粗而变化", fontsize=10.5,
+    ax.set_title("(b) Share of each term as the grid coarsens", fontsize=10.5,
                  loc="left")
 
     save(fig, "fig62_error_accounts.png")
@@ -262,15 +262,31 @@ def fig_error_accounts():
 
 # ------------------------------------------------------------------- fig 63
 PAIRS_CELL = [
-    ("Slope", "单元坡度（无量纲）", ["平缓", "中等", "陡峭"]),
-    ("Building_binary", "单元建筑覆盖率", ["无建筑", "部分", "满覆盖"]),
-    ("Dist_water", "单元到水体的距离（米）", ["靠近", "中等", "远离"]),
+    ("Slope", "Cell slope (dimensionless)", ["Gentle", "Medium", "Steep"]),
+    ("Building_binary", "Cell building coverage", ["No building", "Partial", "Full coverage"]),
+    ("Dist_water", "Cell distance to water (m)", ["Near", "Medium", "Far"]),
 ]
 PAIRS_TILE = [
-    ("building_frac", "瓦片内建筑占比", ["少", "中", "多"]),
-    ("impervious_frac", "瓦片内不透水面占比", ["少", "中", "多"]),
-    ("landuse_entropy", "瓦片土地利用混合度", ["单一", "中等", "混杂"]),
+    ("building_frac", "Tile building fraction", ["Low", "Medium", "High"]),
+    ("impervious_frac", "Tile impervious fraction", ["Low", "Medium", "High"]),
+    ("landuse_entropy", "Tile land-use mixing", ["Uniform", "Medium", "Mixed"]),
 ]
+
+# The contrast JSONs carry a Chinese condition name in their "cn" field.  In-figure
+# text must be English, so map the condition keys to short English labels here
+# rather than editing the data artefacts.
+EN_FACTOR = {
+    "Slope": "Cell slope",
+    "Building_binary": "Building coverage",
+    "Dist_water": "Distance to water",
+    "building_frac": "Building fraction",
+    "impervious_frac": "Impervious fraction",
+    "landuse_entropy": "Land-use mixing",
+}
+
+
+def factor_label(entry, key):
+    return EN_FACTOR.get(key, entry.get("cn", key))
 
 
 def _tercile(v, q1, q2):
@@ -307,12 +323,12 @@ def fig_error_sources():
         vals = [e[t]["mae"] for t in ("low", "mid", "high")]
         dep = [e[t]["mean_truth_m"] for t in ("low", "mid", "high")]
         a2 = panel(axes[0][k], key, vals, dep, labels, xlab,
-                   f"({letters[k]}) {e['cn']}　高值组是低值组的 "
-                   f"{e['mae_ratio_high_over_low']:.2f} 倍",
-                   "平均绝对误差（米）", "组内平均水深（米）")
+                   f"({letters[k]}) {factor_label(e, key)} high group / low group "
+                   f"{e['mae_ratio_high_over_low']:.2f}x",
+                   "MAE (m)", "Group-mean depth (m)")
         if k == 2:
             a2.legend(handles=[Line2D([], [], color="#6b6b6b", ls="--", marker="o",
-                                      label="组内平均水深（右轴）")],
+                                      label="Group-mean depth (right axis)")],
                       frameon=False, fontsize=8, loc="upper left")
 
     tf = TILF["resolutions"]["10m"]["factors"]
@@ -321,19 +337,19 @@ def fig_error_sources():
         vals = [e[t]["mae"]["mean"] for t in ("low", "mid", "high")]
         dep = [e[t]["mean_depth_2m"]["mean"] for t in ("low", "mid", "high")]
         a2 = panel(axes[1][k], key, vals, dep, labels, xlab,
-                   f"({letters[k+3]}) {e['cn']}　高值组是低值组的 "
-                   f"{e['mae_ratio_high_over_low']:.2f} 倍",
-                   "逐瓦片平均绝对误差（米）", "组内平均水深（米）")
+                   f"({letters[k+3]}) {factor_label(e, key)} high group / low group "
+                   f"{e['mae_ratio_high_over_low']:.2f}x",
+                   "Per-tile MAE (m)", "Group-mean depth (m)")
         if k == 0:
             a2.legend(handles=[Line2D([], [], color="#6b6b6b", ls="--", marker="o",
-                                      label="组内平均水深（右轴）")],
+                                      label="Group-mean depth (right axis)")],
                       frameon=False, fontsize=8, loc="upper left")
 
-    fig.text(0.012, 0.762, "单元一级（只统计有水单元）", rotation=90,
+    fig.text(0.012, 0.762, "Cell level (wet cells only)", rotation=90,
              va="center", fontsize=10, color="#333333")
-    fig.text(0.012, 0.285, "瓦片一级（480 米见方）", rotation=90,
+    fig.text(0.012, 0.285, "Tile level (480 m square)", rotation=90,
              va="center", fontsize=10, color="#333333")
-    fig.suptitle("十米网格、一百年一遇情景下，各条件取值高组与低组的误差对照",
+    fig.suptitle("10 m grid, 100-year event: high-group vs low-group error per condition",
                  fontsize=11, y=0.985)
     fig.tight_layout(rect=(0.028, 0, 1, 0.962))
     save(fig, "fig63_error_sources.png")
